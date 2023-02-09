@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FeaturesComponent } from './features.component';
-import { HOME, PROFILE } from 'src/app/constants/routes';
+import { DIRECTORY, ENTREPRENURSHIP, HOME, PROFILE } from 'src/app/constants/routes';
 
 const routes: Routes = [
   {
@@ -19,9 +19,16 @@ const routes: Routes = [
           import('./profile/profile.module').then((m) => m.ProfileModule),
       },
       {
-        path: 'directory',
+        path: DIRECTORY.path,
         loadChildren: () =>
           import('./directory/directory.module').then((m) => m.DirectoryModule),
+      },
+      {
+        path: ENTREPRENURSHIP.path,
+        loadChildren: () =>
+          import('./entreprenurship/entreprenurship.module').then(
+            (m) => m.EntreprenurshipModule
+          ),
       },
     ],
   },

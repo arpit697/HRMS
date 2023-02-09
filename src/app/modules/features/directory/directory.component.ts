@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./directory.component.scss']
 })
 export class DirectoryComponent {
-
+  item = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 }
