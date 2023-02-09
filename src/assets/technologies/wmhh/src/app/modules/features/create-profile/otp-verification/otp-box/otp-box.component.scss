@@ -1,0 +1,70 @@
+
+
+.wrapper {
+    .otp-input:not(:last-child) {
+        margin-right: 8px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .otp-input {
+        width: 40px;
+        font-size: 24px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .otp-input {
+        width: 30px;
+        font-size: 18px;
+        height: 30px; 
+       
+    }
+}
+
+.otp-input {
+    border: 1px solid #d2d2d2;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: #333333;
+    width: 33%;
+    height: 60px;
+    border-radius: 4px;
+    width: 70px !important;
+    height: 70px !important;
+    
+}
+
+.box_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+:host ::ng-deep{
+    .cstm_input_field{
+        .mat-form-field {
+            width: 60px;
+            margin: 0 10px;
+        }           
+        .mat-input-element {
+            margin-top: -0.0625em;
+            font-size: 32px;
+            font-weight: 500;
+            letter-spacing: -0.64px;
+            color: #333333;
+            text-align: center;
+            font-family: "Circular Std", sans-serif;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.sfacebook,
+.sgoogle,
+.stwitter {
+    width: 116px;
+    height: 49px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 7px;
+    cursor: pointer;
+}
+
+.sfacebook {
+    background-color: #3b5998;
+}
+
+@media(max-width:425px) {
+    .sfacebook {
+        max-width: 80px;
+    }
+}

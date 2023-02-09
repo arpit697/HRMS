@@ -1,0 +1,31 @@
+<div class="audio-player">
+  <div class="audio-inner-wrap">
+    <audio controls class="hide">
+      <source [src]="audioSrc" type="audio/ogg" />
+      <source [src]="audioSrc" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <div class="play-pause-btn">
+      <i *ngIf="!state.playing" (click)="play()" class="play"></i>
+      <i *ngIf="state.playing" (click)="pause()" class="pause"></i>
+    </div>
+    <div class="basic-info">
+      <h3>{{ audioTitle }}</h3>
+      <div class="slider-wrap">
+        <div class="start-point">{{ state?.readableCurrentTime }}</div>
+        <div class="mat-side-wrap">
+          <mat-slider
+            class="time-slider"
+            min="0"
+            [max]="state?.duration"
+            step="1"
+            [value]="state?.currentTime"
+            (input)="onSliderChangeEnd($event)"
+            [disabled]="state?.error || audioSrc === undefined"
+          ></mat-slider>
+        </div>
+        <div class="end-point">{{ state?.readableDuration }}</div>
+      </div>
+    </div>
+  </div>
+</div>

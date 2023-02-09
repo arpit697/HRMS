@@ -1,0 +1,33 @@
+<div class="popup-wrapper">
+  <a (click)="close()" class="close-popup" tabindex="0"
+    ><img src="assets/images/times.svg" alt="Icon"
+  /></a>
+  <div class="popup-inner">
+    <figure>
+      <img
+        [src]="
+          dialogData.icon ? dialogData.icon : 'assets/images/create-icon.svg'
+        "
+        alt="Create Icon"
+      />
+    </figure>
+    <div class="create-content">
+      <h3>
+        Create an account to get access to <br />this
+        {{ dialogData.isCourse ? "course" : "resource" }}
+      </h3>
+      <!-- <h3>{{ dialogData?.heading }}</h3> -->
+      <div class="btn-wrap">
+        <button (click)="openSignUp()" type="button" class="submit-btn">
+          Sign Up
+        </button>
+      </div>
+      <div class="already-have">
+        <p (click)="openLogin()">Already have an account? <a>Sign In</a></p>
+      </div>
+      <p class="join-text">
+        {{ dialogData?.description }}
+      </p>
+    </div>
+  </div>
+</div>

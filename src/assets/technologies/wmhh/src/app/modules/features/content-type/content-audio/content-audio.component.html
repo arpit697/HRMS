@@ -1,0 +1,491 @@
+<!-- Main Content Start Here -->
+<section class="main-content" *ngIf="contentDetails">
+  <!-- Main Content Banner Start Here -->
+  <div class="main-content-banner">
+    <div class="container">
+      <div class="inner-wrap">
+        <h1 class="page-title">{{ contentDetails?.title }}</h1>
+        <div class="top-action">
+          <app-like
+            style="margin-right: 10px"
+            [liked]="contentDetails?.isLiked"
+            [isBorder]="false"
+            appClickStopPropagation
+            [moduleId]="contentDetails?.moduleId"
+            [moduleName]="contentDetails?.moduleName"
+            [contentName]="contentDetails?.title"
+            [contentType]="contentDetails?.contenttype"
+          ></app-like>
+          <app-social-share
+            [contentName]="contentDetails?.title"
+            [contentType]="contentDetails?.contenttype"
+            [isShareUrl]="true"
+          ></app-social-share>
+
+          <!-- <ng-container *ngIf="userLoggedIn"> -->
+          <!-- *ngIf="userLoggedIn" -->
+          <app-bookmark
+            [isBorder]="false"
+            [moduleName]="contentDetails?.moduleName"
+            [saved]="contentDetails?.isSaved"
+            [moduleId]="contentDetails?.moduleId"
+            [contentName]="contentDetails?.title"
+            [contentType]="contentDetails?.contenttype"
+          ></app-bookmark>
+          <!-- </ng-container> -->
+          <span>{{ contentDetails?.duration }} mins</span>
+        </div>
+        <div class="content-details">
+          <div class="left-content">
+            <div
+              class="left-inner ck-content"
+              [innerHtml]="contentDetails?.postcontent | safe: 'html'"
+            ></div>
+            <!-- {{ contentDetails?.postvideoData[0]?.url | strapi: "video" }} -->
+            <div
+              *ngIf="
+                !contentDetails.mainAudioDesc && !contentDetails.mainAudioTitle
+              "
+              class="audio-wrap"
+            >
+              <app-audio
+                [audioTitle]="
+                  contentDetails?.audioswithtitleData[0]?.audiotitle
+                "
+                [audioSrc]="
+                  contentDetails?.audioFileData[0]?.url | strapi: 'video'
+                "
+              ></app-audio>
+            </div>
+            <div
+              *ngIf="
+                this.contentDetails &&
+                this.userLoggedIn &&
+                !contentDetails.mainAudioDesc &&
+                !contentDetails.mainAudioTitle
+              "
+              class="mark-btn"
+            >
+              <button
+                [disabled]="this.contentDetails?.isCompleted"
+                (click)="toogleContentCompletion()"
+                type="button"
+                class="primary-btn"
+                [ngClass]="{ mark: this.contentDetails?.isCompleted }"
+              >
+                {{
+                  !this.contentDetails?.isCompleted
+                    ? "Mark as Complete"
+                    : "You completed this on"
+                }}
+
+                {{
+                  this.contentDetails?.isCompleted
+                    ? (this.contentDetails?.completedOn | date: "mediumDate")
+                    : ""
+                }}
+              </button>
+            </div>
+          </div>
+          <div class="right-bg">
+            <img
+              [src]="
+                contentDetails?.postimageData &&
+                contentDetails?.postimageData.length
+                  ? (contentDetails?.postimageData[0].url | strapi: 'image')
+                  : '/assets/images/blank.png'
+              "
+              alt="Image"
+              width="100%"
+              height="100%"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Main Content Banner End Here -->
+
+  <!-- Todo -->
+  <section
+    *ngIf="contentDetails.mainAudioDesc && contentDetails.mainAudioTitle"
+    class="audio-info"
+  >
+    <div class="container">
+      <div class="flex-row">
+        <div class="col-6">
+          <ng-container
+            *ngFor="let item of contentDetails?.audioFileData; let i = index"
+          >
+            <app-audio
+              [audioTitle]="contentDetails?.audioswithtitleData[i]?.audiotitle"
+              [audioSrc]="item?.url | strapi: 'video'"
+            ></app-audio>
+          </ng-container>
+        </div>
+        <div class="col-6">
+          <h3>{{ contentDetails?.mainAudioTitle }}</h3>
+          <p [innerHtml]="contentDetails?.mainAudioDesc | safe: 'html'"></p>
+        </div>
+      </div>
+      <!-- {{ userLoggedIn }} -->
+      <div
+        *ngIf="
+          this.contentDetails &&
+          this.userLoggedIn &&
+          contentDetails.mainAudioDesc &&
+          contentDetails.mainAudioTitle
+        "
+        class="mark-btn"
+      >
+        <button
+          [disabled]="this.contentDetails?.isCompleted"
+          (click)="toogleContentCompletion()"
+          type="button"
+          class="primary-btn"
+          [ngClass]="{ mark: this.contentDetails?.isCompleted }"
+        >
+          {{
+            !this.contentDetails?.isCompleted
+              ? "Mark as Complete"
+              : "You completed this on"
+          }}
+
+          {{
+            this.contentDetails?.isCompleted
+              ? (this.contentDetails?.completedOn | date: "mediumDate")
+              : ""
+          }}
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Todo -->
+
+  <!-- <section class="related-resource">
+    <div class="container">
+      <div class="flex-row">
+        <h3 class="section-title">Related to this resource</h3>
+        <a class="explore-all">Explore All</a>
+      </div>
+    </div>
+  </section> -->
+
+  <div *ngIf="nextSeriesData.length" class="content-series">
+    <div class="container">
+      <div class="sub-content more-in-series">
+        <h3 class="more-content">Next in this series</h3>
+        <figure>
+          <img
+            #prev
+            src="assets/images/ic_detail_arrowleft.svg"
+            alt=""
+            class="arroww_icon_left"
+          />
+        </figure>
+        <div
+          class="swiper-container"
+          [index]="activeIndex"
+          [swiper]="swiperConfig"
+        >
+          <div class="swiper-wrapper">
+            <div
+              *ngFor="let item of nextSeriesData; let i = index"
+              class="swiper-slide"
+            >
+              <div
+                [ngStyle]="{
+                  border:
+                    item?.moduleId === contentDetails?.moduleId
+                      ? '2px solid #E7825B'
+                      : null
+                }"
+                (click)="utility.goToDetails(item, parentData)"
+                class="content-inner no-like-bookmark"
+                tabindex="0"
+              >
+                <div class="top-wrp">
+                  <h4 class="sec-title">Section {{ i + 1 }}</h4>
+                  <h3>{{ item?.title }}</h3>
+                </div>
+                <div class="bottom-info-wrap">
+                  <div class="bottom-left">
+                    <p class="time">{{ item?.duration }} mins</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-scrollbar"></div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <figure>
+          <img
+            #next
+            src="assets/images/ic_detail_arrowleft.svg"
+            alt=""
+            class="arroww_icon_right"
+          />
+        </figure>
+      </div>
+    </div>
+  </div>
+  <!-- Content Series End Here -->
+  <!-- Other Activites Start Here -->
+  <div *ngIf="similarQuickActivities?.length" class="container">
+    <div class="sub-content">
+      <h3 class="more-content">Other Activities</h3>
+      <figure>
+        <img
+          #prevSimilar
+          src="assets/images/ic_detail_arrowleft.svg"
+          alt=""
+          class="arroww_icon_left"
+        />
+      </figure>
+      <div class="similar-activity other-activities">
+        <div class="swiper-container" [swiper]="swiperConfigSimilarActivies">
+          <div class="swiper-wrapper">
+            <div
+              *ngFor="let part of similarQuickActivities; let idx = index"
+              (click)="utility.goToDetails(part)"
+              class="swiper-slide"
+            >
+              <div class="content-inner no-like-bookmark" tabindex="0">
+                <div class="info-top">
+                  <div class="resource-type-icon">
+                    <figure>
+                      <img
+                        [src]="
+                          part?.isAvailabelForQuickActivities
+                            ? (contentType.QUICKFEATURED | contentTypeIcon)
+                            : part?.moduleName ===
+                              MODULE_NAME_ENUM.SERIESCONTENT
+                            ? (part?.contenttype | contentTypeIcon)
+                            : (part?.contenttype
+                              | contentTypeIcon: part?.moduleName)
+                        "
+                        alt="Image"
+                      />
+                    </figure>
+                  </div>
+                  <div class="resource-type-content">
+                    <h3>{{ part.title }}</h3>
+                    <p
+                      [innerHtml]="
+                        part.resourceData && part.resourceData.length
+                          ? part.resourceData[0].shortdesc
+                          : ''
+                      "
+                      class="ck-content"
+                    ></p>
+                    <!-- : part.postcontent -->
+                  </div>
+                </div>
+
+                <div class="bottom-info">
+                  <div class="left-info">
+                    <p class="time">{{ part?.duration }} mins activity</p>
+                  </div>
+                  <div class="right-info">
+                    <!-- *ngIf="userLoggedIn" -->
+                    <app-bookmark
+                      [moduleName]="part?.moduleName"
+                      [saved]="part?.isSaved"
+                      [moduleId]="part?.moduleId"
+                      [contentName]="part?.title"
+                      [contentType]="part?.contenttype"
+                    ></app-bookmark>
+                    <app-like
+                      appClickStopPropagation
+                      [moduleId]="part?.moduleId"
+                      [moduleName]="part?.moduleName"
+                      [liked]="part?.isLiked"
+                      [contentName]="part?.title"
+                      [contentType]="part?.contenttype"
+                    ></app-like>
+                    <div
+                      *ngIf="part?.isCompleted || part?.isInProgress"
+                      class="status-wrap"
+                      [ngClass]="{
+                        completed: part?.isCompleted,
+                        'in-progress': part?.isInProgress
+                      }"
+                    >
+                      {{
+                        part
+                          | resourceStatus
+                            : part?.moduleName == "SERIESCATEGORIES"
+                      }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-scrollbar"></div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+      <figure>
+        <img
+          #nextSimilar
+          src="assets/images/ic_detail_arrowleft.svg"
+          alt=""
+          class="arroww_icon_right"
+        />
+      </figure>
+    </div>
+  </div>
+  <!-- Other Activites End Here -->
+  <!-- Related Artical Start Here -->
+  <div *ngIf="relatedArticles.length" class="container">
+    <div class="sub-page-content">
+      <h2 class="sub-page-title">Related to this article</h2>
+      <div class="flex-related">
+        <!-- [appTooltipInfo]="item" -->
+        <div *ngFor="let item of relatedArticles" class="col-4 style-relative">
+          <div class="hide content-inner-tooltip">
+            <div class="hover-content-tooltip">
+              <div class="top-section">
+                <div class="close-wrap">
+                  <a
+                    ><img
+                      class="cross-icon"
+                      src="assets/images/close-tooltip.svg"
+                      alt="Icon"
+                  /></a>
+                </div>
+                <h3>{{ item.title }}</h3>
+              </div>
+              <div class="sub-info">
+                <div class="top-info">
+                  <div class="book-icon">
+                    <span
+                      *ngIf="item.moduleName == 'SERIESCATEGORIES'"
+                      class="small-content"
+                    >
+                      {{
+                        item.minduration + " - " + item.maxduration + " mins"
+                      }}
+                      {{ item.contenttype | contentType: "contentLabel" }}</span
+                    >
+                    <span
+                      *ngIf="item.moduleName == 'SERIESCONTENT'"
+                      class="small-content"
+                    >
+                      {{ item.duration + " " + "mins" }}
+                      {{ item.contenttype | contentType: "contentLabel" }}</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="content-description">
+                <p
+                  [innerHtml]="
+                    item.resourceData && item.resourceData.length
+                      ? item.resourceData[0].shortdesc
+                      : ''
+                  "
+                  class="ck-content"
+                ></p>
+                <!-- : item.postcontent -->
+              </div>
+              <div class="btn-wrap">
+                <button
+                  (click)="utility.goToDetails(item)"
+                  type="button"
+                  class="primary-btn"
+                >
+                  Let's Go
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            (click)="utility.goToDetails(item)"
+            class="content-inner"
+            tabindex="0"
+          >
+            <div class="info-top">
+              <div class="resource-type-icon">
+                <figure>
+                  <img
+                    [src]="
+                      item?.isAvailabelForQuickActivities
+                        ? (contentType.QUICKFEATURED | contentTypeIcon)
+                        : item?.moduleName === MODULE_NAME_ENUM.SERIESCONTENT
+                        ? (item?.contenttype | contentTypeIcon)
+                        : (item?.contenttype
+                          | contentTypeIcon: item?.moduleName)
+                    "
+                    alt="Image"
+                  />
+                </figure>
+              </div>
+              <div class="resource-type-content">
+                <h3>{{ item?.title }}</h3>
+                <p
+                  [innerHtml]="
+                    item?.resourceData && item?.resourceData.length
+                      ? item?.resourceData[0].shortdesc
+                      : ''
+                  "
+                  class="ck-content"
+                ></p>
+                <!-- : item?.postcontent -->
+              </div>
+            </div>
+            <div class="bottom-info">
+              <div class="left-info">
+                <p class="time">
+                  {{ item?.duration }} mins
+                  {{ item?.contenttype | contentType: "contentLabel" }}
+                </p>
+              </div>
+              <div class="right-info">
+                <!-- *ngIf="userLoggedIn" -->
+                <app-bookmark
+                  [moduleName]="item?.moduleName"
+                  [saved]="item?.isSaved"
+                  [moduleId]="item?.moduleId"
+                  [contentName]="item?.title"
+                  [contentType]="item?.contenttype"
+                ></app-bookmark>
+                <app-like
+                  style="margin-right: 10px"
+                  [liked]="item?.isLiked"
+                  appClickStopPropagation
+                  [noOfLikes]="item?.noOfLikes"
+                  [moduleId]="item?.moduleId"
+                  [moduleName]="item?.moduleName"
+                  [contentName]="item?.title"
+                  [contentType]="item?.contenttype"
+                ></app-like>
+                <div
+                  *ngIf="item?.isCompleted || item?.isInProgress"
+                  class="status-wrap"
+                  [ngClass]="{
+                    completed: item?.isCompleted,
+                    'in-progress': item?.isInProgress
+                  }"
+                >
+                  {{
+                    item
+                      | resourceStatus: item?.moduleName == "SERIESCATEGORIES"
+                  }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content End Here -->

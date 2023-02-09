@@ -1,0 +1,101 @@
+<form [formGroup]="helpForm">
+  <div class="popup-wrapper">
+    <div class="header">
+      <a (click)="onNoClick()" class="close-icon" tabindex="0"
+        ><img src="assets/images/icons/close-popup.svg" alt="Image"
+      /></a>
+    </div>
+    <div class="popup-inner">
+      <div class="description">
+        <p>
+          Tell us about your overall experience of using this website. We value
+          and appreciate you input for make BC’s Hub better.
+        </p>
+      </div>
+      <!-- <div formArrayName="questionanswerobj" class="rating-section">
+
+            
+             
+            <div *ngFor="let item of feedbackQuestionsFormArray.controls;let i=index;" class="rating-row">
+                <ng-container *ngIf="(item | getControl:['questiontype']).value ==='rating'; else textTemplate">
+                    
+                    <div class="rating-col"><p>
+                       {{(item | getControl:['question']).value}}
+                    </p></div>
+                    <div class="rating-col stars">
+                        <div class="star-rating-options"><ngx-star-rating [formControl]="(item | getControl:['answer'])" [id]="'rating' + i" tabindex="0"></ngx-star-rating></div>
+                    </div>
+                </ng-container>
+                <ng-template #textTemplate>
+                    <div class="tell-us">
+                        <div class="tell-us-row">
+                            <div class="col-item">
+                                <p>
+                                {{(item | getControl:['question']).value}}
+                                </p>
+                            </div>
+                            <div class="col-item full-width">
+                                <div class="textarea-wrap">
+                                    <mat-form-field checkMaxLength="descriptionMaxLength" appearance="outline" class="textarea_autosize">
+                                        <textarea [formControl]="(item | getControl:['answer'])" #text matInput></textarea>
+                                        <mat-hint align="end">{{text.value?.length || 0}}/500</mat-hint>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+           
+        </div> -->
+      <div class="form-wrap">
+        <div class="input-row">
+          <mat-label>Name*</mat-label>
+          <mat-form-field appearance="outline">
+            <input formControlName="fullName" matInput />
+            <mat-error>{{
+              helpForm | getControl: ["fullName"] | validate: "Name"
+            }}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="input-row">
+          <mat-label>Email Address*</mat-label>
+          <mat-form-field appearance="outline">
+            <input formControlName="userEmail" matInput />
+            <mat-error>{{
+              helpForm | getControl: ["userEmail"] | validate: "Email"
+            }}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="input-row">
+          <mat-label>Feedback</mat-label>
+          <mat-form-field
+            checkMaxLength="descriptionMaxLength"
+            appearance="outline"
+            class="textarea_autosize"
+          >
+            <textarea formControlName="userFeedback" #text matInput></textarea>
+            <mat-hint align="end">{{ text.value?.length || 0 }}/500</mat-hint>
+            <mat-error>{{
+              helpForm | getControl: ["userFeedback"] | validate: "Feedback"
+            }}</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="btn-wrap">
+      <button type="submit" (click)="helpSubmit()" class="primary-btn">
+        Submit
+      </button>
+    </div>
+    <div class="send-us-email">
+      <p>
+        Want to send us
+        <a href="mailto:workplace.hub@cmha.bc.ca?subject=Help Us Improve"
+          >an email
+        </a>
+        instead ?
+      </p>
+    </div>
+  </div>
+</form>

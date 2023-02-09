@@ -1,0 +1,460 @@
+.close-wrapper {
+  position: relative;
+  height: 40px;
+  &.magic-close {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    & + div {
+      padding-bottom: 26px;
+    }
+  }
+  .close-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease-in;
+    background: transparent;
+    &:hover {
+      background: #e6e6e6;
+    }
+    .mat-icon {
+      color: #ff0000;
+    }
+  }
+}
+.back-wrapper {
+  display: inline-block;
+  a {
+    display: flex;
+    align-items: center;
+    color:#fff;
+    img {
+      margin-right: 10px;
+    }
+    strong {
+      font-size: 18px;
+      font-weight: 900;
+      @media (max-width: 1024px) {
+        font-size: 16px;
+      }
+      @media (max-width: 767px) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+.signup-wrapper {
+  max-width: 892px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: -24px;
+  padding-top: 15px;
+  padding-bottom: 50px;
+  .or-signup {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .sign-up-with-email {
+    padding: 0 0 15px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      display: flex;
+      align-items: center;
+      color:#000;
+      img {
+        margin-left: 10px;
+      }
+    }
+  }
+  .help-icon {
+    padding: 0;
+    position: relative;
+    top: -15px;
+    img {
+      width: 20px;
+      cursor: pointer;
+    }
+
+    .help-info {
+      padding: 0 10px;
+      border-radius: 8px;
+      bottom: 100%;
+      z-index: -99;
+      transition: 0.3s ease-in;
+      opacity: 0;
+      &.show {
+        opacity: 1;
+        z-index: 9;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        font-family: "Lato", sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 25px;
+        color: #a9a9a9;
+        position: relative;
+        padding-left: 25px;
+        @media (max-width: 767px) {
+          font-size: 12px;
+          line-height: 16.19px;
+          padding-left: 16px;
+        }
+        &.active {
+          color: #f64545;
+          font-weight: 700;
+          &:before {
+            background: url("../../../../assets/images/icons/ic-check-black.svg")
+              no-repeat;
+            background-size: 100%;
+          }
+        }
+        &:before {
+          width: 16px;
+          height: 20px;
+          background: url("../../../../assets/images/icons/ic-check.svg")
+            no-repeat;
+          background-size: 100%;
+          position: absolute;
+          content: "";
+          left: 0;
+          top: 5px;
+          @media (max-width: 767px) {
+            width: 10.36px;
+            height: 15px;
+            top: 2px;
+          }
+        }
+      }
+    }
+  }
+  .social-sign-in {
+    padding: 15px 0;
+    text-align: center;
+    a {
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+  .btn-wrap {
+    padding: 25px 0 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .left {
+    padding: 0 0 0 30px;
+    p {
+      font-size: 18px;
+      line-height: 19.55px;
+    }
+    h3 {
+      font-size: 30px;
+      line-height: 1.4;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+  }
+  .checkbox-wrap {
+    display: flex;
+    &.for-mobile-view {
+      display: none;
+      @media (max-width: 767px) {
+        display: flex;
+        margin-top: 15px;
+      }
+    }
+    .checkbox {
+      margin-right: 5px;
+    }
+    .content {
+      a {
+        color: #1A76D2;
+      }
+    }
+  }
+  .right {
+    padding: 15px 30px;
+    h3 {
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+    &.for-mobile-view {
+      .content {
+        p {
+          font-family: "Lato", sans-serif;
+          color: #000;
+          font-size: 18px;
+          line-height: 19.55px;
+        }
+      }
+    }
+  }
+  .left {
+    width: calc(100% - 320px);
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  .right {
+    width: 320px;
+    &.magic-form {
+      width: 620px;
+      padding: 0 50px;
+      border-radius: 30px;
+      position: relative;
+      .btn-wrap {
+        padding-top: 0;
+      }
+    }
+    &.only-form {
+      max-width: 670px;
+      width: initial;
+      padding: 25px 75px 0;
+      @media (max-width: 1024px) {
+        padding: 25px 50px 0;
+      }
+      @media (max-width: 767px) {
+        width: 100%;
+        padding: 15px 25px 0;
+      }
+    }
+    .signup-text {
+      margin-bottom: 15px;
+      h4 {
+        font-family: "Lato", sans-serif;
+        font-size: 30px;
+        line-height: 41px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 0;
+        @media (max-width: 1024px) {
+          font-size: 24px;
+          line-height: 36px;
+          margin-bottom: 15px;
+        }
+        @media (max-width: 767px) {
+          font-size: 18px;
+          list-style: 25px;
+          text-align: left;
+        }
+      }
+    }
+  }
+  .social-signup {
+    width: 100%;
+    a {
+      width: 100%;
+      height: 45px;
+      padding: 0 15px;
+      background: #fefefe;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      span {
+        font-family: "Lato", sans-serif;
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: 700;
+        color: #000000;
+        @media (max-width: 767px) {
+          font-size: 16px;
+          line-height: 21px;
+        }
+      }
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.thanks-wrapper {
+  h3 {
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  .not-receive-email {
+    text-align: right;
+    a {
+      color: #e7825b;
+    }
+  }
+}
+
+:host ::ng-deep {
+  .left {
+    .checkbox-wrap {
+      margin-top: 15px;
+      p {
+        font-family: "Lato", sans-serif;
+        color: #000;
+      }
+    }
+  }
+  .right {
+    .check-box-wrap {
+      margin-top: 15px;
+      display: flex;
+      align-items: flex-start;
+      .mat-checkbox-label {
+        font-family: "Lato", sans-serif;
+        color: #000;
+      }
+      .text-content {
+        font-family: "Lato", sans-serif;
+      }
+      a {
+        color: #1898f8 !important;
+      }
+    }
+  }
+}
+.primary-btn {
+  min-width: 203px;
+  height: 50px;
+  border-radius: 100px;
+  font-size: 18px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.label-text {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 700;
+  @media (max-width: 1024px) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+:host ::ng-deep {
+  .signup-wrapper {
+    input {
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #989898;
+    }
+    input::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #989898 !important;
+    }
+    input::-moz-placeholder {
+      /* Firefox 19+ */
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #989898 !important;
+    }
+    input:-ms-input-placeholder {
+      /* IE 10+ */
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #989898 !important;
+    }
+    .mat-select-placeholder {
+      font-family: "Lato", sans-serif !important;
+      font-weight: 700 !important;
+      font-size: 18px !important;
+      color: #989898 !important;
+    }
+  }
+}
+.welcome-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  line-height: 41px;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 25px;
+  color: #000;
+  @media (max-width: 1420px) {
+    margin-bottom: 25px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  @media (max-width: 767px) {
+    font-size: 18px;
+    line-height: 25px;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+}
+.text-content {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  @media (max-width: 767px) {
+    font-size: 12px;
+    line-height: 17.5px;
+  }
+}
+.personalize-text {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25px;
+  @media (max-width: 767px) {
+    font-size:14px;
+    line-height:18px;
+    margin-top:5px;
+  }
+}
+.errorMessage {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.for-mobile-view {
+  .content {
+    p {
+      font-family: "Lato", sans-serif;
+      font-size: 12px;
+      line-height: 17.5px;
+    }
+  }
+}
+
+.form-wrapper {
+  @media (max-width: 576px) {
+    height: 180px;
+    overflow-y: auto;
+  }
+}

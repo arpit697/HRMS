@@ -1,0 +1,28 @@
+@import 'ckeditor';
+::ng-deep {
+  @include ckeditor;
+}
+.popup-wrapper{
+  height:100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  h3{
+    font-family: 'd-dindin-bold';
+    font-size:20px;
+  }
+  .btn-wrap{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button+button{
+      margin-left:15px;
+    }
+  }
+  .content-description-wrap{
+    max-height: 410px;
+    overflow-y: auto;
+  }
+}

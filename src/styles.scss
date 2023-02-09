@@ -1,1 +1,166 @@
+
+@use "@angular/material" as mat;
+@use "./scss/global.scss";
+
+@include mat.core();
+
+$HRMS_Appinventiv-primary: mat.define-palette(mat.$indigo-palette);
+$HRMS_Appinventiv-accent: mat.define-palette(
+  mat.$pink-palette,
+  A200,
+  A100,
+  A400
+);
+
+$HRMS_Appinventiv-warn: mat.define-palette(mat.$red-palette);
+
+
+$HRMS_Appinventiv-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $HRMS_Appinventiv-primary,
+      accent: $HRMS_Appinventiv-accent,
+      warn: $HRMS_Appinventiv-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($HRMS_Appinventiv-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+//mat form field css class
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent;
+}
+.mdc-text-field--no-label:not(.mdc-text-field--outlined):not(
+    .mdc-text-field--textarea
+  )
+  .mat-mdc-form-field-infix {
+  width: unset;
+}
+
+.mat-mdc-form-field:hover .mat-mdc-form-field-focus-overlay {
+  opacity: 0.04;
+}
+
+.mdc-text-field .mdc-text-field__input {
+  caret-color: var(--mdc-theme-primary, #26b4ff);
+}
+
+.mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-line-ripple::after {
+  border-bottom-color: var(--spiro);
+}
+
+mat-error {
+  font-size: 0.8em;
+}
+
+mat-card {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+mat-card-content {
+  padding: 0;
+}
+
+//snck bar custom class
+.green-snackbar {
+  &.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+    background-color: green !important;
+  }
+  &.mat-mdc-snack-bar-container .mdc-snackbar__label {
+    color: white;
+    &::before {
+      content: "✔";
+    }
+  }
+}
+.red-snackbar {
+  &.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+    background-color: #f44336 !important;
+  }
+  &.mat-mdc-snack-bar-container .mdc-snackbar__label {
+    color: white;
+    &::before {
+      content: "✗";
+    }
+  }
+}
+
+//scroll bar
+::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(226, 226, 226);
+  border-radius: 15px;
+  &:hover {
+    background: gray;
+  }
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: grey;
+}
+
+//mat-list
+
+.mdc-list-item.mdc-list-item--with-one-line {
+  height: auto !important;
+}
+
+// mat accordian
+
+.mat-expansion-panel-header-description {
+  display: none !important;
+}
+
+.mat-expansion-panel-spacing {
+  margin: 0 !important;
+}
+.mat-expansion-panel-body {
+  padding: 0 !important;
+}
+.mat-expansion-indicator ::after {
+  transform: rotate(-180deg) !important;
+}
+
+.mat-expansion-panel-header {
+  padding: 0.5em 1.1em !important;
+}
+.mat-expansion-panel-header {
+  height: auto !important;
+}
+.mat-expansion-panel-header-title {
+  margin-right: none !important;
+}
+
+// .mat-expansion-panel-header-title {
+// }
+
+.mat-expansion-panel {
+  box-shadow: none !important;
+}

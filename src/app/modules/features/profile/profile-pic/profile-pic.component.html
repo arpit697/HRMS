@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-content>
+    <mat-card-title>Profile Picture</mat-card-title>
+  </mat-card-content>
+
+  <mat-card-content class="upload-area">
+    <div>
+      <label> Browse </label>
+    </div>
+    <div>
+      <input type="file" />
+    </div>
+  </mat-card-content>
+
+  <mat-card-content class="preview-area">
+    <small>
+        <mat-card-subtitle>
+        Upload files only : gif, png , jpg , jpeg
+      </mat-card-subtitle>
+    </small>
+    <img src="" alt="User Image">
+  </mat-card-content>
+
+  <mat-card-content>
+    <app-ru-button [bText]="'Save'"> </app-ru-button>
+  </mat-card-content>
+</mat-card>

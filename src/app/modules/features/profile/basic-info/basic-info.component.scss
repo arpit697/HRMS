@@ -1,0 +1,29 @@
+.col-1 {
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto;
+}
+.col-2 {
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1em;
+}
+
+.col-3 {
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1em;
+}
+.field {
+  padding: 0;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.row-2 {
+  padding: 0;
+  display: grid;
+  grid-template-rows: auto auto;
+}

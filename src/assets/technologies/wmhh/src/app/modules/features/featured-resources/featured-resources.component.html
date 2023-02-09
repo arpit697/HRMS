@@ -1,0 +1,22 @@
+<div class="main-content">
+    <div class="container">
+      <h2 class="sub-page-title">Featured Resources</h2>
+      <div
+        infiniteScroll
+        [scrollWindow]="false"
+        (scrolled)="onScroll()"
+        class="flex"
+        *ngIf="resourceList?.length"
+      >
+        <div class="sub-page-content">
+          <div class="flex">
+            <div *ngFor="let item of resourceList" class="col-4">
+              <app-content-card [item]="item"></app-content-card>
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-no-data [message]="'No Featured resources added yet...'" *ngIf="total ===0"></app-no-data>
+    </div>
+  </div>
+  

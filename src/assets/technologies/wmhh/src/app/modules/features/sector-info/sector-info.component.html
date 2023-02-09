@@ -1,0 +1,579 @@
+<section class="main-content">
+  <div class="sector-info-section">
+    <div class="container">
+      <div
+        [style.background-image]="
+          'url(' +
+          (sectorDetail?.watermarkImageData &&
+          sectorDetail?.watermarkImageData.length
+            ? (sectorDetail?.watermarkImageData[0].url | strapi: 'image')
+            : '/assets/images/hospitality-watermark.png') +
+          ')'
+        "
+        class="sector-banner-left"
+      >
+        <h3 class="page-title">{{ sectorDetail?.sectorName }}</h3>
+        <p
+          *ngIf="isBrowser"
+          class="ck-content"
+          [innerHTML]="sectorDetail?.description"
+        ></p>
+        <div
+          *ngIf="quickActivitiesList && quickActivitiesList.length"
+          class="tags-wrapper"
+        >
+          <ul>
+            <ng-container *ngFor="let item of quickActivitiesList">
+              <li
+                tabindex="0"
+                (click)="utilityService.goToDetails(item?.resourceData)"
+                *ngIf="item && item.buttonName"
+              >
+                {{ item?.buttonName }}
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <div class="right-bg">
+        <img
+          [src]="
+            sectorDetail?.detailImageData &&
+            sectorDetail?.detailImageData.length
+              ? (sectorDetail?.detailImageData[0].url | strapi: 'image')
+              : '/assets/images/blank.png'
+          "
+          alt="Image"
+        />
+      </div>
+    </div>
+  </div>
+  <!-- <div
+    [style.background-image]="
+      'url(' +
+      (sectorDetail?.detailImageData && sectorDetail?.detailImageData.length
+        ? (sectorDetail?.detailImageData[0].url | strapi: 'image')
+        : '/assets/images/blank.png') +
+      ')'
+    "
+    class="small-sector-info-banner"
+  ></div> -->
+  <div class="sub-page-content">
+    <div class="container">
+      <div class="title-description">
+        <h3>Discover More Resources</h3>
+        <p>
+          There are more resources to help you including
+          <strong>training</strong> and an opportunity to
+          <strong>join the discussion</strong> and be part of the movement to
+          improve your workplace.
+        </p>
+      </div>
+      <div class="flex">
+        <div class="col-4">
+          <div
+            class="content-inner get-support-icon"
+            tabindex="0"
+            [routerLink]="['DISCOVER' | absolutePath]"
+            [queryParams]="{ sectorSlug: sectorId }"
+          >
+            <div class="title-description">
+              <h3>Get Support</h3>
+              <p class="description">
+                Navigate the mental health system, access information, and/or
+                join a support group.
+              </p>
+            </div>
+            <div class="detail-link">
+              <mat-icon>arrow_forward</mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div
+            tabindex="0"
+            class="content-inner access-training-icon"
+            (click)="openTrainingPopup()"
+          >
+            <div class="title-description">
+              <a>
+                <h3>Access Training</h3>
+                <p class="description">
+                  We offer a variety of online workplace mental health training
+                  for individuals, people leaders, and managers. Sign up to be
+                  notified when courses are next available
+                </p>
+              </a>
+            </div>
+            <div class="detail-link">
+              <mat-icon>arrow_forward</mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="content-inner join-discussion-icon" tabindex="0">
+            <ng-container
+              *ngIf="
+                sectorDetail?.externalLink && sectorDetail?.externalLink.length;
+                else elseTemplate
+              "
+            >
+              <a target="_blank" [href]="sectorDetail?.externalLink">
+                <div class="title-description">
+                  <h3>Join the Discussion</h3>
+
+                  <ng-container
+                    *ngIf="
+                      sectorDetail?.discussionInfo &&
+                        sectorDetail?.discussionInfo.length;
+                      else emptyInfo
+                    "
+                  >
+                    <p
+                      [innerHTML]="sectorDetail?.discussionInfo"
+                      class="description ck-content"
+                    ></p>
+                  </ng-container>
+                  <ng-template #emptyInfo>
+                    <p class="description ck-content">Coming Soon</p>
+                  </ng-template>
+                </div>
+                <div class="detail-link">
+                  <mat-icon>arrow_forward</mat-icon>
+                </div>
+              </a>
+            </ng-container>
+            <ng-template #elseTemplate>
+              <a>
+                <div class="title-description">
+                  <h3>Join the Discussion</h3>
+                  <p class="description">
+                    {{
+                      sectorDetail?.discussionInfo &&
+                      sectorDetail?.discussionInfo.length
+                        ? sectorDetail?.discussionInfo
+                        : "Coming Soon"
+                    }}
+                  </p>
+                </div>
+                <div class="detail-link">
+                  <mat-icon>arrow_forward</mat-icon>
+                </div>
+              </a>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="featured-resources">
+    <div class="container">
+      <div class="feature-header">
+        <h3>Featured Resources</h3>
+        <a
+          [routerLink]="['DISCOVER' | absolutePath]"
+          [queryParams]="{ savedFilters: 'true' }"
+          >Explore All</a
+        >
+      </div>
+      <app-no-data
+        *ngIf="total === 0"
+        [message]="'No featured resources added yet...'"
+      ></app-no-data>
+      <div class="feature-outer">
+        <div
+          *ngIf="featuredResources && featuredResources.length"
+          class="feature-list"
+        >
+          <!-- [self]="false"
+        [appTooltipInfo]="featuredResources[0]" -->
+          <div class="left-area">
+            <div class="hide content-inner-tooltip">
+              <div class="hover-content-tooltip">
+                <div class="top-section">
+                  <div class="close-wrap">
+                    <a
+                      ><img
+                        class="cross-icon"
+                        src="assets/images/close-tooltip.svg"
+                        alt="Icon"
+                    /></a>
+                  </div>
+                  <h3>{{ featuredResources[0].title }}</h3>
+                </div>
+                <div class="sub-info">
+                  <div class="top-info">
+                    <div class="book-icon">
+                      <a class="icon">
+                        <img
+                          [src]="
+                            featuredResources[0]?.isAvailabelForQuickActivities
+                              ? (contentType.QUICKFEATURED | contentTypeIcon)
+                              : (featuredResources[0]?.contenttype
+                                | contentTypeIcon)
+                          "
+                          alt="Image"
+                        />
+                      </a>
+                      <span
+                        *ngIf="
+                          featuredResources[0].moduleName == 'SERIESCATEGORIES'
+                        "
+                        class="small-content"
+                      >
+                        {{
+                          featuredResources[0].minduration +
+                            " - " +
+                            featuredResources[0].maxduration +
+                            " mins"
+                        }}
+                        {{
+                          featuredResources[0].contenttype
+                            | contentType: "contentLabel"
+                        }}</span
+                      >
+                      <span
+                        *ngIf="
+                          featuredResources[0].moduleName == 'SERIESCONTENT'
+                        "
+                        class="small-content"
+                      >
+                        {{ featuredResources[0].duration + " " + "mins" }}
+                        {{
+                          featuredResources[0].contenttype
+                            | contentType: "contentLabel"
+                        }}</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="content-description">
+                  <div
+                    [innerHtml]="
+                      featuredResources[0].resourceData &&
+                      featuredResources[0].resourceData.length
+                        ? featuredResources[0].resourceData[0].shortdesc
+                        : ''
+                    "
+                    class="ck-content"
+                  ></div>
+                  <!-- : featuredResources[0].postcontent -->
+                </div>
+                <div class="btn-wrap">
+                  <button
+                    (click)="utilityService.goToDetails(featuredResources[0])"
+                    type="button"
+                    class="primary-btn"
+                  >
+                    Let's Go
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              (click)="utilityService.goToDetails(featuredResources[0])"
+              [id]="'inner-area'"
+              class="inner-area"
+              tabindex="0"
+            >
+              <div class="title-description-wrap">
+                <div class="info-top">
+                  <div class="resource-type-icon">
+                    <figure>
+                      <img
+                        [src]="
+                          featuredResources[0]?.isAvailabelForQuickActivities
+                            ? (contentType.QUICKFEATURED | contentTypeIcon)
+                            : (featuredResources[0]?.contenttype
+                              | contentTypeIcon)
+                        "
+                        alt="Image"
+                      />
+                    </figure>
+                  </div>
+                  <div class="resource-type-content">
+                    <h3>{{ featuredResources[0]?.title }}</h3>
+                    <p
+                      class="description ck-content"
+                      [innerHtml]="
+                        featuredResources[0].resourceData &&
+                        featuredResources[0].resourceData.length
+                          ? featuredResources[0].resourceData[0].shortdesc
+                          : ''
+                      "
+                    ></p>
+                    <!-- : featuredResources[0].postcontent -->
+                  </div>
+                </div>
+              </div>
+              <div class="bottom-info-wrap">
+                <div class="bottom-left">
+                  <p class="date">
+                    {{
+                      featuredResources[0]?.duration ||
+                        featuredResources[0]?.minduration +
+                          " - " +
+                          featuredResources[0]?.maxduration
+                    }}
+                    mins
+                    {{
+                      featuredResources[0]?.contenttype
+                        | contentType: "contentLabel"
+                    }}
+                  </p>
+                </div>
+                <div class="bottom-right-action">
+                  <!-- appClickStopPropagation -->
+                  <app-bookmark
+                    *ngIf="userLoggedIn"
+                    [moduleName]="featuredResources[0].moduleName"
+                    [saved]="featuredResources[0]?.isSaved"
+                    [moduleId]="featuredResources[0]?.moduleId"
+                    [contentType]="featuredResources[0]?.contenttype"
+                    [contentName]="featuredResources[0]?.title"
+                  ></app-bookmark>
+                  <app-like
+                    [liked]="featuredResources[0].isLiked"
+                    [moduleId]="featuredResources[0].moduleId"
+                    [moduleName]="featuredResources[0].moduleName"
+                    [hideLikeCount]="false"
+                    [noOfLikes]="featuredResources[0].nooflikes"
+                    [contentType]="featuredResources[0]?.contenttype"
+                    [contentName]="featuredResources[0]?.title"
+                  ></app-like>
+                  <div
+                    *ngIf="
+                      featuredResources[0]?.isCompleted ||
+                      featuredResources[0]?.isInProgress
+                    "
+                    class="status-wrap"
+                    [ngClass]="{
+                      completed: featuredResources[0]?.isCompleted,
+                      'in-progress': featuredResources[0]?.isInProgress
+                    }"
+                  >
+                    {{
+                      featuredResources[0]
+                        | resourceStatus
+                          : featuredResources[0]?.moduleName ==
+                              "SERIESCATEGORIES"
+                    }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-area">
+            <!-- [self]="true"
+            [appTooltipInfo]="item" -->
+            <div
+              *ngFor="
+                let item of featuredResources
+                  | slice: 1:featuredResources.length;
+                let i = index
+              "
+              class="inner-area"
+              tabindex="0"
+            >
+              <div class="hide content-inner-tooltip">
+                <div class="hover-content-tooltip">
+                  <div class="top-section">
+                    <div class="close-wrap">
+                      <a
+                        ><img
+                          class="cross-icon"
+                          src="assets/images/close-tooltip.svg"
+                          alt="Icon"
+                      /></a>
+                    </div>
+                    <h3>{{ item.title }}</h3>
+                  </div>
+                  <div class="sub-info">
+                    <div class="top-info">
+                      <div class="book-icon">
+                        <img
+                          [src]="
+                            item?.isAvailabelForQuickActivities
+                              ? (contentType.QUICKFEATURED | contentTypeIcon)
+                              : (item.contenttype | contentTypeIcon)
+                          "
+                          alt="Icon"
+                        />
+                        <span
+                          *ngIf="item.moduleName == 'SERIESCATEGORIES'"
+                          class="small-content"
+                        >
+                          {{
+                            item.minduration +
+                              " - " +
+                              item.maxduration +
+                              " mins"
+                          }}
+                          {{
+                            item.contenttype | contentType: "contentLabel"
+                          }}</span
+                        >
+                        <span
+                          *ngIf="item.moduleName == 'SERIESCONTENT'"
+                          class="small-content"
+                        >
+                          {{ item.duration + " " + "mins" }}
+                          {{
+                            item.contenttype | contentType: "contentLabel"
+                          }}</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content-description">
+                    <p
+                      [innerHtml]="
+                        item.resourceData && item.resourceData.length
+                          ? item.resourceData[0].shortdesc
+                          : ''
+                      "
+                      class="ck-content"
+                    ></p>
+                  </div>
+                  <div class="btn-wrap">
+                    <button
+                      (click)="utilityService.goToDetails(item)"
+                      type="button"
+                      class="primary-btn"
+                    >
+                      Let's Go
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <ng-container>
+                <div
+                  (click)="utilityService.goToDetails(item)"
+                  class="title-icon"
+                >
+                  <div class="info-top">
+                    <div class="resource-type-icon">
+                      <figure>
+                        <img
+                          [src]="
+                            item?.isAvailabelForQuickActivities
+                              ? (contentType.QUICKFEATURED | contentTypeIcon)
+                              : (item.contenttype | contentTypeIcon)
+                          "
+                          alt="Image"
+                        />
+                      </figure>
+                    </div>
+                    <div class="resource-type-content">
+                      <h3>{{ item?.title }}</h3>
+                      <div class="mobile-view">
+                        <p
+                          [innerHtml]="
+                            item.resourceData && item.resourceData.length
+                              ? item.resourceData[0].shortdesc
+                              : ''
+                          "
+                          class="description ck-content"
+                        ></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  (click)="utilityService.goToDetails(item)"
+                  class="bottom-info-wrap"
+                >
+                  <div class="bottom-left">
+                    <p class="date">
+                      {{
+                        item?.duration ||
+                          item?.minduration + " - " + item?.maxduration
+                      }}
+                      mins
+                      {{ item?.contenttype | contentType: "contentLabel" }}
+                    </p>
+                  </div>
+                  <div class="bottom-right-action">
+                    <app-bookmark
+                      *ngIf="userLoggedIn"
+                      [moduleName]="item.moduleName"
+                      [saved]="item?.isSaved"
+                      [moduleId]="item?.moduleId"
+                      [contentType]="item?.contenttype"
+                      [contentName]="item?.title"
+                    ></app-bookmark>
+                    <app-like
+                      [liked]="item?.isLiked"
+                      [moduleId]="item?.moduleId"
+                      [moduleName]="item?.moduleName"
+                      [hideLikeCount]="false"
+                      [noOfLikes]="item?.nooflikes"
+                    ></app-like>
+
+                    <div
+                      *ngIf="item?.isCompleted || item?.isInProgress"
+                      class="status-wrap"
+                      [ngClass]="{
+                        completed: item?.isCompleted,
+                        'in-progress': item?.isInProgress
+                      }"
+                    >
+                      {{
+                        item
+                          | resourceStatus
+                            : item?.moduleName == "SERIESCATEGORIES"
+                      }}
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section
+  *ngIf="
+    sectorDetail &&
+    sectorDetail.SectorLogoDetailsnew &&
+    sectorDetail.SectorLogoDetailsnew.length &&
+    sectorDetail?.SectorLogoDetailsnew[0]?.logoImageData?.length
+  "
+  class="sponsor-logo"
+>
+  <div class="container">
+    <div class="logo-listing">
+      <ng-container *ngFor="let item of sectorDetail.SectorLogoDetailsnew">
+        <a (click)="openSectorSponsor(item)"
+          ><img
+            style="max-height: 70px"
+            [src]="item.logoImageData[0]?.url | strapi: ''"
+            alt="logo"
+        /></a>
+      </ng-container>
+      <!-- <a
+        ><img src="assets/images/CSC_logo_RGB_BILINGUAL-Update.png" alt="logo"
+      /></a>
+      <a><img src="assets/images/NOT-9-TO-5-LOGO.svg" alt="logo" /></a> -->
+    </div>
+  </div>
+</section>
+<div *ngIf="enableChatWidget" class="chat-widget-outer">
+  <div class="container-outer">
+    <div class="chat-widget">
+      <div class="chat-widget-inner">
+        <h3>Confidential Mental Health Support Chat</h3>
+        <iframe
+          style="width: 100%; max-height: 80px"
+          [src]="
+            'https://na0.icarol.com/pub/Messaging/StatusBadge.aspx?orgNum=144723&pid=647&cc=en-US'
+              | safe: 'resourceUrl'
+          "
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>

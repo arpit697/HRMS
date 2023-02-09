@@ -1,0 +1,47 @@
+<header class="header">
+  <app-header></app-header>
+</header>
+<mat-sidenav-container autosize>
+  <mat-sidenav opened="true" mode="side">
+    <button (click)="isExpanded = !isExpanded">click me !</button>
+    <mat-card class="sidenav-container">
+      <mat-accordion class="accordian">
+        <mat-expansion-panel
+          *ngFor="let list of items"
+          disabled="{{ list.active == false }}"
+          hideToggle="{{ !isExpanded || !list.categories }}"
+        >
+          <mat-expansion-panel-header
+            routerLinkActive="active"
+            [routerLink]="list.router_link | routing"
+          >
+            <mat-panel-title
+              ><mat-icon class="list-icon">{{ list.icon }}</mat-icon>
+              <span class="list-name" *ngIf="isExpanded">{{
+                list.name
+              }}</span></mat-panel-title
+            >
+          </mat-expansion-panel-header>
+          <div class="sub-list">
+            <p
+              *ngFor="let sublist of list.categories"
+              routerLinkActive="active"
+              [routerLink]="sublist.router_link | routing"
+            >
+              <mat-icon>home</mat-icon>
+              <span *ngIf="isExpanded">{{ sublist.name }}</span>
+            </p>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-card class="content-container">
+      <mat-card-content class="content">
+        <router-outlet></router-outlet>
+      </mat-card-content>
+      <app-footer class="footer"></app-footer>
+    </mat-card>
+  </mat-sidenav-content>
+</mat-sidenav-container>

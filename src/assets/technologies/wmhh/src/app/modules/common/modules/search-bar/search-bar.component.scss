@@ -1,0 +1,105 @@
+.clear{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: -20px;
+    top: 12px;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    z-index: 9;
+    @media (max-width: 767px) {
+      width:34px;
+      height:34px;
+      top: -4px;
+      right: -16px;
+    }
+    &.show{
+        visibility: visible;
+    }
+}
+.search-discover{
+    width:682px;
+    margin-top:5px;
+    position: relative;
+    @media (max-width: 1280px) {
+      width:482px;
+    }
+    @media (max-width: 1024px) {
+      width:402px;
+    }
+    @media (max-width: 767px) {
+      width:100%;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column-reverse;
+    }
+    .reset{
+      position: absolute;
+      right:0;
+      top:-25px;
+      font-size: 16px;
+      font-weight:700;
+      line-height: 20px;
+      text-align: center;
+      color: #E7825B;
+      @media (max-width: 767px) {
+        position: relative;
+        top:0!important;
+      }
+    }
+    .search-icon {
+      position: relative;
+      right: 35px;
+      @media (max-width: 767px) {
+        top: 5px;
+        right:15px;
+        img{
+          width:16px;
+        }
+      }
+    }
+  }
+
+  :host ::ng-deep{
+    .search-discover{
+      
+      .mat-form-field {
+        .mat-form-field-wrapper {
+        .mat-form-field-flex {
+          .mat-form-field-infix {
+            .mat-input-element{
+              font-family: 'Cairo', sans-serif;
+              font-weight: 300;
+              font-size: 16px;
+              line-height: 30px;
+              color: #575868;
+              @media (max-width: 767px) {
+                font-size: 14px;
+                line-height: 15px;
+              }
+            }
+            border-top: 0;
+            padding: 12px 40px 12px 25px;
+            line-height: 40px;
+            height: 60px;
+            @media (max-width: 767px) {
+              padding: 0 40px 0 15px;
+              line-height: 32px;  
+              height: inherit;
+            }
+            .mat-input-element{
+              @media (max-width: 767px) {
+                height:32px!important;
+                position: relative;
+                top: -2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

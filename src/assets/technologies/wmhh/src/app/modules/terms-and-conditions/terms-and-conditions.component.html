@@ -1,0 +1,7 @@
+<div class="privacy-section">
+  <h3>{{ cmsData?.pageTitle }}</h3>
+
+  <div class="content-description-wrap">
+    <p [innerHTML]="cmsData?.pageContent | safe: 'html'" class="ck-content"></p>
+  </div>
+</div>

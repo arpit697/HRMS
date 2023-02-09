@@ -1,0 +1,15 @@
+<div class="checkbox-wrapper">
+  <div class="choose-item">
+    <mat-checkbox
+      #checkbox
+      accessibilityClick
+      (change)="onValueChange()"
+      [value]="category.value[checkBoxObj.valueKey]"
+      *ngFor="let category of checkBoxObj?.data | keyvalue"
+    >
+      <span accessibilityClick class="tab-index" tabindex="0">{{
+        category.value[checkBoxObj.viewKey]
+      }}</span></mat-checkbox
+    >
+  </div>
+</div>

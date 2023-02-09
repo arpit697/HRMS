@@ -1,0 +1,215 @@
+.signup-wrapper {
+  width: 620px;
+  padding: 0 50px;
+  border-radius: 30px;
+  position: relative;
+  @media (max-width: 767px) {
+    max-width: 100%;
+    width: initial;
+  }
+  .back-wrapper {
+    display: inline-block;
+  }
+  .primary-btn {
+    min-width: 203px;
+    height: 50px;
+    border-radius: 100px;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .forgot-wrap {
+    text-align: right;
+    a {
+      color: #000000;
+    }
+  }
+  .or-signup {
+    p {
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+  }
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 0;
+    border-radius: 15px;
+    position: relative;
+  }
+  .close-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease-in;
+    background: transparent;
+    &:hover {
+      background: #e6e6e6;
+    }
+    .mat-icon {
+      color: #ff0000;
+    }
+  }
+  .back-wrapper {
+    margin-bottom: 35px;
+    @media (max-width: 1420px) {
+      margin-bottom: 20px;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      img {
+        margin-right: 10px;
+      }
+      strong {
+        font-size: 18px;
+        font-weight: 900;
+        @media (max-width: 1024px) {
+          font-size: 16px;
+        }
+        @media (max-width: 767px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .check-box-wrap {
+    margin-top: 15px;
+  }
+  h3 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 30px;
+    line-height: 40.45px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+    @media (max-width: 1420px) {
+      margin-bottom: 25px;
+    }
+    @media (max-width: 1024px) {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    @media (max-width: 767px) {
+      font-size: 18px;
+      list-style: 24.51px;
+      text-align: left;
+    }
+  }
+  .or-signup {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .btn-wrap {
+    padding: 25px 0 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 1420px) {
+      padding: 20px 0 0;
+    }
+  }
+  .social-signup {
+    max-width: 260px;
+    margin: 0 auto 17px auto;
+    @media (max-width: 767px) {
+      max-width: 100%;
+    }
+    a {
+      width: 100%;
+      height: 45px;
+      padding: 0 15px;
+      background: #fefefe;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      @media (max-width: 767px) {
+        padding: 0 10px;
+      }
+      span {
+        font-family: "Lato", sans-serif;
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: 700;
+        color: #000000;
+        @media (max-width: 767px) {
+          font-size: 16px;
+          line-height: 21px;
+        }
+        @media (max-width: 576px) {
+          font-size: 14px;
+        }
+      }
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.label-text {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 700;
+  @media (max-width: 1024px) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+:host ::ng-deep {
+  .signup-wrapper {
+    input {
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #989898 !important;
+    }
+    input::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #989898 !important;
+    }
+    input::-moz-placeholder {
+      /* Firefox 19+ */
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      color: #989898 !important;
+    }
+    input:-ms-input-placeholder {
+      /* IE 10+ */
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #989898 !important;
+    }
+    input:-moz-placeholder {
+      /* Firefox 18- */
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #989898 !important;
+    }
+  }
+}
+.errorMessage .errror-text {
+  margin-top: 15px;
+}

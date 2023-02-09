@@ -1,10 +1,37 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ACCOUNT, FEATURES } from './constants/routes';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: ACCOUNT.path,
+    pathMatch: 'full',
+  },
+  {
+    path: `${ACCOUNT.path}`,
+    loadChildren: () =>
+      import('./modules/account/account.module').then((m) => m.AccountModule),
+  },
+
+  {
+    path: `${FEATURES.path}`,
+    loadChildren: () =>
+      import('./modules/features/features.module').then(
+        (m) => m.FeaturesModule
+      ),
+  },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./modules/not-found/not-found.module').then(
+        (m) => m.NotFoundModule
+      ),
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

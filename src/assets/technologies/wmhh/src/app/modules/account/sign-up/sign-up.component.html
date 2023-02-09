@@ -1,0 +1,302 @@
+<div class="close-wrapper" [ngClass]="{ 'magic-close': magicLink }">
+  <div class="back-wrapper" *ngIf="magicLink">
+    <a (click)="magicLink = !magicLink" tabindex="0">
+      <img src="assets/images/icons/back-arrow.svg" alt="Icon" />
+      <strong>Go Back</strong>
+    </a>
+  </div>
+  <div class="back-wrapper" *ngIf="signupWithEmail">
+    <a (click)="signupWithEmail = false" tabindex="0">
+      <img src="assets/images/icons/back-arrow.svg" alt="Icon" />
+      <strong>Use social sign-in</strong>
+    </a>
+  </div>
+  <a (click)="close()" class="close-btn" tabindex="0">
+    <mat-icon aria-hidden="false" aria-label="Example home icon"
+      >close</mat-icon
+    >
+  </a>
+</div>
+<h3 class="welcome-text" *ngIf="!magicLink && !signupWithEmail">Welcome</h3>
+<!-- {{ magicLink }} -->
+<div class="signup-wrapper">
+  <ng-container *ngIf="!magicLink">
+    <div class="left" *ngIf="!signupWithEmail">
+      <p>
+        You don’t need to register to access the activities and information on
+        Workplace Mental Health Hub, but there are benefits to creating an
+        account.
+      </p>
+      <p>
+        Why register? By creating an account, you can save time by favouriting
+        the resources that have worked for you or bookmarking ones to check out
+        at another time. You can also save your progress in online courses, the
+        results of your wellness surveys, and entries for activities to track
+        changes in your mood and overall wellbeing. Some activities will help
+        you find and choose healthy stress-management and coping strategies, so
+        you can keep these notes in one convenient place.
+      </p>
+      <div class="checkbox-wrap">
+        <div class="checkbox">
+          <mat-checkbox
+            [formControl]="signupForm | getControl: ['termsAndConditions']"
+            class="example-margin"
+          ></mat-checkbox>
+        </div>
+        <div class="content">
+          <p>
+            Creating an account means you agree with our
+            <a tabindex="0">Terms of Conditions</a>, and
+            <a tabindex="0">Privacy Policy</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="right" [ngClass]="{ 'only-form': signupWithEmail }">
+      <ng-container *ngIf="!signupWithEmail">
+        <div class="social-signup">
+          <a tabindex="0" (click)="loginWithGoogle()">
+            <img src="assets/images/icons/google.svg" alt="Image" />
+            <span>Sign up with Google</span></a
+          >
+          <!-- <a tabindex="0">
+            <img src="assets/images/icons/apple.svg" alt="Image" />
+            <span>Sign up with AppleID</span>
+          </a> -->
+          <a (click)="loginWithFacebook()"
+            ><img src="assets/images/icons/facebook-ic.svg" alt="Image" />
+            <span>Sign up with Facebook</span>
+          </a>
+          <a tabindex="0" (click)="checkTnc()">
+            <img src="assets/images/icons/magic.svg" alt="Image" />
+            <span>Sign up with Magic Link</span>
+          </a>
+        </div>
+        <p class="or-signup">or</p>
+        <div class="sign-up-with-email">
+          <a tabindex="0" (click)="signupWithEmail = true"
+            >Sign up with Email
+            <img src="assets/images/icons/right-arrow-icon.svg" alt="Icon"
+          /></a>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="signupWithEmail">
+        <form autocomplete="off" [formGroup]="signupForm">
+          <div class="signup-text" *ngIf="signupWithEmail">
+            <h4>Sign Up with Email</h4>
+          </div>
+          <div class="form-wrapper">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                formControlName="email"
+                matInput
+                placeholder="Email (Required)"
+              />
+              <mat-error>{{
+                signupForm | getControl: ["email"] | validate: "Email"
+              }}</mat-error>
+            </mat-form-field>
+            <mat-form-field
+              class="example-full-width"
+              appearance="outline"
+              autocomplete="off"
+            >
+              <input
+                id="password"
+                formControlName="password"
+                type="password"
+                matInput
+                autofill="off"
+                autocomplete="new-password"
+                (focus)="showPasswordCharacterstics = true"
+                (blur)="showPasswordCharacterstics = false"
+                (keyup)="checkPassword($event)"
+                placeholder="Password (Required)"
+                [type]="hidePassword ? 'password' : 'text'"
+              />
+              <button
+                style="background: none"
+                mat-icon-button
+                matSuffix
+                (click)="hidePassword = !hidePassword"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hidePassword"
+                type="button"
+              >
+                <mat-icon>{{
+                  hidePassword ? "visibility_off" : "visibility"
+                }}</mat-icon>
+              </button>
+              <mat-error>{{
+                signupForm | getControl: ["password"] | validate: "Password"
+              }}</mat-error>
+            </mat-form-field>
+            <div class="help-icon" *ngIf="showPasswordCharacterstics">
+              <!-- <img src="assets/images/icons/ic-help.svg" alt="Icon" /> -->
+              <div
+                [ngClass]="{
+                  'help-info': true,
+                  show: true
+                }"
+              >
+                <!-- show: showPasswordCharacterstics -->
+                <ul>
+                  <li [ngClass]="{ active: hasEightCharacters }">
+                    Longer than 8 characters
+                  </li>
+                  <li [ngClass]="{ active: hasSpecial }">
+                    Contains a special character
+                  </li>
+                  <li [ngClass]="{ active: hasLowerAndUpper }">
+                    Contains upper and lower case
+                  </li>
+                  <li [ngClass]="{ active: hasNumber }">Contains a number</li>
+                </ul>
+              </div>
+            </div>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input
+                formControlName="confirmPassword"
+                type="password"
+                matInput
+                placeholder="Password (Confirm)"
+                [type]="hideConfirmPassword ? 'password' : 'text'"
+              />
+              <button
+                style="background: none"
+                mat-icon-button
+                matSuffix
+                (click)="hideConfirmPassword = !hideConfirmPassword"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hideConfirmPassword"
+                type="button"
+              >
+                <mat-icon>{{
+                  hideConfirmPassword ? "visibility_off" : "visibility"
+                }}</mat-icon>
+              </button>
+
+              <mat-error>{{
+                signupForm
+                  | getControl: ["confirmPassword"]
+                  | validate: "Confirm Password"
+              }}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-select formControlName="sectors" placeholder="Industry">
+                <mat-option
+                  *ngFor="let sector of sectors"
+                  [value]="sector._id"
+                  >{{ sector.sectorName }}</mat-option
+                >
+              </mat-select>
+              <mat-error>{{
+                signupForm | getControl: ["sectors"] | validate: "Sector"
+              }}</mat-error>
+            </mat-form-field>
+          </div>
+          <span class="personalize-text"
+            >This is used to personalize the resources shown to you</span
+          >
+          <div class="check-box-wrap">
+            <mat-checkbox
+              formControlName="termsAndConditions"
+              class="example-margin"
+            >
+            </mat-checkbox>
+            <span class="text-content">
+              Creating an account means you agree with our
+              <a>Terms of Conditions</a>, and <a>Privacy Policy</a>.
+            </span>
+          </div>
+          <div
+            *ngIf="showError && signupWithEmail"
+            class="errorMessage"
+            style="position: relative; margin-top: 20px; bottom: auto"
+          >
+            <label class="errror-text"
+              ><img
+                src="assets/images/exclamation-circle-icon.svg"
+                alt="Exclamation Icon"
+              /><span>{{ errorMessage }}</span></label
+            >
+          </div>
+          <div class="btn-wrap">
+            <button (click)="onSignup()" type="submit" class="primary-btn">
+              Continue
+            </button>
+          </div>
+          <!-- <div class="social-sign-in">
+        <a (click)="signupWithEmail = false" tabindex="0"
+          >Use Social Sign-in Instead</a
+        >
+      </div> -->
+        </form>
+        <!-- <p *ngIf="showError">{{ errorMessage }}</p> -->
+      </ng-container>
+      <div *ngIf="!signupWithEmail" class="checkbox-wrap for-mobile-view">
+        <div class="checkbox">
+          <mat-checkbox
+            [formControl]="signupForm | getControl: ['termsAndConditions']"
+            class="example-margin"
+          ></mat-checkbox>
+        </div>
+        <div class="content">
+          <p>
+            Creating an account means you agree with our
+            <a tabindex="0">Terms of Conditions</a>, and
+            <a tabindex="0">Privacy Policy</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="showError && !signupWithEmail" class="errorMessage">
+      <label class="errror-text"
+        ><img
+          src="assets/images/exclamation-circle-icon.svg"
+          alt="Exclamation Icon"
+        /><span>{{ errorMessage }}</span></label
+      >
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="magicLink">
+    <div class="right" [ngClass]="{ 'magic-form': magicLink }">
+      <div class="magic-wrap">
+        <p class="label-text">Please enter your email to continue.</p>
+        <form [formGroup]="magicForm">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <!-- formControlName="email" -->
+            <input
+              formControlName="email"
+              matInput
+              placeholder="Email (Required)"
+            />
+            <mat-error>{{
+              magicForm | getControl: ["email"] | validate: "Email"
+            }}</mat-error>
+          </mat-form-field>
+          <div class="btn-wrap">
+            <button
+              (click)="loginWithMagicLink()"
+              type="submit"
+              class="primary-btn"
+            >
+              Continue
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </ng-container>
+</div>
+<!-- <div class="thanks-wrapper">
+    <h3>Great! We sent a verification email to the address you provided.</h3>
+    <h3>
+      Click on the Verify button in the email to complete your registration!
+    </h3>
+    <h3>Welcome!</h3>
+    <div class="not-receive-email">
+      <a>Didn't receive the verification email?</a>
+    </div>
+  </div> -->

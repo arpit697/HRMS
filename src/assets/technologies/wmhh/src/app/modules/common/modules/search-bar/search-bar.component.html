@@ -1,0 +1,10 @@
+<div class="search-discover"> 
+<ng-content></ng-content>
+  <mat-form-field class="example-full-width search-form-field" appearance="outline">
+    <input appWhiteSpace [formControl]="searchControl" type="text" matInput (keyup.enter)="searchItem($event.target.value)" placeholder="Search by topic" tabindex="0">
+    <mat-icon matSuffix class="search-icon"><img src="assets/images/search_ic.svg" alt="Search Icon"/></mat-icon>
+    <button mat-button class="clear" [ngClass]="{'show': searchControl?.value}" mat-icon-button (click)="clearSearch()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>

@@ -1,0 +1,43 @@
+<div class="otp-wrapper">
+  <ng-container *ngIf="!otpVerified">
+    <div class="header">
+      <button (click)="close()" class="close-btn">
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          >close</mat-icon
+        >
+      </button>
+    </div>
+    <p>We sent a 6 digit <br />verification code to</p>
+    <h3>{{ dialogData?.phoneNo }}</h3>
+    <mat-label>Enter that code here to continue</mat-label>
+    <app-otp-box
+      #ngOtpInput
+      (onInputChange)="onOtpChange($event)"
+      [config]="config"
+    >
+    </app-otp-box>
+    <div class="btn-wrap">
+      <button
+        (click)="verifyOtp()"
+        [disabled]="!otp || otp.length != config.length"
+        type="submit"
+        class="primary-btn"
+      >
+        Continue
+      </button>
+    </div>
+    <div (click)="resendOtp()" class="wrong"><a>Resend Otp</a></div>
+
+    <!-- <div class="wrong"><a>Wrong phone number?</a></div> -->
+  </ng-container>
+  <ng-container *ngIf="otpVerified">
+    <div class="otp-success">
+      <h3>Great! Thanks for verifying your<br />phone number!</h3>
+    </div>
+    <div class="btn-wrap">
+      <button (click)="close()" type="submit" class="primary-btn">
+        Continue
+      </button>
+    </div>
+  </ng-container>
+</div>

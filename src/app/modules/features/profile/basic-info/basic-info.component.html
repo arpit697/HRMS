@@ -1,0 +1,90 @@
+<mat-card>
+  <mat-card-content>
+    <mat-card-title>{{ "basic information" | titlecase }}</mat-card-title>
+  </mat-card-content>
+  <mat-card-content class="col-3">
+    <mat-card-content class="field">
+      <label>First Name</label>
+      <mat-form-field appearance="outline">
+        <input matInput />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content class="field">
+      <label>Last Name</label>
+      <mat-form-field appearance="outline">
+        <input matInput />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content class="field">
+      <label>Date of Birth</label>
+      <mat-form-field appearance="outline">
+        <input matInput />
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card-content>
+  <mat-card-content class="col-3">
+    <mat-card-content class="field">
+      <label>Gender</label>
+      <mat-form-field appearance="outline">
+        <input matInput />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content class="field">
+      <label>Marital Status</label>
+      <mat-form-field appearance="outline">
+        <input matInput />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content class="field">
+      <label>Contact Number</label>
+      <mat-form-field appearance="outline">
+        <input matInput />
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card-content>
+  <mat-card-content class="col-2">
+    <mat-card-content class="row-2">
+      <label>Total Working Experience</label>
+      <mat-card-content class="col-2">
+        <mat-card-content class="field">
+          <label>Years</label>
+          <mat-form-field appearance="outline">
+            <input matInput />
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-content class="field">
+          <label>Months</label>
+          <mat-form-field appearance="outline">
+            <input matInput />
+          </mat-form-field>
+        </mat-card-content>
+      </mat-card-content>
+    </mat-card-content>
+    <mat-card-content class="row-2">
+      <label>Relevant Experience</label>
+      <mat-card-content class="col-2">
+        <mat-card-content class="field">
+          <label>Years</label>
+          <mat-form-field appearance="outline">
+            <input matInput />
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-content class="field">
+          <label>Months</label>
+          <mat-form-field appearance="outline">
+            <input matInput />
+          </mat-form-field>
+        </mat-card-content>
+      </mat-card-content>
+    </mat-card-content>
+  </mat-card-content>
+  <mat-card-content class="col-1">
+    <mat-form-field appearance="outline">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-content>
+    <app-ru-button [bText]="'Submit'"></app-ru-button>
+  </mat-card-content>
+</mat-card>

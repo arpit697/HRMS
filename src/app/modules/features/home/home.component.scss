@@ -1,0 +1,32 @@
+.home-container {
+  .emp-basic-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: center;
+    figure {
+      margin: 0;
+      max-height: 80px;
+      max-width: 80px;
+      img {
+        max-height: 80px;
+        max-width: 80px;
+        border-radius: 50%;
+      }
+    }
+    .emp-name {
+      padding: 0;
+      word-break: break-word;
+      line-height: 2.2em;
+      mat-card-subtitle {
+        font-size: 1.6em;
+        font-weight: 300;
+      }
+      mat-card-title {
+        font-size: 1.6em;
+        font-weight: 450;
+      }
+    }
+  }
+}

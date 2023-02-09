@@ -1,0 +1,160 @@
+<div class="signup-wrapper">
+  <ng-container *ngIf="!showForgotPassword">
+    <ng-container *ngIf="!magicLink">
+      <div class="back-wrapper">
+        <!-- <a (click)="signinWithEmai = !signinWithEmai" tabindex="0">
+          <img src="assets/images/icons/back-arrow.svg" alt="Icon" />
+          <strong>{{
+            signinWithEmai ? "Use Social Sign-in" : "Use Email to Sign-in"
+          }}</strong>
+        </a> -->
+        <a (click)="close()" class="close-btn" tabindex="0">
+          <mat-icon aria-hidden="false" aria-label="Example home icon"
+            >close</mat-icon
+          >
+        </a>
+      </div>
+      <h3>Welcome Back!</h3>
+      <!-- <ng-container *ngIf="!signinWithEmai"> -->
+      <div class="social-signup">
+        <a (click)="loginWithGoogle()" tabindex="0">
+          <img src="assets/images/icons/google.svg" alt="Image" />
+          <span>Sign-in with Google</span>
+        </a>
+        <!-- <a tabindex="0">
+        <img src="assets/images/icons/apple.svg" alt="Image" />
+        <span>Sign-in with AppleID</span>
+      </a> -->
+        <a (click)="loginWithFacebook()" tabindex="0">
+          <img src="assets/images/icons/facebook-ic.svg" alt="Image" />
+          <span>Sign-in with Facebook</span>
+        </a>
+        <a (click)="magicLink = !magicLink" tabindex="0">
+          <img src="assets/images/icons/magic.svg" alt="Image" />
+          <span>Sign-in with Magic Link</span>
+        </a>
+      </div>
+      <!-- </ng-container> -->
+      <form [formGroup]="loginForm">
+        <div class="or-signup">
+          <p>or Sign in with Email</p>
+        </div>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input
+            formControlName="email"
+            matInput
+            placeholder="Email (Required)"
+          />
+          <mat-error>{{
+            loginForm | getControl: ["email"] | validate: "Email"
+          }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input
+            formControlName="password"
+            [type]="hidePassword ? 'password' : 'text'"
+            matInput
+            placeholder="Password (Required)"
+          />
+          <button
+            style="background: none"
+            mat-icon-button
+            matSuffix
+            (click)="hidePassword = !hidePassword"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hidePassword"
+            type="button"
+          >
+            <mat-icon>{{
+              hidePassword ? "visibility_off" : "visibility"
+            }}</mat-icon>
+          </button>
+          <mat-error>{{
+            loginForm | getControl: ["password"] | validate: "Password"
+          }}</mat-error>
+        </mat-form-field>
+        <div class="forgot-wrap">
+          <a (click)="forgotPassword()" tabindex="0">Forgot Password ?</a>
+        </div>
+        <div *ngIf="showError" class="errorMessage">
+          <label class="errror-text"
+            ><img
+              src="assets/images/exclamation-circle-icon.svg"
+              alt="Exclamation Icon"
+            /><span
+              >{{ errorMessage }}
+
+              <ng-container *ngIf="newUser">
+                The email address provided was not recognized. Please enter your
+                registered email address or
+                <a
+                  (click)="openSignup()"
+                  style="text-decoration: underline; color: #1a76d2"
+                >
+                  click here
+                </a>
+                to sign up an account
+              </ng-container>
+            </span></label
+          >
+        </div>
+        <div class="btn-wrap">
+          <button
+            (click)="onLogin()"
+            type="submit"
+            class="primary-btn"
+            tabindex="0"
+          >
+            Sign in
+          </button>
+        </div>
+      </form>
+    </ng-container>
+
+    <ng-container *ngIf="magicLink">
+      <div class="back-wrapper">
+        <a (click)="magicLink = !magicLink" tabindex="0">
+          <img src="assets/images/icons/back-arrow.svg" alt="Icon" />
+          <strong>Go back</strong>
+        </a>
+        <a (click)="close()" class="close-btn" tabindex="0">
+          <mat-icon aria-hidden="false" aria-label="Example home icon"
+            >close</mat-icon
+          >
+        </a>
+      </div>
+      <p class="label-text">Please enter your email to continue</p>
+      <form [formGroup]="magicForm">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <!-- formControlName="email" -->
+          <input
+            formControlName="email"
+            matInput
+            placeholder="Email (Required)"
+          />
+          <mat-error>{{
+            magicForm | getControl: ["email"] | validate: "Email"
+          }}</mat-error>
+        </mat-form-field>
+
+        <div style="display: flex; justify-content: center">
+          <button
+            (click)="loginWithMagicLink()"
+            type="submit"
+            class="primary-btn"
+            tabindex="0"
+          >
+            Continue
+          </button>
+        </div>
+      </form>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="showForgotPassword">
+    <app-forgot-password
+      (back)="showForgotPassword = false"
+    ></app-forgot-password>
+  </ng-container>
+</div>

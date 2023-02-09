@@ -1,0 +1,236 @@
+<ng-container [ngSwitch]="size">
+  <!-- <div
+    *ngIf="showModalDetail"
+    style="position: absolute; z-index: 10; background: red"
+  >
+    <h2>show</h2>
+  </div> -->
+
+  <!-- [appTooltipInfo]="item" -->
+  <!-- [self]="true" -->
+  <div
+    (click)="goToDetails(item)"
+    tabindex="0"
+    accessibilityClick
+    *ngSwitchCase="'small'"
+    class="content-inner"
+  >
+    <div class="hide hover-content">
+      <div class="top-section">
+        <div class="close-wrap">
+          <a tabindex="0"
+            ><img
+              class="cross-icon"
+              src="assets/images/close-tooltip.svg"
+              alt="Icon"
+          /></a>
+        </div>
+        <h3>{{ item?.title }}</h3>
+        <!-- <button class="close-btn">
+          <mat-icon aria-hidden="false" aria-label="Example home icon"
+            >close</mat-icon
+          >
+        </button> -->
+      </div>
+
+      <div class="content-description" style="cursor: pointer">
+        <p
+          [innerHtml]="
+            item?.resourceData && item?.resourceData.length
+              ? item?.resourceData[0].shortdesc
+              : item?.postcontent
+          "
+          class="ck-content"
+        ></p>
+      </div>
+      <div class="sub-info">
+        <div class="top-info">
+          <div *ngIf="!isDashboardCard" class="book-icon">
+            <!-- <img
+              [src]="item?.contenttype | contentTypeIcon"
+              alt="Icon"
+            /> -->
+            <span
+              *ngIf="item.moduleName == 'SERIESCATEGORIES'"
+              class="small-content"
+            >
+              {{ item?.minduration + " - " + item?.maxduration + " mins" }}
+              <!-- {{ item?.contenttype | contentType: "contentLabel" }} -->
+            </span>
+            <span
+              *ngIf="item.moduleName == 'SERIESCONTENT'"
+              class="small-content"
+            >
+              {{ item?.duration + " " + "mins" }}
+              <!-- {{ item?.contenttype | contentType: "contentLabel" }} -->
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="btn-wrap">
+        <button (click)="goToDetails(item)" type="button" class="primary-btn">
+          Let's Go
+        </button>
+      </div>
+    </div>
+    <!-- <div class="top-info">
+      
+    </div> -->
+    <div class="info-top">
+      <div class="resource-type-icon">
+        <figure>
+          <!-- {{ item?.resourceIcon }} -->
+          <img
+            [src]="item?.resourceIcon | contentTypeIcon"
+            alt="Image"
+            width="72"
+            height="72"
+          />
+        </figure>
+      </div>
+      <div class="resource-type-content">
+        <h3>{{ item?.title }}</h3>
+        <p
+          style="cursor: pointer"
+          [innerHtml]="
+            item?.resourceData &&
+            item?.resourceData.length &&
+            item?.resourceData[0].shortdesc
+              ? item?.resourceData[0].shortdesc
+              : ''
+          "
+          class="ck-content"
+        ></p>
+        <!-- : item?.postcontent -->
+        <!-- {{ item?.resourceData[0]?.shortdesc }} -->
+      </div>
+    </div>
+
+    <!-- {{ item | json }} -->
+
+    <!-- <div *ngIf="!isDashboardCard" class="listing-tbs">
+      <a *ngFor="let tag of item.childTagsData">{{ tag.tagLabel }}</a>
+    </div> -->
+    <div class="bottom-info-wrap">
+      <div class="bottom-left">
+        <p *ngIf="item.moduleName == 'SERIESCATEGORIES'" class="time">
+          <!-- {{ item?.minduration + " - " + item?.maxduration + " Mins" }}
+          {{ item?.resourceIcon | contentType: "contentLabel" }} -->
+
+          {{ item?.noofsessions }} Modules
+        </p>
+        <p *ngIf="item.moduleName == 'SERIESCONTENT'" class="time">
+          {{ item?.duration + " " + "Mins" }}
+          {{ item?.resourceIcon | contentType: "contentLabel" }}
+        </p>
+      </div>
+      <div class="bottom-right">
+        <!-- <a class="icon" tabindex="0"> -->
+        <!-- <img
+            [src]="
+              item?.isAvailabelForQuickActivities
+                ? (contentType.QUICKFEATURED | contentTypeIcon)
+                : item?.moduleName === MODULE_NAME_ENUM.SERIESCONTENT
+                ? (item?.contenttype | contentTypeIcon)
+                : (item?.contenttype | contentTypeIcon: item?.moduleName)
+            "
+            alt="Image"
+          /> -->
+        <!-- </a> -->
+        <!-- <h1>
+          {{ item.contenttype }}
+        </h1> -->
+        <!-- commented -->
+        <!-- <ng-container *ngIf="userLoggedIn"> -->
+        <!-- appClickStopPropagation -->
+        <app-bookmark
+          appClickStopPropagation
+          (statusChanged)="statusChangedOfSaved($event)"
+          [moduleName]="item.moduleName"
+          [saved]="item?.isSaved"
+          [moduleId]="item?.moduleId"
+          [contentType]="item?.contenttype"
+          [contentName]="item?.title"
+        ></app-bookmark>
+        <!-- </ng-container> -->
+        <!-- {{ item.nooflikes }} -->
+        <app-like
+          appClickStopPropagation
+          (statusChanged)="statusChangedLike($event)"
+          [moduleName]="item.moduleName"
+          [liked]="item?.isLiked"
+          [moduleId]="item?.moduleId"
+          [noOfLikes]="item?.nooflikes"
+          [contentType]="item?.contenttype"
+          [contentName]="item?.title"
+        ></app-like>
+        <div
+          *ngIf="item?.isCompleted || item?.isInProgress"
+          class="status-wrap"
+          [ngClass]="{
+            completed: item?.isCompleted,
+            'in-progress': item?.isInProgress
+          }"
+        >
+          {{ item | resourceStatus: item?.moduleName == "SERIESCATEGORIES" }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-left" *ngSwitchCase="'big'">
+    <div (click)="goToDetails(item)" class="content-inner">
+      <div class="top-info">
+        <!-- <div class="book-icon"> -->
+        <!-- <img
+            *ngIf="item?.contenttype == 'Image'"
+            src="assets/images/icons/book-icon.svg"
+            alt="Icon"
+          /> -->
+        <!-- <img
+            *ngIf="item?.contenttype == 'Video'"
+            src="assets/images/icons/video.svg"
+            alt="Icon"
+          /> -->
+        <!-- <img
+            *ngIf="item?.contenttype == 'Question'"
+            src="assets/images/icons/graduation-cap.svg"
+            alt="Icon"
+          /> -->
+        <!-- </div> -->
+        <div class="info-right">
+          <!-- commented -->
+          <!-- <app-bookmark
+            (statusChanged)="statusChangedOfSaved($event)"
+            [moduleName]="item.moduleName"
+            [saved]="item?.isSaved"
+            [moduleId]="item?.moduleId"
+          ></app-bookmark> -->
+          <!-- {{ item.nooflikes }} -->
+          <app-like
+            (statusChanged)="statusChangedLike($event)"
+            [moduleName]="item.moduleName"
+            [liked]="item?.isLiked"
+            [moduleId]="item?.moduleId"
+            [noOfLikes]="item?.nooflikes"
+          ></app-like>
+        </div>
+      </div>
+      <h3>{{ item?.title }}</h3>
+      <!-- {{ item | json }} -->
+      <p *ngIf="item.moduleName == 'SERIESCATEGORIES'" class="time">
+        {{ item?.minduration + " - " + item?.maxduration + " " + "mins" }}
+        <!-- {{ item?.contenttype | contentType: "contentLabel" }} -->
+      </p>
+      <p *ngIf="item.moduleName == 'SERIESCONTENT'" class="time">
+        {{ item?.duration + " " + "mins" }}
+        <!-- {{ item?.contenttype | contentType: "contentLabel" }} -->
+      </p>
+      <div class="listing-tbs">
+        <a *ngFor="let tag of item.childTagsData">{{ tag.tagLabel }}</a>
+      </div>
+    </div>
+  </div>
+
+  <div *ngSwitchDefault>...</div>
+</ng-container>

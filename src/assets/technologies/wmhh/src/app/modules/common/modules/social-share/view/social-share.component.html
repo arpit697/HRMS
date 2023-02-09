@@ -1,0 +1,118 @@
+<button
+  mat-icon-button
+  [matMenuTriggerFor]="menu"
+  class="share_btn"
+  [ngClass]="{ shareBtn: btnText }"
+>
+  <img src="assets/images/icons/share-icon.svg" alt="" />
+</button>
+
+<mat-menu class="social-menu" #menu="matMenu">
+  <button (click)="onFacebookShare()" mat-menu-item>
+    <span class="menu-items">
+      <a href="javascript:void(0)" class="fb-share-button">
+        <span class="flex-row">
+          <img
+            src="assets/images/icons/ic_home_facebook.svg"
+            width="20px"
+            alt=""
+          />
+          <span>Facebook</span>
+        </span>
+      </a>
+    </span>
+  </button>
+  <button (click)="onTwitterShare()" mat-menu-item>
+    <span class="menu-items">
+      <a href="javascript:void(0)" class="fb-share-button">
+        <span class="flex-row">
+          <img src="assets/images/icons/twitter.svg" width="20px" alt="" />
+          <span>Twitter</span>
+        </span>
+      </a>
+    </span>
+  </button>
+
+  <!-- <button (click)="onInstagramShare()" mat-menu-item>
+    <span class="menu-items">
+      <a href="javascript:void(0)" class="fb-share-button">
+        <span class="flex-row">
+          <img src="assets/images/icons/twitter.svg" width="20px" alt="" />
+          <span>Instagram</span>
+        </span>
+      </a>
+    </span>
+  </button> -->
+  <!-- <button mat-menu-item>
+    <span class="menu-items">
+      <a
+        href="javascript:void(0)"
+        class="fb-share-button"
+      >
+        <span class="flex-row">
+          <img src="assets/images/icons/icons8-gmail.svg" width="20px" alt="" />
+          <span>Gmail</span>
+        </span>
+      </a>
+    </span>
+  </button> -->
+  <button mat-menu-item>
+    <span class="menu-items">
+      <a href="javascript:void(0)" class="fb-share-button">
+        <span (click)="copyUrl(currentUrl)" class="flex-row">
+          <img
+            src="assets/images/icons/icons8-copy-24.png"
+            style="height: 20px; margin-top: 10px"
+            alt=""
+          />
+          <span>Copy Url</span>
+        </span>
+      </a>
+    </span>
+  </button>
+  <!-- <button mat-menu-item>
+    <span class="menu-items">
+      <a
+        href="javascript:void(0)"
+        (click)="onTwitterShare()"
+        class="fb-share-button"
+        mat-icon-button
+      >
+        <span>
+          <img src="assets/images/ic_home_twitter.svg" width="20px" alt="" />
+          TWITTER
+        </span>
+      </a>
+    </span>
+  </button> -->
+  <!-- <button mat-menu-item>
+    <span class="menu-items">
+      <a
+        href="javascript:void(0)"
+        (click)="onInstagramShare()"
+        class="fb-share-button"
+        mat-icon-button
+      >
+        <span>
+          <img src="assets/images/instagram-sketched.svg" width="18px" alt="" />
+          {{ "INSTAGRAM" | translate }}
+        </span>
+      </a></span
+    >
+  </button> -->
+  <!-- <button mat-menu-item>
+    <span class="menu-items">
+      <a
+        href="javascript:void(0)"
+        (click)="onLinkedInShare()"
+        class="fb-share-button"
+        mat-icon-button
+      >
+        <span>
+          <img src="assets/images/ic_home_linkdin.svg" width="18px" alt="" />
+          {{  }}
+        </span>
+      </a>
+    </span>
+  </button> -->
+</mat-menu>

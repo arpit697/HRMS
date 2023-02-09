@@ -1,0 +1,78 @@
+.audio-player {
+  background: #ffffff;
+  box-shadow: 0px 4px 15px rgba(151, 141, 141, 0.15);
+  border-radius: 10px;
+  margin-bottom: 25px;
+  .audio-inner-wrap {
+    display: flex;
+    align-items: flex-start;
+    padding: 30px 15px;
+    .hide {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
+    .play-pause-btn {
+      i.play {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: inline-block;
+        background: url("../../../../../assets/images/icons/play_button.svg")
+          no-repeat center center;
+      }
+
+      i.pause {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: inline-block;
+        background: url("../../../../../assets/images/icons/pause_button.svg")
+          no-repeat center center;
+      }
+    }
+    .basic-info {
+      width: calc(100% - 40px);
+      padding-left: 20px;
+      h3 {
+        font-size: 18px;
+        line-height: 20px;
+        font-weight:700;
+        color: #000000;
+        margin: 0 0 10px;
+      }
+      .slider-wrap {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .start-point,
+        .end-point {
+          font-size: 18px;
+          line-height: 20px;
+          color: #575868;
+          white-space: nowrap;
+        }
+      }
+      .mat-side-wrap {
+        width: 100%;
+        padding: 0 5px;
+        .mat-slider-horizontal {
+          padding: 0;
+          height: 0;
+          min-width: 100%;
+          position: relative;
+          top: -28px;
+        }
+      }
+    }
+  }
+}
+
+:host ::ng-deep{
+  .mat-accent .mat-slider-track-fill, .mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label {
+    background-color: #d55827;
+    border-color: #d55827;
+  }
+}

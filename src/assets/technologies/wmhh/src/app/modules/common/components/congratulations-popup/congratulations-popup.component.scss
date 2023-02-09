@@ -1,0 +1,46 @@
+.popup-wrapper{
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-bottom:15px;
+    }
+    .popup-inner{
+        background: url("../../../../../assets/images/popup-bg.png") center top no-repeat;
+        h3{
+            font-size:32px;
+            font-weight:700;
+            text-align: center;
+        }
+        .trophy-icon{
+            width:180px;
+            height:160px;
+            margin:50px auto;
+        }
+        .btn-center{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding:15px 0;
+        }
+    }
+    .description{
+        p{
+            font-size: 24px;
+            font-weight:700;
+            line-height: 26.06px;
+            text-align: center;
+            color: #000000;
+        }
+    }
+}
+:host ::ng-deep{
+    .primary-btn{
+        width:244px;
+        height:50px;
+        font-size:18px;
+        line-height:25px;
+        font-family: 'Lato', sans-serif;
+        font-weight:700;
+    }
+}

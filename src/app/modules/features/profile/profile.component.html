@@ -1,0 +1,56 @@
+<div class="profile-container">
+  <mat-card class="media">
+    <img src="assets/default/default_male.jpg" alt="" />
+    <mat-card-content class="media-body">
+      <mat-card-title>
+        {{ empDetail.full_name | titlecase }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        <span
+          ><strong>{{ "email : " | titlecase }}</strong></span
+        >
+        {{ empDetail.email }}
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+        <span
+          ><strong>{{ "employee ID : " | titlecase }}</strong></span
+        >
+        {{ empDetail.employee_id }}
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+        <span
+          ><strong>{{ "Designation : " | titlecase }}</strong></span
+        >
+        {{ empDetail.designation }}
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+        <span
+          ><strong>{{ "last login : " | titlecase }}</strong></span
+        >
+        {{ empDetail.last_login }}
+      </mat-card-subtitle>
+    </mat-card-content>
+  </mat-card>
+  <div class="basic-lightgroup">
+    <div class="list-container">
+      <mat-card class="list">
+        <mat-list>
+          <mat-list-item *ngFor="let list of selectionMenu">
+            <mat-card class="select">
+              <mat-icon>{{ list.icon }}</mat-icon>
+              <mat-card-title>{{ list.name }}</mat-card-title>
+            </mat-card>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+    <div>
+        <!-- <app-basic-info></app-basic-info> -->
+        <!-- <app-profile-pic></app-profile-pic> -->
+        <!-- <app-qualification></app-qualification> -->
+        <!-- <app-change-pass></app-change-pass> -->
+        <!-- <app-appraisal></app-appraisal> -->
+        <app-shift></app-shift>
+    </div>
+  </div>
+</div>
