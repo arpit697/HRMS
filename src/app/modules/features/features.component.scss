@@ -17,11 +17,15 @@ mat-panel-title {
   margin-right: 0;
 }
 mat-sidenav-container {
+ 
   z-index: 0;
   mat-sidenav {
     position: fixed;
     padding-top: 5em;
     max-width: 15.625em;
+    .title{
+      position: relative;
+    }
     .list-icon {
       font-size: 2em;
       padding: 0.2em;
@@ -31,9 +35,16 @@ mat-sidenav-container {
     }
     .list-name {
       margin-left: 1em;
+      display: grid;
     }
-    // &:hover {
-    // }
+    .important-icon{
+      font-size: 1em;
+      display: grid;
+      right: 0;
+      justify-items: center;
+      align-items: center;
+      color: red;
+    }
   }
   mat-sidenav-content {
     .content-container {

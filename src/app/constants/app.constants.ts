@@ -1,11 +1,18 @@
 export const SIDE_NAV_ITEM = [
   { icon: 'home', name: 'home', router_link: 'HOME' },
-  { icon: 'person', name: 'My Profile', router_link: 'PROFILE' },
-  { icon: 'local_library', name: 'Directory', router_link: 'DIRECTORY' },
+  { icon: 'person', name: 'My Profile', router_link: 'PROFILE' , important : true},
+  { icon: 'local_library', name: 'Directory', router_link: 'DIRECTORY',  important : true},
   {
-    icon: 'sd',
+    icon: 'person_search',
     name: 'Entrepreneurship program',
-    categories: [{ name: 'Explore' }],
+    important : true,
+    categories: [
+      {
+        icon: 'travel_explore',
+        name: 'Explore',
+        router_link: 'ENTREPRENURSHIP',
+      },
+    ],
   },
   {
     icon: 'view_in_ar',

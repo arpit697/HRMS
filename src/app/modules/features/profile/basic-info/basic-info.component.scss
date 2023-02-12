@@ -1,29 +1,48 @@
+.basic-info-main {
+  mat-card-title {
+    font-size: 20px;
+    color: #3246d3;
+    font-family: "Segoe UI";
+    padding: 11px 25px 11px 15px;
+    border-bottom: 1px solid #f3f7fc;
+    font-weight: 700;
+  }
+  .card {
+    padding: 24px;
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      font-family: "Segoe UI";
+      color: #2f3031;
+      margin-bottom: 5px;
+    }
+  }
+}
+
 .col-1 {
-  padding: 0;
   display: grid;
   grid-template-columns: auto;
+  margin-bottom: 20px;
 }
 .col-2 {
-  padding: 0;
   display: grid;
   grid-template-columns: auto auto;
   gap: 1em;
+  margin-bottom: 20px;
 }
 
 .col-3 {
-  padding: 0;
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 1em;
+  margin-bottom: 20px;
 }
 .field {
-  padding: 0;
   display: grid;
   grid-template-rows: auto auto;
 }
 
 .row-2 {
-  padding: 0;
   display: grid;
   grid-template-rows: auto auto;
 }

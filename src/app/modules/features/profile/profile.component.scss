@@ -4,54 +4,96 @@
     margin: 1.25em;
     display: grid;
     grid-template-columns: 10em auto;
-    border-radius: 8px !important;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 20%) !important;
-
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     align-items: center;
+
     img {
       max-height: 10em;
       max-width: 10em;
       border-radius: 50%;
-      box-shadow: 0px 3px 11px -7px rgb(0 0 0 / 30%);
-      border: 4px;
+      box-shadow: 0px 3px 11px -7px rgba(0, 0, 0, 0.3);
+      border: 4px solid transparent;
     }
+
     .media-body {
       padding: 0;
       line-height: 1.5em;
+
       mat-card-title {
         font-size: xx-large;
         line-height: 2em;
       }
-      strong{
+
+      strong {
         color: black;
         font-weight: 400;
       }
     }
   }
-  .basic-lightgroup{
-    margin: 1em;
-    display: grid;
-    grid-template-columns: 20vw auto;
-    gap: 5em;
-    mat-list-item{
-        padding: 12px 28px;
-    }
-    .list-container{
-     position: relative;
-     .list{
-      width: 20vw;
-      position: fixed;
-    }
-    }
-    
-    .select{
-        flex-direction: row;
-        align-items: center;
-        gap: 1em;
-        color: #8c8e90;
-    }
-    .forms{
-        display: flex;
+}
+
+.content-container {
+  margin: 1.25em;
+}
+
+.mat-mdc-tab-group {
+  flex-direction: row !important;
+  gap: 3em;
+}
+
+.list-icon {
+  margin: 0 1em;
+}
+
+::ng-deep.mat-mdc-tab-labels {
+  border-radius: 1em;
+  display: unset !important;
+}
+
+::ng-deep.mat-mdc-tab-body-wrapper {
+  width: 100% !important;
+}
+
+::ng-deep.mat-mdc-tab-label-container {
+  min-width: 20em;
+  height: 18em;
+  border-radius: 0.5em;
+  background: white;
+}
+
+::ng-deep.mdc-tab {
+  justify-content: flex-start !important;
+}
+
+::ng-deep.mdc-tab-indicator--active {
+  background-color: #26b4ff;
+}
+
+::ng-deep.mdc-tab-indicator__content--underline {
+  display: none;
+}
+
+::ng-deep.mdc-tab--active .mdc-tab__text-label {
+  color: white;
+}
+
+@media all and (max-width: 60em) {
+  .mat-mdc-tab-group {
+    flex-direction: column !important;
+  }
+}
+
+@media all and (max-width: 60em) {
+  .profile-container {
+    .media {
+      grid-template-columns: auto;
+      text-align: center;
+      img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
 }

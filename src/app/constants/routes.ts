@@ -47,7 +47,7 @@ export const DIRECTORY: RouteInterface = {
     return `${FEATURES.fullUrl}/${this.path}`;
   },
 };
-export const ENTREPRENURSHIP : RouteInterface = {
+export const ENTREPRENURSHIP: RouteInterface = {
   path: 'entreprenurship',
   get fullUrl(): string {
     return `${FEATURES.fullUrl}/${this.path}`;

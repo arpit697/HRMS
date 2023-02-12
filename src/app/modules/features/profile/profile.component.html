@@ -31,26 +31,23 @@
       </mat-card-subtitle>
     </mat-card-content>
   </mat-card>
-  <div class="basic-lightgroup">
-    <div class="list-container">
-      <mat-card class="list">
-        <mat-list>
-          <mat-list-item *ngFor="let list of selectionMenu">
-            <mat-card class="select">
-              <mat-icon>{{ list.icon }}</mat-icon>
-              <mat-card-title>{{ list.name }}</mat-card-title>
-            </mat-card>
-          </mat-list-item>
-        </mat-list>
-      </mat-card>
-    </div>
-    <div>
-        <!-- <app-basic-info></app-basic-info> -->
-        <!-- <app-profile-pic></app-profile-pic> -->
-        <!-- <app-qualification></app-qualification> -->
-        <!-- <app-change-pass></app-change-pass> -->
-        <!-- <app-appraisal></app-appraisal> -->
-        <app-shift></app-shift>
-    </div>
-  </div>
+</div>
+
+<div class="content-container">
+  <mat-tab-group>
+    <mat-tab *ngFor="let list of selectionMenu">
+      <ng-template mat-tab-label>
+        <mat-icon class="list-icon">{{ list?.icon }}</mat-icon>
+        {{ list.name }}
+      </ng-template>
+      <div [ngSwitch]="list.name">
+        <app-basic-info *ngSwitchCase="'basic information'"></app-basic-info>
+        <app-profile-pic *ngSwitchCase="'profile picture'"></app-profile-pic>
+        <app-qualification *ngSwitchCase="'qualification'"></app-qualification>
+        <app-shift *ngSwitchCase="'shift'"></app-shift>
+        <app-change-pass *ngSwitchCase="'change password'"></app-change-pass>
+        <app-appraisal *ngSwitchCase="'appraisal'"></app-appraisal>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
 </div>

@@ -19,7 +19,7 @@ import { RuButtonModule } from '../../common/modules/ru-button/ru-button.module'
 import { MatSelectModule } from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-
+import {MatTabsModule} from '@angular/material/tabs';
 const MATERIAL = [
   MatCardModule,
   MatListModule,
@@ -28,7 +28,8 @@ const MATERIAL = [
   MatInputModule,
   MatSelectModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatTabsModule
 ];
 
 @NgModule({

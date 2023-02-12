@@ -1,93 +1,91 @@
 .account-container {
-    min-height: 100%;
-    background: url("../../../assets/onboarding/login/banner.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 3em 1.5em 3em 1.5em;
+  min-height: 100%;
+  background: url("../../../assets/onboarding/login/banner.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 3em 1.5em 3em 1.5em;
+  .reusable-card {
+    max-width: 26em;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    .app-logo {
+      position: relative;
+      padding: 6em 3em 3em 0em;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .content-area {
+      word-break: break-word;
+    }
+    .footer {
+      padding: 1em 2em 1em 2em;
+      text-align: center;
+      word-break: break-word;
+      mat-card-subtitle {
+        color: #a3a4a6;
+      }
+    }
+    mat-divider {
+      margin-top: 1em;
+    }
+  }
+}
+
+@media all and (max-width: 25.1em) {
+  .account-container {
     .reusable-card {
-      max-width: 26em;
-      display: grid;
-      grid-template-rows: auto auto auto auto;
       .app-logo {
-        position: relative;
-        padding: 6em 3em  3em 0em;
         img {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+          height: 50%;
+          width: 70%;
         }
-      }
-      .content-area {
-        word-break: break-word;
-      }
-      .footer {
-        padding: 1em 2em 1em 2em;
-        text-align: center;
-        word-break: break-word;
-        mat-card-subtitle {
-          color: #a3a4a6;
-        }
-      }
-      mat-divider{
-        margin-top: 1em;
       }
     }
   }
-  
+}
+@media all and (max-width: 15em) {
+  .account-container {
+    .reusable-card {
+      .app-logo {
+        img {
+          height: 30%;
+          width: 70%;
+        }
+      }
+    }
+  }
+}
 
-  @media all and (max-width: 25.1em) {
-    .account-container{
-      .reusable-card{
-        .app-logo{
-          img{
-            height: 50%;
-            width: 70%;
-          }
+@media all and (max-width: 17em) {
+  .account-container {
+    .reusable-card {
+      .app-logo {
+        img {
+          height: 30%;
+          width: 70%;
         }
       }
     }
   }
-  @media all and (max-width: 15em) {
-    .account-container{
-      .reusable-card{
-        .app-logo{
-          img{
-            height: 30%;
-            width: 70%;
-          }
+}
+@media all and (max-width: 8em) {
+  .account-container {
+    .reusable-card {
+      .app-logo {
+        img {
+          height: 10%;
+          width: 70%;
         }
       }
     }
   }
-
-  @media all and (max-width: 17em) {
-    .account-container{
-      .reusable-card{
-        .app-logo{
-          img{
-            height: 30%;
-            width: 70%;
-          }
-        }
-      }
-    }
-  }
-  @media all and (max-width: 8em) {
-    .account-container{
-      .reusable-card{
-        .app-logo{
-          img{
-            height: 10%;
-            width: 70%;
-          }
-        }
-      }
-    }
-  }
- 
+}

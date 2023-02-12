@@ -15,12 +15,19 @@
             routerLinkActive="active"
             [routerLink]="list.router_link | routing"
           >
-            <mat-panel-title
+            <mat-panel-title class="title"
               ><mat-icon class="list-icon">{{ list.icon }}</mat-icon>
-              <span class="list-name" *ngIf="isExpanded">{{
-                list.name
-              }}</span></mat-panel-title
-            >
+
+              <span class="list-name" *ngIf="isExpanded">{{ list.name }} </span
+              ><span
+                ><mat-icon
+                  class="important-icon"
+                  *ngIf="list.important && isExpanded"
+                  [@rotate]="rotateDirection"
+                  >new_releases</mat-icon
+                ></span
+              >
+            </mat-panel-title>
           </mat-expansion-panel-header>
           <div class="sub-list">
             <p
@@ -28,8 +35,10 @@
               routerLinkActive="active"
               [routerLink]="sublist.router_link | routing"
             >
-              <mat-icon>home</mat-icon>
-              <span *ngIf="isExpanded">{{ sublist.name }}</span>
+              <mat-icon class="list-icon">{{ sublist.icon }}</mat-icon>
+              <span class="list-name" *ngIf="isExpanded">{{
+                sublist.name
+              }}</span>
             </p>
           </div>
         </mat-expansion-panel>
