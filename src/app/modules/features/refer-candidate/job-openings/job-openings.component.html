@@ -1,0 +1,11 @@
+<app-ru-job-card *ngFor="let item of openings">
+  <img class="card-image" src="{{ item.tech_image }}" alt="" />\
+  <span class="location_name">{{ item.location }}</span>
+  <span class="date">{{ item.release_date }}</span>
+  <span class="designation_name">{{ item.tech_name }}</span>
+  <span class="tech_name">{{ item.tech_name }}</span>
+  <span class="description">{{ item.description }}</span>
+  <span class="opening_count">{{ item.openings }}</span>
+  <span class="from">{{ item.experience.from }}</span>
+  <span class="to">{{ item.experience.to }}</span>
+</app-ru-job-card>

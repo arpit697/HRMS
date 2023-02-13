@@ -157,9 +157,23 @@ mat-card-content {
   margin-right: none !important;
 }
 
-// .mat-expansion-panel-header-title {
-// }
-
 .mat-expansion-panel {
   box-shadow: none !important;
+}
+
+//common scss
+
+.col-1 {
+  display: grid;
+  grid-template-columns: auto;
+  
+}
+.col-2 {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.col-3 {
+  display: grid;
+  grid-template-columns: auto auto auto;
 }

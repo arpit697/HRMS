@@ -1,11 +1,22 @@
+
 export const SIDE_NAV_ITEM = [
   { icon: 'home', name: 'home', router_link: 'HOME' },
-  { icon: 'person', name: 'My Profile', router_link: 'PROFILE' , important : true},
-  { icon: 'local_library', name: 'Directory', router_link: 'DIRECTORY',  important : true},
+  {
+    icon: 'person',
+    name: 'My Profile',
+    router_link: 'PROFILE',
+    important: true,
+  },
+  {
+    icon: 'local_library',
+    name: 'Directory',
+    router_link: 'DIRECTORY',
+    important: true,
+  },
   {
     icon: 'person_search',
     name: 'Entrepreneurship program',
-    important : true,
+    important: true,
     categories: [
       {
         icon: 'travel_explore',
@@ -40,7 +51,10 @@ export const SIDE_NAV_ITEM = [
   {
     icon: 'diversity_2',
     name: 'Refer a Friend',
-    categories: [{ name: 'Job Opening' }, { name: 'Referral List' }],
+    categories: [
+      {icon : 'open_in_new' , name: 'Job Opening', router_link: 'JOB_OPENINGS' },
+      {icon : 'list' , name: 'Referral List', router_link: 'REFERRAL_LIST' },
+    ],
   },
   {
     icon: 'work',
@@ -120,3 +134,47 @@ export const PROFILE_SELECTION_MENU = [
   { icon: 'key', name: 'change password' },
   { icon: 'thumb_up', name: 'appraisal' },
 ];
+
+
+
+export const JOBS = [
+  {
+    tech_image : '../../assets/technologies/marketing.svg',
+    tech_name : 'Marketing',
+    location : 'Noida, Uttar Pradesh' , 
+    release_date  :'09/02/2023',
+    designation : 'Business Development Manager',
+    description : 'Looking for Business Development Executive/Manager.',
+    opening_count : '2',
+    experience : {
+      form : '1' ,
+      to : '3'
+    }
+  },
+  {
+    tech_image : '../../assets/technologies/react-native.svg',
+    tech_name : 'Tech Lead',
+    location : 'Noida, Uttar Pradesh' , 
+    release_date  :'09/02/2023',
+    designation : 'Associate Tech Lead',
+    description : 'We are looking for React Native developers & Leads.',
+    opening_count : '5',
+    experience : {
+      form : '5' ,
+      to : '9'
+    }
+  },
+  {
+    tech_image : '../../assets/technologies/business-analyst.svg',
+    tech_name : 'Business Analyst',
+    location : 'Noida, Uttar Pradesh' , 
+    release_date  :'08/02/2023',
+    designation : 'Business Analyst ',
+    description : 'Looking for Business Analysts to join us immediately.',
+    opening_count : '4',
+    experience : {
+      form : '1' ,
+      to : '3'
+    }
+  }
+]

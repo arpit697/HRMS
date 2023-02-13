@@ -6,6 +6,7 @@ import {
   ENTREPRENURSHIP,
   HOME,
   PROFILE,
+  REFER_CANDIDATE,
 } from 'src/app/constants/routes';
 
 const routes: Routes = [
@@ -33,6 +34,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./entreprenurship/entreprenurship.module').then(
             (m) => m.EntreprenurshipModule
+          ),
+      },
+      {
+        path: REFER_CANDIDATE.path,
+        loadChildren: () =>
+          import('./refer-candidate/refer-candidate.module').then(
+            (m) => m.ReferCandidateModule
           ),
       },
     ],

@@ -1,87 +1,78 @@
 <div class="qualification-container">
-  <mat-card>
-    <mat-card-content>
-      <mat-card-title>Add New Qualification</mat-card-title>
-    </mat-card-content>
-
-    <mat-card-content>
-      <div>
-        <label>School/University</label>
-        <mat-form-field>
-          <input matInput />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field>
-          <mat-select>
-            <mat-option>I am option no one</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-    </mat-card-content>
-
-
-
-
-
-
-
-    <mat-card-content>
-      <div>
-        <label>Time Period</label>
-        <mat-form-field>
-            <input matInput [matDatepicker]="picker">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field>
-            <input matInput [matDatepicker]="picker1">
-            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-            <mat-datepicker #picker1></mat-datepicker>
-          </mat-form-field>
-      </div>
-    </mat-card-content>
-
-
-
-
-
-
-
-
-    <mat-card-content> 
+  <mat-card class="qualification-form">
+    <mat-card-title>Add New Qualification</mat-card-title>
+    <div class="field-container">
+      <div class="col-2">
         <div>
-            <label>Language</label>
-            <mat-form-field>
-                <mat-select>
-                    <mat-option>dsafasdfa</mat-option>
-                </mat-select>
-            </mat-form-field>
+          <mat-card-subtitle>School/University</mat-card-subtitle>
+          <mat-form-field appearance="outline">
+            <input matInput />
+          </mat-form-field>
         </div>
         <div>
-            <label>
-                Professional Course (If any)
-            </label>
-            <mat-form-field>
-                <input matInput>
-            </mat-form-field>
+          <mat-card-subtitle>Education Level</mat-card-subtitle>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option>I am option no one</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
-    </mat-card-content>
+      </div>
 
-    <mat-card-content> 
-        
-        <label>
-            Description
-        </label>
-        <mat-form-field>
-            <textarea matInput placeholder="Description"></textarea>
+      <div>
+        <mat-card-subtitle>Time Period</mat-card-subtitle>
+        <div class="col-2">
+          <div>
+            <mat-form-field appearance="outline">
+              <input matInput [matDatepicker]="picker" />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline">
+              <input matInput [matDatepicker]="picker1" />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker1"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-2">
+        <div>
+          <mat-card-subtitle>Language</mat-card-subtitle>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option>dsafasdfa</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-card-subtitle> Professional Course (If any)</mat-card-subtitle>
+          <mat-form-field appearance="outline">
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div>
+        <mat-card-subtitle>Description</mat-card-subtitle>
+        <mat-form-field appearance="outline">
+          <textarea matInput placeholder="Description"></textarea>
         </mat-form-field>
-    </mat-card-content>
-    <mat-card-content> 
-        <app-ru-button bText="'Save'"></app-ru-button>
-    </mat-card-content>
+      </div>
+      <div>
+        <app-ru-button [bText]="'Save'"></app-ru-button>
+      </div>
+    </div>
   </mat-card>
+
   <mat-card>Area for commom table</mat-card>
 </div>

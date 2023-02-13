@@ -1,5 +1,27 @@
-.qualification-container{
-    display: grid;
-    grid-template-rows: auto auto ;
-    gap: 2em;
+mat-form-field {
+  width: 100%;
+}
+mat-card-subtitle {
+  margin-bottom: 0.5em;
+}
+
+.qualification-container {
+  .qualification-form {
+    padding: 24px;
+    mat-card-title {
+      font-size: 20px;
+      color: #3246d3;
+      font-family: "Segoe UI";
+      padding: 11px 25px 11px 15px;
+      border-bottom: 1px solid #f3f7fc;
+      font-weight: 700;
+    }
+    .field-container {
+      padding: 24px;
+      .col-2 {
+        gap: 2em;
+        padding-bottom: 16px;
+      }
+    }
+  }
 }

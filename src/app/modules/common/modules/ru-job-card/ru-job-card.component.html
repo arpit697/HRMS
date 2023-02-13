@@ -1,0 +1,39 @@
+<mat-card>
+  <div class="img-background">
+    <ng-content select = ".card-image"></ng-content>
+    <div class="location-date">
+      <div class="location">
+        <mat-icon>location_on</mat-icon>
+        <mat-card-subtitle>
+          <ng-content select=".location_name"></ng-content>
+        </mat-card-subtitle>
+      </div>
+      <mat-card-subtitle class="date">
+        <ng-content select=".date"></ng-content>
+      </mat-card-subtitle>
+    </div>
+  </div>
+  <div class="designation">
+    <mat-card-title><ng-content select=".designation_name"></ng-content> :- </mat-card-title>
+    <mat-card-subtitle > <ng-content select=".tech_name"></ng-content></mat-card-subtitle>
+  </div>
+  <mat-card-subtitle class="description">
+   <ng-content select=".description"></ng-content>
+  </mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <div class="openings-experience">
+    <div>
+      <mat-card-subtitle>No.of Openings</mat-card-subtitle>
+      <mat-card-subtitle> 4 </mat-card-subtitle>
+    </div>
+    <div>
+      <mat-card-subtitle>Experience</mat-card-subtitle>
+      <mat-card-subtitle> 3 to 5 years </mat-card-subtitle>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="action-buttons">
+    <button>asdfasdf</button>
+    <button>asdfasdf</button>
+  </div>
+</mat-card>

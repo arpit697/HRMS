@@ -47,9 +47,31 @@ export const DIRECTORY: RouteInterface = {
     return `${FEATURES.fullUrl}/${this.path}`;
   },
 };
+
 export const ENTREPRENURSHIP: RouteInterface = {
   path: 'entreprenurship',
   get fullUrl(): string {
     return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
+
+export const REFER_CANDIDATE: RouteInterface = {
+  path: 'refer-candidate',
+  get fullUrl(): string {
+    return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
+
+export const JOB_OPENINGS: RouteInterface = {
+  path: 'job-openings',
+  get fullUrl(): string {
+    return `${REFER_CANDIDATE.fullUrl}/${this.path}`;
+  },
+};
+
+export const REFERRAL_LIST: RouteInterface = {
+  path: 'referral-list',
+  get fullUrl(): string {
+    return `${REFER_CANDIDATE.fullUrl}/${this.path}`;
   },
 };

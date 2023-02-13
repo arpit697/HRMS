@@ -1,24 +1,26 @@
-<mat-card>
-    <mat-card-title>Profile Picture</mat-card-title>
-  <mat-card-content class="upload-area">
-    <div>
-      <label> Browse </label>
+<mat-card class="profile-pic-container">
+  <mat-card-title>Profile Picture</mat-card-title>
+  <div class="content-container">
+    <div class="upload-area">
+      <div>
+        <label> Browse </label>
+      </div>
+      <div class="field">
+        <input class="custom-file-input" type="file" />
+      </div>
     </div>
-    <div>
-      <input type="file" />
+  
+    <div class="preview-area">
+      <small>
+        <mat-card-subtitle class="upload-file-type">
+          Upload files only : gif, png , jpg , jpeg
+        </mat-card-subtitle>
+      </small>
+      <img src="../../../../../assets/default/default_male.jpg" alt="User Image" />
     </div>
-  </mat-card-content>
-
-  <mat-card-content class="preview-area">
-    <small>
-        <mat-card-subtitle>
-        Upload files only : gif, png , jpg , jpeg
-      </mat-card-subtitle>
-    </small>
-    <img src="" alt="User Image">
-  </mat-card-content>
-
-  <mat-card-content>
-    <app-ru-button [bText]="'Save'"> </app-ru-button>
-  </mat-card-content>
+  
+    <div>
+      <app-ru-button [bText]="'Save'"> </app-ru-button>
+    </div>
+  </div>
 </mat-card>
