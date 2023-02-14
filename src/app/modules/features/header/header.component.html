@@ -1,16 +1,18 @@
 <mat-toolbar>
-  <span
+  <span *ngIf="isExpanded"
     ><img
       class="full-logo"
       src="assets/header/applogo.png"
       alt="appinventiv full logo"
   /></span>
-  <span
-    ><img
-      class="logo"
-      src="assets/header/ic-logo.svg"
-      alt="appinventiv logo" /></span
-  >
+  <span *ngIf="!isExpanded"
+    ><img class="logo" src="assets/header/ic-logo.svg" alt="appinventiv logo"
+  /></span>
+  <span class="arrow_forward" (click)="isExpendedValue()">
+    <mat-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }"
+      >arrow_forward</mat-icon
+    >
+  </span>
   <span class="spacer"></span>
   <mat-card class="right-side">
     <mat-card-subtitle class="last-login"
@@ -22,7 +24,11 @@
         <mat-card-subtitle>
           {{ "arpit dwivedi" }}
         </mat-card-subtitle>
-        <img class="user-image" src="../../../../assets/default/default_male.jpg" alt="" />
+        <img
+          class="user-image"
+          src="../../../../assets/default/default_male.jpg"
+          alt=""
+        />
         <mat-icon>expand_more</mat-icon>
         <mat-menu class="menu" #menu="matMenu">
           <button mat-menu-item>
@@ -45,5 +51,7 @@
       </span>
     </mat-card-content>
   </mat-card>
-  <span class="menu"><mat-icon>menu</mat-icon></span>
+  <span class="menu" (click)="isExpendedValue()"
+    ><mat-icon>menu</mat-icon></span
+  >
 </mat-toolbar>

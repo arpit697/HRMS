@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./ru-job-card.component.scss']
 })
 export class RuJobCardComponent {
+  card: any;
 
 }

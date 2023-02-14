@@ -176,5 +176,44 @@ export const JOBS = [
       form : '1' ,
       to : '3'
     }
+  },
+  {
+    tech_image : '../../assets/technologies/marketing.svg',
+    tech_name : 'Marketing',
+    location : 'Noida, Uttar Pradesh' , 
+    release_date  :'09/02/2023',
+    designation : 'Business Development Manager',
+    description : 'Looking for Business Development Executive/Manager.',
+    opening_count : '2',
+    experience : {
+      form : '1' ,
+      to : '3'
+    }
+  },
+  {
+    tech_image : '../../assets/technologies/react-native.svg',
+    tech_name : 'Tech Lead',
+    location : 'Noida, Uttar Pradesh' , 
+    release_date  :'09/02/2023',
+    designation : 'Associate Tech Lead',
+    description : 'We are looking for React Native developers & Leads.',
+    opening_count : '5',
+    experience : {
+      form : '5' ,
+      to : '9'
+    }
+  },
+  {
+    tech_image : '../../assets/technologies/business-analyst.svg',
+    tech_name : 'Business Analyst',
+    location : 'Noida, Uttar Pradesh' , 
+    release_date  :'08/02/2023',
+    designation : 'Business Analyst ',
+    description : 'Looking for Business Analysts to join us immediately.',
+    opening_count : '4',
+    experience : {
+      form : '1' ,
+      to : '3'
+    }
   }
 ]

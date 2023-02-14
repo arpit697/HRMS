@@ -9,21 +9,20 @@ p {
   .list-icon {
     color: #3246d3;
   }
-  .list-name{
-    color: #3246d3;;
-  } 
+  .list-name {
+    color: #3246d3;
+  }
 }
 mat-panel-title {
   margin-right: 0;
 }
 mat-sidenav-container {
- 
   z-index: 0;
   mat-sidenav {
     position: fixed;
     padding-top: 5em;
     max-width: 15.625em;
-    .title{
+    .title {
       position: relative;
     }
     .list-icon {
@@ -37,7 +36,7 @@ mat-sidenav-container {
       margin-left: 1em;
       display: grid;
     }
-    .important-icon{
+    .important-icon {
       font-size: 1em;
       display: grid;
       right: 0;
@@ -61,4 +60,8 @@ mat-sidenav-container {
       bottom: 0;
     }
   }
+}
+
+@media all and (max-width: 62em) {
+  
 }

@@ -1,6 +1,6 @@
 <mat-card>
   <div class="img-background">
-    <ng-content select = ".card-image"></ng-content>
+    <ng-content select=".card-image"></ng-content>
     <div class="location-date">
       <div class="location">
         <mat-icon>location_on</mat-icon>
@@ -14,11 +14,16 @@
     </div>
   </div>
   <div class="designation">
-    <mat-card-title><ng-content select=".designation_name"></ng-content> :- </mat-card-title>
-    <mat-card-subtitle > <ng-content select=".tech_name"></ng-content></mat-card-subtitle>
+    <mat-card-title
+      ><ng-content select=".designation_name"></ng-content> :-
+      &nbsp;</mat-card-title
+    >
+    <mat-card-subtitle
+      ><ng-content select=".tech_name"></ng-content
+    ></mat-card-subtitle>
   </div>
   <mat-card-subtitle class="description">
-   <ng-content select=".description"></ng-content>
+    <ng-content select=".description"></ng-content>
   </mat-card-subtitle>
   <mat-divider></mat-divider>
   <div class="openings-experience">

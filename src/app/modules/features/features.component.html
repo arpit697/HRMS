@@ -1,10 +1,9 @@
 <header class="header">
-  <app-header></app-header>
+  <app-header (dataEvent)="isExpendedValue($event)"></app-header>
 </header>
 <mat-sidenav-container autosize>
   <mat-sidenav opened="true" mode="side">
-    <button (click)="isExpanded = !isExpanded">click me !</button>
-    <mat-card class="sidenav-container">
+    <mat-card >
       <mat-accordion class="accordian">
         <mat-expansion-panel
           *ngFor="let list of items"

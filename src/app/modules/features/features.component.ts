@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { rotateAnimation } from 'src/app/animations/clock.anticlock';
 import { SIDE_NAV_ITEM } from 'src/app/constants/app.constants';
 
-
 @Component({
   selector: 'app-features',
   templateUrl: './features.component.html',
@@ -22,5 +21,8 @@ export class FeaturesComponent implements OnInit {
         this.rotateDirection === 'clockwise' ? 'anticlockwise' : 'clockwise';
     }, 1000);
   }
-  isExpanded: boolean = false;
+  isExpanded : boolean = true;
+  isExpendedValue(event: any) {
+    this.isExpanded = event;
+  }
 }

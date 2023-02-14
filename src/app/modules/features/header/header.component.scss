@@ -13,8 +13,21 @@ mat-toolbar {
     height: 39px;
   }
   .logo {
-    display: none;
     height: 39px;
+  }
+
+  .arrow_forward {
+    margin-left: 1em;
+    color: var(--spiro);
+  }
+
+  .chevron-button {
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+  }
+
+  .chevron-button.rotated {
+    transform: rotate(180deg);
   }
 
   .right-side {
@@ -74,13 +87,9 @@ mat-toolbar {
 }
 @media all and (max-width: 62em) {
   mat-toolbar {
-    .full-logo {
+    .arrow_forward {
       display: none;
     }
-    .logo {
-      display: unset;
-    }
-
     .right-side {
       display: none;
     }
