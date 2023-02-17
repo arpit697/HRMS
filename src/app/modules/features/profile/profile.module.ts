@@ -17,9 +17,10 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RuButtonModule } from '../../common/modules/ru-button/ru-button.module';
 import { MatSelectModule } from '@angular/material/select';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
+import { RuTableModule } from '../../common/modules/ru-table/ru-table.module';
 const MATERIAL = [
   MatCardModule,
   MatListModule,
@@ -29,7 +30,7 @@ const MATERIAL = [
   MatSelectModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatTabsModule
+  MatTabsModule,
 ];
 
 @NgModule({
@@ -47,6 +48,7 @@ const MATERIAL = [
     ProfileRoutingModule,
     ReactiveFormsModule,
     RuButtonModule,
+    RuTableModule,
     ...MATERIAL,
   ],
 })

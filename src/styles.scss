@@ -1,6 +1,7 @@
-
 @use "@angular/material" as mat;
 @use "./scss/global.scss";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 
 @include mat.core();
 
@@ -13,7 +14,6 @@ $HRMS_Appinventiv-accent: mat.define-palette(
 );
 
 $HRMS_Appinventiv-warn: mat.define-palette(mat.$red-palette);
-
 
 $HRMS_Appinventiv-theme: mat.define-light-theme(
   (
@@ -37,6 +37,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  word-break: break-word;
 }
 
 //mat form field css class
@@ -166,7 +167,6 @@ mat-card-content {
 .col-1 {
   display: grid;
   grid-template-columns: auto;
-  
 }
 .col-2 {
   display: grid;
@@ -177,3 +177,38 @@ mat-card-content {
   display: grid;
   grid-template-columns: auto auto auto;
 }
+
+// .owl-carousel - This is the main class that you should add to the container element for your carousel.
+
+// .owl-theme - This class is used in conjunction with the .owl-carousel class to apply a default theme to your carousel.
+
+// .owl-item - This class is applied to each slide in the carousel.
+
+// .owl-nav - This class is used to create the navigation buttons for the carousel.
+
+// .owl-prev and .owl-next - These classes are used to style the navigation buttons.
+
+// .owl-dots - This class is used to create the pagination dots for the carousel.
+
+// .owl-dot - This class is applied to each pagination dot.
+
+// .owl-video - This class is used to create a video slide in the carousel.
+
+// .owl-video-play-icon - This class is used to style the video play icon.
+
+// .owl-video-tn - This class is used to create a thumbnail for the video slide.
+
+// .owl-video-frame - This class is used to create the video iframe.
+
+// .owl-prev , .owl-next{
+//   background-color: #f4f9ff !important;
+//   border-radius: 50% !important;
+//   color: var(--spiro) !important;
+//   font-size: 2em !important;
+// }
+
+// .owl-nav{
+//   position: absolute;
+//   top: -50px ;
+//   right: 0;
+// }

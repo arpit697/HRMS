@@ -7,7 +7,6 @@ import * as routes from '../../constants/routes';
 export class RoutingPipe implements PipeTransform {
   transform(route: any) {
     if (route) {
-      console.log(route, routes);
       //@ts-ignore
       return routes[route].fullUrl;
     }

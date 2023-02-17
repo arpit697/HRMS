@@ -1,3 +1,16 @@
+.heading {
+  font-family: "Lato";
+  font-size: 20px;
+  color: #231e1e;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
 .home-container {
   .emp-basic-info {
     display: flex;
@@ -5,6 +18,7 @@
     flex-wrap: wrap;
     gap: 1em;
     align-items: center;
+    margin-bottom: 30px;
     figure {
       margin: 0;
       max-height: 80px;
@@ -26,6 +40,153 @@
       mat-card-title {
         font-size: 1.6em;
         font-weight: 450;
+      }
+    }
+  }
+}
+
+.upper-card {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  gap: 1em;
+  .opening-refer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    .latest-job-openings {
+      padding: 1em;
+    }
+  }
+  .referral-bonus {
+    padding: 1em;
+    border-left: 2px dotted #d0d1d3;
+    .ref-bonus-heading {
+      font-family: "Lato";
+      font-size: 1em;
+      color: #199cff;
+      font-weight: 600;
+      line-height: 1.9;
+      text-transform: uppercase;
+    }
+    .list-container {
+      ul {
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 1em;
+        li {
+          background: #f4f9ff;
+          margin: 10px;
+          padding: 25px 17px;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5em;
+          text-align: center;
+          .money {
+            font-family: "Lato";
+            font-size: 2em;
+            color: #199cff;
+            font-weight: 800;
+            line-height: 1;
+          }
+          .ref-bonus {
+            font-family: "Lato";
+            font-size: 1em;
+            color: #000000;
+            font-weight: 800;
+            line-height: 1.3;
+            text-align: center;
+          }
+          .exp-req {
+            font-family: "Lato";
+            font-size: 14px;
+            color: #606167;
+            font-weight: 500;
+            line-height: 1.2;
+            margin: 5px 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+.carousel-right {
+  padding: 24px;
+  .heading {
+    font-family: "Lato";
+    font-size: 20px;
+    color: #231e1e;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .new-member-wrapper {
+    margin-top: 30px;
+    padding-left: 26px;
+    
+    .member-card {
+      height: 392px;
+      max-width: 296px;
+      background-image: url(../../../../assets/default/new-family-card.png);
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      gap: 1em;
+
+      .new-employee-image {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.job-opening-wrapper {
+  .job-card {
+    display: flex;
+    .card-image {
+      max-width: 100px;
+      max-height: 100px;
+    }
+  }
+}
+
+.card-bottom {
+  .image-wrapper {
+    height: 256px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .gallery-image {
+      margin-right: 1em;
+    }
+  }
+}
+
+@media all and (max-width: 1400px) {
+  .upper-card {
+    grid-template-columns: 100%;
+    .carousel-right {
+      .new-member-wrapper {
+      }
+    }
+  }
+}
+
+@media all and (max-width: 700px) {
+  .upper-card {
+    .opening-refer {
+      grid-template-columns: 100%;
+      .list-container {
+        ul {
+          grid-template-columns: auto;
+        }
       }
     }
   }

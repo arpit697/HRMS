@@ -26,4 +26,6 @@ export class BasicInfoComponent implements OnInit {
       address: [],
     });
   }
+
+ 
 }

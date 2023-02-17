@@ -1,9 +1,18 @@
 <header class="header">
-  <app-header (dataEvent)="isExpendedValue($event)"></app-header>
+  <app-header (dataEvent)="handleIsExpandedChange($event)"></app-header>
 </header>
 <mat-sidenav-container autosize>
-  <mat-sidenav opened="true" mode="side">
-    <mat-card >
+  <mat-sidenav
+  [@slideInOut]="sidenavState"
+    opened="true"
+    mode="side"
+    (mouseenter)="mouseenter()"
+    (mouseleave)="mouseleave()"
+  >
+    <mat-card
+      
+      [ngClass]="{ hide: !isExpanded, show: isExpanded }"
+    >
       <mat-accordion class="accordian">
         <mat-expansion-panel
           *ngFor="let list of items"
@@ -16,8 +25,8 @@
           >
             <mat-panel-title class="title"
               ><mat-icon class="list-icon">{{ list.icon }}</mat-icon>
-
-              <span class="list-name" *ngIf="isExpanded">{{ list.name }} </span
+              <span class="list-name" *ngIf="isShowing || isExpanded"
+                >{{ list.name }} </span
               ><span
                 ><mat-icon
                   class="important-icon"

@@ -2,6 +2,7 @@ import {
   GoogleLoginProvider,
   SocialAuthService,
 } from '@abacritt/angularx-social-login';
+import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FEATURES } from 'src/app/constants/routes';
@@ -23,6 +24,7 @@ export class GoogleLoginComponent implements OnInit {
     this.authService.authState.subscribe((user: any) => {
       this.user = user;
       if (user != null) {
+        sessionStorage.setItem('login', JSON.stringify(true));
         this._router.navigate([FEATURES.path]);
       }
     });

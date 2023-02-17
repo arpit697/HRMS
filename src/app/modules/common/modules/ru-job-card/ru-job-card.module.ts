@@ -4,12 +4,13 @@ import { RuJobCardComponent } from './ru-job-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import { RuButtonModule } from '../ru-button/ru-button.module';
 
 const MATERIAL = [MatCardModule , MatIconModule , MatDividerModule]
 
 @NgModule({
   declarations: [RuJobCardComponent],
-  imports: [CommonModule , ...MATERIAL],
+  imports: [CommonModule ,RuButtonModule, ...MATERIAL],
   exports: [RuJobCardComponent],
 })
 export class RuJobCardModule {}

@@ -46,3 +46,13 @@
   display: grid;
   grid-template-rows: auto auto;
 }
+
+@media all and (max-width: 50em) {
+  .col-3 {
+    grid-template-columns: auto;
+    margin-bottom: 5px;
+  }
+  .exp {
+    grid-template-columns: auto;
+  }
+}

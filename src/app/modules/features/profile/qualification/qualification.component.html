@@ -69,10 +69,17 @@
         </mat-form-field>
       </div>
       <div>
-        <app-ru-button [bText]="'Save'"></app-ru-button>
+        <app-ru-button [bText]="'Save'" [bClass]="'save'"></app-ru-button>
       </div>
     </div>
   </mat-card>
 
-  <mat-card>Area for commom table</mat-card>
+  <mat-card class="qualifiction-table-card">
+    <mat-card-title>List All Qualification</mat-card-title>
+    <app-ru-table
+    class="table"
+      [tableColumns]="tableColumns"
+      [tableData]="tableData"
+    ></app-ru-table>
+  </mat-card>
 </div>

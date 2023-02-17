@@ -8,7 +8,7 @@
         <mat-card-subtitle class="form-field-title">Name</mat-card-subtitle>
       </div>
       <mat-form-field appearance="outline">
-        <input matInput />
+        <input matInput #searchInput />
       </mat-form-field>
     </div>
     <div>
@@ -18,13 +18,25 @@
         >
       </div>
       <mat-form-field appearance="outline">
-        <mat-select>
-          <mat-option>dsfasdf</mat-option>
+        <mat-select
+          [(value)]="selected"
+          #departmentSelect
+          (selectionChange)="onDepartmentSelect()"
+        >
+          <mat-option
+            *ngFor="let department of departments"
+            [value]="department"
+            >{{ department }}</mat-option
+          >
         </mat-select>
       </mat-form-field>
     </div>
     <div class="button-group">
-      <app-ru-button [bText]="'Reset'" [bClass]="'reset'"></app-ru-button>
+      <app-ru-button
+        [bText]="'Reset'"
+        [bClass]="'reset'"
+        (btnClick)="reset()"
+      ></app-ru-button>
       <app-ru-button
         [bText]="'Search'"
         [bIcon]="'search'"
@@ -34,24 +46,25 @@
   </mat-card-content>
 </div>
 
-<div class="wrapper">
-  <div class="cards_wrap">
-    <mat-card class="card_item" *ngFor="let item of item">
-      <div class="hover-img">
-        
-      </div>
-      <img src="../../../../assets/default/default_male.jpg" />
-      <mat-card-title class="name">{{ "arpit" | titlecase }}</mat-card-title>
-      <mat-card-subtitle class="post_name">Chadwick Boseman</mat-card-subtitle>
-      <mat-card-subtitle class="email">
-        <mat-icon>alternate_email</mat-icon>
-        <a> {{ "arpit.dwiveid@appinventiv.com" }}</a>
-      </mat-card-subtitle>
-      <mat-card-subtitle class="cake">
-        <mat-icon>cake</mat-icon>
-        {{ "29/06" }}
-      </mat-card-subtitle>
-      <div class="hover"></div>
-    </mat-card>
+<div class="card-container">
+  <div class="card" *ngFor="let employee of filteredData">
+    <div class="background"></div>
+    <div class="card-image">
+      <img
+        class=".picture"
+        src="../../../../assets/employees/profile_1584437739.jpg"
+      />
+    </div>
+    <mat-card-title class="name">{{ employee?.name }}</mat-card-title>
+    <mat-card-subtitle class="post_name">Chadwick Boseman</mat-card-subtitle>
+    <mat-card-subtitle class="email">
+      <mat-icon>alternate_email</mat-icon>
+      <a> {{ employee?.email }}</a>
+    </mat-card-subtitle>
+    <mat-card-subtitle class="cake">
+      <mat-icon>cake</mat-icon>
+      <span>{{ "29/06" }}</span>
+    </mat-card-subtitle>
+    <div class="social"></div>
   </div>
 </div>

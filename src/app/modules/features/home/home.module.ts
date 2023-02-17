@@ -5,11 +5,24 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { MatCardModule } from '@angular/material/card';
 import { RuJobCardModule } from '../../common/modules/ru-job-card/ru-job-card.module';
+import { MatDividerModule } from '@angular/material/divider';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { MatIconModule } from '@angular/material/icon';
+import { RuButtonModule } from '../../common/modules/ru-button/ru-button.module';
+import { RoutingModule } from 'src/app/pipes/routing/routing.module';
 
-const MATERIAL = [MatCardModule ];
+const MATERIAL = [MatCardModule, MatDividerModule, MatIconModule];
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [CommonModule, HomeRoutingModule , RuJobCardModule , ...MATERIAL],
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    CarouselModule,
+    RuButtonModule,
+    RoutingModule,
+    RuJobCardModule,
+    ...MATERIAL,
+  ],
 })
 export class HomeModule {}

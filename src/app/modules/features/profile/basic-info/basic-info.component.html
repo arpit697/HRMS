@@ -1,23 +1,23 @@
 <mat-card class="basic-info-main">
   <mat-card-title>{{ "basic information" | titlecase }}</mat-card-title>
-  <div class="card" [formGroup]="basicInfoForm">
+  <div class="card">
     <div class="col-3">
       <div class="field">
         <label>First Name</label>
         <mat-form-field appearance="outline">
-          <input matInput formControlName="first_name" />
+          <input matInput />
         </mat-form-field>
       </div>
       <div class="field">
         <label>Last Name</label>
         <mat-form-field appearance="outline">
-          <input matInput formControlName="last_name" />
+          <input matInput />
         </mat-form-field>
       </div>
       <div class="field">
         <label>Date of Birth</label>
         <mat-form-field appearance="outline">
-          <input matInput formControlName="date_of_birth" />
+          <input matInput />
         </mat-form-field>
       </div>
     </div>
@@ -25,23 +25,23 @@
       <div class="field">
         <label>Gender</label>
         <mat-form-field appearance="outline">
-          <input matInput formControlName="gender" />
+          <input matInput />
         </mat-form-field>
       </div>
       <div class="field">
         <label>Marital Status</label>
         <mat-form-field appearance="outline">
-          <input matInput formControlName="marital_status" />
+          <input matInput />
         </mat-form-field>
       </div>
       <div class="field">
         <label>Contact Number</label>
         <mat-form-field appearance="outline">
-          <input matInput formControlName="contact_number" />
+          <input matInput />
         </mat-form-field>
       </div>
     </div>
-    <div class="col-2">
+    <div class="col-2 exp">
       <div class="row-2">
         <label>Total Working Experience</label>
         <div class="col-2">
@@ -84,7 +84,8 @@
       </mat-form-field>
     </div>
     <div>
-      <app-ru-button [bText]="'Submit'"></app-ru-button>
+      <app-ru-button [bText]="'Submit'" [bClass]="'save'"></app-ru-button>
     </div>
   </div>
 </mat-card>
+

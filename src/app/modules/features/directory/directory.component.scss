@@ -34,131 +34,115 @@
   margin-bottom: 30px;
 }
 
-$color_1: #fff;
-$color_2: black;
-$color_3: #b6c0c2;
-$color_4: #7b8ca0;
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
 
-.wrapper {
-  .header {
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  background-color: #f7f5ec;
+  .social {
+    height: 1em;
     width: 100%;
-    height: 50px;
-    background: #e36686;
-    color: $color_1;
-    text-align: center;
+    padding: 0;
+    margin: 0;
+    background-color: #1369ce;
+    position: absolute;
+    bottom: -0.5em;
+    left: 0;
+    transition: all 0.5s ease 0s;
+  }
+  .background {
+    height: 30%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    z-index: -1;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #1369ce;
+    position: absolute;
+    top: -0.5em;
+    left: 0;
+    transition: all 0.5s ease 0s;
+  }
+  .post_name{
+    margin-top: 1em;
+  }
+  .email {
+    margin-top: 1em;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-weight: 900;
+    gap: 0.5em;
+  }
+  .cake {
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    span{
+      margin-top: 6px;
+    }
   }
 }
-.cards_wrap {
-  width: 100%;
+
+.card:hover {
+  transform: scale(1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  img {
+    box-shadow: 0 0 0 14px #f7f5ec;
+    transform: scale(0.7);
+  }
+  .background {
+    top: 0;
+  }
+  .social {
+    bottom: 0;
+  }
+}
+
+.card-image {
+  background-color: #1369ce;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  .card_item {
-    margin-bottom: 2em;
-    padding-top: 2em;
-    width: 30%;
-    background-color: #f7f5ec;
-    position: relative;
-    .hover {
-      position: absolute;
-      width: 100%;
-      background-color: #1369ce;
-      bottom: 0;
-    }
-    .hover-img {
-      position: absolute;
-      width: 100%;
-      background-color: #1369ce;
-      z-index: 0;
-      top: 0;
-      border-bottom-left-radius: 50%;
-      border-bottom-right-radius: 50%;
-    }
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  height: 130px;
+  width: 130px;
+  margin-bottom: 20px;
+  z-index: 1;
+  position: relative;
+  img {
+    width: 100%;
+    height: 130px;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: all 0.9s ease 0s;
+  }
+}
 
-    &:hover {
-      .hover-img {
-        height: 30%;
-      }
-      .hover {
-        height: 1.5em;
-      }
-    }
+@media (max-width: 768px) {
+  .search-n-filter {
+    grid-template-columns: auto;
+    gap: 0;
+  }
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-    img {
-      z-index: 1;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 50%;
-      width: 130px;
-      height: 130px;
-      margin-bottom: 5px;
-      border-radius: 50%;
-    }
-    .name {
-      font-weight: 900;
-      letter-spacing: 2px;
-      font-size: 20px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-align: center;
-      margin-bottom: 1em;
-    }
-    .post_name {
-      margin-bottom: 1em;
-      text-align: center;
-      overflow: hidden;
-    }
-    .cake,
-    .email {
-      margin-bottom: 1em;
-      display: grid;
-      grid-template-columns: 2em auto;
-      align-items: center;
-      word-break: break-word;
-    }
-    .cake {
-      padding-bottom: 1em;
-    }
-  }
-}
-@media screen and (max-width: 1024px) {
-  .cards_wrap {
-    .card_item {
-      width: 33%;
-    }
-  }
-}
-@media screen and (max-width: 768px) {
-  .cards_wrap {
-    .card_item {
-      width: 45%;
-    }
-  }
-  .wrapper {
-    .header {
-      font-size: 16px;
-      height: 60px;
-    }
-  }
-}
-@media screen and (max-width: 568px) {
-  .cards_wrap {
-    .card_item {
-      width: 100%;
-    }
-  }
-  .wrapper {
-    .header {
-      font-size: 14px;
-    }
+@media (max-width: 576px) {
+  .card-container {
+    grid-template-columns: 1fr;
   }
 }

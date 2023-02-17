@@ -8,7 +8,7 @@ export class HeaderComponent implements OnInit {
   isExpanded: boolean = true;
   @Output () dataEvent =  new EventEmitter<any>();
   ngOnInit() {}
-
+  
   isExpendedValue(){
     this.isExpanded = !this.isExpanded
     this.dataEvent.emit(this.isExpanded);

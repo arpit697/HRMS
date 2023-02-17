@@ -6,7 +6,7 @@
         <label> Browse </label>
       </div>
       <div class="field">
-        <input class="custom-file-input" type="file" />
+        <input class="custom-file-input"  (change)="readURL($event);" type="file" />
       </div>
     </div>
   
@@ -16,11 +16,12 @@
           Upload files only : gif, png , jpg , jpeg
         </mat-card-subtitle>
       </small>
-      <img src="../../../../../assets/default/default_male.jpg" alt="User Image" />
+      
+      <img  [src]="imageSrc || '../../../../../assets/default/default_male.jpg'" alt="User Image" />
     </div>
   
     <div>
-      <app-ru-button [bText]="'Save'"> </app-ru-button>
+      <app-ru-button [bText]="'Save'" [bClass]="'save'"> </app-ru-button>
     </div>
   </div>
 </mat-card>

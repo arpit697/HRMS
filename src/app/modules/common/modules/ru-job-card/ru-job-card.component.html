@@ -29,16 +29,16 @@
   <div class="openings-experience">
     <div>
       <mat-card-subtitle>No.of Openings</mat-card-subtitle>
-      <mat-card-subtitle> 4 </mat-card-subtitle>
+      <mat-card-subtitle> <ng-content slelct=".opening_count"></ng-content> </mat-card-subtitle>
     </div>
     <div>
       <mat-card-subtitle>Experience</mat-card-subtitle>
-      <mat-card-subtitle> 3 to 5 years </mat-card-subtitle>
+      <mat-card-subtitle> <ng-content select=".from"></ng-content> to <ng-content select=".to"></ng-content> years </mat-card-subtitle>
     </div>
   </div>
   <mat-divider></mat-divider>
-  <div class="action-buttons">
-    <button>asdfasdf</button>
-    <button>asdfasdf</button>
-  </div>
+  <mat-card-actions class="action-buttons">
+    <app-ru-button [bText] ="'View Details'" [bClass]="'view-detail'"></app-ru-button>
+    <app-ru-button [bText]="'Refer a Candidate'" [bClass]="'refer-candidate'"></app-ru-button>
+  </mat-card-actions>
 </mat-card>

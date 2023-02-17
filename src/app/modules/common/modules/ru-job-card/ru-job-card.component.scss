@@ -1,20 +1,19 @@
 mat-card {
   padding: 1em;
   border-radius: 0.7em !important;
+  border: 1px solid #e3e5e9;
 }
 .img-background {
   border-radius: 0.7em !important;
   min-height: 180px;
+  padding-top: 1em;
+  padding-bottom: 1em;
   background-color: #f3f7fc;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  gap: 0.5em;
-  .card-image {
-    max-height: 102px;
-    max-width: 102px;
-  }
+  gap: 1em;
   .location-date {
     width: 100%;
     display: flex;
@@ -55,7 +54,9 @@ mat-card {
 }
 
 .action-buttons {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 5em;
+  margin-top: 1em;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5em;
 }

@@ -25,3 +25,24 @@ mat-card-subtitle {
     }
   }
 }
+
+.qualifiction-table-card {
+  margin-top: 1em;
+  mat-card-title {
+    font-size: 20px;
+    color: #3246d3;
+    font-family: "Segoe UI";
+    padding: 11px 25px 11px 15px;
+    border-bottom: 1px solid #f3f7fc;
+    font-weight: 700;
+  }
+  .table {
+    padding: 24px;
+  }
+}
+
+@media all and (max-width: 50em) {
+  .col-2{
+    grid-template-columns: auto;
+  }
+}

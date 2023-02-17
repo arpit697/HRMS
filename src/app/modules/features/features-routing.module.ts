@@ -15,6 +15,11 @@ const routes: Routes = [
     component: FeaturesComponent,
     children: [
       {
+        path: '',
+        redirectTo: HOME.path,
+        pathMatch: 'full',
+      },
+      {
         path: HOME.path,
         loadChildren: () =>
           import('./home/home.module').then((m) => m.HomeModule),

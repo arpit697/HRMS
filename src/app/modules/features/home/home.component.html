@@ -10,4 +10,117 @@
   </div>
 </div>
 
+<div class="upper-card">
+  <mat-card class="opening-refer">
+    <div class="latest-job-openings">
+      <div class="heading">
+        <mat-card-title>Latest Job Openings</mat-card-title>
+        <app-ru-button
+          [bText]="'View All'"
+          [bClass]="'btn-primary'"
+          [routerLink]="'JOB_OPENINGS' | routing"
+        ></app-ru-button>
+      </div>
+      <div class="carousel-container">
+        <div class="job-opening-wrapper">
+          <mat-card class="job-card">
+            <owl-carousel-o [options]="topCarouselLeft">
+              <ng-template carouselSlide *ngFor="let item of openings">
+                <app-ru-job-card>
+                  <img class="card-image" src="{{ item.tech_image }}" alt="" />
+                  <span class="location_name">{{ item.location }}</span>
+                  <span class="date">{{ item.release_date }}</span>
+                  <span class="designation_name">{{ item.tech_name }}</span>
+                  <span class="tech_name">{{ item.tech_name }}</span>
+                  <span class="description">{{ item.description }}</span>
+                  <span class="opening_count">{{ item.opening_count }}</span>
+                  <span class="from">{{ item.experience.from }}</span>
+                  <span class="to">{{ item.experience.to }}</span>
+                </app-ru-job-card>
+              </ng-template>
+            </owl-carousel-o>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+    <div class="referral-bonus">
+      <div class="">
+        <mat-card-title class="ref-bonus-heading"
+          >OUR REFERRAL BONUS PROGRAM</mat-card-title
+        >
+      </div>
+      <mat-card class="list-container">
+        <ul>
+          <li>
+            <mat-card-title class="money">2K</mat-card-title>
+            <mat-card-subtitle class="ref-bonus"
+              >Referral Bonus</mat-card-subtitle
+            >
+            <mat-card-subtitle class="exp-req"
+              >For 3 to 5 Years of experience</mat-card-subtitle
+            >
+          </li>
+          <li>
+            <mat-card-title class="money">5K</mat-card-title>
+            <mat-card-subtitle class="ref-bonus"
+              >Referral Bonus</mat-card-subtitle
+            >
+            <mat-card-subtitle class="exp-req"
+              >For 5 to 9 Years of experience</mat-card-subtitle
+            >
+          </li>
+          <li>
+            <mat-card-title class="money">10K</mat-card-title>
+            <mat-card-subtitle class="ref-bonus"
+              >Referral Bonus</mat-card-subtitle
+            >
+            <mat-card-subtitle class="exp-req"
+              >For 9+ Years of experience</mat-card-subtitle
+            >
+          </li>
+        </ul>
+      </mat-card>
+    </div>
+  </mat-card>
 
+  <mat-card class="carousel-right">
+    <mat-card-title class="heading">New Family Members</mat-card-title>
+    <mat-card class="new-member-wrapper">
+      <owl-carousel-o [options]="topCarouselRight">
+        <ng-container *ngFor="let item of newEmployee">
+          <ng-template carouselSlide>
+            <div class="member-card">
+              <img class="new-employee-image" src="{{ item }}" alt="" />
+              <mat-card-title>Something</mat-card-title>
+              <mat-card-subtitle
+                >Social Media Marketing : Social Media Team</mat-card-subtitle
+              >
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </mat-card>
+  </mat-card>
+</div>
+<br />
+<br /><br />
+<mat-card class="card-bottom">
+  <div class="heading">
+    <mat-card-title>New Family Members</mat-card-title>
+    <!-- <div>
+      <mat-icon>chevron_left</mat-icon>
+      <mat-icon>chevron_right</mat-icon>
+    </div> -->
+  </div>
+  <div>
+    <owl-carousel-o [options]="bottomCarousel">
+      <ng-container *ngFor="let slide of gallery">
+        <ng-template carouselSlide>
+          <div class="image-wrapper">
+            <img class="gallery-image" src="{{ slide }}" />
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+</mat-card>

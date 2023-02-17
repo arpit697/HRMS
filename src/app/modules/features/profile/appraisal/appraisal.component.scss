@@ -16,7 +16,16 @@ mat-card-subtitle {
 mat-card {
   padding: 24px;
 }
+.not-allowed:hover{
+  cursor:not-allowed
+}
 
 .col-2{
     gap: 2em;
+}
+
+@media all and (max-width: 50em){
+  .col-2{
+    grid-template-columns: auto;
+  }
 }
