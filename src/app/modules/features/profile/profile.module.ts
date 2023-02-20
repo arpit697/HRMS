@@ -21,6 +21,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RuTableModule } from '../../common/modules/ru-table/ru-table.module';
+import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
+import { ValidationCheckModule } from 'src/app/pipes/validation-check/validation-check.module';
 const MATERIAL = [
   MatCardModule,
   MatListModule,
@@ -47,6 +49,8 @@ const MATERIAL = [
     CommonModule,
     ProfileRoutingModule,
     ReactiveFormsModule,
+    GetControlModule,
+    ValidationCheckModule,
     RuButtonModule,
     RuTableModule,
     ...MATERIAL,

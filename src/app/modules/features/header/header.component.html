@@ -25,9 +25,12 @@
           {{ "arpit dwivedi" }}
         </mat-card-subtitle>
         <img
-          class="user-image"
-          src="../../../../assets/default/default_male.jpg"
-          alt=""
+        class="user-image"
+          [src]="
+            utility.uploadedProfilePicture ||
+            '../../../../../assets/default/default_male.jpg'
+          "
+          alt="User Image"
         />
         <mat-icon>expand_more</mat-icon>
         <mat-menu class="menu" #menu="matMenu">

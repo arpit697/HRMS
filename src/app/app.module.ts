@@ -10,6 +10,7 @@ import {
 } from '@abacritt/angularx-social-login';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { GetClassesAndAttributeDirective } from './directives/get-class-attribute/get-classes-and-attribute.directive';
 const MATERIAL = [MatSnackBarModule];
 @NgModule({
   declarations: [AppComponent],

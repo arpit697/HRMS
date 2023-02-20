@@ -299,3 +299,13 @@ export const DEPARTMENTS = [
   'House Keeping',
   'HR',
 ];
+
+export const GENDERS = ['male', 'female', 'third gender'];
+
+export const MARITAL_STATUS = [
+  'single',
+  'married',
+  'widowed',
+  'divorced',
+  'registered partnership',
+];

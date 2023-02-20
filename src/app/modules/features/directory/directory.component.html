@@ -50,10 +50,7 @@
   <div class="card" *ngFor="let employee of filteredData">
     <div class="background"></div>
     <div class="card-image">
-      <img
-        class=".picture"
-        src="../../../../assets/employees/profile_1584437739.jpg"
-      />
+      <img class=".picture" src="../../../../assets/default/default_male.jpg" />
     </div>
     <mat-card-title class="name">{{ employee?.name }}</mat-card-title>
     <mat-card-subtitle class="post_name">Chadwick Boseman</mat-card-subtitle>
@@ -68,3 +65,7 @@
     <div class="social"></div>
   </div>
 </div>
+
+<mat-card-title class="no-result" *ngIf="this.filteredData.length == 0">{{
+  "no result found !" | titlecase
+}}</mat-card-title>

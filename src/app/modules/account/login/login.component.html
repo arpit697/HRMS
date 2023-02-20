@@ -2,8 +2,5 @@
   <app-google-login *ngIf="screen"></app-google-login>
   <app-credential-login *ngIf="!screen"></app-credential-login>
 </mat-card>
-<app-ru-button
-  (btnClick)="switch()"
-  [bText]="text"
-  [bClass]="'login-with'"
-></app-ru-button>
+
+<button  class="login-with" mat-raised-button (click)="switch()">{{text}}</button>

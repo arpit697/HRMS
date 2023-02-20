@@ -19,7 +19,7 @@
     .media-body {
       padding: 0;
       line-height: 1.5em;
-
+      margin-left: 2em;
       mat-card-title {
         font-size: xx-large;
         line-height: 2em;
@@ -89,7 +89,8 @@
     .media {
       grid-template-columns: auto;
       text-align: center;
-      img{
+      margin-left: none;
+      img {
         display: block;
         margin-left: auto;
         margin-right: auto;

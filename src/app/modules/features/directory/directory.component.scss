@@ -73,7 +73,7 @@
     left: 0;
     transition: all 0.5s ease 0s;
   }
-  .post_name{
+  .post_name {
     margin-top: 1em;
   }
   .email {
@@ -87,7 +87,7 @@
     display: flex;
     align-items: center;
     gap: 0.5em;
-    span{
+    span {
       margin-top: 6px;
     }
   }
@@ -129,6 +129,11 @@
     transform: scale(1);
     transition: all 0.9s ease 0s;
   }
+}
+
+.no-result {
+  text-align: center;
+  font-size: 1.7em;
 }
 
 @media (max-width: 768px) {

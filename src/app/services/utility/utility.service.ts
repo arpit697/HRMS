@@ -20,13 +20,13 @@ export class UtilityService {
         .get('https://api.ipify.org?format=json')
         .toPromise();
       ipAddress = res.ip;
-    
     } catch (error) {
       console.error(error);
     }
     return ipAddress;
   }
 
+  uploadedProfilePicture: any = '';
   // get ipAddress() {
   //   let ipAddress;
   //   this.http.get('https://api.ipify.org?format=json').subscribe((res: any) => {

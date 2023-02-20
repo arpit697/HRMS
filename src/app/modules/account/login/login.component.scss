@@ -6,3 +6,14 @@ mat-card {
   padding: 0;
 }
 
+.login-with {
+  word-break: break-word;
+  width: 100%;
+  border: none;
+  background-color: var(--spiro) !important;
+  font-size: 0.9em;
+  color: var(--white) !important;
+  text-transform: uppercase;
+  padding: 1em;
+  border-radius: 0.125rem;
+}

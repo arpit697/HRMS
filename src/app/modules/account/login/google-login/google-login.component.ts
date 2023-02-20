@@ -6,6 +6,7 @@ import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FEATURES } from 'src/app/constants/routes';
+import { UtilityService } from 'src/app/services/utility/utility.service';
 
 @Component({
   selector: 'app-google-login',
@@ -17,7 +18,8 @@ export class GoogleLoginComponent implements OnInit {
   user!: any;
   constructor(
     private authService: SocialAuthService,
-    private _router: Router
+    private _router: Router , 
+    private _utility : UtilityService
   ) {}
 
   ngOnInit(): void {
@@ -26,6 +28,7 @@ export class GoogleLoginComponent implements OnInit {
       if (user != null) {
         sessionStorage.setItem('login', JSON.stringify(true));
         this._router.navigate([FEATURES.path]);
+        this._utility.bar('login successfully', '', 'green-snackbar');
       }
     });
   }

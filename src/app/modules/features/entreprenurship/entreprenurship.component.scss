@@ -1,9 +1,9 @@
 p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 .container {
   margin-left: 176px;
@@ -22,6 +22,9 @@ p {
       max-width: 512px;
       z-index: 1;
     }
+    .hero-button {
+      margin-top: 1em;
+    }
     .hero-media {
       position: relative;
       .hero-media-illustration {
@@ -31,7 +34,7 @@ p {
       }
       .header-illustration {
         display: none;
-    }
+      }
       .hero-media-container {
         position: relative;
         .hero-media-image {

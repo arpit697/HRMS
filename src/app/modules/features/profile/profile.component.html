@@ -1,6 +1,10 @@
 <div class="profile-container">
   <mat-card class="media">
-    <img src="assets/default/default_male.jpg" alt="" />
+    <img
+    
+        [src]="utility.uploadedProfilePicture || '../../../../../assets/default/default_male.jpg'"
+        alt="User Image"
+      />
     <mat-card-content class="media-body">
       <mat-card-title>
         {{ empDetail.full_name | titlecase }}

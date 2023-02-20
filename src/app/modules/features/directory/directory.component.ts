@@ -73,6 +73,8 @@ export class DirectoryComponent implements OnInit, AfterViewInit {
       });
 
       this.filteredData = filteredData;
+      console.log(this.filteredData);
+      
     });
   }
 

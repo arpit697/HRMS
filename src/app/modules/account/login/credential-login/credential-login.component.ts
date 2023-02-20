@@ -1,5 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  Renderer2,
+  RendererFactory2,
+} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FEATURES } from 'src/app/constants/routes';
 import { FormValidationService } from 'src/app/services/forms/form.validation.service';
 import { UtilityService } from 'src/app/services/utility/utility.service';
 
@@ -8,22 +18,33 @@ import { UtilityService } from 'src/app/services/utility/utility.service';
   templateUrl: './credential-login.component.html',
   styleUrls: ['./credential-login.component.scss'],
 })
-export class CredentialLoginComponent implements OnInit {
+export class CredentialLoginComponent implements OnInit, AfterViewInit {
   hide = true;
   loginForm!: FormGroup;
-
+  @ViewChild('formField', { read: ElementRef }) formField!: ElementRef;
   constructor(
     public utility: UtilityService,
     private _formBuilder: FormBuilder,
-    private _formValidation: FormValidationService
+    private _formValidation: FormValidationService,
+    private _router: Router,
+    private rendererFactory: RendererFactory2
   ) {}
+  ngAfterViewInit(): void {
+    const renderer = this.rendererFactory.createRenderer(null, null);
+    const classList = Array.from(
+      renderer.selectRootElement(this.formField.nativeElement).classList
+    );
+    console.log(classList);
+  }
 
   ngOnInit(): void {
     this.createForm();
   }
   login() {
     if (this.loginForm.valid) {
-      this.utility.bar('login successfull', '', 'green-snackbar');
+      sessionStorage.setItem('login', JSON.stringify(true));
+      this.utility.bar('login successfully', '', 'green-snackbar');
+      this._router.navigate([FEATURES.path]);
     } else {
       this.utility.bar('invalid form field', '', 'red-snackbar');
     }

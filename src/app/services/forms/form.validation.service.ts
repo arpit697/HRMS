@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { PATTERN } from 'src/app/constants/validations/pattern';
 import { VALIDATION_CRITERIA } from 'src/app/constants/validations/validation.criteria';
-
+import { AbstractControl, ValidatorFn } from '@angular/forms';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FormValidationService {
-
-  constructor() { }
+  constructor() {}
 
   VALIDATION = {
     emptyControl: [],
@@ -18,11 +17,16 @@ export class FormValidationService {
       Validators.minLength(VALIDATION_CRITERIA.nameMinLength),
       Validators.maxLength(VALIDATION_CRITERIA.nameMaxLength),
     ],
+    last_name: [Validators.pattern(PATTERN.last_name)],
+    address: [Validators.pattern(PATTERN.address)],
+    month: [],
+    year: [],
     phone: [
       Validators.pattern(PATTERN.phoneNumber),
       Validators.minLength(VALIDATION_CRITERIA.phoneMinLength),
       Validators.maxLength(VALIDATION_CRITERIA.phoneMaxLength),
     ],
+
     email: [
       Validators.required,
       Validators.pattern(PATTERN.email),
@@ -41,4 +45,36 @@ export class FormValidationService {
       Validators.maxLength(VALIDATION_CRITERIA.passwordMaxLength),
     ],
   };
+
+  minMaxDateValidator(minDate: Date, maxDate: Date): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const date = control.value;
+
+      if (date && (date < minDate || date > maxDate)) {
+        return { minMaxDateInvalid: { value: control.value } };
+      }
+
+      return null;
+    };
+  }
+
+  birthdayValidator(minAge: number, maxAge: number): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const birthday = new Date(control.value);
+      const now = new Date();
+      let age = now.getFullYear() - birthday.getFullYear();
+      birthday.setFullYear(now.getFullYear());
+
+      if (birthday > now) {
+        birthday.setFullYear(now.getFullYear() - 1);
+        age--;
+      }
+
+      if (age < minAge || age > maxAge) {
+        return { birthdayInvalid: { value: control.value } };
+      }
+
+      return null;
+    };
+  }
 }

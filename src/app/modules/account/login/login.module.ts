@@ -15,11 +15,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationCheckModule } from 'src/app/pipes/validation-check/validation-check.module';
 import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 const MATERIAL = [
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
-  MatIconModule
+  MatIconModule,
+  MatButtonModule
 ];
 
 @NgModule({

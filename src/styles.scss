@@ -63,6 +63,14 @@ body {
   border-bottom-color: var(--spiro);
 }
 
+.cdk-text-field-autofill-monitored{
+  background-color: #26b4ff;
+}
+
+.mat-form-field-underline{
+  display: none !important;
+}
+
 mat-error {
   font-size: 0.8em;
 }
@@ -79,13 +87,13 @@ mat-card-content {
   padding: 0;
 }
 
-//snck bar custom class
+//snack bar custom class
 .green-snackbar {
   &.mat-mdc-snack-bar-container .mdc-snackbar__surface {
     background-color: green !important;
   }
   &.mat-mdc-snack-bar-container .mdc-snackbar__label {
-    color: white;
+   color: white;
     &::before {
       content: "✔";
     }

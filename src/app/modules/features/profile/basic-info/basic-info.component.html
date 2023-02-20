@@ -1,23 +1,52 @@
-<mat-card class="basic-info-main">
+<mat-card [formGroup]="basicInfoForm" class="basic-info-main">
   <mat-card-title>{{ "basic information" | titlecase }}</mat-card-title>
   <div class="card">
     <div class="col-3">
       <div class="field">
         <label>First Name</label>
         <mat-form-field appearance="outline">
-          <input matInput />
+          <input matInput formControlName="first_name" />
+          <mat-error>{{
+            basicInfoForm
+              | getControl : ["first_name"]
+              | validationCheck : "first name"
+          }}</mat-error>
         </mat-form-field>
       </div>
       <div class="field">
         <label>Last Name</label>
         <mat-form-field appearance="outline">
-          <input matInput />
+          <input matInput formControlName="last_name" />
+          <mat-error>{{
+            basicInfoForm
+              | getControl : ["last_name"]
+              | validationCheck : "last name"
+          }}</mat-error>
         </mat-form-field>
       </div>
       <div class="field">
         <label>Date of Birth</label>
         <mat-form-field appearance="outline">
-          <input matInput />
+          <input
+            matInput
+            [matDatepicker]="birthdayPicker"
+            formControlName="birthday"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="birthdayPicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #birthdayPicker></mat-datepicker>
+          <mat-error
+            *ngIf="
+              basicInfoForm.get('birthday')?.hasError('matDatepickerParse')
+            "
+            >Invalid date format</mat-error
+          >
+          <mat-error
+            *ngIf="basicInfoForm.get('birthday')?.hasError('birthdayInvalid')"
+            >Age must be between 18 and 65</mat-error
+          >
         </mat-form-field>
       </div>
     </div>
@@ -25,19 +54,34 @@
       <div class="field">
         <label>Gender</label>
         <mat-form-field appearance="outline">
-          <input matInput />
+          <mat-select formControlName="gender">
+            <mat-option *ngFor="let gender of genders" value="{{ gender }}">{{
+              gender | titlecase
+            }}</mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
       <div class="field">
         <label>Marital Status</label>
         <mat-form-field appearance="outline">
-          <input matInput />
+          <mat-select formControlName="marital_status">
+            <mat-option
+              *ngFor="let status of marital_status"
+              value="{{ status }}"
+              >{{ status | titlecase }}</mat-option
+            >
+          </mat-select>
         </mat-form-field>
       </div>
       <div class="field">
         <label>Contact Number</label>
         <mat-form-field appearance="outline">
-          <input matInput />
+          <input matInput formControlName="contact_number" />
+          <mat-error>{{
+            basicInfoForm
+              | getControl : ["contact_number"]
+              | validationCheck : "phone"
+          }}</mat-error>
         </mat-form-field>
       </div>
     </div>
@@ -48,13 +92,13 @@
           <div class="field">
             <label>Years</label>
             <mat-form-field appearance="outline">
-              <input matInput />
+              <input matInput min="1" max="60" formControlName="working_experience_year"/>
             </mat-form-field>
           </div>
           <div class="field">
             <label>Months</label>
             <mat-form-field appearance="outline">
-              <input matInput />
+              <input matInput formControlName="working_experience_month"/>
             </mat-form-field>
           </div>
         </div>
@@ -65,13 +109,13 @@
           <div class="field">
             <label>Years</label>
             <mat-form-field appearance="outline">
-              <input matInput />
+              <input matInput formControlName="relevant_experience_year" />
             </mat-form-field>
           </div>
           <div class="field">
             <label>Months</label>
             <mat-form-field appearance="outline">
-              <input matInput />
+              <input matInput formControlName="relevant_experience_month"/>
             </mat-form-field>
           </div>
         </div>
@@ -80,12 +124,18 @@
     <div class="col-1">
       <label>Address</label>
       <mat-form-field appearance="outline">
-        <textarea matInput></textarea>
+        <textarea matInput formControlName="address"></textarea>
+        <mat-error>{{
+          basicInfoForm | getControl : ["address"] | validationCheck : "address"
+        }}</mat-error>
       </mat-form-field>
     </div>
     <div>
-      <app-ru-button [bText]="'Submit'" [bClass]="'save'"></app-ru-button>
+      <app-ru-button
+        [bText]="'Submit'"
+        [bClass]="'save'"
+        (btnClick)="submitHandler()"
+      ></app-ru-button>
     </div>
   </div>
 </mat-card>
-
