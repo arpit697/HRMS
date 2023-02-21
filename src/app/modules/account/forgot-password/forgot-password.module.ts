@@ -11,11 +11,13 @@ import { MatDividerModule } from '@angular/material/divider';
 import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationCheckModule } from 'src/app/pipes/validation-check/validation-check.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 const MATERIAL = [
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
   MatDividerModule,
+  MatButtonModule
 ];
 
 @NgModule({

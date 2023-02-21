@@ -38,7 +38,6 @@ export class ChangePassComponent implements OnInit {
           '',
           'green-snackbar'
         );
-
         this.resetPasswordForm.reset();
       } else {
         this._utility.bar('form fields are not valid', '', 'red-snackbar');

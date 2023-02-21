@@ -37,10 +37,22 @@ export class BasicInfoComponent implements OnInit {
       gender: ['male'],
       marital_status: ['single'],
       contact_number: [7071520965, [...this._formValidation.VALIDATION.phone]],
-      working_experience_year: [0],
-      working_experience_month: [0],
-      relevant_experience_year: [0],
-      relevant_experience_month: [0],
+      working_experience_year: [
+        0,
+        [this._formValidation.numberRangeValidator(0, 50)],
+      ],
+      working_experience_month: [
+        0,
+        [this._formValidation.numberRangeValidator(0, 12)],
+      ],
+      relevant_experience_year: [
+        0,
+        [this._formValidation.numberRangeValidator(0, 50)],
+      ],
+      relevant_experience_month: [
+        0,
+        [this._formValidation.numberRangeValidator(0, 12)],
+      ],
       address: ['Noida Sector 4', [...this._formValidation.VALIDATION.address]],
     });
   }

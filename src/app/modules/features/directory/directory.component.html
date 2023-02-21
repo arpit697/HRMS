@@ -32,21 +32,15 @@
       </mat-form-field>
     </div>
     <div class="button-group">
-      <app-ru-button
-        [bText]="'Reset'"
-        [bClass]="'reset'"
-        (btnClick)="reset()"
-      ></app-ru-button>
-      <app-ru-button
-        [bText]="'Search'"
-        [bIcon]="'search'"
-        [bClass]="'search'"
-      ></app-ru-button>
+      <button mat-raised-button class="reset" (click)="reset()">{{ "Reset" }}</button>
+      <button mat-raised-button class="search" (click)="search()">
+        <mat-icon>search</mat-icon>{{ "Search" }}
+      </button>
     </div>
   </mat-card-content>
 </div>
 
-<div class="card-container">
+<div class="card-container" *ngIf="loading == false">
   <div class="card" *ngFor="let employee of filteredData">
     <div class="background"></div>
     <div class="card-image">
@@ -65,6 +59,8 @@
     <div class="social"></div>
   </div>
 </div>
+
+<div class="loading" [class.spinner]="loading" *ngIf="loading == true"></div>
 
 <mat-card-title class="no-result" *ngIf="this.filteredData.length == 0">{{
   "no result found !" | titlecase

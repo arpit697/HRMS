@@ -77,4 +77,21 @@ export class FormValidationService {
       return null;
     };
   }
+
+  numberRangeValidator(min: number, max: number): ValidatorFn {
+    return (control: AbstractControl): {[key: string]: any} | null => {
+      const value = control.value;
+      if (value === null || value === undefined || value === '') {
+        // Return null if the value is not set
+        return null;
+      }
+      const num = Number(value);
+      if (isNaN(num) || num < min || num > max) {
+        // Return an error object if the value is not a number or is outside the range
+        return { 'numberRange': true };
+      }
+      // Return null if the value is valid
+      return null;
+    };
+  }
 }

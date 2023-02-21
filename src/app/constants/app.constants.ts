@@ -20,7 +20,7 @@ export const SIDE_NAV_ITEM = [
       {
         icon: 'travel_explore',
         name: 'Explore',
-        router_link: 'ENTREPRENURSHIP',
+        router_link: 'ENTREPRENEURSHIP',
       },
     ],
   },

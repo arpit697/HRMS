@@ -16,8 +16,9 @@ import { DEPARTMENTS, EMPLOYEE_DATA } from 'src/app/constants/app.constants';
 })
 export class DirectoryComponent implements OnInit, AfterViewInit {
   selected!: string;
+  loading = false;
   ngAfterViewInit(): void {
-    this.searchFun();
+    this.search()
   }
   departments!: string[];
   employeeData: any[] = [];
@@ -43,7 +44,7 @@ export class DirectoryComponent implements OnInit, AfterViewInit {
       );
     }
   }
-
+  
   searchFun() {
     const searchInput = this.searchInput.nativeElement;
     const searchTerm$ = fromEvent(searchInput, 'input').pipe(
@@ -71,11 +72,12 @@ export class DirectoryComponent implements OnInit, AfterViewInit {
         }
         return false;
       });
-
       this.filteredData = filteredData;
-      console.log(this.filteredData);
-      
     });
+  }
+
+  search() {
+    this.searchFun();
   }
 
   reset() {

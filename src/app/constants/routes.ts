@@ -48,8 +48,15 @@ export const DIRECTORY: RouteInterface = {
   },
 };
 
-export const ENTREPRENURSHIP: RouteInterface = {
-  path: 'entreprenurship',
+export const ENTREPRENEURSHIP: RouteInterface = {
+  path: 'entrepreneurship',
+  get fullUrl(): string {
+    return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
+
+export const MY_LINKS: RouteInterface = {
+  path: 'my-links',
   get fullUrl(): string {
     return `${FEATURES.fullUrl}/${this.path}`;
   },

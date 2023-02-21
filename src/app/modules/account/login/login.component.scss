@@ -11,9 +11,16 @@ mat-card {
   width: 100%;
   border: none;
   background-color: var(--spiro) !important;
-  font-size: 0.9em;
+  
   color: var(--white) !important;
   text-transform: uppercase;
   padding: 1em;
   border-radius: 0.125rem;
+}
+
+@media all and (max-width: 17em) {
+  .login-with {
+    height: 20px;
+    font-size: 1em;
+  }
 }

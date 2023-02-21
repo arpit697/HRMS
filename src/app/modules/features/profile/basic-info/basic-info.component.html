@@ -92,13 +92,29 @@
           <div class="field">
             <label>Years</label>
             <mat-form-field appearance="outline">
-              <input matInput min="1" max="60" formControlName="working_experience_year"/>
+              <input matInput formControlName="working_experience_year" />
+              <mat-error
+                *ngIf="
+                  basicInfoForm
+                    .get('working_experience_year')
+                    ?.hasError('numberRange')
+                "
+                >Please enter a Year between 0 and 50.</mat-error
+              >
             </mat-form-field>
           </div>
           <div class="field">
             <label>Months</label>
             <mat-form-field appearance="outline">
-              <input matInput formControlName="working_experience_month"/>
+              <input matInput formControlName="working_experience_month" />
+              <mat-error
+                *ngIf="
+                  basicInfoForm
+                    .get('working_experience_month')
+                    ?.hasError('numberRange')
+                "
+                >Please enter a months between 0 and 12.</mat-error
+              >
             </mat-form-field>
           </div>
         </div>
@@ -110,12 +126,28 @@
             <label>Years</label>
             <mat-form-field appearance="outline">
               <input matInput formControlName="relevant_experience_year" />
+              <mat-error
+                *ngIf="
+                  basicInfoForm
+                    .get('relevant_experience_year')
+                    ?.hasError('numberRange')
+                "
+                >Please enter a Year between 0 and 50.</mat-error
+              >
             </mat-form-field>
           </div>
           <div class="field">
             <label>Months</label>
             <mat-form-field appearance="outline">
-              <input matInput formControlName="relevant_experience_month"/>
+              <input matInput formControlName="relevant_experience_month" />
+              <mat-error
+                *ngIf="
+                  basicInfoForm
+                    .get('relevant_experience_month')
+                    ?.hasError('numberRange')
+                "
+                >Please enter a months between 0 and 12.</mat-error
+              >
             </mat-form-field>
           </div>
         </div>

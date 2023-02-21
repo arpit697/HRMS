@@ -14,14 +14,15 @@ import { RoutingModule } from 'src/app/pipes/routing/routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationCheckModule } from 'src/app/pipes/validation-check/validation-check.module';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { GetClassesAndAttributeDirective } from 'src/app/directives/get-class-attribute/get-classes-and-attribute.directive';
 const MATERIAL = [
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
   MatIconModule,
-  MatButtonModule
+  MatButtonModule,
 ];
 
 @NgModule({
@@ -29,6 +30,7 @@ const MATERIAL = [
     LoginComponent,
     CredentialLoginComponent,
     GoogleLoginComponent,
+    GetClassesAndAttributeDirective
   ],
   imports: [
     CommonModule,

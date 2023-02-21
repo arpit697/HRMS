@@ -3,8 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { FeaturesComponent } from './features.component';
 import {
   DIRECTORY,
-  ENTREPRENURSHIP,
+  ENTREPRENEURSHIP,
   HOME,
+  MY_LINKS,
   PROFILE,
   REFER_CANDIDATE,
 } from 'src/app/constants/routes';
@@ -35,7 +36,7 @@ const routes: Routes = [
           import('./directory/directory.module').then((m) => m.DirectoryModule),
       },
       {
-        path: ENTREPRENURSHIP.path,
+        path: ENTREPRENEURSHIP.path,
         loadChildren: () =>
           import('./entreprenurship/entreprenurship.module').then(
             (m) => m.EntreprenurshipModule
@@ -47,6 +48,11 @@ const routes: Routes = [
           import('./refer-candidate/refer-candidate.module').then(
             (m) => m.ReferCandidateModule
           ),
+      },
+      {
+        path: MY_LINKS.path,
+        loadChildren: () =>
+          import('./my-links/my-links.module').then((m) => m.MyLinksModule),
       },
     ],
   },

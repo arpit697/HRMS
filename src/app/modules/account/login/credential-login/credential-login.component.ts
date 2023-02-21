@@ -21,7 +21,7 @@ import { UtilityService } from 'src/app/services/utility/utility.service';
 export class CredentialLoginComponent implements OnInit, AfterViewInit {
   hide = true;
   loginForm!: FormGroup;
-  @ViewChild('formField', { read: ElementRef }) formField!: ElementRef;
+
   constructor(
     public utility: UtilityService,
     private _formBuilder: FormBuilder,
@@ -29,12 +29,14 @@ export class CredentialLoginComponent implements OnInit, AfterViewInit {
     private _router: Router,
     private rendererFactory: RendererFactory2
   ) {}
+
+  @ViewChild('formField', { read: ElementRef }) formField!: ElementRef;
   ngAfterViewInit(): void {
-    const renderer = this.rendererFactory.createRenderer(null, null);
-    const classList = Array.from(
-      renderer.selectRootElement(this.formField.nativeElement).classList
-    );
-    console.log(classList);
+    // const renderer = this.rendererFactory.createRenderer(null, null);
+    // const classList = Array.from(
+    //   renderer.selectRootElement(this.formField.nativeElement).classList
+    // );
+    // console.log(classList);
   }
 
   ngOnInit(): void {

@@ -10,6 +10,10 @@
   }
   ::ng-deep .mat-mdc-text-field-wrapper {
     background-color: white;
+    height: 2.5em;
+  }
+  ::ng-deep.mat-mdc-form-field-infix {
+    padding-top: 8px !important;
   }
   .form-field-title {
     font-family: "Lato";
@@ -21,6 +25,14 @@
   }
   .button-group {
     display: flex;
+    gap: 3em;
+    .search{
+      background-color: var(--spiro);
+      color: var(--white);
+    }
+    .reset{
+      color: #96a5b8;
+    }
   }
 }
 
@@ -37,7 +49,7 @@
 .card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 3em;
 }
 
 .card {
@@ -95,8 +107,8 @@
 
 .card:hover {
   transform: scale(1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  // box-sizing: border-box;
   img {
     box-shadow: 0 0 0 14px #f7f5ec;
     transform: scale(0.7);
@@ -136,6 +148,11 @@
   font-size: 1.7em;
 }
 
+.spinner::before {
+  height: 50px;
+  width: 50px;
+}
+
 @media (max-width: 768px) {
   .search-n-filter {
     grid-template-columns: auto;
@@ -149,5 +166,8 @@
 @media (max-width: 576px) {
   .card-container {
     grid-template-columns: 1fr;
+  }
+  .spinner::before {
+    top: 70%;
   }
 }

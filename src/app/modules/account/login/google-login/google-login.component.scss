@@ -43,6 +43,18 @@ mat-card {
     }
   }
 }
+
+.loading {
+  text-align: center;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.spinner::before {
+  height: 30px;
+  width: 30px;
+}
+
 @media all and (max-width: 29em) {
   .google-login-main {
     .container {
@@ -57,7 +69,6 @@ mat-card {
     }
   }
 }
-
 
 @media all and (max-width: 22em) {
   .google-login-main {
@@ -76,3 +87,5 @@ mat-card {
     }
   }
 }
+
+@media all and (max-width: 17em) {}
