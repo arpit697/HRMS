@@ -9,7 +9,18 @@ export class HeaderComponent implements OnInit {
   isExpanded: boolean = true;
   @Output() dataEvent = new EventEmitter<any>();
   ngOnInit() {}
-  constructor(public utility: UtilityService) {}
+  constructor(public utility: UtilityService) {
+    this.checkScreenSize();
+    window.addEventListener('resize', () => {
+      this.checkScreenSize();
+    });
+  }
+
+  checkScreenSize() {
+    const screenWidth = window.innerWidth;
+    this.isExpanded = screenWidth < 1000;
+    this.isExpanded = screenWidth > 1000;
+  }
   isExpendedValue() {
     this.isExpanded = !this.isExpanded;
     this.dataEvent.emit(this.isExpanded);

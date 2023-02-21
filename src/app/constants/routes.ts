@@ -62,6 +62,20 @@ export const MY_LINKS: RouteInterface = {
   },
 };
 
+export const POLICY_DOCUMENTS: RouteInterface = {
+  path: 'policy-documents',
+  get fullUrl(): string {
+    return `${MY_LINKS.fullUrl}/${this.path}`;
+  },
+};
+
+export const HOLIDAY_CALENDER: RouteInterface = {
+  path: 'holiday_calender',
+  get fullUrl(): string {
+    return `${MY_LINKS.fullUrl}/${this.path}`;
+  },
+};
+
 export const REFER_CANDIDATE: RouteInterface = {
   path: 'refer-candidate',
   get fullUrl(): string {

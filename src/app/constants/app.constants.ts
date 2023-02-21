@@ -29,8 +29,12 @@ export const SIDE_NAV_ITEM = [
     name: 'My Links',
     categories: [
       { name: 'Insurance Verification Details' },
-      { name: 'Holiday Calenders 2023' },
-      { name: 'Policy Document' },
+      {
+        icon: '',
+        name: 'Holiday Calenders 2023',
+        router_link: 'HOLIDAY_CALENDER',
+      },
+      { icon: '', name: 'Policy Document', router_link: 'POLICY_DOCUMENTS' },
     ],
   },
   {
