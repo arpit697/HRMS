@@ -96,3 +96,24 @@
     }
   }
 }
+
+.rating-card-container {
+  .heading {
+    padding: 15px 11px;
+  }
+  .heading-filter {
+    display: flex;
+    justify-content: space-between;
+  }
+  .rating-cards {
+    .card-wrapper {
+      display: grid;
+      grid-template-columns: 25% 25% 25% 25%;
+      gap: 1em;
+      .card {
+        padding: 20px;
+        border: 1px solid;
+      }
+    }
+  }
+}

@@ -37,12 +37,40 @@
       <div class="rating-row">
         <mat-card
           class="rating-sum-head"
-          *ngFor="let rating of employee_rating"
+          *ngFor="let rating of employeeRatings"
         >
-          <mat-card-subtitle>{{ rating.rating_type }}</mat-card-subtitle>
+          <mat-card-subtitle>{{ rating.ratingType }}</mat-card-subtitle>
           <b>{{ rating.score }}</b>
         </mat-card>
       </div>
     </mat-card>
+  </div>
+</mat-card>
+
+<mat-card class="rating-card-container">
+  <div class="header">
+    <button mat-raised-button>Monthly Rating</button>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="heading-filter">
+    <mat-card-title>Monthly Performance Calendar</mat-card-title>
+    <div>
+      <mat-card-subtitle>Select Year :</mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <mat-select #yearValue (selectionChange)="selectedYear($event.value)">
+          <mat-option
+            *ngFor="let rating of employeeRatingMonths"
+            [value]="rating.year"
+            >{{ rating.year }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="rating-cards">
+    <div class="card-wrapper" *ngFor="let rating of ratingYear">
+      <mat-card class="card" *ngFor="let monthlyRating of rating.months">{{monthlyRating.month}}</mat-card>
+    </div>
   </div>
 </mat-card>

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { slideRightToLeft } from 'src/app/animations/slide.right.to.left';
-import { EMP_DETAIL, EMP_RATING } from 'src/app/constants/app.constants';
+import {
+  EMP_DETAIL,
+  EMP_RATING,
+  EMP_RATING_MONTH,
+} from 'src/app/constants/app.constants';
 
 @Component({
   selector: 'app-my-performance',
@@ -9,16 +13,34 @@ import { EMP_DETAIL, EMP_RATING } from 'src/app/constants/app.constants';
   animations: [slideRightToLeft],
 })
 export class MyPerformanceComponent implements OnInit {
-  employee_rating!: { rating_type: string; score: string }[];
-  employee_details!: {
-    full_name: string;
-    email: string;
-    employee_id: string;
-    department: string;
-    last_login: string;
-  };
+  // Declare variables with explicit types
+  employeeRatings: any;
+  employeeDetails: any;
+  employeeRatingMonths!: {
+    year: string;
+    months: { month: string; rating: number; honor: string; reward: string }[];
+  }[];
+  selectedYearValue: any; // Rename 'year' to 'selectedYearValue' for clarity
+
   ngOnInit(): void {
-    this.employee_details = EMP_DETAIL;
-    this.employee_rating = EMP_RATING;
+    // Initialize component properties
+    this.employeeDetails = EMP_DETAIL;
+    this.employeeRatings = EMP_RATING;
+    this.employeeRatingMonths = EMP_RATING_MONTH;
+  }
+
+  // Handler for when user selects a year
+  selectedYear(selectedYear: any): void {
+    this.selectedYearValue = selectedYear;
+  }
+
+  // Filter employee ratings by selected year
+  get ratingYear(): any {
+    let ratings = this.employeeRatingMonths;
+    ratings = ratings.filter(
+      (rating) => rating.year === this.selectedYearValue
+    );
+    
+    return ratings;
   }
 }

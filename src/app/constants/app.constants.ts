@@ -335,13 +335,6 @@ export const MARITAL_STATUS = [
   'registered partnership',
 ];
 
-export const EMP_RATING = [
-  { rating_type: 'Technical Skills', score: '3.4' },
-  { rating_type: 'Ownership of Delivery', score: '3.7' },
-  { rating_type: 'Teamwork', score: '3.9' },
-  { rating_type: 'Process Adherence', score: '3.7' },
-];
-
 export const ENTREPRENEURSHIP_DATA = {
   objective: {
     title: 'Objective :',
@@ -380,3 +373,167 @@ export const CAROUSEL_DATA = {
     },
   ],
 };
+
+export const EMP_RATING = [
+  { rating_type: 'Technical Skills', score: '3.4' },
+  { rating_type: 'Ownership of Delivery', score: '3.7' },
+  { rating_type: 'Teamwork', score: '3.9' },
+  { rating_type: 'Process Adherence', score: '3.7' },
+];
+
+export const EMP_RATING_MONTH =  [
+  {
+    year: '2022',
+    months: [
+      {
+        month: 'January',
+        rating: 4,
+        honor: 'Employee of the Month',
+        reward: '$100 gift card',
+      },
+      {
+        month: 'February',
+        rating: 2,
+        honor: '',
+        reward: '',
+      },
+      {
+        month: 'March',
+        rating: 5,
+        honor: 'Salesperson of the Month',
+        reward: '$500 bonus',
+      },
+      {
+        month: 'April',
+        rating: 1,
+        honor: '',
+        reward: '',
+      },
+      {
+        month: 'May',
+        rating: 5,
+        honor: 'Top Performer of the Month',
+        reward: '$250 gift card',
+      },
+      {
+        month: 'June',
+        rating: 3,
+        honor: '',
+        reward: '',
+      },
+      {
+        month: 'July',
+        rating: 5,
+        honor: "Manager's Choice Award",
+        reward: '$500 bonus',
+      },
+      {
+        month: 'August',
+        rating: 4,
+        honor: '',
+        reward: '',
+      },
+      {
+        month: 'September',
+        rating: 2,
+        honor: '',
+        reward: '',
+      },
+      {
+        month: 'October',
+        rating: 3,
+        honor: '',
+        reward: '',
+      },
+      {
+        month: 'November',
+        rating: 5,
+        honor: 'Outstanding Service Award',
+        reward: '$1,000 bonus',
+      },
+      {
+        month: 'December',
+        rating: 1,
+        honor: '',
+        reward: '',
+      },
+    ],
+  },
+  {
+    year: '2023',
+    months: [
+      {
+        month: 'January',
+        rating: 5,
+        honor: 'Employee of the Month',
+        reward: '$100 gift card',
+      },
+      {
+        month: 'February',
+        rating: 2,
+        honor: '',
+        reward: '',
+      },
+      {
+        month: 'March',
+        rating: 4,
+        honor: 'Salesperson of the Month',
+        reward: '$500 bonus',
+      },
+      {
+        month: 'April',
+        rating: 5,
+        honor: 'Top Performer of the Month',
+        reward: '$250 gift card',
+      },
+      {
+        month: 'May',
+        rating: 3,
+        honor: '',
+        reward: '',
+      },
+      {
+        month: 'June',
+        rating: 5,
+        honor: "Manager's Choice Award",
+        reward: '$500 bonus',
+      },
+      {
+        month: 'July',
+        rating: 1,
+        honor: '',
+        reward: '',
+      },
+      {
+        month: 'August',
+        rating: 4,
+        honor: '',
+        reward: '',
+      },
+      {
+        month: 'September',
+        rating: 3,
+        honor: '',
+        reward: '',
+      },
+      {
+        month: 'October',
+        rating: 2,
+        honor: '',
+        reward: '',
+      },
+      {
+        month: 'November',
+        rating: 5,
+        honor: 'Outstanding Service Award',
+        reward: '$1,000 bonus',
+      },
+      {
+        month: 'December',
+        rating: 4,
+        honor: '',
+        reward: '',
+      },
+    ],
+  },
+]

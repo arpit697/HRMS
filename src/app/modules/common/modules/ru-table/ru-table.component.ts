@@ -29,4 +29,18 @@ export class RuTableComponent<T> {
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.Paginator;
   }
+  downloadData(element: any) {
+    console.log(element);
+
+    const fileUrl = element.file_url; // replace with your file URL
+    const fileName = `${element.name}`; // replace with your file name
+
+    const link = document.createElement('a');
+    link.setAttribute('href', fileUrl);
+    link.setAttribute('download', fileName);
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 }

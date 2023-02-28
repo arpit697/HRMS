@@ -12,7 +12,15 @@
         {{ disCol?.cell(element) }}
       </span>
 
-      <ng-template #link> </ng-template>
+      <ng-template #link>
+        <button mat-icon-button (click)="downloadData(element)">
+          <mat-icon>file_download</mat-icon>
+          <span>
+            {{ disCol?.cell(element)}}
+           
+          </span>
+        </button>
+      </ng-template>
     </td>
   </ng-container>
 
