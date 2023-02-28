@@ -1,0 +1,98 @@
+.card {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  .card-body {
+    padding: 1.5em;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    gap: 1em;
+    .emp-info {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      img {
+        max-width: 77px;
+        max-height: 77px;
+        border-radius: 50%;
+        border: 2px solid #bfff77;
+      }
+      .info {
+        .exp {
+          background-color: #f7ffb3;
+          text-transform: uppercase;
+          padding: 5px;
+          border-radius: 3px;
+          text-align: center;
+          line-height: 1.7;
+          font-weight: 500;
+        }
+      }
+    }
+    .awards-honours {
+      display: grid;
+      grid-template-columns: auto 35%;
+      gap: 10px;
+      .awards {
+        border-radius: 10px !important;
+        padding: 20px;
+        background-color: #fff3cb;
+        mat-card-title {
+          margin-bottom: 1em;
+        }
+      }
+      .honours {
+        border-radius: 10px !important;
+        padding: 20px;
+        background-color: #cbe7ff;
+        mat-card-title {
+          margin-bottom: 1em;
+        }
+      }
+    }
+  }
+  .cal-skills-panel {
+    background: #dfffb0;
+    padding: 30px 20px;
+    border-radius: 10px !important;
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 2em;
+    .flex-panel {
+      display: grid;
+      grid-template-columns: 25% auto;
+      align-items: center;
+      .rating-count {
+        font-size: 50px;
+        font-weight: 700;
+        align-items: center;
+      }
+      .cal-nav {
+        display: flex;
+        background-color: white;
+        min-height: 2em;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+      }
+    }
+    .rating-row {
+      display: grid;
+      grid-template-columns:
+        calc(25% - 0.15em) calc(25% - 0.15em) calc(25% - 0.15em)
+        calc(25% - 0.15em);
+      gap: 0.3em;
+      .rating-sum-head {
+        min-height: 100px;
+        background-color: #edffd2;
+        padding: 20px 5px;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-rows: 50% 50%;
+        align-items: center;
+        text-align: center;
+        border-radius: 15px !important;
+      }
+    }
+  }
+}

@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { HolidayCalenderRoutingModule } from './holiday-calender-routing.module';
 import { HolidayCalenderComponent } from './holiday-calender.component';
-
+import { MatCardModule } from '@angular/material/card';
+const MATERIAL = [MatCardModule];
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { HolidayCalenderComponent } from './holiday-calender.component';
   ],
   imports: [
     CommonModule,
-    HolidayCalenderRoutingModule
+    HolidayCalenderRoutingModule , 
+    MATERIAL
   ]
 })
 export class HolidayCalenderModule { }

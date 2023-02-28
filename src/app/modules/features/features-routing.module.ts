@@ -4,10 +4,13 @@ import { FeaturesComponent } from './features.component';
 import {
   DIRECTORY,
   ENTREPRENEURSHIP,
+  FINANCE,
   HOME,
   MY_LINKS,
   PROFILE,
   REFER_CANDIDATE,
+  REVIEWS,
+  STARTUP,
 } from 'src/app/constants/routes';
 
 const routes: Routes = [
@@ -53,6 +56,21 @@ const routes: Routes = [
         path: MY_LINKS.path,
         loadChildren: () =>
           import('./my-links/my-links.module').then((m) => m.MyLinksModule),
+      },
+      {
+        path: FINANCE.path,
+        loadChildren: () =>
+          import('./finance/finance.module').then((m) => m.FinanceModule),
+      },
+      {
+        path: REVIEWS.path,
+        loadChildren: () =>
+          import('./reviews/reviews.module').then((m) => m.ReviewsModule),
+      },
+      {
+        path: STARTUP.path,
+        loadChildren: () =>
+          import('./startup/startup.module').then((m) => m.StartupModule),
       },
     ],
   },

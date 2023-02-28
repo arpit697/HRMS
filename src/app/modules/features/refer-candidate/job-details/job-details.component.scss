@@ -1,0 +1,51 @@
+.job-details-card {
+  padding: 24px;
+  .heading-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .more {
+      border-radius: 50%;
+      font-size: 2em;
+      padding: 0.2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(36, 116, 255, 0.2);
+      color: var(--spiro);
+    }
+  }
+  .detail-grid {
+    ::ng-deep .mat-grid-tile-content {
+      right: auto !important;
+      justify-content: space-between !important;
+      width: 100%;
+    }
+    mat-grid-list {
+      margin: 8px;
+      mat-grid-tile {
+        height: 1em !important;
+      }
+    }
+  }
+  .tech-skills {
+    .list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 1em;
+      .item {
+        background-color: #f1f9ff;
+        color: #199cff;
+        padding: 6px 12px;
+        border-radius: 4px;
+        text-align: center;
+      }
+    }
+  }
+  .content-container {
+    padding: 24px;
+    background-color: #f4f8ff;
+  }
+}

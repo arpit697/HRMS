@@ -4,7 +4,32 @@ p {
   display: flex;
   align-items: center;
   gap: 1em;
+  &:hover {
+    .list-icon {
+      color: #3246d3;
+    }
+    .list-name {
+      color: #3246d3;
+    }
+  }
 }
+
+a {
+  text-decoration: none;
+  border-bottom: none;
+  color: black;
+}
+.title {
+  &:hover {
+    .list-icon {
+      color: #3246d3;
+    }
+    .list-name {
+      color: #3246d3;
+    }
+  }
+}
+
 .active {
   .list-icon {
     color: #3246d3;
@@ -50,7 +75,7 @@ mat-sidenav-container {
       min-height: 100vh;
       background-color: #f3f7fc;
       .content {
-        padding: 6.375em 2em 3em 2em;
+        padding: 6.375em 2em 5em 2em;
       }
     }
     position: relative;
@@ -66,9 +91,9 @@ mat-sidenav-container {
   mat-sidenav-content {
     display: contents;
   }
-  mat-sidenav-container{
-    mat-sidenav{
-      .hide{
+  mat-sidenav-container {
+    mat-sidenav {
+      .hide {
         display: none;
       }
       .show {

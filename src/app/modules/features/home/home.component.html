@@ -104,13 +104,99 @@
 </div>
 <br />
 <br /><br />
+
+<mat-card class="middle-card">
+  <mat-card-title>Latest at Appinventiv</mat-card-title>
+  <owl-carousel-o [options]="middleCarousel">
+    <ng-container>
+      <ng-template carouselSlide>
+        <mat-card class="inner-card">
+          <owl-carousel-o [options]="innerCardLeft">
+            <ng-container>
+              <ng-template carouselSlide>
+                <div style="height: 414px">
+                  <mat-card-title>Appreciation for teams</mat-card-title>
+                  <mat-card-subtitle>Dear Moxy Team</mat-card-subtitle>
+                  <mat-card-subtitle
+                    >We would like to really appreciate the hard work of each
+                    individual and show our gratitude. We really appreciate the
+                    efforts and good work. Keep Shining and growing! All of us
+                    are putting our best efforts we are sure, so keep spreading
+                    your awesomeness. View More</mat-card-subtitle
+                  >
+
+                  <button
+                    mat-raised-button
+                    style="
+                      position: absolute;
+                      z-index: 1;
+                      left: 2%;
+                      bottom: 2.3%;
+                    "
+                  >
+                    View More
+                  </button>
+                </div>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+        </mat-card>
+      </ng-template>
+      <ng-template carouselSlide>
+        <mat-card class="inner-card">
+          <mat-card-subtitle>Awards</mat-card-subtitle>
+          <mat-card-subtitle>Dear</mat-card-subtitle>
+          <div class="nested-wrapper">
+            <div class="nested">
+              <owl-carousel-o [options]="innerCardsRight">
+                <ng-container *ngFor="let slide of gallery; let index = index">
+                  <ng-template carouselSlide>
+                    <div class="image-wrapper item">
+                      <img class="gallery-image" src="{{ slide }}" />
+                    </div>
+                  </ng-template>
+                </ng-container>
+              </owl-carousel-o>
+            </div>
+            <div class="nested">
+              <owl-carousel-o [options]="innerCardsRight">
+                <ng-container *ngFor="let slide of gallery; let index = index">
+                  <ng-template carouselSlide>
+                    <div class="image-wrapper item">
+                      <img class="gallery-image" src="{{ slide }}" />
+                    </div>
+                  </ng-template>
+                </ng-container>
+              </owl-carousel-o>
+            </div>
+          </div>
+          <div>
+            <mat-card-subtitle
+              >Keep spreading your awesomeness. Congratulations !
+            </mat-card-subtitle>
+          </div>
+
+          <div>
+            <mat-card-subtitle>Cheers !</mat-card-subtitle>
+            <mat-card-subtitle>Appinventiv</mat-card-subtitle>
+          </div>
+        </mat-card>
+      </ng-template>
+      <ng-template carouselSlide>
+        <mat-card class="inner-card"></mat-card>
+      </ng-template>
+      <ng-template carouselSlide>
+        <mat-card class="inner-card"></mat-card>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</mat-card>
+<br />
+<br /><br />
+
 <mat-card class="card-bottom">
   <div class="heading">
     <mat-card-title>New Family Members</mat-card-title>
-    <!-- <div>
-      <mat-icon>chevron_left</mat-icon>
-      <mat-icon>chevron_right</mat-icon>
-    </div> -->
   </div>
   <div>
     <owl-carousel-o [options]="bottomCarousel">

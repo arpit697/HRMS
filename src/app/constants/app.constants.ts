@@ -28,28 +28,49 @@ export const SIDE_NAV_ITEM = [
     icon: 'view_in_ar',
     name: 'My Links',
     categories: [
-      { name: 'Insurance Verification Details' },
+      { icon: 'shield', name: 'Insurance Verification Details' },
       {
-        icon: '',
+        icon: 'holiday_village',
         name: 'Holiday Calenders 2023',
         router_link: 'HOLIDAY_CALENDER',
       },
-      { icon: '', name: 'Policy Document', router_link: 'POLICY_DOCUMENTS' },
+      {
+        icon: 'gavel',
+        name: 'Policy Document',
+        router_link: 'POLICY_DOCUMENTS',
+      },
     ],
   },
   {
     icon: 'payments',
     name: 'Finance',
     categories: [
-      { name: 'Salary Slip' },
-      { name: 'Form 16' },
-      { name: 'Investment Declaration' },
+      {
+        icon: 'horizontal_rule',
+        name: 'Salary Slip',
+        blank: true,
+        router_link: 'https://hrms.easysourceindia.com/Payroll/',
+      },
+      {
+        icon: 'horizontal_rule',
+        name: 'Form 16',
+        blank: true,
+        router_link: 'https://hrms.easysourceindia.com/Payroll/',
+      },
+      {
+        icon: 'horizontal_rule',
+        name: 'Investment Declaration',
+        blank: true,
+        router_link: 'https://hrms.easysourceindia.com/Payroll/',
+      },
     ],
   },
   {
     icon: 'preview',
     name: 'Reviews',
-    categories: [{ name: 'My Performance' }],
+    categories: [
+      { icon: 'commit', name: 'My Performance', router_link: 'MY_PERFORMANCE' },
+    ],
   },
   {
     icon: 'diversity_2',
@@ -91,7 +112,7 @@ export const SIDE_NAV_ITEM = [
   },
   {
     icon: 'schedule',
-    name: 'Attendence',
+    name: 'Attendance',
     categories: [
       { name: 'Attendance Calendar' },
       { name: 'Manual Punch' },
@@ -313,3 +334,49 @@ export const MARITAL_STATUS = [
   'divorced',
   'registered partnership',
 ];
+
+export const EMP_RATING = [
+  { rating_type: 'Technical Skills', score: '3.4' },
+  { rating_type: 'Ownership of Delivery', score: '3.7' },
+  { rating_type: 'Teamwork', score: '3.9' },
+  { rating_type: 'Process Adherence', score: '3.7' },
+];
+
+export const ENTREPRENEURSHIP_DATA = {
+  objective: {
+    title: 'Objective :',
+    paragraph:
+      'Share your innovative startup ideas with us, get funding from us and grow on your own. We want to give the young and brilliant ideas some shape and nurture them to the fullest to become potential competitors in the market. Validate your idea, learn and grow from here.',
+  },
+  investor: {
+    title: 'Story about our Angel Investor (AI) Saurabh Singh',
+    list: [
+      'Followed by @NarendraModi Prime Minister of India | @BarackObama Ex-President US | @PiyushGoyal Railway Minister India on Twitter',
+      "Listed on INDIA's Top 25 Most Inspiring Startup Stories of 2013 by YourStory",
+      'The Companies he has led have created over 4,000 jobs during his leadership tenure.',
+      'In Past, He has built successful companies from startup (Bootstrapped) to multi-million dollar in revenue.',
+    ],
+    paragraph:
+      'Founded passion driven niche startups where he served many Top Fortune companies & leading brands in making their Mobile Strategy successful as a CEO & Founder of 250+ people company AppStudioz "India\'s leading mobile app development company" ​(★Acquired in 2014). He also Co-founded TechAhead in 2009 & was founding partner at C&B Electronics.',
+  },
+  experience: [
+    {
+      title: 'Professional Experience',
+      list: [
+        '16+ years of professional experience of which 11+ years are as Founding Partner of lean startups across diverse domains with an entrepreneurial drive. Always looking to innovate by bringing smart people together.',
+        'Passionate for building and scaling businesses',
+        'Strong experience in working in ambiguity to solve complex problems. Skilled at designing and executing successful innovative strategies.',
+        'Extensive experience in developing many successful products for the entire spectrum of users, from conceptualising the business ideas to preparing product feature road map, from consumer facing front-end to business facing back-end, designing & wire framing with unmatched track record of Success & Performance.',
+      ],
+    },
+  ],
+};
+
+export const CAROUSEL_DATA = {
+  celebration: [
+    {
+      content:
+        'Appreciation for teams, Dear ABP News Team, We would like to really appreciate the hard work of each individual and show our gratitude. We really appreciate the efforts and good work. Keep Shining and growing! All of us are putting our best efforts we are sure, so keep spreading your awesomeness.',
+    },
+  ],
+};

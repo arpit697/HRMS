@@ -10,6 +10,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MatIconModule } from '@angular/material/icon';
 import { RuButtonModule } from '../../common/modules/ru-button/ru-button.module';
 import { RoutingModule } from 'src/app/pipes/routing/routing.module';
+import { MatButtonModule } from '@angular/material/button';
 
 const MATERIAL = [MatCardModule, MatDividerModule, MatIconModule];
 
@@ -22,6 +23,7 @@ const MATERIAL = [MatCardModule, MatDividerModule, MatIconModule];
     RuButtonModule,
     RoutingModule,
     RuJobCardModule,
+    MatButtonModule,
     ...MATERIAL,
   ],
 })

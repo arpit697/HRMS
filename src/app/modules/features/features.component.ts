@@ -36,7 +36,9 @@ import { SIDE_NAV_ITEM } from 'src/app/constants/app.constants';
 export class FeaturesComponent implements OnInit {
   rotateDirection = 'clockwise';
   sidenavState = 'open';
+  isExpanded: boolean = true;
   public items = <any>[];
+isClicked: any;
   constructor() {
     this.checkScreenSize();
     window.addEventListener('resize', () => {
@@ -57,8 +59,6 @@ export class FeaturesComponent implements OnInit {
         this.rotateDirection === 'clockwise' ? 'anticlockwise' : 'clockwise';
     }, 1000);
   }
-
-  isExpanded: boolean = true;
 
   handleIsExpandedChange(event: any) {
     this.isExpanded = event;

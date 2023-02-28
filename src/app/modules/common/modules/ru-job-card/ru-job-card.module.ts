@@ -5,8 +5,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import { RuButtonModule } from '../ru-button/ru-button.module';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
-const MATERIAL = [MatCardModule , MatIconModule , MatDividerModule]
+const MATERIAL = [MatCardModule , MatIconModule , MatDividerModule , MatButtonModule , MatDialogModule]
 
 @NgModule({
   declarations: [RuJobCardComponent],

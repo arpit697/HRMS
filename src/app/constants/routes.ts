@@ -55,6 +55,20 @@ export const ENTREPRENEURSHIP: RouteInterface = {
   },
 };
 
+export const STARTUP: RouteInterface = {
+  path: 'startup',
+  get fullUrl(): string {
+    return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
+
+export const ADD_PITCH: RouteInterface = {
+  path: 'add-pitch',
+  get fullUrl(): string {
+    return `${STARTUP.fullUrl}/${this.path}`;
+  },
+};
+
 export const MY_LINKS: RouteInterface = {
   path: 'my-links',
   get fullUrl(): string {
@@ -73,6 +87,27 @@ export const HOLIDAY_CALENDER: RouteInterface = {
   path: 'holiday_calender',
   get fullUrl(): string {
     return `${MY_LINKS.fullUrl}/${this.path}`;
+  },
+};
+
+export const FINANCE: RouteInterface = {
+  path: 'finance',
+  get fullUrl(): string {
+    return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
+
+export const REVIEWS: RouteInterface = {
+  path: 'reviews',
+  get fullUrl(): string {
+    return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
+
+export const MY_PERFORMANCE: RouteInterface = {
+  path: 'my_performance',
+  get fullUrl(): string {
+    return `${REVIEWS.fullUrl}/${this.path}`;
   },
 };
 

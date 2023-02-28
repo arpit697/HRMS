@@ -1,0 +1,82 @@
+<div class="header">
+  <mat-card-title>Add Pitch</mat-card-title>
+  <mat-card-actions class="button-wrapper">
+    <button mat-raised-button>Cancel</button>
+    <button mat-raised-button>Submit</button>
+  </mat-card-actions>
+</div>
+<mat-card class="pitch-container">
+  <div class="dash_heading">
+    <mat-card-title>My Details</mat-card-title>
+  </div>
+  <div class="form-field-container">
+    <mat-card-subtitle>Name</mat-card-subtitle>
+    <mat-form-field appearance="outline">
+      <input matInput type="text" />
+    </mat-form-field>
+  </div>
+  <div class="col-2">
+    <div class="form-field-container">
+      <mat-card-subtitle>Employee Id</mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <input matInput type="text" />
+      </mat-form-field>
+    </div>
+    <div class="form-field-container">
+      <mat-card-subtitle>Date of birth</mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <input matInput type="text" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="dash_heading">
+    <mat-card-title>Pitch Details</mat-card-title>
+  </div>
+
+  <div class="form-field-container">
+    <mat-card-subtitle>Pitch Title</mat-card-subtitle>
+    <mat-form-field appearance="outline">
+      <input matInput />
+    </mat-form-field>
+  </div>
+  <div class="form-field-container">
+    <mat-card-subtitle>Industry</mat-card-subtitle>
+    <mat-form-field appearance="outline">
+      <mat-select>
+        <mat-option></mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-field-container">
+    <mat-card-subtitle>Type</mat-card-subtitle>
+    <mat-form-field appearance="outline">
+      <mat-select>
+        <mat-option></mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="editor-container">
+    <mat-card-subtitle for="pitch_idea"
+      >Idea - (Share your idea in brief)</mat-card-subtitle
+    >
+    <editor
+      [init]="{
+        height: 200,
+        menubar: false,
+        toolbar:
+          '  bold italic underline alignleft aligncenter alignright alignjustify '
+      }"
+    ></editor>
+  </div>
+
+  <div>
+    <mat-card-subtitle
+      >Presentation - (Share your detailed presentation on the idea)
+      (ppt,pdf)</mat-card-subtitle
+    >
+    <mat-card class="custom-file-input-container">
+      <input class="custom-file-input" (change)="readURL($event)" type="file" />
+    </mat-card>
+  </div>
+</mat-card>

@@ -67,9 +67,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
       },
     },
   };
-
-  bottomCarousel: OwlOptions = {
-    loop: true,
+  middleCarousel: OwlOptions = {
+    dots: true,
+    mouseDrag: false,
+    touchDrag: true,
+    // autoplay: true,
+    // autoplayTimeout: 4000,
     responsive: {
       '0': {
         items: 1,
@@ -82,6 +85,53 @@ export class HomeComponent implements OnInit, AfterViewInit {
       },
     },
   };
+  bottomCarousel: OwlOptions = {
+    loop: false,
+    responsive: {
+      '0': {
+        items: 1,
+      },
+      '600': {
+        items: 2,
+      },
+      '1500': {
+        items: 3,
+      },
+    },
+  };
+
+  innerCardLeft: OwlOptions = {
+    loop: true,
+    dots: false,
+    responsive: {
+      '0': {
+        items: 1,
+      },
+      '600': {
+        items: 1,
+      },
+      '1000': {
+        items: 1,
+      },
+    },
+  };
+
+  innerCardsRight: OwlOptions = {
+    items: 1,
+    loop: true,
+    dots: false,
+    autoplay: true,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    smartSpeed: 450,
+    autoplayTimeout: 2000,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    navSpeed: 700,
+    
+  };
+
   ngAfterViewInit() {
     window.dispatchEvent(new Event('resize'));
   }

@@ -1,0 +1,48 @@
+<mat-card class="card">
+  <div class="card-body">
+    <div class="emp-info">
+      <img
+        matCardImage
+        src="../../../../../assets/default/default_male.jpg"
+        alt=""
+      />
+      <div class="info">
+        <mat-card-title>Arpit Dwivedi</mat-card-title>
+        <mat-card-subtitle>Software Engineer (angular)</mat-card-subtitle>
+        <span class="exp">1.0 YRS</span>
+      </div>
+    </div>
+    <div class="awards-honours">
+      <mat-card class="awards">
+        <mat-card-title>AWARDS</mat-card-title>
+        <mat-card-subtitle>N/A</mat-card-subtitle>
+      </mat-card>
+      <mat-card class="honours">
+        <mat-card-title>HONOURS</mat-card-title>
+        <mat-card-subtitle>N/A</mat-card-subtitle>
+      </mat-card>
+    </div>
+  </div>
+
+  <div>
+    <mat-card class="cal-skills-panel">
+      <div class="flex-panel">
+        <div class="rating-count">
+          <mat-card-title>3.7</mat-card-title>
+        </div>
+        <div class="cal-nav">
+          <mat-card-subtitle> Jan 2021 - TILL NOW </mat-card-subtitle>
+        </div>
+      </div>
+      <div class="rating-row">
+        <mat-card
+          class="rating-sum-head"
+          *ngFor="let rating of employee_rating"
+        >
+          <mat-card-subtitle>{{ rating.rating_type }}</mat-card-subtitle>
+          <b>{{ rating.score }}</b>
+        </mat-card>
+      </div>
+    </mat-card>
+  </div>
+</mat-card>

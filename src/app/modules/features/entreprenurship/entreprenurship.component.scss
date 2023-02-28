@@ -16,7 +16,6 @@ p {
     display: flex;
     justify-content: space-between;
     .hero-copy {
-      padding-top: 40px;
       padding-right: 48px;
       min-width: 448px;
       max-width: 512px;
@@ -24,6 +23,8 @@ p {
     }
     .hero-button {
       margin-top: 1em;
+      background-color: var(--spiro);
+      color: var(--white);
     }
     .hero-media {
       position: relative;

@@ -1,0 +1,56 @@
+<mat-card class="job-details-card">
+  <div class="heading-container">
+    <mat-card-title> job Details </mat-card-title>
+    <mat-icon class="more">more_horiz</mat-icon>
+  </div>
+  <mat-divider></mat-divider>
+
+  <div class="detail-grid">
+    <mat-grid-list cols="2" rowHeight="2.3em">
+      <mat-grid-tile>
+        <mat-card-subtitle>Job Title : </mat-card-subtitle>
+        <mat-card-subtitle>Associate Tech Lead </mat-card-subtitle>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card-subtitle>Job Type :</mat-card-subtitle>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card-subtitle>Department :</mat-card-subtitle>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card-subtitle> Location :</mat-card-subtitle>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2">
+        <mat-card-subtitle>No. of Openings :</mat-card-subtitle>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2">
+        <mat-card-subtitle> Exp. Required : <span (click)="openDialog()">Terms & Conditions</span></mat-card-subtitle>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <div class="tech-skills">
+    <mat-card-title>Technical Skills</mat-card-title>
+    <mat-divider></mat-divider>
+    <ul class="list">
+      <li class="item">Java</li>
+    </ul>
+  </div>
+
+  <div class="job-introduction">
+    <mat-card-title>Job Introduction</mat-card-title>
+    <mat-divider></mat-divider>
+    <div class="content-container"></div>
+  </div>
+
+  <div class="job-discription">
+    <mat-card-title>Job Introduction</mat-card-title>
+    <mat-divider></mat-divider>
+    <div class="content-container"></div>
+  </div>
+  <div class="job-qualification">
+    <mat-card-title>Job Introduction</mat-card-title>
+    <mat-divider></mat-divider>
+    <div class="content-container"></div>
+  </div>
+</mat-card>

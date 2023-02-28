@@ -1,0 +1,56 @@
+<div class="header">
+  <mat-card-title>Refer a Candidate</mat-card-title>
+  <mat-icon>close</mat-icon>
+</div>
+
+<div class="container" [formGroup]="referCandidateFrom">
+  <div class="dash_heading">
+    <mat-card-title>My Details</mat-card-title>
+  </div>
+
+  <div class="pre-filled-form-fields">
+    <div *ngFor="let field of preFilledFields">
+      <mat-card-subtitle>{{ field.label }}</mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <input matInput formControlName="{{ field.formControlName }}" />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="dash_heading">
+    <mat-card-title>My Details</mat-card-title>
+  </div>
+
+  <div class="manual-fill-form-field">
+    <div *ngFor="let field of ManualFillFields">
+      <mat-card-subtitle>{{ field.label }}</mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <input
+          
+          matInput
+          formControlName="{{ field.formControlName }}"
+        />
+        <!-- <mat-select
+          formControlName="{{ field.formControlName }}"
+          
+        >
+          <mat-option></mat-option>
+        </mat-select> -->
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="resume-skill-set">
+    <mat-card class="custom-file-input-container">
+      <input class="custom-file-input" (change)="readURL($event)" type="file" />
+    </mat-card>
+    <mat-form-field>
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </div>
+
+  <mat-card-actions>
+    <button mat-raised-button>Cancel</button>
+    <button mat-raised-button>Submit</button>
+  </mat-card-actions>
+</div>

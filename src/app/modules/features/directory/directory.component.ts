@@ -6,7 +6,6 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatSelect } from '@angular/material/select';
-import { fromEvent, map, debounceTime, distinctUntilChanged } from 'rxjs';
 import { DEPARTMENTS, EMPLOYEE_DATA } from 'src/app/constants/app.constants';
 
 @Component({
@@ -17,9 +16,6 @@ import { DEPARTMENTS, EMPLOYEE_DATA } from 'src/app/constants/app.constants';
 export class DirectoryComponent implements OnInit, AfterViewInit {
   selected!: string;
   loading = false;
-  ngAfterViewInit(): void {
-    this.search()
-  }
   departments!: string[];
   employeeData: any[] = [];
   filteredData: any[] = [];
@@ -43,26 +39,22 @@ export class DirectoryComponent implements OnInit, AfterViewInit {
         (emp) => emp.department === selectedDepartment
       );
     }
+    this.search();
   }
-  
-  searchFun() {
+
+  search() {
     const searchInput = this.searchInput.nativeElement;
-    const searchTerm$ = fromEvent(searchInput, 'input').pipe(
-      map((event: any) => event.target.value),
-      debounceTime(300),
-      distinctUntilChanged()
-    );
+    const searchTerm = searchInput.value;
 
-    searchTerm$.subscribe((searchTerm) => {
-      const selectedDepartment = this.departmentSelect.value;
-      let filteredData = this.employeeData;
+    let filteredData = this.employeeData;
+    const selectedDepartment = this.departmentSelect.value;
+    if (selectedDepartment !== 'All') {
+      filteredData = filteredData.filter(
+        (emp) => emp.department === selectedDepartment
+      );
+    }
 
-      if (selectedDepartment !== 'All') {
-        filteredData = filteredData.filter(
-          (emp) => emp.department === selectedDepartment
-        );
-      }
-
+    if (searchTerm) {
       filteredData = filteredData.filter((emp) => {
         const searchFields = [emp.name, emp.email];
         for (const field of searchFields) {
@@ -72,16 +64,15 @@ export class DirectoryComponent implements OnInit, AfterViewInit {
         }
         return false;
       });
-      this.filteredData = filteredData;
-    });
-  }
+    }
 
-  search() {
-    this.searchFun();
+    this.filteredData = filteredData;
   }
 
   reset() {
     this.searchInput.nativeElement.value = '';
     this.filteredData = this.employeeData;
   }
+
+  ngAfterViewInit(): void {}
 }

@@ -29,7 +29,7 @@
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
               "src/styles.scss"
             ],
-            "scripts": ["node_modules/googleapis/googleapis.js"]
+            "scripts": ["node_modules/googleapis/build/src/googleapis.js"]
           },
           "configurations": {
             "production": {

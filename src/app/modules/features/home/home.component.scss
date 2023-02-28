@@ -158,6 +158,16 @@
   }
 }
 
+.middle-card {
+  .inner-card {
+    border: 1.5px solid rgba(150, 165, 184, 0.3);
+    margin: 0.5em;
+    height: 414px;
+    box-sizing: border-box;
+    border-radius: 10px !important ;
+  }
+}
+
 .card-bottom {
   .image-wrapper {
     height: 256px;
@@ -167,6 +177,19 @@
     align-items: center;
     .gallery-image {
       margin-right: 1em;
+    }
+  }
+}
+
+.nested-wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.inner-card {
+  .nested {
+    padding: 0.5em;
+    img {
+      height: 150px;
     }
   }
 }

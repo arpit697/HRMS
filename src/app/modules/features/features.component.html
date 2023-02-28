@@ -3,17 +3,14 @@
 </header>
 <mat-sidenav-container autosize>
   <mat-sidenav
-  [@slideInOut]="sidenavState"
+    [@slideInOut]="sidenavState"
     opened="true"
     mode="side"
     (mouseenter)="mouseenter()"
     (mouseleave)="mouseleave()"
   >
-    <mat-card
-      
-      [ngClass]="{ hide: !isExpanded, show: isExpanded }"
-    >
-      <mat-accordion class="accordian">
+    <mat-card [ngClass]="{ hide: !isExpanded, show: isExpanded }">
+      <mat-accordion class="accordion">
         <mat-expansion-panel
           *ngFor="let list of items"
           disabled="{{ list.active == false }}"
@@ -38,16 +35,31 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <div class="sub-list">
-            <p
-              *ngFor="let sublist of list.categories"
-              routerLinkActive="active"
-              [routerLink]="sublist.router_link | routing"
-            >
-              <mat-icon class="list-icon">{{ sublist.icon }}</mat-icon>
-              <span class="list-name" *ngIf="isExpanded">{{
-                sublist.name
-              }}</span>
-            </p>
+            <div *ngFor="let sublist of list.categories">
+              <p
+                *ngIf="!sublist.blank"
+                routerLinkActive="active"
+                [routerLink]="sublist.router_link | routing"
+              >
+                <mat-icon class="list-icon">{{ sublist.icon }}</mat-icon>
+                <span class="list-name" *ngIf="isShowing || isExpanded">{{
+                  sublist.name
+                }}</span>
+              </p>
+
+              <a
+                *ngIf="sublist.blank === true"
+                href="https://hrms.easysourceindia.com/Payroll/"
+                target="_blank"
+              >
+                <p>
+                  <mat-icon class="list-icon">{{ sublist.icon }}</mat-icon>
+                  <span class="list-name" *ngIf="isShowing || isExpanded">{{
+                    sublist.name
+                  }}</span>
+                </p>
+              </a>
+            </div>
           </div>
         </mat-expansion-panel>
       </mat-accordion>
