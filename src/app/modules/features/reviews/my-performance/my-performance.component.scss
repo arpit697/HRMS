@@ -98,21 +98,71 @@
 }
 
 .rating-card-container {
-  .heading {
+  margin-top: 20px;
+  .header {
     padding: 15px 11px;
+    .monthly-rating-button {
+      color: white;
+      background-color: var(--spiro);
+      margin: 6px;
+    }
   }
   .heading-filter {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    mat-card-title {
+      font-size: 22px;
+      font-weight: 500;
+      color: #494949;
+    }
   }
   .rating-cards {
+    padding-bottom: 32px;
     .card-wrapper {
       display: grid;
-      grid-template-columns: 25% 25% 25% 25%;
+      grid-template-columns: calc(25% - 32px) calc(25% - 32px) calc(25% - 32px) calc(
+          25% - 32px
+        );
       gap: 1em;
-      .card {
+      justify-content: center;
+
+      .month-card {
+        border: 1px solid #e9e9e9;
+        border-radius: 10px !important;
+        height: 145px;
         padding: 20px;
-        border: 1px solid;
+        margin-bottom: 20px;
+        display: grid;
+        align-items: center;
+        .month {
+          display: flex;
+          justify-content: space-between;
+          mat-card-subtitle {
+            color: #000;
+          }
+          .rating {
+            background-color: #e7fcc8;
+            padding-left: 1em;
+            padding-right: 1em;
+            padding-bottom: 0.2em;
+            padding-top: 0.2em;
+            border-radius: 5px;
+          }
+        }
+        .award {
+          display: flex;
+          mat-card-subtitle {
+            color: #f7c417;
+          }
+        }
+        .honor {
+          display: flex;
+          mat-card-subtitle {
+            color: #0086ff;
+          }
+        }
       }
     }
   }

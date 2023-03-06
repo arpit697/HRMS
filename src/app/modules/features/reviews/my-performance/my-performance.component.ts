@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { slideRightToLeft } from 'src/app/animations/slide.right.to.left';
 import {
   EMP_DETAIL,
@@ -18,9 +18,9 @@ export class MyPerformanceComponent implements OnInit {
   employeeDetails: any;
   employeeRatingMonths!: {
     year: string;
-    months: { month: string; rating: number; honor: string; reward: string }[];
+    months: { month: string; rating: number; honor: number; reward: number }[];
   }[];
-  selectedYearValue: any; // Rename 'year' to 'selectedYearValue' for clarity
+  selectedYearValue = '2022'; // Rename 'year' to 'selectedYearValue' for clarity
 
   ngOnInit(): void {
     // Initialize component properties
@@ -40,7 +40,7 @@ export class MyPerformanceComponent implements OnInit {
     ratings = ratings.filter(
       (rating) => rating.year === this.selectedYearValue
     );
-    
+
     return ratings;
   }
 }

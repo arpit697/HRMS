@@ -23,6 +23,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { RuTableModule } from '../../common/modules/ru-table/ru-table.module';
 import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationCheckModule } from 'src/app/pipes/validation-check/validation-check.module';
+import { MatButtonModule } from '@angular/material/button';
 const MATERIAL = [
   MatCardModule,
   MatListModule,
@@ -33,6 +34,7 @@ const MATERIAL = [
   MatDatepickerModule,
   MatNativeDateModule,
   MatTabsModule,
+  MatButtonModule
 ];
 
 @NgModule({

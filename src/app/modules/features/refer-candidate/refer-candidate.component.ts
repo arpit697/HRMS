@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./refer-candidate.component.scss']
 })
 export class ReferCandidateComponent {
-  
+ constructor(){
+ 
+ }
 }

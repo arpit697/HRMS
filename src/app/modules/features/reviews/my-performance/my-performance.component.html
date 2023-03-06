@@ -39,7 +39,7 @@
           class="rating-sum-head"
           *ngFor="let rating of employeeRatings"
         >
-          <mat-card-subtitle>{{ rating.ratingType }}</mat-card-subtitle>
+          <mat-card-subtitle>{{ rating.rating_type }}</mat-card-subtitle>
           <b>{{ rating.score }}</b>
         </mat-card>
       </div>
@@ -49,7 +49,9 @@
 
 <mat-card class="rating-card-container">
   <div class="header">
-    <button mat-raised-button>Monthly Rating</button>
+    <button class="monthly-rating-button" mat-raised-button>
+      Monthly Rating
+    </button>
   </div>
   <mat-divider></mat-divider>
   <div class="heading-filter">
@@ -57,7 +59,11 @@
     <div>
       <mat-card-subtitle>Select Year :</mat-card-subtitle>
       <mat-form-field appearance="outline">
-        <mat-select #yearValue (selectionChange)="selectedYear($event.value)">
+        <mat-select
+          [(value)]="selectedYearValue"
+          #yearValue
+          (selectionChange)="selectedYear($event.value)"
+        >
           <mat-option
             *ngFor="let rating of employeeRatingMonths"
             [value]="rating.year"
@@ -70,7 +76,21 @@
 
   <div class="rating-cards">
     <div class="card-wrapper" *ngFor="let rating of ratingYear">
-      <mat-card class="card" *ngFor="let monthlyRating of rating.months">{{monthlyRating.month}}</mat-card>
+      <mat-card class="month-card" *ngFor="let monthlyRating of rating.months">
+        <div class="month" >
+          <mat-card-subtitle>{{ monthlyRating.month }}</mat-card-subtitle>
+          <mat-card-subtitle class="rating">{{ monthlyRating.rating }}</mat-card-subtitle>
+        </div>
+
+        <div class="award" >
+          <mat-card-subtitle>{{ "AWARDS : " }}</mat-card-subtitle>
+          <mat-card-subtitle>{{ monthlyRating.reward }}</mat-card-subtitle>
+        </div>
+        <div class="honor" >
+          <mat-card-subtitle>{{ "HONOR : " }}</mat-card-subtitle>
+          <mat-card-subtitle>{{ monthlyRating.honor }}</mat-card-subtitle>
+        </div>
+      </mat-card>
     </div>
   </div>
 </mat-card>

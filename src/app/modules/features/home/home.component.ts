@@ -71,8 +71,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     dots: true,
     mouseDrag: false,
     touchDrag: true,
-    // autoplay: true,
-    // autoplayTimeout: 4000,
+    autoplay: true,
+    autoplayTimeout: 4000,
     responsive: {
       '0': {
         items: 1,
@@ -80,10 +80,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
       '600': {
         items: 2,
       },
-      '1500': {
+      '1400': {
         items: 3,
       },
     },
+    margin: 5,
   };
   bottomCarousel: OwlOptions = {
     loop: false,
@@ -123,13 +124,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     autoplay: true,
     animateOut: 'fadeOut',
     animateIn: 'fadeIn',
-    smartSpeed: 450,
-    autoplayTimeout: 2000,
+    smartSpeed: 750,
+    autoplayTimeout: 5000,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
     navSpeed: 700,
-    
   };
 
   ngAfterViewInit() {

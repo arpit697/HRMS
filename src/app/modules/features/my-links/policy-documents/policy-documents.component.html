@@ -1,6 +1,10 @@
 <app-ru-table
-  class="table"
+  [TableClass]="'policy-document-table'"
   [tableColumns]="tableColumns"
   [tableData]="tableData"
+  (clickHandler)="downloadHandler($event)"
 ></app-ru-table>
-<img src="../../../../../assets/policyDoc/Appinventiv_Policy_Manual.pdf" alt="">
+<img
+  src="../../../../../assets/policyDoc/Appinventiv_Policy_Manual.pdf"
+  alt=""
+/>

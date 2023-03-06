@@ -16,6 +16,7 @@ export class PolicyDocumentsComponent {
       columnDef: 'name',
       header: 'Name',
       cell: (element: Record<string, any>) => `${element['name']}`,
+      icon: 'picture_as_pdf',
     },
     {
       columnDef: 'type',
@@ -96,4 +97,16 @@ export class PolicyDocumentsComponent {
       file_url: 'assets/policyDoc/SexualHarassment.pdf',
     },
   ];
+
+  downloadHandler(element: any) {
+    const fileUrl = element.file_url;
+    const fileName = `${element.name}`;
+    const link = document.createElement('a');
+    link.setAttribute('href', fileUrl);
+    link.setAttribute('download', fileName);
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 }

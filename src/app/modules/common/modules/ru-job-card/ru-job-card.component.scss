@@ -55,7 +55,7 @@ mat-card {
 
 .action-buttons {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: calc(50% - 0.5em) calc(50% - 0.5em);
   gap: 1em;
   button {
     width: 100%;
