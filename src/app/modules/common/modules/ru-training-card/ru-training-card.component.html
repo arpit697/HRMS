@@ -1,0 +1,40 @@
+<mat-card>
+  <div class="img-background">
+    <ng-content select=".card-image"></ng-content>
+  </div>
+  <div class="training">
+    <mat-card-title>
+      <ng-content select=".training-name"></ng-content>
+    </mat-card-title>
+    <button mat-raised-button class="status-button">
+      <ng-content select=".current-status"></ng-content>
+    </button>
+  </div>
+  <mat-card-subtitle class="description"> </mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <div class="training-details">
+    <div class="detail">
+      <mat-card-subtitle class="start-date">Start Date</mat-card-subtitle>
+      <mat-card-subtitle class="date">
+        <ng-content select=".start-date"></ng-content>
+      </mat-card-subtitle>
+    </div>
+    <div class="detail">
+      <mat-card-subtitle class="end-date">End Date</mat-card-subtitle>
+      <mat-card-subtitle class="date">
+        <ng-content select=".end-date"></ng-content>
+      </mat-card-subtitle>
+    </div>
+    <div class="detail">
+      <mat-card-subtitle class="mode-type">Mode</mat-card-subtitle>
+      <mat-card-subtitle class="mode">
+        <ng-content select=".mode-type"></ng-content>
+      </mat-card-subtitle>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-card-actions class="action-buttons">
+    <button mat-raised-button class="view">View Details</button>
+    <button mat-raised-button class="feed-back">Feedback</button>
+  </mat-card-actions>
+</mat-card>

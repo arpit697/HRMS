@@ -47,7 +47,7 @@
 
 .upper-card {
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: calc(70% - 0.5em) calc(30% - 0.5em);
   gap: 1em;
   .opening-refer {
     display: grid;
@@ -113,57 +113,10 @@
     }
   }
 }
-.carousel-right {
-  padding: 24px;
-  .heading {
-    font-family: "Lato";
-    font-size: 20px;
-    color: #231e1e;
-    font-weight: 700;
-    line-height: 1.5;
-    margin: 0;
-  }
-  .new-member-wrapper {
-    margin-top: 30px;
-    padding-left: 26px;
-
-    .member-card {
-      height: 392px;
-      max-width: 296px;
-      background-image: url(../../../../assets/default/new-family-card.png);
-      background-repeat: no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      gap: 1em;
-
-      .new-employee-image {
-        height: 120px;
-        width: 120px;
-        border-radius: 50%;
-      }
-    }
-  }
-}
-
-.job-opening-wrapper {
-  .job-card {
-    display: flex;
-    .card-image {
-      max-width: 100px;
-      max-height: 100px;
-    }
-  }
-}
 
 .middle-card {
   padding-left: 24px;
   padding-right: 24px;
-  mat-card {
-    min-height: 30em;
-  }
   .middle-card-heading {
     padding-top: 14px;
     padding-bottom: 24px;
@@ -180,11 +133,11 @@
     border: 1.5px solid rgba(150, 165, 184, 0.3);
     box-sizing: border-box;
     border-radius: 10px !important ;
-
     .appreciation-card {
       padding: 16px;
       padding-bottom: 6em;
       box-sizing: border-box;
+      min-height: 29em;
       .title-wrapper {
         display: flex;
         align-items: center;
@@ -220,6 +173,7 @@
     padding: 16px;
     padding-bottom: 6em;
     box-sizing: border-box;
+    min-height: 29em;
     .title-wrapper {
       display: flex;
       align-items: center;
@@ -245,6 +199,7 @@
     }
     .image-wrapper {
       overflow: hidden;
+      height: 150px;
       img {
         height: 150px;
       }
@@ -273,6 +228,7 @@
     padding: 16px;
     padding-bottom: 6em;
     box-sizing: border-box;
+    min-height: 29em;
     .title-wrapper {
       display: flex;
       align-items: center;
@@ -298,6 +254,7 @@
     }
     .image-wrapper {
       overflow: hidden;
+      height: 150px;
       img {
         height: 150px;
       }
@@ -326,6 +283,7 @@
     padding: 16px;
     padding-bottom: 6em;
     box-sizing: border-box;
+    min-height: 29em;
     .title-wrapper {
       display: flex;
       align-items: center;
@@ -351,6 +309,7 @@
     }
     .image-wrapper {
       overflow: hidden;
+      height: 150px;
       img {
         height: 150px;
       }
@@ -373,17 +332,14 @@
     }
   }
 }
-
-.card-bottom {
-  .image-wrapper {
-    height: 256px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .gallery-image {
-      margin-right: 1em;
-    }
+.image-wrapper {
+  height: 256px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .gallery-image {
+    margin-right: 1em;
   }
 }
 
@@ -404,10 +360,10 @@
 @media all and (max-width: 1400px) {
   .upper-card {
     grid-template-columns: 100%;
-    .carousel-right {
-      .new-member-wrapper {
-      }
-    }
+    // .carousel-right {
+    //   .new-member-wrapper {
+    //   }
+    // }
   }
 }
 

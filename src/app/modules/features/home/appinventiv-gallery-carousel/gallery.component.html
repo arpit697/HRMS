@@ -1,0 +1,30 @@
+<mat-card class="carousel-wrapper">
+  <div class="heading">
+    <mat-card-title>New Family Members</mat-card-title>
+    <mat-card-actions class="icon-wrapper">
+      <mat-icon class="arrow-icon">chevron_left</mat-icon>
+      <mat-icon class="arrow-icon">chevron_right</mat-icon>
+    </mat-card-actions>
+  </div>
+  <div>
+    <owl-carousel-o [options]="bottomCarousel">
+      <ng-container *ngFor="let item of gallery">
+        <ng-template carouselSlide>
+          <div class="image-wrapper">
+            <img src="{{ item.collection[0] }}" />
+            <div class="count">
+              <mat-icon>image</mat-icon>
+              <mat-card-subtitle>{{
+                item.collection.length
+              }}</mat-card-subtitle>
+            </div>
+            <mat-card-title class="collection-name">
+              {{ item.collection_name }}</mat-card-title
+            >
+            <button (click)="view(item)" class="view-button">View</button>
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+</mat-card>

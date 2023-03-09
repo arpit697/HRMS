@@ -27,12 +27,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
       to: '9',
     },
   };
+
+  arr = [1, 2, 3];
   ngOnInit(): void {
     this.openings = JOBS;
     this.gallery = GALLERY;
     this.newEmployee = NEW_FAMILY_MEMBERS;
-    console.log(this.newEmployee);
   }
+
+  bonuses = [
+    { money: '2K', expReq: 'For 3 to 5 Years of experience' },
+    { money: '5K', expReq: 'For 5 to 9 Years of experience' },
+    { money: '10K', expReq: 'For 9+ Years of experience' },
+  ];
 
   topCarouselLeft = {
     loop: true,
@@ -86,20 +93,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
     margin: 5,
   };
-  bottomCarousel: OwlOptions = {
-    loop: false,
-    responsive: {
-      '0': {
-        items: 1,
-      },
-      '600': {
-        items: 2,
-      },
-      '1500': {
-        items: 3,
-      },
-    },
-  };
 
   innerCardLeft: OwlOptions = {
     loop: true,
@@ -136,39 +129,3 @@ export class HomeComponent implements OnInit, AfterViewInit {
     window.dispatchEvent(new Event('resize'));
   }
 }
-
-// items: The number of items to be displayed on a single page.
-
-// loop: Enables looping of the carousel, so that the first and last items are connected.
-
-// autoplay: Enables automatic rotation of the carousel.
-
-// autoplayTimeout: The time in milliseconds between automatic rotations.
-
-// autoplayHoverPause: Pause autoplay when hovering over the carousel.
-
-// nav: Enables navigation arrows to move forward and backward in the carousel.
-
-// dots: Enables navigation dots at the bottom of the carousel.
-
-// autoWidth: Sets the width of the items to auto.
-
-// center: Enables centering of the active item.
-
-// lazyLoad: Enables lazy loading of images.
-
-// responsive: Allows configuration of the carousel based on the screen size.
-
-// mouseDrag: Enables dragging of the carousel using the mouse.
-
-// touchDrag: Enables dragging of the carousel using touch.
-
-// pullDrag: Enables dragging of the carousel using the mouse or touch.
-
-// freeDrag: Enables free dragging of the carousel.
-
-// merge: Merges items to create a seamless effect.
-
-// mergeFit: Ensures that items are merged to fit within the container.
-
-// stagePadding: Adds padding to the sides of the carousel.

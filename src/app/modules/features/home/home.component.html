@@ -21,85 +21,31 @@
           [routerLink]="'JOB_OPENINGS' | routing"
         ></app-ru-button>
       </div>
-      <div class="carousel-container">
-        <div class="job-opening-wrapper">
-          <mat-card class="job-card">
-            <owl-carousel-o [options]="topCarouselLeft">
-              <ng-template carouselSlide *ngFor="let item of openings">
-                <app-ru-job-card>
-                  <img class="card-image" src="{{ item.tech_image }}" alt="" />
-                  <span class="location_name">{{ item.location }}</span>
-                  <span class="date">{{ item.release_date }}</span>
-                  <span class="designation_name">{{ item.tech_name }}</span>
-                  <span class="tech_name">{{ item.tech_name }}</span>
-                  <span class="description">{{ item.description }}</span>
-                  <span class="opening_count">{{ item.opening_count }}</span>
-                  <span class="from">{{ item.experience.from }}</span>
-                  <span class="to">{{ item.experience.to }}</span>
-                </app-ru-job-card>
-              </ng-template>
-            </owl-carousel-o>
-          </mat-card>
-        </div>
-      </div>
+      <app-latest-job-openings></app-latest-job-openings>
     </div>
     <div class="referral-bonus">
-      <div class="">
-        <mat-card-title class="ref-bonus-heading"
-          >OUR REFERRAL BONUS PROGRAM</mat-card-title
-        >
-      </div>
+      <mat-card-title class="ref-bonus-heading"
+        >OUR REFERRAL BONUS PROGRAM</mat-card-title
+      >
       <mat-card class="list-container">
         <ul>
-          <li>
-            <mat-card-title class="money">2K</mat-card-title>
-            <mat-card-subtitle class="ref-bonus"
-              >Referral Bonus</mat-card-subtitle
-            >
-            <mat-card-subtitle class="exp-req"
-              >For 3 to 5 Years of experience</mat-card-subtitle
-            >
-          </li>
-          <li>
-            <mat-card-title class="money">5K</mat-card-title>
-            <mat-card-subtitle class="ref-bonus"
-              >Referral Bonus</mat-card-subtitle
-            >
-            <mat-card-subtitle class="exp-req"
-              >For 5 to 9 Years of experience</mat-card-subtitle
-            >
-          </li>
-          <li>
-            <mat-card-title class="money">10K</mat-card-title>
-            <mat-card-subtitle class="ref-bonus"
-              >Referral Bonus</mat-card-subtitle
-            >
-            <mat-card-subtitle class="exp-req"
-              >For 9+ Years of experience</mat-card-subtitle
-            >
-          </li>
+          <ng-container *ngFor="let bonus of bonuses">
+            <li>
+              <mat-card-title class="money">{{ bonus.money }}</mat-card-title>
+              <mat-card-subtitle class="ref-bonus"
+                >Referral Bonus</mat-card-subtitle
+              >
+              <mat-card-subtitle class="exp-req">{{
+                bonus.expReq
+              }}</mat-card-subtitle>
+            </li>
+          </ng-container>
         </ul>
       </mat-card>
     </div>
   </mat-card>
-
-  <mat-card class="carousel-right">
-    <mat-card-title class="heading">New Family Members</mat-card-title>
-    <mat-card class="new-member-wrapper">
-      <owl-carousel-o [options]="topCarouselRight">
-        <ng-container *ngFor="let item of newEmployee">
-          <ng-template carouselSlide>
-            <div class="member-card">
-              <img class="new-employee-image" src="{{ item }}" alt="" />
-              <mat-card-title>Something</mat-card-title>
-              <mat-card-subtitle
-                >Social Media Marketing : Social Media Team</mat-card-subtitle
-              >
-            </div>
-          </ng-template>
-        </ng-container>
-      </owl-carousel-o>
-    </mat-card>
+  <mat-card>
+    <app-new-members></app-new-members>
   </mat-card>
 </div>
 <br />
@@ -111,39 +57,7 @@
   >
   <owl-carousel-o [options]="middleCarousel">
     <ng-container>
-      <ng-template carouselSlide>
-        <mat-card class="middle-card-content-wrapper">
-          <owl-carousel-o [options]="innerCardLeft">
-            <ng-container>
-              <ng-template carouselSlide>
-                <mat-card class="appreciation-card">
-                  <div class="title-wrapper">
-                    <mat-icon class="icon">fiber_manual_record</mat-icon>
-                    <mat-card-subtitle class="for"
-                      >Appreciation for team</mat-card-subtitle
-                    >
-                  </div>
-                  <mat-card-subtitle class="from"
-                    >Dear Moxa Team</mat-card-subtitle
-                  >
-                  <mat-card-subtitle
-                    >We would like to really appreciate the hard work of each
-                    individual and show our gratitude. We really appreciate the
-                    efforts and good work. Keep Shining and growing! All of us
-                    are putting our best efforts we are sure, so keep spreading
-                    your awesomeness. View More</mat-card-subtitle
-                  >
-
-                  <button class="view-more-button" mat-raised-button>
-                    View More
-                  </button>
-                </mat-card>
-              </ng-template>
-            </ng-container>
-          </owl-carousel-o>
-        </mat-card>
-      </ng-template>
-      <ng-template carouselSlide>
+      <ng-template carouselSlide *ngFor="let items of arr">
         <mat-card class="award-card">
           <div class="title-wrapper">
             <mat-icon class="icon">fiber_manual_record</mat-icon>
@@ -188,118 +102,40 @@
           </div>
         </mat-card>
       </ng-template>
-      <ng-template carouselSlide>
-        <mat-card class="birthday-celebration">
-          <div class="title-wrapper">
-            <mat-icon class="icon">fiber_manual_record</mat-icon>
-            <mat-card-subtitle class="for">Awards</mat-card-subtitle>
-          </div>
-          <mat-card-subtitle class="from">Dear</mat-card-subtitle>
-          <div class="nested-wrapper">
-            <div class="nested">
-              <owl-carousel-o [options]="innerCardsRight">
-                <ng-container *ngFor="let slide of gallery; let index = index">
-                  <ng-template carouselSlide>
-                    <div class="image-wrapper item">
-                      <img class="gallery-image" src="{{ slide }}" />
-                    </div>
-                  </ng-template>
-                </ng-container>
-              </owl-carousel-o>
-            </div>
-            <div class="nested">
-              <owl-carousel-o [options]="innerCardsRight">
-                <ng-container *ngFor="let slide of gallery; let index = index">
-                  <ng-template carouselSlide>
-                    <div class="image-wrapper item">
-                      <img class="gallery-image" src="{{ slide }}" />
-                    </div>
-                  </ng-template>
-                </ng-container>
-              </owl-carousel-o>
-            </div>
-          </div>
-          <div class="message">
-            <mat-card-subtitle
-              >I can’t believe it’s your birthday again! One more year together
-              of sharing ideas and minds. Thanks for everything! Happy birthday!
-            </mat-card-subtitle>
-          </div>
-
-          <div class="cheers">
-            <mat-card-subtitle>Cheers !</mat-card-subtitle>
-            <mat-card-subtitle class="appinventiv"
-              >Appinventiv</mat-card-subtitle
-            >
-          </div>
-        </mat-card>
-      </ng-template>
-      <ng-template carouselSlide>
-        <mat-card class="work-anniversary">
-          <div class="title-wrapper">
-            <mat-icon class="icon">fiber_manual_record</mat-icon>
-            <mat-card-subtitle class="for">Awards</mat-card-subtitle>
-          </div>
-          <mat-card-subtitle class="from">Dear</mat-card-subtitle>
-          <div class="nested-wrapper">
-            <div class="nested">
-              <owl-carousel-o [options]="innerCardsRight">
-                <ng-container *ngFor="let slide of gallery; let index = index">
-                  <ng-template carouselSlide>
-                    <div class="image-wrapper item">
-                      <img class="gallery-image" src="{{ slide }}" />
-                    </div>
-                  </ng-template>
-                </ng-container>
-              </owl-carousel-o>
-            </div>
-            <div class="nested">
-              <owl-carousel-o [options]="innerCardsRight">
-                <ng-container *ngFor="let slide of gallery; let index = index">
-                  <ng-template carouselSlide>
-                    <div class="image-wrapper item">
-                      <img class="gallery-image" src="{{ slide }}" />
-                    </div>
-                  </ng-template>
-                </ng-container>
-              </owl-carousel-o>
-            </div>
-          </div>
-          <div class="message">
-            <mat-card-subtitle
-              >Wishing you many more years of success, good luck, and joy! On
-              this blissful and charming day of your Corporate anniversary may
-              you continue the journey of achievements with pride!
-            </mat-card-subtitle>
-          </div>
-
-          <div class="cheers">
-            <mat-card-subtitle>Cheers !</mat-card-subtitle>
-            <mat-card-subtitle class="appinventiv"
-              >Appinventiv</mat-card-subtitle
-            >
-          </div>
-        </mat-card>
-      </ng-template>
     </ng-container>
   </owl-carousel-o>
 </mat-card>
 <br />
 <br /><br />
+<app-gallery></app-gallery>
 
-<mat-card class="card-bottom">
-  <div class="heading">
-    <mat-card-title>New Family Members</mat-card-title>
-  </div>
-  <div>
-    <owl-carousel-o [options]="bottomCarousel">
-      <ng-container *ngFor="let slide of gallery">
+<!-- <ng-template carouselSlide>
+  <mat-card class="middle-card-content-wrapper">
+    <owl-carousel-o [options]="innerCardLeft">
+      <ng-container>
         <ng-template carouselSlide>
-          <div class="image-wrapper">
-            <img class="gallery-image" src="{{ slide }}" />
-          </div>
+          <mat-card class="appreciation-card">
+            <div class="title-wrapper">
+              <mat-icon class="icon">fiber_manual_record</mat-icon>
+              <mat-card-subtitle class="for"
+                >Appreciation for team</mat-card-subtitle
+              >
+            </div>
+            <mat-card-subtitle class="from">Dear Moxa Team</mat-card-subtitle>
+            <mat-card-subtitle
+              >We would like to really appreciate the hard work of each
+              individual and show our gratitude. We really appreciate the
+              efforts and good work. Keep Shining and growing! All of us are
+              putting our best efforts we are sure, so keep spreading your
+              awesomeness. View More</mat-card-subtitle
+            >
+
+            <button class="view-more-button" mat-raised-button>
+              View More
+            </button>
+          </mat-card>
         </ng-template>
       </ng-container>
     </owl-carousel-o>
-  </div>
-</mat-card>
+  </mat-card>
+</ng-template> -->

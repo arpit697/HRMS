@@ -1,0 +1,14 @@
+<owl-carousel-o [options]="carousel_config">
+  <ng-container>
+    <ng-template carouselSlide *ngFor="let item of gallery?.collection">
+      <div class="image-wrapper">
+        <img attr.src="{{ item }}" alt="" />
+      </div>
+    </ng-template>
+  </ng-container>
+</owl-carousel-o>
+
+<mat-card-actions class="icon-wrapper">
+  <mat-icon class="arrow-icon">chevron_left</mat-icon>
+  <mat-icon class="arrow-icon">chevron_right</mat-icon>
+</mat-card-actions>

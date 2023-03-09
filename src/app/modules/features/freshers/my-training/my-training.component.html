@@ -1,0 +1,11 @@
+<mat-card-title>Trainings</mat-card-title>
+<div>
+  <app-ru-training-card *ngFor="let training of employee_training_data">
+    <img class="card-image" src="{{ training.default_img }}" alt="" />
+    <span class="training-name">{{ training.name }}</span>
+    <span class="current-status">{{ training.status }}</span>
+    <span class="start-date">{{ training.start_date }}</span>
+    <span class="end-date">{{ training.end_date }}</span>
+    <span class="mode-type">{{ training.mode }}</span>
+  </app-ru-training-card>
+</div>

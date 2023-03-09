@@ -1,0 +1,22 @@
+<mat-card class="wrapper">
+  <div class="heading">
+    <mat-card-title>New Family Members</mat-card-title>
+    <mat-card-actions class="icon-wrapper">
+      <mat-icon class="arrow-icon">chevron_left</mat-icon>
+      <mat-icon class="arrow-icon">chevron_right</mat-icon>
+    </mat-card-actions>
+  </div>
+  <owl-carousel-o [options]="topCarouselRight">
+    <ng-container *ngFor="let item of newEmployee">
+      <ng-template carouselSlide>
+        <div class="member-card">
+          <img class="new-employee-image" src="{{ item }}" alt="" />
+          <mat-card-title>Something</mat-card-title>
+          <mat-card-subtitle
+            >Social Media Marketing : Social Media Team</mat-card-subtitle
+          >
+        </div>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</mat-card>

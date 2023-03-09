@@ -11,11 +11,27 @@ import { MatIconModule } from '@angular/material/icon';
 import { RuButtonModule } from '../../common/modules/ru-button/ru-button.module';
 import { RoutingModule } from 'src/app/pipes/routing/routing.module';
 import { MatButtonModule } from '@angular/material/button';
+import { GalleryComponent } from './appinventiv-gallery-carousel/gallery.component';
+import { LatestJobOpeningsComponent } from './latest-job-openings-carousel/latest-job-openings.component';
+import { NewMembersComponent } from './new-members-carousel/new-members.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { GalleryDialogComponent } from './appinventiv-gallery-carousel/gallery-dialog/gallery-dialog.component';
 
-const MATERIAL = [MatCardModule, MatDividerModule, MatIconModule];
+const MATERIAL = [
+  MatCardModule,
+  MatDividerModule,
+  MatIconModule,
+  MatDialogModule,
+];
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [
+    HomeComponent,
+    GalleryComponent,
+    GalleryDialogComponent,
+    LatestJobOpeningsComponent,
+    NewMembersComponent,
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule,

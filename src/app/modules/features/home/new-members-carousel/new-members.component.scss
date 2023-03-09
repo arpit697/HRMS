@@ -1,0 +1,38 @@
+.wrapper {
+  .heading {
+    margin-bottom: 0;
+    background-color: transparent;
+    border-bottom: 0 solid rgba(24, 28, 33, 0.06);
+    padding-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .icon-wrapper {
+      gap: 1em;
+      .arrow-icon {
+        border-radius: 50%;
+        padding: 0.2em;
+        color: #199cff;
+        background: #f3f7fc;
+      }
+    }
+  }
+  .member-card {
+    min-height: 392px;
+    max-width: 296px;
+    background-image: url(../../../../../assets/default/new-family-card.png);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1em;
+
+    .new-employee-image {
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+    }
+  }
+}

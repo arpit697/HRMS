@@ -1,0 +1,48 @@
+<div>
+  <mat-card-title> List All Candidates </mat-card-title>
+</div>
+
+<mat-card>
+  <div>
+    <div>
+      <mat-card-subtitle></mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <mat-select>
+          <mat-option></mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-card-subtitle></mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <mat-select>
+          <mat-option></mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <mat-card-subtitle>Show</mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <mat-select>
+          <mat-option></mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-card-subtitle>Entries</mat-card-subtitle>
+    </div>
+
+    <div>
+      <mat-card-subtitle>Search :</mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <input matInput type="text" />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <app-ru-table
+    [tableColumns]="tableColumns"
+    [tableData]="tableData"
+  ></app-ru-table>
+</mat-card>

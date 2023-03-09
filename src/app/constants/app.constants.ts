@@ -83,59 +83,110 @@ export const SIDE_NAV_ITEM = [
   {
     icon: 'work',
     name: 'Recruitment',
-    categories: [{ name: 'My Interview' }],
+    categories: [
+      {
+        icon: 'fullscreen',
+        name: 'My Interview',
+        router_link: 'INTERVIEWS',
+      },
+    ],
   },
 
   {
     icon: 'model_training',
     name: 'Freshers Training',
-    categories: [{ name: 'My Training' }],
+    categories: [
+      {
+        icon: 'moving',
+        name: 'My Training',
+        router_link: 'FRESHERS_TRAININGS',
+      },
+    ],
   },
   {
     icon: 'straighten',
     name: 'Training',
     categories: [
-      { name: 'Upcoming Training' },
-      { name: 'Ongoing Trainings' },
-      { name: 'My Trainings' },
-      { name: 'Requested Trainings' },
+      {
+        icon: 'upcoming',
+        name: 'Upcoming Training',
+        router_link: 'UPCOMING_TRAININGS',
+      },
+      {
+        icon: 'arrow_upward',
+        name: 'Ongoing Trainings',
+        router_link: 'ONGOING_TRAININGS',
+      },
+      { icon: 'moving', name: 'My Trainings', router_link: 'MY_TRAININGS' },
+      {
+        icon: 'pending_actions',
+        name: 'Requested Trainings',
+        router_link: 'REQUESTED_TRAININGS',
+      },
     ],
   },
   {
     icon: 'science',
     name: 'Assets inventory',
     categories: [
-      { name: 'My Assets Inventory' },
-      { name: 'Request Asset' },
-      { name: 'Asset Declaration' },
+      {
+        icon: 'devices',
+        name: 'My Assets Inventory',
+        router_link: 'MY_ASSETS_INVENTORY',
+      },
+      { icon: 'send', name: 'Request Asset', router_link: 'REQUEST_ASSET' },
+      {
+        icon: 'info',
+        name: 'Asset Declaration',
+        router_link: 'ASSET_DECLARATION',
+      },
     ],
   },
   {
     icon: 'schedule',
     name: 'Attendance',
     categories: [
-      { name: 'Attendance Calendar' },
-      { name: 'Manual Punch' },
-      { name: 'Punch log' },
+      {
+        icon: 'fiber_manual_record',
+        name: 'Attendance Calendar',
+        router_link: 'ATTENDANCE_CALENDAR',
+      },
+      {
+        icon: 'precision_manufacturing',
+        name: 'Manual Punch',
+        router_link: 'MANUAL_PUNCH',
+      },
+      { icon: 'punch_clock', name: 'Punch log', router_link: 'PUNCH_LOG' },
     ],
   },
   {
     icon: 'energy_savings_leaf',
     name: 'Leave',
-    categories: [{ name: 'My Leave' }, { name: 'Floating Leave' }],
+    categories: [
+      { icon: 'villa', name: 'My Leave', router_link: 'MY_LEAVES' },
+      {
+        icon: 'houseboat',
+        name: 'Floating Leave',
+        router_link: 'FLOATING_LEAVES',
+      },
+    ],
   },
   {
     icon: 'confirmation_number',
     name: 'Tickets',
-    categories: [{ name: 'Tickets' }],
+    categories: [
+      { icon: 'book_online', name: 'Tickets', router_link: 'MY_TICKETS' },
+    ],
   },
   {
     icon: 'local_activity',
     name: 'DSR',
-    categories: [{ name: 'My DSR' }],
+    categories: [
+      { icon: 'edit_calendar', name: 'My DSR', router_link: 'MY_DSR' },
+    ],
   },
 
-  { icon: 'view_agenda', name: 'Projects' },
+  { icon: 'view_agenda', name: 'Projects', router_link: 'PROJECTS' },
   { icon: 'currency_exchange', name: 'Expense', active: false },
   { icon: 'campaign', name: 'Announcements', active: false },
   { icon: 'flight_takeoff', name: 'Travels', active: false },
@@ -246,7 +297,6 @@ export const GALLERY = [
   '../../assets/gallery/award_1562311580581.JPG',
   '../../assets/gallery/award_1562312036940.jpg',
   '../../assets/gallery/award_1562312173528.JPG',
-  '../../assets/gallery/award_1562321673412.jpg',
   '../../assets/gallery/award_1565349878201.jpg',
   '../../assets/gallery/award_1578298873782.JPG',
   '../../assets/gallery/award_1580297046325.jpg',
@@ -262,6 +312,49 @@ export const GALLERY = [
   '../../assets/gallery/award_1672292016846.jpg',
   '../../assets/gallery/award_1672378171227.jpg',
   '../../assets/gallery/award_1674822333816.jpg',
+];
+
+export const GALLERY_COLLECTION = [
+  {
+    collection_name: 'lorem',
+    collection: [
+      '../../assets/gallery/award_165840057373.jpg',
+      '../../assets/gallery/award_166719426194.JPG',
+      '../../assets/gallery/award_1562311580581.JPG',
+    ],
+  },
+  {
+    collection_name: 'lorem 4',
+    collection: [
+      '../../assets/gallery/award_1658644699135.JPG',
+      '../../assets/gallery/award_1659338710776.jpg',
+      '../../assets/gallery/award_1660310382113.jpg',
+      '../../assets/gallery/award_1665553979253.jpg',
+      '../../assets/gallery/award_1669014343495.png',
+      '../../assets/gallery/award_1672292016846.jpg',
+      '../../assets/gallery/award_1672378171227.jpg',
+      '../../assets/gallery/award_1674822333816.jpg',
+    ],
+  },
+  {
+    collection_name: 'lorem 3',
+    collection: [
+      '../../assets/gallery/award_1578298873782.JPG',
+      '../../assets/gallery/award_1580297046325.jpg',
+      '../../assets/gallery/award_1649302782547.JPG',
+      '../../assets/gallery/award_1649320793321.jpg',
+      '../../assets/gallery/award_1649407376974.JPG',
+      '../../assets/gallery/award_1656582283345.JPG',
+    ],
+  },
+  {
+    collection_name: 'lorem 2',
+    collection: [
+      '../../assets/gallery/award_1562312036940.jpg',
+      '../../assets/gallery/award_1562312173528.JPG',
+      '../../assets/gallery/award_1565349878201.jpg',
+    ],
+  },
 ];
 
 export const NEW_FAMILY_MEMBERS = [
@@ -535,5 +628,24 @@ export const EMP_RATING_MONTH = [
         reward: 0,
       },
     ],
+  },
+];
+
+export const EMPLOYEE_TRAINING_DATA = [
+  {
+    default_img: '../../assets/default/ic-training.svg',
+    name: 'Angular Training',
+    status: 'Complete',
+    start_date: 'Feb-28-2022',
+    end_date: 'Arp-02-2022',
+    mode: 'Online',
+  },
+  {
+    default_img: '../../assets/default/ic-training.svg',
+    name: 'HTML/CSS/UI',
+    status: 'Complete',
+    start_date: 'Feb-14-2022',
+    end_date: 'Feb-25-2022',
+    mode: 'offline',
   },
 ];

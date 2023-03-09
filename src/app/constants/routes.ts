@@ -131,3 +131,174 @@ export const REFERRAL_LIST: RouteInterface = {
     return `${REFER_CANDIDATE.fullUrl}/${this.path}`;
   },
 };
+
+export const RECRUITMENT: RouteInterface = {
+  path: 'recruitment',
+  get fullUrl(): string {
+    return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
+
+export const INTERVIEWS: RouteInterface = {
+  path: 'interviews',
+  get fullUrl(): string {
+    return `${RECRUITMENT.fullUrl}/${this.path}`;
+  },
+};
+
+export const FRESHERS: RouteInterface = {
+  path: 'freshers',
+  get fullUrl(): string {
+    return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
+
+export const FRESHERS_TRAININGS: RouteInterface = {
+  path: 'my-trainings',
+  get fullUrl(): string {
+    return `${FRESHERS.fullUrl}/${this.path}`;
+  },
+};
+export const TRAINING: RouteInterface = {
+  path: 'training',
+  get fullUrl(): string {
+    return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
+
+export const UPCOMING_TRAININGS: RouteInterface = {
+  path: 'upcoming-trainings',
+  get fullUrl(): string {
+    return `${TRAINING.fullUrl}/${this.path}`;
+  },
+};
+export const ONGOING_TRAININGS: RouteInterface = {
+  path: 'ongoing-trainings',
+  get fullUrl(): string {
+    return `${TRAINING.fullUrl}/${this.path}`;
+  },
+};
+export const MY_TRAININGS: RouteInterface = {
+  path: 'my-trainings',
+  get fullUrl(): string {
+    return `${TRAINING.fullUrl}/${this.path}`;
+  },
+};
+export const REQUESTED_TRAININGS: RouteInterface = {
+  path: 'requested-trainings',
+  get fullUrl(): string {
+    return `${TRAINING.fullUrl}/${this.path}`;
+  },
+};
+
+export const ASSETS_INVENTORY: RouteInterface = {
+  path: 'assets-inventory',
+  get fullUrl(): string {
+    return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
+
+export const ASSET_DECLARATION: RouteInterface = {
+  path: 'assets-declaration',
+  get fullUrl(): string {
+    return `${ASSETS_INVENTORY.fullUrl}/${this.path}`;
+  },
+};
+
+export const REQUEST_ASSET: RouteInterface = {
+  path: 'request-asset',
+  get fullUrl(): string {
+    return `${ASSETS_INVENTORY.fullUrl}/${this.path}`;
+  },
+};
+
+export const MY_ASSETS_INVENTORY: RouteInterface = {
+  path: 'my-assets-inventory',
+  get fullUrl(): string {
+    return `${ASSETS_INVENTORY.fullUrl}/${this.path}`;
+  },
+};
+
+export const LEAVE: RouteInterface = {
+  path: 'leave',
+  get fullUrl(): string {
+    return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
+
+export const MY_LEAVES: RouteInterface = {
+  path: 'my-leaves',
+  get fullUrl(): string {
+    return `${LEAVE.fullUrl}/${this.path}`;
+  },
+};
+
+export const FLOATING_LEAVES: RouteInterface = {
+  path: 'floating-leaves',
+  get fullUrl(): string {
+    return `${LEAVE.fullUrl}/${this.path}`;
+  },
+};
+
+export const TICKETS: RouteInterface = {
+  path: 'tickets',
+  get fullUrl(): string {
+    return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
+
+export const MY_TICKETS: RouteInterface = {
+  path: 'my-tickets',
+  get fullUrl(): string {
+    return `${TICKETS.fullUrl}/${this.path}`;
+  },
+};
+
+export const DSR: RouteInterface = {
+  path: 'dsr',
+  get fullUrl(): string {
+    return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
+
+export const MY_DSR: RouteInterface = {
+  path: 'my-dsr',
+  get fullUrl(): string {
+    return `${DSR.fullUrl}/${this.path}`;
+  },
+};
+
+export const ATTENDANCE: RouteInterface = {
+  path: 'projects',
+  get fullUrl(): string {
+    return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
+
+export const ATTENDANCE_CALENDAR: RouteInterface = {
+  path: 'attendance-calendar',
+  get fullUrl(): string {
+    return `${ATTENDANCE.fullUrl}/${this.path}`;
+  },
+};
+
+export const PUNCH_LOG: RouteInterface = {
+  path: 'punch-log',
+  get fullUrl(): string {
+    return `${ATTENDANCE.fullUrl}/${this.path}`;
+  },
+};
+
+export const MANUAL_PUNCH: RouteInterface = {
+  path: 'manual-punch',
+  get fullUrl(): string {
+    return `${ATTENDANCE.fullUrl}/${this.path}`;
+  },
+};
+
+export const PROJECTS: RouteInterface = {
+  path: 'projects',
+  get fullUrl(): string {
+    return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
