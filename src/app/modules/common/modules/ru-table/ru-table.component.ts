@@ -38,7 +38,7 @@ export class RuTableComponent<T> {
     this.dataSource.paginator = this.Paginator;
   }
 
-  bClick(element : any) {
+  bClick(element: any) {
     this.clickHandler.emit(element);
   }
 }

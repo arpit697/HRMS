@@ -1,5 +1,5 @@
 @use "@angular/material" as mat;
-@use "./scss/global.scss";
+@use "./scss/global.scss" as *;
 @import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
 @import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 
@@ -111,7 +111,6 @@ mat-card-content {
   }
 }
 
-
 //scroll bar
 ::-webkit-scrollbar {
   width: 5px;
@@ -211,38 +210,3 @@ mat-card-content {
   border-top-color: #000000;
   animation: spinner 0.8s linear infinite;
 }
-
-// .owl-carousel - This is the main class that you should add to the container element for your carousel.
-
-// .owl-theme - This class is used in conjunction with the .owl-carousel class to apply a default theme to your carousel.
-
-// .owl-item - This class is applied to each slide in the carousel.
-
-// .owl-nav - This class is used to create the navigation buttons for the carousel.
-
-// .owl-prev and .owl-next - These classes are used to style the navigation buttons.
-
-// .owl-dots - This class is used to create the pagination dots for the carousel.
-
-// .owl-dot - This class is applied to each pagination dot.
-
-// .owl-video - This class is used to create a video slide in the carousel.
-
-// .owl-video-play-icon - This class is used to style the video play icon.
-
-// .owl-video-tn - This class is used to create a thumbnail for the video slide.
-
-// .owl-video-frame - This class is used to create the video iframe.
-
-// .owl-prev , .owl-next{
-//   background-color: #f4f9ff !important;
-//   border-radius: 50% !important;
-//   color: var(--spiro) !important;
-//   font-size: 2em !important;
-// }
-
-// .owl-nav{
-//   position: absolute;
-//   top: -50px ;
-//   right: 0;
-// }

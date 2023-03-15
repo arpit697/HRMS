@@ -1,0 +1,24 @@
+.req-button {
+  width: 15em;
+  background-color: #199cff;
+  color: white;
+}
+
+.gap-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.message-wrapper {
+  font-size: 2.25em;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  align-items: center;
+  button {
+    width: 15em;
+    background-color: #199cff;
+    color: white;
+  }
+}

@@ -1,0 +1,20 @@
+.icon-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+  margin-bottom: 30px;
+  .icon {
+    font-size: 2em;
+    padding: 0.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.project-table-wrapper {
+  padding: 24px;
+  .title {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+}

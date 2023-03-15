@@ -2,10 +2,13 @@
   justify-content: center;
   align-items: center;
   gap: 1em;
-  padding-top: 5em;
-  padding-bottom: 5em;
+  padding-top: 3em;
+  padding-bottom: 3em;
   margin-top: 2%;
+  font-size: 2em;
   button {
     max-width: 10em;
+    background-color: #199cff;
+    color: white;
   }
 }

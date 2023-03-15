@@ -1,1 +1,13 @@
-<p>projects works!</p>
+<div class="icon-group">
+  <mat-icon class="icon">apps</mat-icon>
+  <mat-icon class="icon">list</mat-icon>
+  <mat-icon class="icon" (click)="openAtlassian()">link</mat-icon>
+</div>
+
+<mat-card class="project-table-wrapper">
+  <mat-card-title class="heading">All Projects</mat-card-title>
+  <app-ru-table
+    [tableColumns]="tableColumns"
+    [tableData]="tableData"
+  ></app-ru-table>
+</mat-card>

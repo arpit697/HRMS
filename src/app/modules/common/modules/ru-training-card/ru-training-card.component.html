@@ -29,12 +29,19 @@
       <mat-card-subtitle class="mode-type">Mode</mat-card-subtitle>
       <mat-card-subtitle class="mode">
         <ng-content select=".mode-type"></ng-content>
+        <ng-content select=".seat"></ng-content>
       </mat-card-subtitle>
     </div>
   </div>
   <mat-divider></mat-divider>
   <mat-card-actions class="action-buttons">
     <button mat-raised-button class="view">View Details</button>
-    <button mat-raised-button class="feed-back">Feedback</button>
+    <button
+      mat-raised-button
+      (click)="feedBackHandler($event)"
+      class="feed-back"
+    >
+      Feedback
+    </button>
   </mat-card-actions>
 </mat-card>

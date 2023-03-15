@@ -1,15 +1,9 @@
-mat-card-title {
-  font-family: "Lato";
-  font-size: 24px;
-  color: #199cff;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 32px;
-}
 div {
   display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 2em;
+  grid-template-columns: calc(100% / 3 - 0.5em) calc(100% / 3 - 0.5em) calc(
+      100% / 3 - 0.5em
+    );
+  gap: 1.5em;
 }
 
 @media all and (max-width: 1264px) {

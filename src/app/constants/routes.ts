@@ -269,7 +269,7 @@ export const MY_DSR: RouteInterface = {
 };
 
 export const ATTENDANCE: RouteInterface = {
-  path: 'projects',
+  path: 'attendance',
   get fullUrl(): string {
     return `${FEATURES.fullUrl}/${this.path}`;
   },

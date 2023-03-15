@@ -1,5 +1,13 @@
 table {
   box-shadow: none;
+  .no_data_row {
+    text-align: center;
+    background-color: rgba(24, 28, 33, 0.025);
+    td {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
 }
 
 .policy-document-table {
@@ -43,5 +51,35 @@ table {
       box-shadow: 0 0 2px rgb(0 0 0 / 19%);
       color: #199cff;
     }
+  }
+}
+
+.my-interview-table {
+  th {
+    border: 1px solid #f1f1f2;
+    padding: 0.625rem;
+    font-weight: 400;
+  }
+}
+
+.requested-trainings-table {
+  th {
+    font-size: 14px;
+    color: #96a5b8;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0px 10px 18px 10px;
+    border-bottom: 1px solid #edf2f6;
+  }
+}
+
+.asset-inventory-table {
+  th,
+  td {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.625rem;
+    border: 1px solid #edf2f6;
   }
 }

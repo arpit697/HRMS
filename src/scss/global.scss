@@ -1,3 +1,9 @@
-@forward "common";
 @forward "mixins";
 @forward "var";
+
+.module-title {
+  font-size: 1.5em;
+  color: #199cff;
+  line-height: 1.2;
+  font-weight: 500;
+}

@@ -1,1 +1,18 @@
-<p>requested-trainings works!</p>
+<mat-card-title class="module-title">Requested Trainings</mat-card-title>
+
+<mat-card class="container">
+  <div class="select-filter">
+    <mat-card-subtitle class="label">Show</mat-card-subtitle>
+    <mat-form-field appearance="outline">
+      <mat-select>
+        <mat-option></mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-card-subtitle class="label">entries</mat-card-subtitle>
+  </div>
+  <app-ru-table
+    [tableColumns]="tableColumns"
+    [tableData]="tableData"
+    TableClass="requested-trainings-table"
+  ></app-ru-table>
+</mat-card>

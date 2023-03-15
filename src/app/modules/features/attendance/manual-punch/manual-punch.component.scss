@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  grid-template-columns: calc(30% - 1em) calc(70% - 1em);
+
+  gap: 2em;
+  .employee-detail {
+    .title {
+      padding: 11px 15px;
+    }
+    .field-group {
+      padding: 24px;
+      mat-form-field {
+        width: 100%;
+      }
+    }
+  }
+  .manual-punch-list {
+    .title {
+      padding: 11px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

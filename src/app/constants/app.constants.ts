@@ -649,3 +649,14 @@ export const EMPLOYEE_TRAINING_DATA = [
     mode: 'offline',
   },
 ];
+
+export const UPCOMING_TRAINING_DATA = [
+  {
+    default_img: '../../assets/default/ic-training.svg',
+    name: 'Angular Training',
+    status: 'Complete',
+    start_date: 'Jan-05-2023',
+    end_date: 'Arp-02-2022',
+    seat: '41',
+  },
+];

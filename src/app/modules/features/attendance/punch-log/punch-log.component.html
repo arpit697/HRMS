@@ -1,1 +1,39 @@
-<p>punch-log works!</p>
+<div class="container">
+  <div>
+    <mat-card class="employee-detail">
+      <mat-card-title class="title"> Employee Detail </mat-card-title>
+      <div class="field-group">
+        <div>
+          <mat-card-subtitle> Date </mat-card-subtitle>
+          <mat-form-field appearance="outline">
+            <input matInput type="text" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-card-subtitle> Company </mat-card-subtitle>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option> </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-raised-button>Get</button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <div>
+    <mat-card class="manual-punch-list">
+      <div class="title">
+        <mat-card-title> Manual Punch List </mat-card-title>
+        <button mat-raised-button>+ Add</button>
+      </div>
+      <div class="punch-list"></div>
+      <app-ru-table
+        [tableColumns]="tableColumns"
+        [tableData]="tableData"
+      ></app-ru-table>
+    </mat-card>
+  </div>
+</div>

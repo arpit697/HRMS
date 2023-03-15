@@ -3,15 +3,26 @@ import { CommonModule } from '@angular/common';
 
 import { MyAssetsInventoryRoutingModule } from './my-assets-inventory-routing.module';
 import { MyAssetsInventoryComponent } from './my-assets-inventory.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { RuTableModule } from 'src/app/modules/common/modules/ru-table/ru-table.module';
 
+const MATERIAL = [
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+];
 
 @NgModule({
-  declarations: [
-    MyAssetsInventoryComponent
-  ],
+  declarations: [MyAssetsInventoryComponent],
   imports: [
     CommonModule,
-    MyAssetsInventoryRoutingModule
-  ]
+    MyAssetsInventoryRoutingModule,
+    RuTableModule,
+    ...MATERIAL,
+  ],
 })
-export class MyAssetsInventoryModule { }
+export class MyAssetsInventoryModule {}
