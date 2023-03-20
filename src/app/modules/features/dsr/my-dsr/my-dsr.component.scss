@@ -2,3 +2,28 @@
   display: grid;
   grid-template-columns: 50% 50%;
 }
+
+.project-container {
+  display: grid;
+  padding: 1em;
+  grid-template-columns:
+    calc(25% - 0.25em)
+    calc(25% - 0.25em)
+    calc(25% - 0.25em)
+    calc(25% - 0.25em);
+  gap: 0.25em;
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.expansion-penal-content {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  .filters {
+    .form-field {
+      width: 100%;
+    }
+  }
+}

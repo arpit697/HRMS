@@ -34,7 +34,7 @@ const MATERIAL = [
   MatDatepickerModule,
   MatNativeDateModule,
   MatTabsModule,
-  MatButtonModule
+  MatButtonModule,
 ];
 
 @NgModule({

@@ -1,0 +1,42 @@
+.leave-cards {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1em;
+  .card {
+    padding: 24px;
+    flex-direction: row;
+    gap: 1em;
+    .icon {
+      font-size: 2em;
+      padding: 0.2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #02bc77;
+    }
+    mat-card-subtitle {
+      font-size: 0.8em;
+    }
+  }
+}
+.asset-card {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: calc(50% - 0.5em) calc(50% - 0.5em);
+  gap: 1em;
+  .selection-container {
+    .date-pickers {
+      display: grid;
+      grid-template-columns: calc(50% - 0.5em) calc(50% - 0.5em);
+      gap: 1em;
+      mat-form-field {
+        width: 100%;
+      }
+    }
+    .remark {
+      mat-form-field {
+        width: 100%;
+      }
+    }
+  }
+}

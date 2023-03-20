@@ -12,10 +12,6 @@ mat-card {
   min-height: 180px;
   padding: 1em;
   background-color: #f3f7fc;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 1em;
 
   .location-date {
@@ -27,17 +23,22 @@ mat-card {
       margin-left: 1em;
       padding: 0 1em;
       border-radius: 1em;
-      display: flex;
-      justify-content: center;
       gap: 0.5em;
+      padding-top: 2px;
+      padding-bottom: 2px;
       background-color: white;
-
+      .location-icon {
+        color: #ff9584;
+      }
       mat-card-subtitle {
-        margin-top: 2px;
+        font-size: 0.7em;
+        color: black;
       }
     }
 
     .date {
+      font-size: 0.8em;
+      font-weight: 500;
       padding-right: 1em;
     }
   }
@@ -51,6 +52,7 @@ mat-card {
 }
 
 .description {
+  padding: 10px;
   margin: 8px 0;
 }
 
@@ -62,11 +64,20 @@ mat-card {
   button {
     width: 100%;
     font-weight: 500;
+    font-size: 0.9em;
     line-height: 1.32;
     border-radius: 5px;
-    padding: 12px;
+    padding: 1.5em;
     border: 1.5px solid rgba(150, 165, 184, 0.5);
-    box-shadow: none;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      ),
+      #199cff;
+    background-blend-mode: soft-light, normal;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 12%),
+      inset 0px 2px 0px rgb(255 255 255 / 24%);
   }
 
   .view {

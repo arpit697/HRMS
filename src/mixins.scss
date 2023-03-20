@@ -1,0 +1,32 @@
+// flex related mixins
+@mixin flex-container(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+// grid related mixins
+
+@mixin grid-container($cols, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  grid-gap: $gap;
+}
+
+@mixin grid-template($template) {
+  grid-template: $template;
+}
+
+// height width related mixins
+
+@mixin fixed-size($width, $height) {
+  width: $width;
+  height: $height;
+}

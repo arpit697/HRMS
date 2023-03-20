@@ -16,6 +16,8 @@ import { LatestJobOpeningsComponent } from './latest-job-openings-carousel/lates
 import { NewMembersComponent } from './new-members-carousel/new-members.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { GalleryDialogComponent } from './appinventiv-gallery-carousel/gallery-dialog/gallery-dialog.component';
+import { LatestAtAppinventivCarouselComponent } from './latest-at-appinventiv-carousel/latest-at-appinventiv-carousel.component';
+import { ReferralBonusComponent } from './referral-bonus/referral-bonus.component';
 
 const MATERIAL = [
   MatCardModule,
@@ -31,6 +33,8 @@ const MATERIAL = [
     GalleryDialogComponent,
     LatestJobOpeningsComponent,
     NewMembersComponent,
+    LatestAtAppinventivCarouselComponent,
+    ReferralBonusComponent,
   ],
   imports: [
     CommonModule,

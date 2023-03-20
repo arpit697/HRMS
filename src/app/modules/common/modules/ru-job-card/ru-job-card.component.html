@@ -1,9 +1,9 @@
 <mat-card>
-  <div class="img-background">
+  <div class="img-background flex flex-column jc-center ai-center">
     <ng-content select=".card-image"></ng-content>
-    <div class="location-date">
-      <div class="location">
-        <mat-icon>location_on</mat-icon>
+    <div class="location-date flex ai-center">
+      <div class="location flex jc-center ai-center">
+        <mat-icon class="location-icon">location_on</mat-icon>
         <mat-card-subtitle>
           <ng-content select=".location_name"></ng-content>
         </mat-card-subtitle>

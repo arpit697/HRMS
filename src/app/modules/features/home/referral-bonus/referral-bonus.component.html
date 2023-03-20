@@ -1,0 +1,20 @@
+<div class="referral-bonus">
+  <mat-card-title class="ref-bonus-heading"
+    >OUR REFERRAL BONUS PROGRAM</mat-card-title
+  >
+  <mat-card class="list-container">
+    <ul>
+      <ng-container *ngFor="let bonus of bonuses">
+        <li>
+          <mat-card-title class="money">{{ bonus.money }}</mat-card-title>
+          <mat-card-subtitle class="ref-bonus"
+            >Referral Bonus</mat-card-subtitle
+          >
+          <mat-card-subtitle class="exp-req">{{
+            bonus.expReq
+          }}</mat-card-subtitle>
+        </li>
+      </ng-container>
+    </ul>
+  </mat-card>
+</div>

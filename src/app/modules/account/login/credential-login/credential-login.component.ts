@@ -26,18 +26,11 @@ export class CredentialLoginComponent implements OnInit, AfterViewInit {
     public utility: UtilityService,
     private _formBuilder: FormBuilder,
     private _formValidation: FormValidationService,
-    private _router: Router,
-    private rendererFactory: RendererFactory2
+    private _router: Router
   ) {}
 
   @ViewChild('formField', { read: ElementRef }) formField!: ElementRef;
-  ngAfterViewInit(): void {
-    // const renderer = this.rendererFactory.createRenderer(null, null);
-    // const classList = Array.from(
-    //   renderer.selectRootElement(this.formField.nativeElement).classList
-    // );
-    // console.log(classList);
-  }
+  ngAfterViewInit(): void {}
 
   ngOnInit(): void {
     this.createForm();

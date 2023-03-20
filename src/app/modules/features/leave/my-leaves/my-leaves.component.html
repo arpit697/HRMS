@@ -1,1 +1,95 @@
-<p>my-leaves works!</p>
+<div class="leave-cards">
+  <mat-card class="card" *ngFor="let item of employeeLeaves">
+    <mat-icon class="icon">event</mat-icon>
+    <div>
+      <mat-card-subtitle>{{
+        item.type + item.claimed + "/" + item.total
+      }}</mat-card-subtitle>
+      <mat-card-subtitle>{{ item.type }}</mat-card-subtitle>
+    </div>
+  </mat-card>
+</div>
+<br />
+<br />
+<mat-accordion>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title> This is the expansion title </mat-panel-title>
+      <mat-panel-description>
+        This is a summary of the content
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<br />
+<br />
+<br />
+
+<mat-card class="asset-card">
+  <div class="selection-container">
+    <div class="leave-type">
+      <mat-card-subtitle>Leave Type</mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <mat-select>
+          <mat-option> </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <mat-checkbox>Half Day ?</mat-checkbox>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">1st Half</mat-radio-button>
+          <mat-radio-button value="2">2nd Half</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div class="date-pickers">
+      <div>
+        <mat-card-subtitle>Start Date</mat-card-subtitle>
+        <mat-form-field appearance="outline">
+          <input matInput [matDatepicker]="startDate" />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="startDate"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #startDate></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-card-subtitle>End Date</mat-card-subtitle>
+        <mat-form-field appearance="outline">
+          <input matInput [matDatepicker]="endDate" />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="endDate"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #endDate></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="remark">
+      <mat-card-subtitle>Remark</mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <input matInput type="text" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-card> Upload Document </mat-card>
+    </div>
+    <mat-card-actions>
+      <button mat-raised-button>Save</button>
+      <button mat-raised-button>Cancel</button>
+    </mat-card-actions>
+  </div>
+  <div>
+    <ckeditor [(ngModel)]="content" [config]="editorConfig"></ckeditor>
+  </div>
+</mat-card>
+
+<br />
+<br />
+<br />
+<app-ru-table
+  [tableColumns]="tableColumns"
+  [tableData]="tableData"
+></app-ru-table>

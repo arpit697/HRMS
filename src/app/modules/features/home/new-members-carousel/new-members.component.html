@@ -1,6 +1,6 @@
-<mat-card class="wrapper">
-  <div class="heading">
-    <mat-card-title>New Family Members</mat-card-title>
+<mat-card class="new-member-card">
+  <div class="flex jc-between ai-center">
+    <mat-card-title class="card-title">New Family Members</mat-card-title>
     <mat-card-actions class="icon-wrapper">
       <mat-icon class="arrow-icon">chevron_left</mat-icon>
       <mat-icon class="arrow-icon">chevron_right</mat-icon>
@@ -9,7 +9,7 @@
   <owl-carousel-o [options]="topCarouselRight">
     <ng-container *ngFor="let item of newEmployee">
       <ng-template carouselSlide>
-        <div class="member-card">
+        <div class="user-card flex flex-column jc-center ai-center">
           <img class="new-employee-image" src="{{ item }}" alt="" />
           <mat-card-title>Something</mat-card-title>
           <mat-card-subtitle

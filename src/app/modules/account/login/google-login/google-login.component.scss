@@ -1,8 +1,4 @@
 mat-card {
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  border: none;
-  margin: 0;
   padding: 0;
 }
 .google-login-main {
@@ -88,4 +84,5 @@ mat-card {
   }
 }
 
-@media all and (max-width: 17em) {}
+@media all and (max-width: 17em) {
+}

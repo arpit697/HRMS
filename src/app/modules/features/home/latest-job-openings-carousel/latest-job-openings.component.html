@@ -1,4 +1,12 @@
 <mat-card class="job-card">
+  <div class="flex jc-between">
+    <mat-card-title class="card-title">Latest Job Openings</mat-card-title>
+    <app-ru-button
+      [bText]="'View All'"
+      [bClass]="'btn-primary'"
+      [routerLink]="'JOB_OPENINGS' | routing"
+    ></app-ru-button>
+  </div>
   <owl-carousel-o [options]="topCarouselLeft">
     <ng-template carouselSlide *ngFor="let item of openings">
       <app-ru-job-card>

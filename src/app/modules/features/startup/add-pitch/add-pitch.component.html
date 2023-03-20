@@ -60,14 +60,15 @@
     <mat-card-subtitle for="pitch_idea"
       >Idea - (Share your idea in brief)</mat-card-subtitle
     >
-    <editor
+    <!-- <editor
       [init]="{
         height: 200,
         menubar: false,
         toolbar:
           '  bold italic underline alignleft aligncenter alignright alignjustify '
       }"
-    ></editor>
+    ></editor> -->
+    <ckeditor [(ngModel)]="content" [config]="editorConfig"></ckeditor>
   </div>
 
   <div>

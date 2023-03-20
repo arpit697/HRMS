@@ -10,7 +10,7 @@ import {
 } from '@abacritt/angularx-social-login';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
-import { GetClassesAndAttributeDirective } from './directives/get-class-attribute/get-classes-and-attribute.directive';
+import { CKEditorModule } from 'ckeditor4-angular';
 const MATERIAL = [MatSnackBarModule];
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +19,7 @@ const MATERIAL = [MatSnackBarModule];
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    CKEditorModule,
     ...MATERIAL,
   ],
   providers: [
