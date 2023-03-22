@@ -5,8 +5,12 @@ import * as routes from '../../constants/routes';
   name: 'routing',
 })
 export class RoutingPipe implements PipeTransform {
-  transform(route: any) {
+  transform(route: any, params?: any) {
     if (route) {
+      if (params) {
+        //@ts-ignore
+        return routes[route].fullUrl + `/${params}`;
+      }
       //@ts-ignore
       return routes[route].fullUrl;
     }

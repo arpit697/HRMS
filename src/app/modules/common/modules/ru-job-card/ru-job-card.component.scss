@@ -2,7 +2,6 @@ mat-card,
 .img-background {
   border-radius: 0.7em !important;
 }
-
 .card-container {
   border: 1px solid #e3e5e9;
   padding: 1em;
@@ -26,6 +25,8 @@ mat-card,
       gap: 0.5em;
       padding-top: 2px;
       padding-bottom: 2px;
+      mat-card-title {
+      }
       background-color: white;
       .location-icon {
         color: #ff9584;

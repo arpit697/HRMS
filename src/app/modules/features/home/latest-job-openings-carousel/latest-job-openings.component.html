@@ -8,8 +8,8 @@
     ></app-ru-button>
   </div>
   <owl-carousel-o [options]="topCarouselLeft">
-    <ng-template carouselSlide *ngFor="let item of openings">
-      <app-ru-job-card>
+    <ng-template carouselSlide *ngFor="let item of openings; let id = index">
+      <app-ru-job-card [id]="id">
         <img class="card-image" src="{{ item.tech_image }}" alt="" />
         <span class="location_name">{{ item.location }}</span>
         <span class="date">{{ item.release_date }}</span>

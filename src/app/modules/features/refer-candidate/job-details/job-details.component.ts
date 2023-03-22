@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { JOBS } from 'src/app/constants/app.constants';
 
 @Component({
   selector: 'app-job-details',
@@ -10,9 +11,10 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
 })
 export class JobDetailsComponent implements OnInit {
   constructor(private _route: ActivatedRoute, private dialog: MatDialog) {}
+  jobDetail: any;
   ngOnInit(): void {
-    this._route.params.subscribe((params) => {
-      console.log(params);
+    this._route.params.subscribe((params: any) => {
+      this.jobDetail = JOBS[params.id];
     });
   }
 

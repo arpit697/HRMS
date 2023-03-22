@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ReferCandidateComponent } from './refer-candidate.component';
-import { JOB_OPENINGS } from 'src/app/constants/routes';
+import { JOB_DETAILS, JOB_OPENINGS } from 'src/app/constants/routes';
 
 const routes: Routes = [
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'job-details/:id',
+        path: `${JOB_DETAILS.path}/:id`,
         loadChildren: () =>
           import('./job-details/job-details.module').then(
             (m) => m.JobDetailsModule

@@ -10,19 +10,18 @@
 
 <div class="upper-card">
   <mat-card class="opening-refer">
-    <div class="latest-job-openings">
-      <app-latest-job-openings></app-latest-job-openings>
-    </div>
+    <app-latest-job-openings
+      class="latest-job-openings"
+    ></app-latest-job-openings>
     <app-referral-bonus></app-referral-bonus>
   </mat-card>
   <mat-card class="new-member">
     <app-new-members></app-new-members>
   </mat-card>
 </div>
-<br />
-<br /><br />
-
-<app-latest-at-appinventiv-carousel></app-latest-at-appinventiv-carousel>
-<br />
-<br /><br />
-<app-gallery></app-gallery>
+<div class="latest-appinventiv">
+  <app-latest-at-appinventiv-carousel></app-latest-at-appinventiv-carousel>
+</div>
+<div class="gallery">
+  <app-gallery></app-gallery>
+</div>

@@ -3,49 +3,52 @@
   flex-wrap: wrap;
   gap: 1em;
   margin-bottom: 30px;
+
   figure,
   img {
     margin: 0;
     height: 80px;
     width: 80px;
-    img {
-      border-radius: 50%;
-    }
+    border-radius: 50%;
   }
+
   .emp-name {
     padding: 0;
     word-break: break-word;
     line-height: 2.2em;
-    mat-card-subtitle {
-      font-size: 1.6em;
-      font-weight: 300;
-    }
+
+    mat-card-subtitle,
     mat-card-title {
       font-size: 1.6em;
+      font-weight: 300;
       font-weight: 450;
     }
   }
 }
-
 .upper-card {
   display: grid;
   grid-template-columns: calc(70% - 0.5em) calc(30% - 0.5em);
   gap: 1em;
+  margin-bottom: 1em;
   .opening-refer {
     border: 1px solid #dbe2ea;
     border-radius: 0.3em !important;
     display: grid;
     grid-template-columns: 50% 50%;
-    .latest-job-openings {
-      padding: 1em;
-    }
+    padding: 1em;
+  }
+  .latest-job-openings {
+    padding-right: 1em;
   }
   .new-member {
     border-radius: 0.3em !important;
     border: 1px solid #dbe2ea;
   }
 }
-
+.latest-appinventiv,
+.gallery {
+  margin-bottom: 1em;
+}
 @media all and (max-width: 1400px) {
   .upper-card {
     grid-template-columns: 100%;
@@ -56,6 +59,9 @@
   .upper-card {
     .opening-refer {
       grid-template-columns: 100%;
+      .latest-job-openings {
+        padding-right: 0;
+      }
       .list-container {
         ul {
           grid-template-columns: auto;

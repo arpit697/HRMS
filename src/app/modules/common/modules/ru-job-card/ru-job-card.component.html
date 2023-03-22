@@ -43,7 +43,9 @@
   </div>
   <mat-divider></mat-divider>
   <mat-card-actions class="action-buttons">
-    <button mat-raised-button class="view">View Details</button>
+    <button mat-raised-button class="view" (click)="viewDetails()">
+      View Details
+    </button>
     <button mat-raised-button class="refer" (click)="openDialog()">
       Refer a Candidate
     </button>
