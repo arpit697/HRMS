@@ -21,8 +21,7 @@ export class GoogleLoginComponent implements OnInit {
   constructor(
     private authService: SocialAuthService,
     private _router: Router,
-    private _utility: UtilityService,
-    private zone: NgZone
+    private _utility: UtilityService
   ) {}
 
   ngOnInit(): void {

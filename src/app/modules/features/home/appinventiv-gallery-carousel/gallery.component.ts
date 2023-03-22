@@ -29,7 +29,7 @@ export class GalleryComponent implements OnInit {
         items: 3,
       },
     },
-    margin: 10,
+    margin: 20,
   };
 
   view(collection_data: any) {

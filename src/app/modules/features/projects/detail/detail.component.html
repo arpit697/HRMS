@@ -1,0 +1,39 @@
+<div>
+  <mat-card-title>React Js Training Project</mat-card-title>
+  <br /><br />
+  <mat-card>
+    <div>
+      <mat-card-title>Project Tags/Label</mat-card-title>
+      <mat-icon>add</mat-icon>
+    </div>
+  </mat-card>
+</div>
+<br />
+<br />
+<mat-card>
+  <mat-tab-group>
+    <mat-tab label="Overview">
+      <app-overview></app-overview>
+    </mat-tab>
+    <mat-tab label="Notes">
+      <app-notes></app-notes>
+    </mat-tab>
+    <mat-tab label="Dsr Reports">
+      <app-dsr-report></app-dsr-report>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+
+<br />
+
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let item of projectTitles">
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{ getFirstLetter(item.title) }}</mat-panel-title>
+      <mat-panel-description>
+        {{ item.title }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <br />
+  </mat-expansion-panel>
+</mat-accordion>

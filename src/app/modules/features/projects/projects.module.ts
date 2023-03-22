@@ -6,6 +6,9 @@ import { ProjectsComponent } from './projects.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { RuTableModule } from '../../common/modules/ru-table/ru-table.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 const MATERIAL = [MatCardModule, MatIconModule];
 

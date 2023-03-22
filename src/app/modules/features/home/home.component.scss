@@ -32,11 +32,17 @@
   grid-template-columns: calc(70% - 0.5em) calc(30% - 0.5em);
   gap: 1em;
   .opening-refer {
+    border: 1px solid #dbe2ea;
+    border-radius: 0.3em !important;
     display: grid;
     grid-template-columns: 50% 50%;
     .latest-job-openings {
       padding: 1em;
     }
+  }
+  .new-member {
+    border-radius: 0.3em !important;
+    border: 1px solid #dbe2ea;
   }
 }
 

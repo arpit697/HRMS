@@ -1,0 +1,15 @@
+.filters {
+  gap: 1em;
+  .filter {
+    flex: 1 0 21%;
+  }
+  .b {
+    flex: 1 0 21%;
+  }
+  .c {
+    gap: 1em;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+}

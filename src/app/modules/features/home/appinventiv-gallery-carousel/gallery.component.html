@@ -1,4 +1,4 @@
-<mat-card class="carousel-wrapper">
+<mat-card class="container">
   <div class="heading">
     <mat-card-title class="card-title">Appinventiv Gallery</mat-card-title>
     <mat-card-actions class="icon-wrapper">
@@ -6,7 +6,8 @@
       <mat-icon class="arrow-icon">chevron_right</mat-icon>
     </mat-card-actions>
   </div>
-  <div>
+  <mat-divider class="mat-divider"></mat-divider>
+  <div class="carousel-container">
     <owl-carousel-o [options]="bottomCarousel">
       <ng-container *ngFor="let item of gallery">
         <ng-template carouselSlide>

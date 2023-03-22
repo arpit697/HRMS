@@ -17,7 +17,6 @@ export class NewMembersComponent implements OnInit {
     dots: false,
     autoplay: true,
     autoplayTimeout: 2500,
-
     responsive: {
       '0': {
         items: 1,
@@ -26,5 +25,6 @@ export class NewMembersComponent implements OnInit {
         items: 2,
       },
     },
+    margin: 20,
   };
 }

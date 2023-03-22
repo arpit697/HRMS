@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title class="table-title"> Planned Deliveries </mat-card-title>
+  <app-ru-table
+    [tableColumns]="PlannedTableColumns"
+    [tableData]="PlannedTableData"
+  ></app-ru-table>
+</mat-card>
+<br />
+<br />
+<br />
+<mat-card>
+  <mat-card-title class="table-title">
+    Team Detail (Team Size {{ TeamTableData.length }})</mat-card-title
+  >
+  <app-ru-table
+    [tableColumns]="TeamTableColumns"
+    [tableData]="TeamTableData"
+  ></app-ru-table>
+</mat-card>

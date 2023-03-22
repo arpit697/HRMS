@@ -1,7 +1,7 @@
 .referral-bonus {
   padding: 1em;
   border-left: 2px dotted #d0d1d3;
-  .ref-bonus-heading {
+  .title {
     font-size: 1em;
     color: #199cff;
     font-weight: 500;
@@ -14,7 +14,7 @@
       list-style: none;
       display: grid;
       grid-template-columns: repeat(2, auto);
-      gap: 1em;
+      gap: 0.1em;
     }
 
     li {
@@ -25,12 +25,12 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 0.5em;
+      gap: 0.3em;
       text-align: center;
 
       .money {
         font-size: 3.5em;
-        margin-bottom: 0.5em;
+        margin-bottom: 0.2em;
         color: #199cff;
         font-weight: 500;
         line-height: 1;
@@ -49,6 +49,15 @@
         font-weight: 500;
         line-height: 1.2;
         margin: 5px 0;
+      }
+    }
+  }
+}
+@media all and (max-width: 760px) {
+  .referral-bonus {
+    .list-container {
+      ul {
+        grid-template-columns: auto;
       }
     }
   }

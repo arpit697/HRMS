@@ -1,29 +1,26 @@
 .new-member-card {
+  border-radius: 0.3em !important;
   gap: 1em;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-.icon-wrapper {
-  gap: 1em;
-  .arrow-icon {
-    border-radius: 50%;
-    padding: 0.2em;
-    color: #199cff;
-    background: #f3f7fc;
+  padding: 16px;
+  .user-card {
+    min-height: 430px;
+    margin: 0 3em;
+    background: url("../../../../../assets/default/new-family-card.png")
+      no-repeat center / cover;
+    text-align: center;
+    .new-employee-image {
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+    }
   }
-}
-.user-card {
-  min-height: 392px;
-  max-width: 296px;
-  margin-left: 3.5em;
-  background-image: url(../../../../../assets/default/new-family-card.png);
-  background-repeat: no-repeat;
-  text-align: center;
-  gap: 1em;
-
-  .new-employee-image {
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
+  .icon-wrapper {
+    gap: 1em;
+    .arrow-icon {
+      border-radius: 50%;
+      padding: 0.2em;
+      color: #199cff;
+      background: #f3f7fc;
+    }
   }
 }

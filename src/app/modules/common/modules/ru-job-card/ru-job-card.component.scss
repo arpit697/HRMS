@@ -3,14 +3,14 @@ mat-card,
   border-radius: 0.7em !important;
 }
 
-mat-card {
-  padding: 1em;
+.card-container {
   border: 1px solid #e3e5e9;
+  padding: 1em;
 }
 
 .img-background {
   min-height: 180px;
-  padding: 1em;
+
   background-color: #f3f7fc;
   gap: 1em;
 

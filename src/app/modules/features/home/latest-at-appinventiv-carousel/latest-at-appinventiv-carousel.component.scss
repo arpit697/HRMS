@@ -1,228 +1,128 @@
-.middle-card {
-  padding-left: 24px;
-  padding-right: 24px;
-  .middle-card-heading {
-    padding-top: 14px;
-    padding-bottom: 24px;
-    font-size: 20px;
-    color: #231e1e;
-    font-weight: 500;
-    line-height: 1.5;
-    margin: 0;
-  }
-  .inner-card-wrapper {
-    padding: 24px;
-  }
-  .middle-card-content-wrapper {
+.container {
+  border-radius: 0.3em !important;
+  border: 1px solid #dbe2ea;
+}
+.card-title {
+  padding: 0.8em;
+}
+
+.mat-divider {
+  color: rgba(24, 28, 33, 0.06);
+}
+
+.carousel-container {
+  padding: 24px;
+  border-radius: 0.3em !important;
+  .carousel-slide {
     border: 1.5px solid rgba(150, 165, 184, 0.3);
     box-sizing: border-box;
     border-radius: 10px !important ;
-    .appreciation-card {
-      padding: 16px;
-      padding-bottom: 6em;
-      box-sizing: border-box;
-      min-height: 29em;
-      .title-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 0.2em;
-        margin-bottom: 16px;
-        .for {
-          font-size: 1.2em;
-          color: #000000;
-          font-weight: 400;
-          line-height: 1.9;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          margin-top: 2px;
-        }
-        .icon {
-          color: #c136cd;
-        }
-      }
-      .from {
-        margin-bottom: 16px;
-      }
-      .view-more-button {
-        position: absolute;
-        bottom: 5%;
-      }
-    }
   }
-  .award-card {
-    border: 1.5px solid rgba(150, 165, 184, 0.3);
-    box-sizing: border-box;
-    border-radius: 10px !important ;
+
+  .carousel-content-wrapper {
     padding: 16px;
     padding-bottom: 6em;
     box-sizing: border-box;
-    min-height: 29em;
-    .title-wrapper {
+    height: 25em;
+    .slide-title {
       display: flex;
       align-items: center;
       gap: 0.2em;
       margin-bottom: 16px;
-      .for {
-        font-size: 1.2em;
+      .title {
+        font-size: 16px;
         color: #000000;
-        font-weight: 400;
         line-height: 1.9;
+        width: 90%;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        margin-top: 2px;
-      }
-      .icon {
-        color: #c136cd;
-      }
-    }
-
-    .from {
-      margin-bottom: 16px;
-    }
-    .image-wrapper {
-      overflow: hidden;
-      height: 150px;
-      img {
-        height: 150px;
-      }
-    }
-
-    .message {
-      display: block;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
-    }
-
-    .cheers {
-      position: absolute;
-      bottom: 5%;
-      .appinventiv {
-        color: #199cff;
       }
     }
   }
-  .birthday-celebration {
-    border: 1.5px solid rgba(150, 165, 184, 0.3);
-    box-sizing: border-box;
-    border-radius: 10px !important ;
-    padding: 16px;
-    padding-bottom: 6em;
-    box-sizing: border-box;
-    min-height: 29em;
-    .title-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 0.2em;
-      margin-bottom: 16px;
-      .for {
-        font-size: 1.2em;
-        color: #000000;
-        font-weight: 400;
-        line-height: 1.9;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        margin-top: 2px;
-      }
-      .icon {
-        color: #36c4cd;
-      }
-    }
 
-    .from {
-      margin-bottom: 16px;
-    }
-    .image-wrapper {
-      overflow: hidden;
-      height: 150px;
-      img {
-        height: 150px;
-      }
-    }
-
-    .message {
-      display: block;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
-    }
-
-    .cheers {
-      position: absolute;
-      bottom: 5%;
-      .appinventiv {
-        color: #199cff;
-      }
-    }
+  .for {
+    font: 400 1.2em/1.9 #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 2px;
   }
-  .work-anniversary {
-    border: 1.5px solid rgba(150, 165, 184, 0.3);
-    box-sizing: border-box;
-    border-radius: 10px !important ;
-    padding: 16px;
-    padding-bottom: 6em;
-    box-sizing: border-box;
-    min-height: 29em;
-    .title-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 0.2em;
-      margin-bottom: 16px;
-      .for {
-        font-size: 1.2em;
-        color: #000000;
-        font-weight: 400;
-        line-height: 1.9;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        margin-top: 2px;
-      }
-      .icon {
-        color: #1657c8;
-      }
-    }
 
-    .from {
-      margin-bottom: 16px;
-    }
-    .image-wrapper {
-      overflow: hidden;
-      height: 150px;
-      img {
-        height: 150px;
-      }
-    }
-
-    .message {
-      display: block;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
-    }
-
-    .cheers {
-      position: absolute;
-      bottom: 5%;
-      .appinventiv {
-        color: #199cff;
-      }
-    }
+  .icon {
+    font-size: 1em;
+    color: #c136cd;
   }
 }
 
+.from {
+  font-size: 12px;
+  color: #606167;
+  font-weight: 500;
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
 .image-wrapper {
-  height: 256px;
+  overflow: hidden;
+  height: 150px;
+
+  img {
+    height: 150px;
+  }
+}
+
+.msg,
+.message {
+  font-size: 12px;
+  color: #606167;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+.message {
+  display: block;
+  margin: 1em 0;
+}
+
+.cheers {
+  position: absolute;
+  bottom: 5%;
+
+  .appinventiv {
+    color: #199cff;
+  }
+}
+
+.view-more-button {
+  position: absolute;
+  bottom: 5%;
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    ),
+    #199cff !important;
+  background-blend-mode: soft-light, normal !important;
+  border: 1px solid rgba(150, 165, 184, 0.2) !important;
+  box-sizing: border-box !important;
+  box-shadow: 0px 1px 4px rgb(0 0 0 / 12%),
+    inset 0px 2px 0px rgb(255 255 255 / 24%) !important;
+  border-radius: 4px !important;
+  color: #ffffff !important;
+}
+
+.inner-card-wrapper {
+  padding: 24px;
+}
+
+.image-wrapper {
+  height: 150px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+
   .gallery-image {
     margin-right: 1em;
   }
@@ -230,14 +130,14 @@
 
 .nested-wrapper {
   display: grid;
-  grid-template-columns: calc(50% - 0.25em) calc(50% - 0.25em);
+  grid-template-columns: repeat(2, calc(50% - 0.25em));
   gap: 0.5em;
 }
-.inner-card {
-  .nested {
-    padding: 0.5em;
-    img {
-      height: 150px;
-    }
+
+.inner-card .nested {
+  padding: 0.5em;
+
+  img {
+    height: 150px;
   }
 }

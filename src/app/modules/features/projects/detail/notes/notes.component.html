@@ -1,0 +1,18 @@
+<mat-card>
+  <div class="flex jc-between">
+    <mat-card-title class="table-title">Project Note</mat-card-title>
+    <mat-icon>add</mat-icon>
+  </div>
+  <mat-card *ngFor="let item of arr">
+    <div>
+      <a>Project Plan</a>
+      <span>Time</span> &nbsp; <span>13, Dec 2020 09:10 AM</span>
+    </div>
+    <div>
+      <span>Download</span>
+      <span>
+        <mat-icon>sim_card_download</mat-icon>
+      </span>
+    </div>
+  </mat-card>
+</mat-card>

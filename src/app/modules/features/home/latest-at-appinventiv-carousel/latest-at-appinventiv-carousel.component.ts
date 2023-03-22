@@ -18,7 +18,7 @@ export class LatestAtAppinventivCarouselComponent implements OnInit {
     dots: true,
     mouseDrag: false,
     touchDrag: true,
-    autoplay: true,
+    autoplay: false,
     autoplayTimeout: 4000,
     responsive: {
       '0': {
@@ -34,7 +34,7 @@ export class LatestAtAppinventivCarouselComponent implements OnInit {
     margin: 5,
   };
 
-  innerCardLeft: OwlOptions = {
+  appreciationCarouselConfig: OwlOptions = {
     loop: true,
     dots: false,
     responsive: {
