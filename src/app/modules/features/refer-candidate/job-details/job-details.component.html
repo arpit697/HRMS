@@ -1,15 +1,16 @@
-<mat-card class="job-details-card">
-  <div class="heading-container">
-    <mat-card-title> job Details </mat-card-title>
+<mat-card class="card">
+  <div class="title-container flex jc-between ai-center">
+    <mat-card-title class="title"> Job Details </mat-card-title>
     <mat-icon class="more">more_horiz</mat-icon>
   </div>
-  <mat-divider></mat-divider>
+  <mat-divider class="mat-divider"></mat-divider>
 
-  <div class="detail-grid">
+  <div class="detail flex flex-wrap"></div>
+  <!-- <div>
     <mat-grid-list cols="2" rowHeight="2.3em">
       <mat-grid-tile>
         <mat-card-subtitle>Job Title : </mat-card-subtitle>
-        <mat-card-subtitle>Associate Tech Lead </mat-card-subtitle>
+        <mat-card-subtitle class="data">Associate Tech Lead </mat-card-subtitle>
       </mat-grid-tile>
       <mat-grid-tile>
         <mat-card-subtitle>Job Type :</mat-card-subtitle>
@@ -24,11 +25,15 @@
         <mat-card-subtitle>No. of Openings :</mat-card-subtitle>
       </mat-grid-tile>
       <mat-grid-tile colspan="2">
-        <mat-card-subtitle> Exp. Required : <span (click)="openDialog()">Terms & Conditions</span></mat-card-subtitle>
+        <mat-card-subtitle>
+          Exp. Required :
+          <span (click)="openDialog()"
+            >Terms & Conditions</span
+          ></mat-card-subtitle
+        >
       </mat-grid-tile>
     </mat-grid-list>
-  </div>
-
+  </div> -->
   <div class="tech-skills">
     <mat-card-title>Technical Skills</mat-card-title>
     <mat-divider></mat-divider>
