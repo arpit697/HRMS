@@ -5,57 +5,69 @@
   </div>
   <mat-divider class="mat-divider"></mat-divider>
 
-  <div class="detail flex flex-wrap"></div>
-  <!-- <div>
-    <mat-grid-list cols="2" rowHeight="2.3em">
-      <mat-grid-tile>
-        <mat-card-subtitle>Job Title : </mat-card-subtitle>
-        <mat-card-subtitle class="data">Associate Tech Lead </mat-card-subtitle>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <mat-card-subtitle>Job Type :</mat-card-subtitle>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <mat-card-subtitle>Department :</mat-card-subtitle>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <mat-card-subtitle> Location :</mat-card-subtitle>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="2">
-        <mat-card-subtitle>No. of Openings :</mat-card-subtitle>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="2">
-        <mat-card-subtitle>
-          Exp. Required :
-          <span (click)="openDialog()"
-            >Terms & Conditions</span
-          ></mat-card-subtitle
-        >
-      </mat-grid-tile>
-    </mat-grid-list>
-  </div> -->
+  <div class="detail">
+    <div *ngFor="let item of jobDetail" class="flex flex-wrap">
+      <mat-card-subtitle class="tag">{{ item.tag + " :" }}</mat-card-subtitle>
+      <mat-card-subtitle class="data">{{ item.data }}</mat-card-subtitle>
+    </div>
+  </div>
+  <div class="exp-require flex flex-wrap">
+    <mat-card-subtitle class="tag">Exp.Req</mat-card-subtitle>
+    <mat-card-subtitle class="data"
+      >{{
+        job.experience.from +
+          " to " +
+          job.experience.to +
+          " Years Referral bonus will be Rs.0 form more information read"
+      }}
+      <span (click)="openDialog()" class="terms-n-condition"
+        >Terms & conditions</span
+      >
+    </mat-card-subtitle>
+  </div>
   <div class="tech-skills">
-    <mat-card-title>Technical Skills</mat-card-title>
+    <mat-card-title class="title">Technical Skills</mat-card-title>
     <mat-divider></mat-divider>
     <ul class="list">
-      <li class="item">Java</li>
+      <li class="item" *ngFor="let item of job.technical_skills">{{ item }}</li>
     </ul>
   </div>
 
   <div class="job-introduction">
-    <mat-card-title>Job Introduction</mat-card-title>
+    <mat-card-title class="title">Job Introduction</mat-card-title>
     <mat-divider></mat-divider>
-    <div class="content-container"></div>
+    <div class="content-container">
+      <mat-card-subtitle class="introduction-data">
+        {{ job.job_introduction }}
+      </mat-card-subtitle>
+    </div>
   </div>
 
-  <div class="job-discription">
-    <mat-card-title>Job Introduction</mat-card-title>
+  <div class="job-description">
+    <mat-card-title class="title">Job Description</mat-card-title>
     <mat-divider></mat-divider>
-    <div class="content-container"></div>
+    <div class="content-container">
+      <mat-card-subtitle>
+        {{ job.job_description.description }}
+      </mat-card-subtitle>
+      <br />
+      <mat-card-subtitle class="description-title"
+        >Responsibilities :
+      </mat-card-subtitle>
+      <ul>
+        <li *ngFor="let item of job.job_description.responsibilities">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="job-qualification">
-    <mat-card-title>Job Introduction</mat-card-title>
+    <mat-card-title class="title">Job Qualification</mat-card-title>
     <mat-divider></mat-divider>
-    <div class="content-container"></div>
+    <div class="content-container">
+      <ul>
+        <li *ngFor="let item of job.job_qualification">{{ item }}</li>
+      </ul>
+    </div>
   </div>
 </mat-card>

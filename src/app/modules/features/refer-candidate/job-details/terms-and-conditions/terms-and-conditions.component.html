@@ -1,1 +1,12 @@
-<p>terms-and-conditions works!</p>
+<div class="header flex jc-between ai-center">
+  <mat-card-title class="title">
+    Additional condition for rewards
+  </mat-card-title>
+  <mat-icon (click)="close()" class="icon"> close </mat-icon>
+</div>
+
+<mat-card class="list">
+  <ul>
+    <li *ngFor="let item of termsAndConditions">{{ item }}</li>
+  </ul>
+</mat-card>

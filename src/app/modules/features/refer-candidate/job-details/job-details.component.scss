@@ -20,9 +20,30 @@
     margin-bottom: 0.5em;
   }
   .detail {
-    .item {
-      flex: 1 0 50%;
-      gap: 1em;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 0.5em;
+  }
+  .exp-require {
+    margin-top: 1em;
+  }
+  .tag {
+    font-size: 14px;
+    color: #606167;
+    font-weight: 400;
+    line-height: 1.5;
+    min-width: 160px;
+    margin: 0 10px 0 0;
+  }
+  .data {
+    font-size: 14px;
+    color: #231e1e;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    .terms-n-condition {
+      font-weight: 500;
+      color: var(--spiro);
     }
   }
   .tech-skills {
@@ -38,6 +59,26 @@
         border-radius: 4px;
         text-align: center;
       }
+    }
+  }
+  .tech-skills,
+  .job-introduction,
+  .job-description,
+  .job-qualification {
+    margin-top: 1em;
+    font-size: 0.9em;
+    color: #606167;
+    line-height: 2em;
+    .title {
+      font-size: 1.2em;
+      color: black;
+    }
+    .description-title {
+      color: black;
+      font-weight: 500;
+    }
+    .introduction-data {
+      color: black;
     }
   }
   .content-container {
