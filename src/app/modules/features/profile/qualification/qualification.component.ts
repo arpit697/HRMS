@@ -28,16 +28,16 @@ export class QualificationComponent {
 
   @ViewChild(RuTableComponent) tableComponent!: RuTableComponent<any>;
 
-  constructor() {}
+  constructor() { }
 
   submitHandler() {
-    // this.tableData.push({ action: '1', school_university: '1', time_period: '1' });
-    // this.tableComponent.dataSource.data = this.tableData; // update the data source
+    this.tableData.push({ action: '1', school_university: '1', time_period: '1' });
+    this.tableComponent.dataSource.data = this.tableData; // update the data source
   }
 
   ngAfterViewInit(): void {
     // set the table data in the child component
-    // this.tableComponent.tableData = this.tableData;
+    this.tableComponent.tableData = this.tableData;
   }
 }
 

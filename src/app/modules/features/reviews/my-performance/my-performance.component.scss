@@ -1,23 +1,31 @@
 .card {
-  padding: 1em;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5em;
+
   .card-body {
     padding: 1.5em;
     display: grid;
     grid-template-rows: 50% 50%;
     gap: 1em;
+
     .emp-info {
       display: flex;
       align-items: center;
       gap: 1em;
+
       img {
         max-width: 77px;
         max-height: 77px;
         border-radius: 50%;
         border: 2px solid #bfff77;
       }
+
       .info {
+        mat-card-subtitle {
+          margin-bottom: .5em;
+        }
+
         .exp {
           background-color: #f7ffb3;
           text-transform: uppercase;
@@ -29,28 +37,34 @@
         }
       }
     }
+
     .awards-honours {
       display: grid;
       grid-template-columns: auto 35%;
       gap: 10px;
+
       .awards {
         border-radius: 10px !important;
         padding: 20px;
         background-color: #fff3cb;
+
         mat-card-title {
           margin-bottom: 1em;
         }
       }
+
       .honours {
         border-radius: 10px !important;
         padding: 20px;
         background-color: #cbe7ff;
+
         mat-card-title {
           margin-bottom: 1em;
         }
       }
     }
   }
+
   .cal-skills-panel {
     background: #dfffb0;
     padding: 30px 20px;
@@ -58,15 +72,18 @@
     display: grid;
     grid-template-rows: auto auto;
     gap: 2em;
-    .flex-panel {
+
+    .grid-panel {
       display: grid;
       grid-template-columns: 25% auto;
       align-items: center;
+
       .rating-count {
         font-size: 50px;
         font-weight: 700;
         align-items: center;
       }
+
       .cal-nav {
         display: flex;
         background-color: white;
@@ -76,12 +93,13 @@
         border-radius: 10px;
       }
     }
+
     .rating-row {
       display: grid;
       grid-template-columns:
-        calc(25% - 0.15em) calc(25% - 0.15em) calc(25% - 0.15em)
-        calc(25% - 0.15em);
+        calc(25% - 0.15em) calc(25% - 0.15em) calc(25% - 0.15em) calc(25% - 0.15em);
       gap: 0.3em;
+
       .rating-sum-head {
         min-height: 100px;
         background-color: #edffd2;
@@ -99,32 +117,36 @@
 
 .rating-card-container {
   margin-top: 20px;
+
   .header {
     padding: 15px 11px;
+
     .monthly-rating-button {
       color: white;
       background-color: var(--spiro);
       margin: 6px;
     }
   }
+
   .heading-filter {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 24px;
+
     mat-card-title {
       font-size: 22px;
       font-weight: 500;
       color: #494949;
     }
   }
+
   .rating-cards {
     padding-bottom: 32px;
+
     .card-wrapper {
       display: grid;
-      grid-template-columns: calc(25% - 32px) calc(25% - 32px) calc(25% - 32px) calc(
-          25% - 32px
-        );
+      grid-template-columns: calc(25% - 32px) calc(25% - 32px) calc(25% - 32px) calc(25% - 32px);
       gap: 1em;
       justify-content: center;
 
@@ -136,12 +158,15 @@
         margin-bottom: 20px;
         display: grid;
         align-items: center;
+
         .month {
           display: flex;
           justify-content: space-between;
+
           mat-card-subtitle {
             color: #000;
           }
+
           .rating {
             background-color: #e7fcc8;
             padding-left: 1em;
@@ -151,19 +176,90 @@
             border-radius: 5px;
           }
         }
+
         .award {
           display: flex;
+
           mat-card-subtitle {
             color: #f7c417;
           }
         }
+
         .honor {
           display: flex;
+
           mat-card-subtitle {
             color: #0086ff;
           }
         }
       }
     }
+  }
+}
+
+
+@media all and (max-width : 50em) {
+  .card {
+    grid-template-columns: 1fr;
+
+    .card-body {
+      padding: 0;
+    }
+  }
+
+  .rating-card-container {
+    .heading-filter {
+      flex-direction: column;
+      gap: 1em;
+
+      mat-card-title {
+        font-size: 1em;
+      }
+
+    }
+
+    .rating-cards {
+      .card-wrapper {
+        grid-template-columns: calc(50% - 32px) calc(50% - 32px);
+      }
+    }
+
+  }
+}
+
+@media all and (max-width : 30em) {
+  .card {
+    gap: 2em;
+
+    .card-body {
+      .emp-info {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .awards-honours {
+        grid-template-columns: auto;
+      }
+    }
+
+    .cal-skills-panel {
+      .grid-panel {
+        text-align: center;
+        grid-template-columns: auto;
+      }
+
+      .rating-row {
+        grid-template-columns: auto;
+      }
+    }
+  }
+
+  .rating-card-container {
+    .rating-cards {
+      .card-wrapper {
+        grid-template-columns: calc(100% - 32px);
+      }
+    }
+
   }
 }

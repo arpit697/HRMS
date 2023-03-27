@@ -39,19 +39,6 @@ body {
   word-break: break-word;
 }
 
-@mixin flex-container(
-  $direction: row,
-  $justify: flex-start,
-  $align: stretch,
-  $wrap: nowrap
-) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
-  flex-wrap: $wrap;
-}
-
 //mat form field css class
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
   background-color: transparent;
@@ -99,53 +86,7 @@ mat-card-content {
   padding: 0;
 }
 
-//snack bar custom class
-.green-snackbar {
-  &.mat-mdc-snack-bar-container .mdc-snackbar__surface {
-    background-color: green !important;
-  }
-  &.mat-mdc-snack-bar-container .mdc-snackbar__label {
-    color: white;
-    &::before {
-      content: "✔";
-    }
-  }
-}
-.red-snackbar {
-  &.mat-mdc-snack-bar-container .mdc-snackbar__surface {
-    background-color: #f44336 !important;
-  }
-  &.mat-mdc-snack-bar-container .mdc-snackbar__label {
-    color: white;
-    &::before {
-      content: "✗";
-    }
-  }
-}
 
-//scroll bar
-::-webkit-scrollbar {
-  width: 5px;
-  height: 10px;
-  display: none;
-}
-
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #f1f1f1;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgb(226, 226, 226);
-  border-radius: 15px;
-  &:hover {
-    background: gray;
-  }
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: grey;
-}
 
 //mat-list
 

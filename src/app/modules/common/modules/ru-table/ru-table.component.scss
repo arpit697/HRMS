@@ -1,8 +1,74 @@
+mat-form-field {
+  width: auto;
+}
+
+::ng-deep {
+  .mat-mdc-paginator-page-size {
+    display: none !important;
+  }
+
+  .mat-mdc-paginator-range-label {
+    position: absolute;
+    left: 0;
+  }
+}
+
+.filters {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2em;
+  padding-top: .5em;
+  padding-bottom: 1.5em;
+
+  .show-entries {
+    gap: .5em;
+
+    ::ng-deep {
+      .mat-mdc-form-field-subscript-wrapper {
+        display: none;
+      }
+
+      .mat-mdc-text-field-wrapper {
+        background-color: white;
+        height: 2.5em;
+        width: 5em;
+      }
+
+      .mat-mdc-form-field-infix {
+        padding-top: 8px !important;
+      }
+    }
+  }
+
+  .search {
+    gap: .5em;
+
+    ::ng-deep {
+      .mat-mdc-form-field-subscript-wrapper {
+        display: none;
+      }
+
+      .mat-mdc-text-field-wrapper {
+        background-color: white;
+        height: 2.5em;
+        width: auto;
+      }
+
+      .mat-mdc-form-field-infix {
+        padding-top: 8px !important;
+      }
+    }
+  }
+
+}
+
 table {
   box-shadow: none;
+
   .no_data_row {
     text-align: center;
     background-color: rgba(24, 28, 33, 0.025);
+
     td {
       padding-top: 10px;
       padding-bottom: 10px;
@@ -16,6 +82,7 @@ table {
   background-color: #ffffff;
   border-radius: 10px;
   padding: 1em 2.5em;
+
   th {
     font-family: "Lato";
     font-size: 14px;
@@ -34,14 +101,17 @@ table {
     line-height: 1.5;
     padding: 20px 10px;
     border-bottom: 1px solid #edf2f6;
+
     span {
       display: flex;
       align-items: center;
       gap: 1em;
+
       mat-icon {
         color: red;
       }
     }
+
     .link-button {
       display: flex;
       justify-content: center;
@@ -63,6 +133,10 @@ table {
 }
 
 .requested-trainings-table {
+  .c-label , .no_data_row {
+    color: #606167 !important;
+  }
+
   th {
     font-size: 14px;
     color: #96a5b8;
@@ -74,6 +148,7 @@ table {
 }
 
 .asset-inventory-table {
+
   th,
   td {
     font-size: 14px;

@@ -1,39 +1,15 @@
 <div class="profile-container">
   <mat-card class="media">
-    <img
-    
-        [src]="utility.uploadedProfilePicture || '../../../../../assets/default/default_male.jpg'"
-        alt="User Image"
-      />
-    <mat-card-content class="media-body">
+    <img [src]="utility.uploadedProfilePicture || '../../../../../assets/default/default_male.jpg'" alt="User Image" />
+    <div class="media-body">
       <mat-card-title>
-        {{ empDetail.full_name | titlecase }}
+        {{ empDetail.full_name| titlecase }}
       </mat-card-title>
-      <mat-card-subtitle>
-        <span
-          ><strong>{{ "email : " | titlecase }}</strong></span
-        >
-        {{ empDetail.email }}
+      <mat-card-subtitle class="user-data" *ngFor="let item of empDetail">
+        <span><strong>{{ item.label | titlecase }} {{' : '}}</strong></span>
+        <span class="data">{{item.data }}</span>
       </mat-card-subtitle>
-      <mat-card-subtitle>
-        <span
-          ><strong>{{ "employee ID : " | titlecase }}</strong></span
-        >
-        {{ empDetail.employee_id }}
-      </mat-card-subtitle>
-      <mat-card-subtitle>
-        <span
-          ><strong>{{ "Designation : " | titlecase }}</strong></span
-        >
-        {{ empDetail.designation }}
-      </mat-card-subtitle>
-      <mat-card-subtitle>
-        <span
-          ><strong>{{ "last login : " | titlecase }}</strong></span
-        >
-        {{ empDetail.last_login }}
-      </mat-card-subtitle>
-    </mat-card-content>
+    </div>
   </mat-card>
 </div>
 
@@ -42,7 +18,7 @@
     <mat-tab *ngFor="let list of selectionMenu">
       <ng-template mat-tab-label>
         <mat-icon class="list-icon">{{ list?.icon }}</mat-icon>
-        {{ list.name }}
+        {{ list.name | titlecase}}
       </ng-template>
       <div [ngSwitch]="list.name">
         <app-basic-info *ngSwitchCase="'basic information'"></app-basic-info>

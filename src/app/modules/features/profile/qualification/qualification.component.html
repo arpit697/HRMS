@@ -1,6 +1,8 @@
+<mat-card>
+  <mat-card-title class="table-title">Add New Qualification</mat-card-title>
+</mat-card>
 <div class="qualification-container">
   <mat-card class="qualification-form">
-    <mat-card-title>Add New Qualification</mat-card-title>
     <div class="field-container">
       <div class="col-2">
         <div>
@@ -25,20 +27,14 @@
           <div>
             <mat-form-field appearance="outline">
               <input matInput [matDatepicker]="picker" />
-              <mat-datepicker-toggle
-                matSuffix
-                [for]="picker"
-              ></mat-datepicker-toggle>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </div>
           <div>
             <mat-form-field appearance="outline">
               <input matInput [matDatepicker]="picker1" />
-              <mat-datepicker-toggle
-                matSuffix
-                [for]="picker1"
-              ></mat-datepicker-toggle>
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
               <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
           </div>
@@ -75,11 +71,7 @@
   </mat-card>
 
   <mat-card class="qualifiction-table-card">
-    <mat-card-title>List All Qualification</mat-card-title>
-    <app-ru-table
-    class="table"
-      [tableColumns]="tableColumns"
-      [tableData]="tableData"
-    ></app-ru-table>
+    <mat-card-title class="table-title">List All Qualification</mat-card-title>
+    <app-ru-table class="table" [tableColumns]="tableColumns" [tableData]="tableData"></app-ru-table>
   </mat-card>
 </div>

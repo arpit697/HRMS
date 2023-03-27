@@ -1,18 +1,11 @@
 <mat-card-title class="module-title">Requested Trainings</mat-card-title>
 
-<mat-card class="container">
-  <div class="select-filter">
-    <mat-card-subtitle class="label">Show</mat-card-subtitle>
-    <mat-form-field appearance="outline">
-      <mat-select>
-        <mat-option></mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-card-subtitle class="label">entries</mat-card-subtitle>
-  </div>
+<mat-card class="p-24">
   <app-ru-table
     [tableColumns]="tableColumns"
     [tableData]="tableData"
+    [isFilterable]="true"
+    [isPageable]="true"
     TableClass="requested-trainings-table"
   ></app-ru-table>
 </mat-card>

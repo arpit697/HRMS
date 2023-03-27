@@ -8,6 +8,16 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     align-items: center;
 
+    .user-data {
+      font-size: 15px;
+      font-weight: 500;
+
+      .data {
+        font-weight: 300;
+        color: black;
+      }
+    }
+
     img {
       max-height: 10em;
       max-width: 10em;
@@ -20,6 +30,7 @@
       padding: 0;
       line-height: 1.5em;
       margin-left: 2em;
+
       mat-card-title {
         font-size: xx-large;
         line-height: 2em;
@@ -35,6 +46,10 @@
 
 .content-container {
   margin: 1.25em;
+
+  .tab-title {
+    margin-right: 2em;
+  }
 }
 
 .mat-mdc-tab-group {
@@ -56,14 +71,19 @@
 }
 
 ::ng-deep.mat-mdc-tab-label-container {
-  min-width: 20em;
+  min-width: 16em;
   height: 18em;
   border-radius: 0.5em;
   background: white;
+  // border: 1px solid #dbe2ea;
 }
 
 ::ng-deep.mdc-tab {
   justify-content: flex-start !important;
+}
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+  color: whitesmoke;
 }
 
 ::ng-deep.mdc-tab-indicator--active {
@@ -78,6 +98,13 @@
   color: white;
 }
 
+::ng-deep .mat-mdc-tab {
+  border-top: 1px solid #dbe2ea !important;
+  &:first-child{
+    border: none !important;
+  }
+}
+
 @media all and (max-width: 60em) {
   .mat-mdc-tab-group {
     flex-direction: column !important;
@@ -90,11 +117,71 @@
       grid-template-columns: auto;
       text-align: center;
       margin-left: none;
+
       img {
         display: block;
         margin-left: auto;
         margin-right: auto;
       }
     }
+  }
+
+  .media-body {
+    margin-left: 0 !important;
+  }
+}
+
+
+@media all and (max-width: 24em) {
+  .profile-container {
+    .media {
+      padding: .5em;
+      margin: 0;
+
+      img {
+        max-height: 5em;
+        max-width: 5em;
+      }
+    }
+
+    .media-body {
+      margin-left: 0 !important;
+
+      mat-card-title {
+        font-size: large !important;
+        line-height: 2em;
+      }
+
+      mat-card-subtitle {
+        font-size: x-small;
+      }
+
+      strong {
+        color: black;
+        font-weight: 400;
+      }
+    }
+
+  }
+
+  .content-container {
+    margin: 0;
+    margin-top: 1em;
+  }
+
+  .mat-mdc-tab-group {
+    gap: 1em;
+  }
+
+  .list-icon {
+    margin: 0 .3em;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mat-mdc-tab-label-container {
+    display: none !important;
   }
 }

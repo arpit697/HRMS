@@ -15,6 +15,10 @@
   flex-wrap: wrap;
 }
 
+.flex-wrap-rev {
+  flex-wrap: wrap-reverse;
+}
+
 .flex-nowrap {
   flex-wrap: nowrap;
 }
@@ -81,4 +85,24 @@
 
 .ac-stretch {
   align-content: stretch;
+}
+
+.g-1 {
+  gap: 1em;
+}
+
+.g-2 {
+  gap: 2em
+}
+
+.g-3 {
+  gap: 3em
+}
+
+.g-4 {
+  gap: 4em
+}
+
+.g-5 {
+  gap: 5em
 }

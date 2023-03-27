@@ -5,9 +5,7 @@
   align-items: center;
   gap: 3em;
   margin-bottom: 20px;
-  mat-form-field {
-    width: 100%;
-  }
+  
   ::ng-deep .mat-mdc-text-field-wrapper {
     background-color: white;
     height: 2.5em;

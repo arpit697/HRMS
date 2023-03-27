@@ -144,4 +144,15 @@ export class MyLeavesComponent {
       level_two: 'Erica Davis',
     },
   ];
+
+
+  leaveDetail = [
+    {tag :"Employee Name" , detail : 'Arpit Dwivedi (AI1558)'},
+    {tag :"Leave Type" , detail : 'Short Leaves'},
+    {tag :"Leave Duration" , detail : '5:00 PM - 7:00 PM'},
+    {tag :"Applied Duration" , detail : 'Mar-17-2023'},
+    {tag :"Start Date" , detail : 'Mar-17-2023'},
+    {tag :"End Date" , detail : 'Mar-17-2023'},
+    {tag :"Uploaded " , detail : ''},
+  ]
 }

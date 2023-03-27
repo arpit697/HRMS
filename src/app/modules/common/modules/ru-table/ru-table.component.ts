@@ -24,11 +24,11 @@ export class RuTableComponent<T> {
   @Input() defaultPageSize = this.defaultPaginationSize[1];
   @Output() clickHandler: EventEmitter<any> = new EventEmitter();
   @Input() TableClass!: string;
-
+  @Input() isFilterable: boolean = false;
   displayedColumns: Array<any> = [];
   dataSource: MatTableDataSource<T> = new MatTableDataSource();
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.displayedColumns = this.tableColumns.map((c) => c.columnDef);

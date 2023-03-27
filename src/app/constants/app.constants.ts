@@ -197,7 +197,7 @@ export const EMP_DETAIL = {
   full_name: 'arpit dwivedi',
   email: 'arpit.dwivedi@appinventiv.com',
   employee_id: 'AI1558',
-  department: 'software engineer',
+  designation: 'software engineer',
   last_login: 'Feb-05-2023 06:34 PM from 172.31.25.47',
 };
 

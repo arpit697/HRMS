@@ -17,8 +17,57 @@
 
 .table-title {
   font-size: 20px;
-  color: #3246d3;
+  color: #3246d3 !important;
   padding: 11px 25px 11px 15px;
   border-bottom: 1px solid #f3f7fc;
   font-weight: 500;
+}
+
+.button-primary {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF !important;
+  color: #FFFFFF !important;
+}
+
+
+.add-button {
+  background: transparent;
+  box-shadow: 0 0 0 1px #26B4FF inset;
+  color: #26B4FF !important;
+  border-radius: 0 !important;
+  height: 1.5em !important;
+  width: 2em;
+  padding: 0;
+}
+
+.c-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #2f3031 !important;
+  margin-bottom: 5px !important;
+}
+
+.c-2-label {
+  font-size: 14px;
+  color: #96A5B8 !important;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 5px !important;
+  white-space: pre-wrap;
+}
+
+//common paddings
+.p-24 {
+  padding: 24px;
+}
+
+.p-12 {
+  padding: 12px;
+}
+
+.p-14 {
+  padding: 14px;
+}
+
+.p-16 {
+  padding: 16px;
 }

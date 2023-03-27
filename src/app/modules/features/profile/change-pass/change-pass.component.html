@@ -1,12 +1,12 @@
-<mat-card [formGroup]="resetPasswordForm">
-  <mat-card-title>Employee Force Change Password</mat-card-title>
+<mat-card>
+  <mat-card-title class="table-title">Employee Force Change Password</mat-card-title>
+</mat-card>
+<mat-card [formGroup]="resetPasswordForm" class="change-password-container">
   <div>
     <mat-card-subtitle>Old Password</mat-card-subtitle>
     <mat-form-field appearance="outline">
       <input matInput formControlName="old_password" />
-      <mat-error *ngIf="resetPasswordForm.get('old_password')?.invalid"
-        >old password is required</mat-error
-      >
+      <mat-error *ngIf="resetPasswordForm.get('old_password')?.invalid">old password is required</mat-error>
     </mat-form-field>
   </div>
   <div>
@@ -15,25 +15,19 @@
       <input matInput formControlName="new_password" />
       <mat-error>{{
         resetPasswordForm
-          | getControl : ["new_password"]
-          | validationCheck : "new password"
-      }}</mat-error>
+        | getControl : ["new_password"]
+        | validationCheck : "new password"
+        }}</mat-error>
     </mat-form-field>
   </div>
   <div>
     <mat-card-subtitle>Confirm Password</mat-card-subtitle>
     <mat-form-field appearance="outline">
       <input matInput formControlName="confirm_password" />
-      <mat-error *ngIf="resetPasswordForm.get('confirm_password')?.invalid"
-        >confirm password is required</mat-error
-      >
+      <mat-error *ngIf="resetPasswordForm.get('confirm_password')?.invalid">confirm password is required</mat-error>
     </mat-form-field>
   </div>
   <div>
-    <app-ru-button
-      [bText]="'Save'"
-      [bClass]="'save'"
-      (btnClick)="submitHandler()"
-    ></app-ru-button>
+    <app-ru-button [bText]="'Save'" [bClass]="'save'" (btnClick)="submitHandler()"></app-ru-button>
   </div>
 </mat-card>

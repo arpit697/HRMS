@@ -17,6 +17,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ckeditor4-angular';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatListModule} from '@angular/material/list';
 const MATERIAL = [
   MatCardModule,
   MatIconModule,
@@ -29,7 +30,10 @@ const MATERIAL = [
   MatExpansionModule,
   MatCheckboxModule,
   MatRadioModule,
+  MatListModule
 ];
+
+
 
 @NgModule({
   declarations: [MyLeavesComponent],

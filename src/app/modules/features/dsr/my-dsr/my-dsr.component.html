@@ -1,51 +1,49 @@
 <mat-expansion-panel hideToggle>
   <mat-expansion-panel-header>
-    <mat-panel-title> Create New DSR </mat-panel-title>
-    <button mat-raised-button>+ ADD</button>
+    <mat-panel-title class="table-title"> Create New DSR </mat-panel-title>
+    <button mat-button class="add-button">+ Add</button>
   </mat-expansion-panel-header>
+  <div class="expansion p-24">
+    <div>
+      <div class="project">
+        <mat-card-subtitle class="c-label">Project</mat-card-subtitle>
+        <mat-form-field class="form-field" appearance="outline">
+          <input matInput type="text" />
+        </mat-form-field>
+      </div>
+      <div class="work-time flex flex-wrap ai-center">
+        <div class="flex-size">
+          <mat-card-subtitle class="c-label">Date</mat-card-subtitle>
+          <mat-form-field class="form-field" appearance="outline">
+            <input matInput type="text" />
+          </mat-form-field>
+        </div>
+        <div class="flex-size">
+          <mat-card-subtitle class="c-label">Date</mat-card-subtitle>
+          <mat-form-field class="form-field" appearance="outline">
+            <input matInput type="text" />
+          </mat-form-field>
+        </div>
+        <div class="flex-size">
+          <mat-checkbox class="example-margin">No Work Done</mat-checkbox>
+        </div>
+      </div>
+    </div>
+    <div>
+      <mat-card-subtitle class="c-label">Description</mat-card-subtitle>
+      <ckeditor [(ngModel)]="content" [config]="editorConfig"></ckeditor>
+    </div>
+    <mat-card-actions>
+      <button mat-raised-button class="add">Add</button>
+    </mat-card-actions>
+  </div>
 </mat-expansion-panel>
 <br />
 <br />
-<br />
-
-<mat-card class="expansion-penal-content">
-  <div class="filters">
-    <div>
-      <mat-card-subtitle>Project</mat-card-subtitle>
-      <mat-form-field class="form-field" appearance="outline">
-        <input matInput type="text" />
-      </mat-form-field>
-    </div>
-
-    <div class="col-3">
-      <div>
-        <mat-card-subtitle>Date</mat-card-subtitle>
-        <mat-form-field class="form-field" appearance="outline">
-          <input matInput type="text" />
-        </mat-form-field>
-      </div>
-
-      <div>
-        <mat-card-subtitle>Estimated Hour</mat-card-subtitle>
-        <mat-form-field class="form-field" appearance="outline">
-          <input matInput type="text" />
-        </mat-form-field>
-      </div>
-      <mat-checkbox class="example-margin">Check me!</mat-checkbox>
-    </div>
-  </div>
-  <div>
-    <ckeditor [(ngModel)]="content" [config]="editorConfig"></ckeditor>
-  </div>
-</mat-card>
-
-<br />
-<br />
-<br />
-<mat-card>
-  <div class="project-container">
-    <div *ngFor="let item of formFields">
-      <mat-card-subtitle>{{ item.label }}</mat-card-subtitle>
+<mat-card class="p-24">
+  <div class="project-conteiner flex flex-wrap ai-center">
+    <div *ngFor="let item of formFields" class="flex-size">
+      <mat-card-subtitle class="c-label">{{ item.label }}</mat-card-subtitle>
       <mat-form-field appearance="outline" *ngIf="item.type === 'select'">
         <mat-select>
           <mat-option></mat-option>
@@ -54,17 +52,25 @@
 
       <mat-form-field appearance="outline" *ngIf="item.type === 'datePicker'">
         <input matInput [matDatepicker]="picker" />
-        <mat-datepicker-toggle
-          matIconSuffix
-          [for]="picker"
-        ></mat-datepicker-toggle>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
+    </div>
+    <div class="button-container">
+      <button mat-raised-button class="button-primary">Reset</button>
     </div>
   </div>
 </mat-card>
 
-<app-ru-table
-  [tableColumns]="tableColumns"
-  [tableData]="tableData"
-></app-ru-table>
+<br>
+<mat-card class="worksheets">
+  <mat-card-title class="table-title">List All Worksheets</mat-card-title>
+  <mat-card-actions>
+    <button mat-button class="refresh-button">Refresh</button>
+  </mat-card-actions>
+  <mat-card-content class="p-12">
+  <app-ru-table [tableColumns]="tableColumns" [tableData]="tableData" [isFilterable]="true"></app-ru-table>
+  </mat-card-content>
+</mat-card>
+
+

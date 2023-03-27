@@ -1,3 +1,90 @@
-.none {
+//snack bar custom class
+.green-snackbar {
+  &.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+    background-color: green !important;
+  }
+
+  &.mat-mdc-snack-bar-container .mdc-snackbar__label {
+    color: white;
+
+    &::before {
+      content: "✔";
+    }
+  }
+}
+
+.red-snackbar {
+  &.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+    background-color: #f44336 !important;
+  }
+
+  &.mat-mdc-snack-bar-container .mdc-snackbar__label {
+    color: white;
+
+    &::before {
+      content: "✗";
+    }
+  }
+}
+
+
+//scroll bar
+::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
   display: none;
 }
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(226, 226, 226);
+  border-radius: 15px;
+
+  &:hover {
+    background: gray;
+  }
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: grey;
+}
+
+mat-form-field {
+  width: 100%;
+
+  .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__trailing {
+    border-top-right-radius: 3px !important;
+    border-bottom-right-radius: 3px !important;
+  }
+
+  .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading {
+
+    border-top-left-radius: 3px !important;
+    border-bottom-left-radius: 3px !important;
+  }
+
+  .mat-mdc-text-field-wrapper {
+    background-color: white;
+    height: 2.7rem;
+    border: 1px solid #d8d8d8;
+  }
+
+  .mat-mdc-form-field-infix {
+    padding-top: 10px !important;
+  }
+  .mat-mdc-icon-button.mat-mdc-button-base {
+    padding-top: 0;
+  }
+}
+
+// .mat-mdc-text-field-wrapper {
+//   background-color: white;
+//   height: 2.5em ;
+// }
+// .mat-mdc-form-field-infix {
+//   padding-top: 8px !important;
+// }
