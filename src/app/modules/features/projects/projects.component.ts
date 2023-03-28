@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ACCOUNT } from 'src/app/constants/routes';
 
 @Component({
   selector: 'app-projects',
@@ -15,6 +16,7 @@ export class ProjectsComponent {
       columnDef: 'project_name',
       header: 'Project Name',
       cell: (element: Record<string, any>) => `${element['project_name']}`,
+      isLink : true
     },
     {
       columnDef: 'billing_type',

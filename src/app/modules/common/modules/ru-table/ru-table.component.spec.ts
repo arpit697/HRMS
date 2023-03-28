@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RuTableComponent } from './ru-table.component';
 
 describe('RuTableComponent', () => {
-  let component: RuTableComponent;
+  let component:RuTableComponent;
   let fixture: ComponentFixture<RuTableComponent>;
 
   beforeEach(async () => {

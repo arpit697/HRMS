@@ -62,9 +62,14 @@ mat-form-field {
 
 }
 
+
+.tablesss{
+  overflow: auto;
+}
 table {
   box-shadow: none;
-
+  white-space: nowrap;
+  
   .no_data_row {
     text-align: center;
     background-color: rgba(24, 28, 33, 0.025);
@@ -133,7 +138,9 @@ table {
 }
 
 .requested-trainings-table {
-  .c-label , .no_data_row {
+
+  .c-label,
+  .no_data_row {
     color: #606167 !important;
   }
 
