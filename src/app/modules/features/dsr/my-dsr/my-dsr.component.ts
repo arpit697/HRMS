@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { rotate } from 'src/app/animations/clock.anticlock';
 
 @Component({
   selector: 'app-my-dsr',
@@ -6,6 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./my-dsr.component.scss'],
 })
 export class MyDsrComponent {
+
+  constructor(private _route : Router){
+    
+  }
+
+
   formFields = [
     { label: 'From Date', formControlName: '', type: 'datePicker' },
     { label: 'End Date', formControlName: '', type: 'datePicker' },
@@ -85,6 +93,7 @@ export class MyDsrComponent {
       columnDef: 'final_approval',
       header: 'Final Approval',
       cell: (element: Record<string, any>) => `${element['final_approval']}`,
+      type : 'button-action'
     },
   ];
 
@@ -120,4 +129,9 @@ export class MyDsrComponent {
       final_approval: 'No',
     },
   ];
+
+
+  viewDetails(){
+    this._route.navigate([])
+  }
 }

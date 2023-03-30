@@ -15,12 +15,12 @@ import { AppraisalComponent } from './appraisal/appraisal.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RuButtonModule } from '../../common/modules/ru-button/ru-button.module';
+import { RuButtonModule } from '../../common/modules/common-button/ru-button.module';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
-import { RuTableModule } from '../../common/modules/ru-table/ru-table.module';
+import { RuTableModule } from '../../common/modules/common-table/ru-table.module';
 import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationCheckModule } from 'src/app/pipes/validation-check/validation-check.module';
 import { MatButtonModule } from '@angular/material/button';
@@ -58,4 +58,4 @@ const MATERIAL = [
     ...MATERIAL,
   ],
 })
-export class ProfileModule {}
+export class ProfileModule { }

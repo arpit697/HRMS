@@ -37,4 +37,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ReferCandidateRoutingModule {}
+export class ReferCandidateRoutingModule { }

@@ -1,7 +1,7 @@
 //snack bar custom class
 .green-snackbar {
   &.mat-mdc-snack-bar-container .mdc-snackbar__surface {
-    background-color: green !important;
+    background-color: #20c997 !important;
   }
 
   &.mat-mdc-snack-bar-container .mdc-snackbar__label {
@@ -15,7 +15,7 @@
 
 .red-snackbar {
   &.mat-mdc-snack-bar-container .mdc-snackbar__surface {
-    background-color: #f44336 !important;
+    background-color: #d9534f !important;
   }
 
   &.mat-mdc-snack-bar-container .mdc-snackbar__label {
@@ -70,15 +70,24 @@ mat-form-field {
   .mat-mdc-text-field-wrapper {
     background-color: white;
     height: 2.7rem;
-    border: 1px solid #d8d8d8;
+
   }
 
   .mat-mdc-form-field-infix {
     padding-top: 10px !important;
+    background-color: transparent;
   }
+
   .mat-mdc-icon-button.mat-mdc-button-base {
-    padding-top: 0;
+    padding-top: 5px;
   }
+
+  .mat-mdc-icon-button {
+    --mat-mdc-button-persistent-ripple-color: transparent;
+    --mat-mdc-button-ripple-color: transparent;
+}
+
+
 }
 
 // .mat-mdc-text-field-wrapper {

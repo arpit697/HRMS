@@ -9,7 +9,7 @@ export class RoutingPipe implements PipeTransform {
     if (route) {
       if (params) {
         //@ts-ignore
-        return routes[route].fullUrl + `/${params}`;
+        return `${routes[route].fullUrl}/${params}`;
       }
       //@ts-ignore
       return routes[route].fullUrl;

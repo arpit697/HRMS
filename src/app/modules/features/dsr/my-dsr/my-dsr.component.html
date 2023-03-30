@@ -69,7 +69,7 @@
     <button mat-button class="refresh-button">Refresh</button>
   </mat-card-actions>
   <mat-card-content class="p-12">
-  <app-ru-table [tableColumns]="tableColumns" [tableData]="tableData" [isFilterable]="true"></app-ru-table>
+  <app-ru-table [tableColumns]="tableColumns" [tableData]="tableData" [isFilterable]="true" [TableClass]="'my-dsr'" (clickHandler)="viewDetails()"></app-ru-table>
   </mat-card-content>
 </mat-card>
 

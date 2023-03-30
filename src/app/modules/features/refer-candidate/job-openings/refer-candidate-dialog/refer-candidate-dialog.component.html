@@ -1,12 +1,13 @@
 <div class="main-container">
-  <div class="header">
-    <mat-card-title>Refer a Candidate</mat-card-title>
-    <mat-icon>close</mat-icon>
+  <div class="header flex jc-between ai-center">
+    <mat-card-title class="title">
+      Additional condition for rewards
+    </mat-card-title>
+    <mat-icon (click)="close()" class="icon"> close </mat-icon>
   </div>
-
   <div class="container" [formGroup]="referCandidateFrom">
     <div class="dash_heading">
-      <mat-card-title>My Details</mat-card-title>
+      <mat-card-title>Job Details</mat-card-title>
     </div>
 
     <div class="pre-filled-form-fields">
@@ -19,20 +20,22 @@
     </div>
 
     <div class="dash_heading">
-      <mat-card-title>My Details</mat-card-title>
+      <mat-card-title>Candidate Details</mat-card-title>
     </div>
 
     <div class="manual-fill-form-field">
       <div *ngFor="let field of ManualFillFields">
         <mat-card-subtitle>{{ field.label }}</mat-card-subtitle>
-        <mat-form-field appearance="outline">
+        <mat-form-field *ngIf="field.select" appearance="outline">
+          <mat-select formControlName="{{ field.formControlName }}">
+            <mat-option *ngFor="let location of jobLocations" [value]="location">{{location}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" *ngIf="!field.select">
           <input matInput formControlName="{{ field.formControlName }}" />
-          <!-- <mat-select
-          formControlName="{{ field.formControlName }}"
-          
-        >
-          <mat-option></mat-option>
-        </mat-select> -->
+          <mat-error>{{
+            referCandidateFrom | getControl : [field.formControlName] | validationCheck : field.formControlName | replaceChar : '_':' '
+          }}</mat-error>
         </mat-form-field>
       </div>
     </div>
@@ -41,30 +44,25 @@
       <div>
         <mat-card-subtitle>Upload CV (pdf,doc)</mat-card-subtitle>
         <mat-card class="custom-file-input-container">
-          <input
-            class="custom-file-input"
-            (change)="readURL($event)"
-            type="file"
-          />
+          <input class="custom-file-input" (change)="readURL($event)" type="file" />
         </mat-card>
       </div>
 
       <div>
         <mat-card-subtitle>Skill Set</mat-card-subtitle>
         <mat-form-field appearance="outline">
-          <textarea
-            matInput
-            cdkTextareaAutosize
-            cdkAutosizeMinRows="1"
-            cdkAutosizeMaxRows="5"
-          ></textarea>
+          <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="10" formControlName="skill"></textarea>
+          <mat-error>{{
+            referCandidateFrom | getControl : ["skill"] | validationCheck : "skill" 
+          }}</mat-error>
         </mat-form-field>
+        <p>{{referCandidateFrom.get('skill')?.value.length}}/500</p>
       </div>
     </div>
 
     <mat-card-actions class="actions">
-      <button mat-raised-button>Cancel</button>
-      <button mat-raised-button>Submit</button>
+      <button mat-raised-button (click)="cancelHandler()" >Cancel</button>
+      <button mat-raised-button (click)="submitHandler()">Submit</button>
     </mat-card-actions>
   </div>
 </div>

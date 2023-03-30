@@ -8,7 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import { RuTableModule } from 'src/app/modules/common/modules/ru-table/ru-table.module';
+import { RuTableModule } from 'src/app/modules/common/modules/common-table/ru-table.module';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {
   MatDatepicker,
@@ -44,4 +44,4 @@ const MATERIAL = [
     ...MATERIAL,
   ],
 })
-export class MyDsrModule {}
+export class MyDsrModule { }

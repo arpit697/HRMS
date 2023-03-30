@@ -8,7 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import { RuTableModule } from 'src/app/modules/common/modules/ru-table/ru-table.module';
+import { RuTableModule } from 'src/app/modules/common/modules/common-table/ru-table.module';
 
 const MATERIAL = [
   MatCardModule,
@@ -22,4 +22,4 @@ const MATERIAL = [
   declarations: [ManualPunchComponent],
   imports: [CommonModule, ManualPunchRoutingModule, RuTableModule, ...MATERIAL],
 })
-export class ManualPunchModule {}
+export class ManualPunchModule { }

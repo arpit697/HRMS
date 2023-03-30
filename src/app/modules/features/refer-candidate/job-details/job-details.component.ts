@@ -10,12 +10,13 @@ import { JOBS } from 'src/app/constants/app.constants';
   styleUrls: ['./job-details.component.scss'],
 })
 export class JobDetailsComponent implements OnInit {
-  constructor(private _route: ActivatedRoute, private dialog: MatDialog) {}
+  constructor(private _route: ActivatedRoute, private dialog: MatDialog) { }
   job: any;
   jobDetail: any;
   ngOnInit(): void {
     this._route.params.subscribe((params: any) => {
-      this.job = JOBS[params.id];
+      let index = JOBS.findIndex(item => item.id == params.id);
+      this.job = JOBS[index];
       let newJobDetail = [
         { tag: 'Job Title', data: this.job.tech_name },
         { tag: 'Job Type', data: this.job.job_type },
@@ -29,6 +30,6 @@ export class JobDetailsComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(TermsAndConditionsComponent, {});
-    dialogRef.afterClosed().subscribe((result: any) => {});
+    dialogRef.afterClosed().subscribe((result: any) => { });
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ACCOUNT } from 'src/app/constants/routes';
+import { ACCOUNT, PROJECT_DETAIL } from 'src/app/constants/routes';
 
 @Component({
   selector: 'app-projects',
@@ -10,13 +10,12 @@ export class ProjectsComponent {
   openAtlassian() {
     window.open('https://www.atlassian.com/', '_blank');
   }
-
   tableColumns: Array<any> = [
     {
       columnDef: 'project_name',
       header: 'Project Name',
       cell: (element: Record<string, any>) => `${element['project_name']}`,
-      isLink : true
+      type : 'link'
     },
     {
       columnDef: 'billing_type',
@@ -54,10 +53,15 @@ export class ProjectsComponent {
       cell: (element: Record<string, any>) => `${element['completed']}`,
     },
   ];
-
+  get url(){
+    let detail = `${PROJECT_DETAIL.path}/${1}`
+    return detail.toString
+  }
   tableData = [
     {
+      id : 12567,
       project_name: 'Project A',
+      path : 'PROJECT_DETAIL',
       billing_type: 'Hourly',
       resource: 'John Smith',
       hrs: 40,
@@ -65,36 +69,6 @@ export class ProjectsComponent {
       delivered: 3,
       pending: 1,
       completed: '60%',
-    },
-    {
-      project_name: 'Project B',
-      billing_type: 'Fixed Price',
-      resource: 'Jane Doe',
-      hrs: 60,
-      total_milestone: 3,
-      delivered: 2,
-      pending: 1,
-      completed: '80%',
-    },
-    {
-      project_name: 'Project C',
-      billing_type: 'Hourly',
-      resource: 'Bob Johnson',
-      hrs: 20,
-      total_milestone: 2,
-      delivered: 1,
-      pending: 1,
-      completed: '50%',
-    },
-    {
-      project_name: 'Project D',
-      billing_type: 'Fixed Price',
-      resource: 'Sarah Lee',
-      hrs: 80,
-      total_milestone: 4,
-      delivered: 3,
-      pending: 1,
-      completed: '75%',
     },
   ];
 }

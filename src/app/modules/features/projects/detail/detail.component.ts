@@ -1,11 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UtilityService } from 'src/app/services/utility/utility.service';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss'],
 })
-export class DetailComponent {
+export class DetailComponent implements OnInit{
+
+  splitTiles = <any>[] 
+  constructor(public utility:UtilityService){
+
+  }
+  ngOnInit(): void {
+    let stpit = this.utility.splitArray(this.projectTitles)
+    console.log(stpit);
+    this.splitTiles = this.utility.splitArray(this.projectTitles);
+  }
+
   projectTitles = [
     { title: 'Roadmap', documents: [] },
     { title: 'Project Plan', documents: [] },
@@ -17,7 +29,4 @@ export class DetailComponent {
     { title: 'Project App Links', documents: [] },
   ];
 
-  getFirstLetter(text: any) {
-    return text.charAt(0);
-  }
 }

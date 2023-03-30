@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { RuTableComponent } from 'src/app/modules/common/modules/ru-table/ru-table.component';
+import { RuTableComponent } from 'src/app/modules/common/modules/common-table/ru-table.component';
 
 @Component({
   selector: 'app-qualification',

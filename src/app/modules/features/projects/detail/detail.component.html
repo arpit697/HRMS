@@ -1,6 +1,5 @@
 <div>
-  <mat-card-title>React Js Training Project</mat-card-title>
-  <br /><br />
+  <mat-card-title class="module-title">React Js Training Project</mat-card-title>
   <mat-card>
     <div>
       <mat-card-title>Project Tags/Label</mat-card-title>
@@ -26,14 +25,18 @@
 
 <br />
 
-<mat-accordion>
-  <mat-expansion-panel *ngFor="let item of projectTitles">
-    <mat-expansion-panel-header>
-      <mat-panel-title>{{ getFirstLetter(item.title) }}</mat-panel-title>
-      <mat-panel-description>
-        {{ item.title }}
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <br />
-  </mat-expansion-panel>
-</mat-accordion>
+<div *ngFor="let item of splitTiles" class="a">
+  <div *ngFor="let projectTile of item" >
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{utility.getFirstLetter(projectTile.title)}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{projectTile.title}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <br>
+    </mat-expansion-panel>
+  </div>
+</div>

@@ -63,13 +63,14 @@ mat-form-field {
 }
 
 
-.tablesss{
+.table-wrapper {
   overflow: auto;
 }
+
 table {
   box-shadow: none;
   white-space: nowrap;
-  
+
   .no_data_row {
     text-align: center;
     background-color: rgba(24, 28, 33, 0.025);
@@ -117,7 +118,7 @@ table {
       }
     }
 
-    .link-button {
+    .action-button {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -163,5 +164,41 @@ table {
     line-height: 1.5;
     padding: 0.625rem;
     border: 1px solid #edf2f6;
+  }
+}
+
+.my-dsr {
+
+  th,
+  td {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.625rem;
+  }
+
+  th {
+    background-color: white;
+  }
+
+  td {
+    .action-button {
+      height: 1.5em;
+      width: 5em;
+      background: transparent;
+      box-shadow: 0 0 0 1px #28c3d7 inset;
+      color: orange;
+      border-radius: 0;
+
+      mat-icon {
+        display: none;
+      }
+    }
+  }
+
+  tr {
+    &:nth-child(odd) {
+      background-color: rgba(24, 28, 33, 0.025);
+    }
   }
 }

@@ -8,28 +8,26 @@
   <div class="detail">
     <div *ngFor="let item of jobDetail" class="flex flex-wrap">
       <mat-card-subtitle class="tag">{{ item.tag + " :" }}</mat-card-subtitle>
-      <mat-card-subtitle class="data">{{ item.data }}</mat-card-subtitle>
+      <mat-card-subtitle class="data">{{ item?.data }}</mat-card-subtitle>
     </div>
   </div>
   <div class="exp-require flex flex-wrap">
     <mat-card-subtitle class="tag">Exp.Req</mat-card-subtitle>
-    <mat-card-subtitle class="data"
-      >{{
-        job.experience.from +
-          " to " +
-          job.experience.to +
-          " Years Referral bonus will be Rs.0 form more information read"
+    <mat-card-subtitle class="data">{{
+      job?.experience.from +
+      " to " +
+      job?.experience.to +
+      " Years Referral bonus will be Rs.0 form more information read"
       }}
-      <span (click)="openDialog()" class="terms-n-condition"
-        >Terms & conditions</span
-      >
+      <span (click)="openDialog()" class="terms-n-condition">Terms & conditions</span>
     </mat-card-subtitle>
   </div>
   <div class="tech-skills">
     <mat-card-title class="title">Technical Skills</mat-card-title>
     <mat-divider></mat-divider>
     <ul class="list">
-      <li class="item" *ngFor="let item of job.technical_skills">{{ item }}</li>
+
+      <li class="item" *ngFor="let item of job?.technical_skills">{{ item }}</li>
     </ul>
   </div>
 
@@ -38,7 +36,7 @@
     <mat-divider></mat-divider>
     <div class="content-container">
       <mat-card-subtitle class="introduction-data">
-        {{ job.job_introduction }}
+        {{ job?.job_introduction }}
       </mat-card-subtitle>
     </div>
   </div>
@@ -48,14 +46,13 @@
     <mat-divider></mat-divider>
     <div class="content-container">
       <mat-card-subtitle>
-        {{ job.job_description.description }}
+        {{ job?.job_description.description }}
       </mat-card-subtitle>
       <br />
-      <mat-card-subtitle class="description-title"
-        >Responsibilities :
+      <mat-card-subtitle class="description-title">Responsibilities :
       </mat-card-subtitle>
       <ul>
-        <li *ngFor="let item of job.job_description.responsibilities">
+        <li *ngFor="let item of job?.job_description.responsibilities">
           {{ item }}
         </li>
       </ul>
@@ -66,7 +63,7 @@
     <mat-divider></mat-divider>
     <div class="content-container">
       <ul>
-        <li *ngFor="let item of job.job_qualification">{{ item }}</li>
+        <li *ngFor="let item of job?.job_qualification">{{ item }}</li>
       </ul>
     </div>
   </div>

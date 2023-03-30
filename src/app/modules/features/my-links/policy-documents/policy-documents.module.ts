@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PolicyDocumentsRoutingModule } from './policy-documents-routing.module';
 import { PolicyDocumentsComponent } from './policy-documents.component';
-import { RuTableModule } from 'src/app/modules/common/modules/ru-table/ru-table.module';
+import { RuTableModule } from 'src/app/modules/common/modules/common-table/ru-table.module';
 
 const MATERIAL = []
 
@@ -13,7 +13,7 @@ const MATERIAL = []
   ],
   imports: [
     CommonModule,
-    PolicyDocumentsRoutingModule , 
+    PolicyDocumentsRoutingModule,
     RuTableModule
   ]
 })

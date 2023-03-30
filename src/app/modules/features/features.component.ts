@@ -1,7 +1,6 @@
 import {
   trigger,
   transition,
-  useAnimation,
   animate,
   state,
   style,
@@ -38,7 +37,7 @@ export class FeaturesComponent implements OnInit {
   sidenavState = 'open';
   isExpanded: boolean = true;
   public items = <any>[];
-isClicked: any;
+  isClicked: any;
   constructor() {
     this.checkScreenSize();
     window.addEventListener('resize', () => {

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FloatingLeavesRoutingModule } from './floating-leaves-routing.module';
 import { FloatingLeavesComponent } from './floating-leaves.component';
 import { MatCardModule } from '@angular/material/card';
-import { RuTableModule } from 'src/app/modules/common/modules/ru-table/ru-table.module';
+import { RuTableModule } from 'src/app/modules/common/modules/common-table/ru-table.module';
 
 const MATERIAL = [MatCardModule];
 
@@ -17,4 +17,4 @@ const MATERIAL = [MatCardModule];
     ...MATERIAL,
   ],
 })
-export class FloatingLeavesModule {}
+export class FloatingLeavesModule { }

@@ -309,3 +309,10 @@ export const PROJECTS: RouteInterface = {
     return `${FEATURES.fullUrl}/${this.path}`;
   },
 };
+
+export const PROJECT_DETAIL: RouteInterface = {
+  path: 'detail',
+  get fullUrl(): string {
+    return `${PROJECTS.fullUrl}/${this.path}`;
+  },
+};

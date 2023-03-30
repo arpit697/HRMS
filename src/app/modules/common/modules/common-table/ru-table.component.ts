@@ -6,7 +6,9 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ru-table',
@@ -16,6 +18,8 @@ import { MatTableDataSource } from '@angular/material/table';
 export class RuTableComponent<T> {
   @ViewChild(MatPaginator)
   Paginator!: MatPaginator;
+
+  @ViewChild(MatSort) sort !: MatSort;
 
   @Input() tableColumns: Array<any> = [];
   @Input() tableData: Array<T> = [];
@@ -33,12 +37,14 @@ export class RuTableComponent<T> {
   ngOnInit(): void {
     this.displayedColumns = this.tableColumns.map((c) => c.columnDef);
     this.dataSource = new MatTableDataSource(this.tableData);
+    
   }
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.Paginator;
+    this.dataSource.sort = this.sort;
   }
 
-  bClick(element: any) {
+  bClick(element?: any) {
     this.clickHandler.emit(element);
   }
 }

@@ -6,4 +6,5 @@ export const VALIDATION_CRITERIA = {
   nameMaxLength: 80,
   phoneMinLength: 10,
   phoneMaxLength: 10,
+  textAreaMaxLength : 500
 };

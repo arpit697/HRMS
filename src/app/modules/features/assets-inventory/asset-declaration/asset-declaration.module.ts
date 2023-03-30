@@ -7,7 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { RuTableModule } from 'src/app/modules/common/modules/ru-table/ru-table.module';
+import { RuTableModule } from 'src/app/modules/common/modules/common-table/ru-table.module';
 
 const MATERIAL = [
   MatCardModule,
@@ -26,4 +26,4 @@ const MATERIAL = [
     ...MATERIAL,
   ],
 })
-export class AssetDeclarationModule {}
+export class AssetDeclarationModule { }

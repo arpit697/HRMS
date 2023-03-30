@@ -21,6 +21,8 @@ export class FormValidationService {
     address: [Validators.pattern(PATTERN.address)],
     month: [],
     year: [],
+    skill : [
+    Validators.maxLength(VALIDATION_CRITERIA.textAreaMaxLength)],
     phone: [
       Validators.pattern(PATTERN.phoneNumber),
       Validators.minLength(VALIDATION_CRITERIA.phoneMinLength),

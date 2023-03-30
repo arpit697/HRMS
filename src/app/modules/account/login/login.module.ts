@@ -7,7 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { CredentialLoginComponent } from './credential-login/credential-login.component';
 import { GoogleLoginComponent } from './google-login/google-login.component';
 import { SocialLoginModule } from '@abacritt/angularx-social-login';
-import { RuButtonModule } from '../../common/modules/ru-button/ru-button.module';
+import { RuButtonModule } from '../../common/modules/common-button/ru-button.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { RoutingModule } from 'src/app/pipes/routing/routing.module';
@@ -44,4 +44,4 @@ const MATERIAL = [
     ...MATERIAL,
   ],
 })
-export class LoginModule {}
+export class LoginModule { }

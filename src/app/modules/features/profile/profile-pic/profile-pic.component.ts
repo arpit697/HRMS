@@ -7,19 +7,48 @@ import { UtilityService } from 'src/app/services/utility/utility.service';
   styleUrls: ['./profile-pic.component.scss'],
 })
 export class ProfilePicComponent {
-
   constructor(public utility: UtilityService) {}
-  readURL(event: any): void {
-    if (event.target.files && event.target.files[0]) {
-      const file = event.target.files[0];
-
-      const reader = new FileReader();
-      reader.onload = (e) =>
-        (this.utility.uploadedProfilePicture = reader.result);
-
-      reader.readAsDataURL(file);
-    }
+  getUserImage(event: any): void {
+    this.utility
+      .readURL(event, [
+        'image/apng',
+        'image/bmp',
+        'image/gif',
+        'image/jpeg',
+        'image/png',
+        'image/svg+xml',
+        'image/tiff',
+        'image/webp',
+        'image/jpeg',
+        'image/avif'
+      ])
+      .then((result:any) => {
+       this.utility.uploadedProfilePicture = result;
+       this.utility.bar('Uploaded Successfully' , '' , 'green-snackbar')
+      })
+      .catch((error) => {
+        this.utility.bar('The attachment must be a file of type: png, jpg, jpeg, gif' , '' , 'red-snackbar')
+        console.error(error);
+      });
   }
+
+  allowedTypes = [
+    'image/apng',
+    'image/bmp',
+    'image/gif',
+    'image/jpeg',
+    'image/png',
+    'image/svg+xml',
+    'image/tiff',
+    'image/webp',
+    'application/msword',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'application/vnd.ms-excel',
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    'application/pdf',
+    'application/rtf',
+    'text/plain',
+  ];
 
   submitHandler() {
     if (!(this.utility.uploadedProfilePicture == '')) {

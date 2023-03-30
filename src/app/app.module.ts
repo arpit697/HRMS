@@ -11,9 +11,12 @@ import {
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { CKEditorModule } from 'ckeditor4-angular';
-const MATERIAL = [MatSnackBarModule];
+import { ReplaceCharPipe } from './pipes/replace-char/replace-char.pipe';
+
+
+const MATERIAL = [MatSnackBarModule ];
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent ],
   imports: [
     BrowserModule,
     AppRoutingModule,

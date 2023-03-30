@@ -11,5 +11,6 @@ export const PATTERN = {
   string: /(.|\s)*\S(.|\s)*/,
   alphaNumeric: /[^a-z\d]/,
   phoneNumber: /^[1-9][0-9]*$/,
-  address : /^[a-zA-Z0-9\s\-\#\.\,]+$/
+  address : /^[a-zA-Z0-9\s\-\#\.\,]+$/,
+  skill :/^.{0,500}$/
 };

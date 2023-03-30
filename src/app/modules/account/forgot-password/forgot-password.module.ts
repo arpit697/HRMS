@@ -6,7 +6,7 @@ import { ForgotPasswordComponent } from './forgot-password.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { RuButtonModule } from '../../common/modules/ru-button/ru-button.module';
+import { RuButtonModule } from '../../common/modules/common-button/ru-button.module';
 import { MatDividerModule } from '@angular/material/divider';
 import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationCheckModule } from 'src/app/pipes/validation-check/validation-check.module';
@@ -32,4 +32,4 @@ const MATERIAL = [
     ...MATERIAL,
   ],
 })
-export class ForgotPasswordModule {}
+export class ForgotPasswordModule { }

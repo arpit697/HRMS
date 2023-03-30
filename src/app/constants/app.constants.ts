@@ -211,7 +211,7 @@ export const PROFILE_SELECTION_MENU = [
 ];
 
 export const JOBS = [
-  {
+  { id:2567,
     tech_image: '../../assets/technologies/marketing.svg',
     tech_name: 'Marketing',
     location: 'Noida, Uttar Pradesh',
@@ -245,11 +245,12 @@ export const JOBS = [
       'Ability to identify & prioritize tasks as per their urgency & importance',
     ],
     experience: {
-      form: '1',
+      from: '1',
       to: '3',
     },
   },
   {
+    id:2569,
     tech_image: '../../assets/technologies/react-native.svg',
     tech_name: 'Tech Lead',
     location: 'Noida, Uttar Pradesh',
@@ -286,6 +287,7 @@ export const JOBS = [
     },
   },
   {
+    id:2669,
     tech_image: '../../assets/technologies/business-analyst.svg',
     tech_name: 'Business Analyst',
     location: 'Noida, Uttar Pradesh',

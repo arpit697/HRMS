@@ -11,13 +11,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, NativeDateModule } from '@angular/material/core';
-import { RuTableModule } from 'src/app/modules/common/modules/ru-table/ru-table.module';
+import { RuTableModule } from 'src/app/modules/common/modules/common-table/ru-table.module';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ckeditor4-angular';
 import { MatRadioModule } from '@angular/material/radio';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 const MATERIAL = [
   MatCardModule,
   MatIconModule,
@@ -46,4 +46,4 @@ const MATERIAL = [
     ...MATERIAL,
   ],
 })
-export class MyLeavesModule {}
+export class MyLeavesModule { }

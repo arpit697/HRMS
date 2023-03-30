@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MyTrainingRoutingModule } from './my-training-routing.module';
 import { MyTrainingComponent } from './my-training.component';
-import { RuTrainingCardModule } from 'src/app/modules/common/modules/ru-training-card/ru-training-card.module';
+import { RuTrainingCardModule } from 'src/app/modules/common/modules/common-training-card/ru-training-card.module';
 import { MatCardModule } from '@angular/material/card';
 
 const MATERIAL = [MatCardModule];
@@ -17,4 +17,4 @@ const MATERIAL = [MatCardModule];
     ...MATERIAL,
   ],
 })
-export class MyTrainingModule {}
+export class MyTrainingModule { }

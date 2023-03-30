@@ -7,33 +7,11 @@
 </mat-card>
 
 <mat-card class="container">
-  <div class="search-filters">
-    <div *ngFor="let item of searchFilter" class="form-field-container">
-      <mat-card-subtitle class="label-horizontal">{{
-        item.label_horizontal_left
-      }}</mat-card-subtitle>
-      <mat-form-field
-        *ngIf="item.type == 'select'"
-        appearance="outline"
-        class="number-select"
-      >
-        <mat-select>
-          <mat-option></mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field *ngIf="item.type == 'input'" appearance="outline">
-        <input matInput type="text" />
-      </mat-form-field>
-      <mat-card-subtitle class="label-horizontal">{{
-        item.label_horizontal_right
-      }}</mat-card-subtitle>
-    </div>
-  </div>
-
   <app-ru-table
     class="table"
     [tableColumns]="tableColumns"
     [tableData]="tableData"
     [TableClass]="'asset-inventory-table'"
+    [isFilterable]="true"
   ></app-ru-table>
 </mat-card>

@@ -2,6 +2,7 @@ mat-card,
 .img-background {
   border-radius: 0.7em !important;
 }
+
 .card-container {
   border: 1px solid #e3e5e9;
   padding: 1em;
@@ -25,12 +26,12 @@ mat-card,
       gap: 0.5em;
       padding-top: 2px;
       padding-bottom: 2px;
-      mat-card-title {
-      }
       background-color: white;
+
       .location-icon {
         color: #ff9584;
       }
+
       mat-card-subtitle {
         font-size: 0.7em;
         color: black;
@@ -45,11 +46,25 @@ mat-card,
   }
 }
 
+.designation {
+  .designation_name,
+  .tech_name {
+    font-size: 20px;
+    color: #231E1E;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+}
+
 .designation,
 .openings-experience {
   display: flex;
-  justify-content: space-between;
   padding: 10px;
+}
+
+.openings-experience {
+  justify-content: space-between;
 }
 
 .description {
@@ -70,11 +85,9 @@ mat-card,
     border-radius: 5px;
     padding: 1.5em;
     border: 1.5px solid rgba(150, 165, 184, 0.5);
-    background: linear-gradient(
-        180deg,
+    background: linear-gradient(180deg,
         rgba(255, 255, 255, 0.3) 0%,
-        rgba(0, 0, 0, 0.3) 100%
-      ),
+        rgba(0, 0, 0, 0.3) 100%),
       #199cff;
     background-blend-mode: soft-light, normal;
     box-shadow: 0px 1px 4px rgb(0 0 0 / 12%),
