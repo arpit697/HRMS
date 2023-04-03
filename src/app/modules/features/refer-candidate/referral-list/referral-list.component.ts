@@ -1,19 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { JOB_OPENINGS } from 'src/app/constants/routes';
 import { DataService } from 'src/app/services/data/data.service';
 import { UtilityService } from 'src/app/services/utility/utility.service';
 
 @Component({
   selector: 'app-referral-list',
   templateUrl: './referral-list.component.html',
-  styleUrls: ['./referral-list.component.scss']
+  styleUrls: ['./referral-list.component.scss'],
 })
 export class ReferralListComponent implements OnInit {
-  constructor(private _dataService:DataService , public utility : UtilityService){
-
-  }
-  ngOnInit(): void {
-    
-  }
+  constructor(
+    public dataService: DataService,
+    public utility: UtilityService,
+    private _router: Router
+  ) {}
+  ngOnInit(): void {}
 
   tableColumns: Array<any> = [
     {
@@ -25,12 +27,13 @@ export class ReferralListComponent implements OnInit {
       columnDef: 'candidate_name',
       header: 'Candidate Name',
       cell: (element: Record<string, any>) => `${element['candidate_name']}`,
-      type : 'link'
+      type: 'link',
     },
     {
       columnDef: 'candidate_experience',
       header: 'Experience',
-      cell: (element: Record<string, any>) => `${element['candidate_experience']}`,
+      cell: (element: Record<string, any>) =>
+        `${element['candidate_experience']}`,
     },
     {
       columnDef: 'department_name',
@@ -56,14 +59,11 @@ export class ReferralListComponent implements OnInit {
       columnDef: 'action',
       header: 'Resume / CV',
       cell: (element: Record<string, any>) => `${element['action']}`,
-      type: 'button-action'
+      type: 'button-action',
     },
-    
   ];
 
-
   tableData = [
-    ...this._dataService.referredCandidate
     // {
     //   id: 1173,
     //   serial_number: 1,
@@ -73,10 +73,15 @@ export class ReferralListComponent implements OnInit {
     //   position: 'Marketing Manager',
     //   date_of_referral: '2022-03-15',
     //   candidate_status: 'Hired',
-    //   path : 'CANDIDATE_PROFILE',
+    //   path: 'CANDIDATE_PROFILE',
     //   button_icon: 'download',
     //   file_url: 'https://example.com/resume/johndoe.pdf',
     //   action: 'Download',
     // },
+    ...this.dataService.referredCandidate,
   ];
+
+  jobOpeningClickHandler() {
+    this._router.navigate([JOB_OPENINGS.fullUrl]);
+  }
 }

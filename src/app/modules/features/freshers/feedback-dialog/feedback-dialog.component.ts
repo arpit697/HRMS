@@ -11,4 +11,8 @@ export class FeedbackDialogComponent {
     public dialogRef: MatDialogRef<FeedbackDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
+
+  close() {
+    this.dialogRef.close();
+  }
 }

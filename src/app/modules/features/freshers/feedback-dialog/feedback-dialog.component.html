@@ -1,1 +1,99 @@
-<p>feedback-dialog works!</p>
+<div class="header flex jc-between ai-center">
+    <mat-card-title class="title">
+      Additional condition for rewards
+    </mat-card-title>
+    <mat-icon (click)="close()" class="icon"> close </mat-icon>
+</div>
+<mat-card class="feed-back-container p-24">
+<div class="training-details">
+    <div class="col-2">
+        <mat-card-subtitle>Title:</mat-card-subtitle>
+        <mat-card-subtitle>Angular Training Feb - 2022</mat-card-subtitle>
+    </div>
+    <div class="col-2">
+        <mat-card-subtitle>Department:</mat-card-subtitle>
+        <mat-card-subtitle>Angular</mat-card-subtitle>
+    </div>
+    <div class="col-4">
+        <mat-card-subtitle class="">Start Date:</mat-card-subtitle >
+        <mat-card-subtitle  class="">a</mat-card-subtitle >
+        <mat-card-subtitle  class="">End Date:</mat-card-subtitle >
+        <mat-card-subtitle  class="">a</mat-card-subtitle >
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div>
+    <mat-card-subtitle>
+        Do you feel that the objective/goal of the training has been fulfilled? *
+    </mat-card-subtitle>
+    <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Option 1</mat-radio-button>
+        <mat-radio-button value="2">Option 2</mat-radio-button>
+    </mat-radio-group>
+</div>
+<div>
+    <mat-card-subtitle>
+        What is missing ? *
+    </mat-card-subtitle>
+    <mat-form-field appearance="outline">
+        <textarea matInput></textarea>
+    </mat-form-field>
+</div>
+<div>
+    <mat-card-subtitle>
+        How relevant and helpful do you think it was for your job? *
+    </mat-card-subtitle>
+    <span>Not Very</span>
+    <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">1</mat-radio-button>
+        <mat-radio-button value="2">2</mat-radio-button>
+        <mat-radio-button value="3">3</mat-radio-button>
+        <mat-radio-button value="4">4</mat-radio-button>
+        <mat-radio-button value="5">5</mat-radio-button>
+    </mat-radio-group>
+    <span>Very Much</span>
+</div>
+<div>
+    <mat-card-subtitle>
+        How would you rate the overall training? *
+    </mat-card-subtitle>
+    <span>Not Good</span>
+    <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">1</mat-radio-button>
+        <mat-radio-button value="2">2</mat-radio-button>
+        <mat-radio-button value="3">3</mat-radio-button>
+        <mat-radio-button value="4">4</mat-radio-button>
+        <mat-radio-button value="5">5</mat-radio-button>
+    </mat-radio-group>
+    <span>Excellent</span>
+</div>
+<div>
+    <mat-card-subtitle>
+        How satisfied were you with the session content? *
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+        (Both presented and pre-read material)
+    </mat-card-subtitle>
+    <span>Poor</span>
+    <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">1</mat-radio-button>
+        <mat-radio-button value="2">2</mat-radio-button>
+        <mat-radio-button value="3">3</mat-radio-button>
+        <mat-radio-button value="4">4</mat-radio-button>
+        <mat-radio-button value="5">5</mat-radio-button>
+    </mat-radio-group>
+    <span>Excellent</span>
+</div>
+<div>
+    <mat-card-subtitle>
+        Any overall feedback for the training? *
+    </mat-card-subtitle>
+    <mat-form-field appearance="outline">
+        <textarea matInput></textarea>
+    </mat-form-field>
+</div>
+<mat-card-actions>
+    <button>Cancel</button>
+    <button>Submit</button>
+</mat-card-actions>
+</mat-card>

@@ -11,14 +11,14 @@ export class RuTrainingCardComponent {
   constructor(private dialog: MatDialog) {}
 
   feedBackHandler(collection_data: any) {
-    const dialogRef = this.dialog.open(FeedbackDialogComponent, {
-      width: '30%',
-      height: '80%',
-      data: { ...collection_data },
-    });
+    const isSmallScreen = window.matchMedia('(max-width: 50em)').matches;
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
+    const dialogRef = this.dialog.open(FeedbackDialogComponent, {
+      width: isSmallScreen ? '100%' : '30%',
+      height: '98%',
+      data: {},
     });
+    dialogRef.disableClose = true;
+    dialogRef.afterClosed().subscribe((result: any) => {});
   }
 }

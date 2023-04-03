@@ -50,7 +50,7 @@ mat-card,
   .designation_name,
   .tech_name {
     font-size: 24px;
-    color: #231E1E;
+    color: #231e1e;
     font-weight: 500;
     line-height: 1.2;
     margin-bottom: 5px;
@@ -85,9 +85,11 @@ mat-card,
     border-radius: 5px;
     padding: 1.5em;
     border: 1.5px solid rgba(150, 165, 184, 0.5);
-    background: linear-gradient(180deg,
+    background: linear-gradient(
+        180deg,
         rgba(255, 255, 255, 0.3) 0%,
-        rgba(0, 0, 0, 0.3) 100%),
+        rgba(0, 0, 0, 0.3) 100%
+      ),
       #199cff;
     background-blend-mode: soft-light, normal;
     box-shadow: 0px 1px 4px rgb(0 0 0 / 12%),
@@ -102,5 +104,11 @@ mat-card,
   .refer {
     background-color: #199cff;
     color: #ffffff;
+  }
+}
+
+@media all and (max-width: 50em) {
+  .action-buttons {
+    grid-template-columns: auto;
   }
 }

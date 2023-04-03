@@ -1,0 +1,29 @@
+.header {
+  background: #f3f3f3 !important;
+  padding: 5px 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  .title {
+    font-size: 1.4em;
+    color: #199cff;
+    line-height: 1.2;
+    font-weight: 550;
+  }
+  .icon {
+    background: white;
+    border-radius: 50%;
+    padding: 0.2em;
+  }
+}
+
+.feed-back-container {
+  .training-details {
+    .col-2 {
+      grid-template-columns: 25% auto;
+    }
+  }
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+  height: auto !important;
+}

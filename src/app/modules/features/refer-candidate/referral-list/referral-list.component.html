@@ -1,11 +1,16 @@
 <mat-card-title class="module-title">My Referral List</mat-card-title>
-<mat-card class="no-referrals-card">
+<mat-card *ngIf="tableData.length <= 0 " class="no-referrals-card" >
   <mat-card-title
     >No referrals yet! Checkout current job openings and refer</mat-card-title
   >
-  <button mat-raised-button>Job Openings</button>
+  <button mat-raised-button (click)="jobOpeningClickHandler()">Job Openings</button>
 </mat-card>
 
-<app-ru-table [tableColumns]="tableColumns"
- [tableData]="tableData" 
- (clickHandler)="utility.downloadHandler($event)"></app-ru-table>
+<div *ngIf="tableData.length > 0" >
+  <app-ru-table 
+  [TableClass]="'referral-list-table'"
+  [tableColumns]="tableColumns"
+  [tableData]="tableData" 
+  (clickHandler)="utility.downloadHandler($event)">
+</app-ru-table>
+</div>

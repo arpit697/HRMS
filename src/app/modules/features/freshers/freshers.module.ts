@@ -4,9 +4,24 @@ import { CommonModule } from '@angular/common';
 import { FreshersRoutingModule } from './freshers-routing.module';
 import { FreshersComponent } from './freshers.component';
 import { FeedbackDialogComponent } from './feedback-dialog/feedback-dialog.component';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatDivider, MatDividerModule } from '@angular/material/divider';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+const MATERIAL = [
+  MatIconModule,
+  MatCardModule,
+  MatDividerModule,
+  MatRadioModule,
+  MatFormFieldModule,
+  MatInputModule,
+];
 
 @NgModule({
   declarations: [FreshersComponent, FeedbackDialogComponent],
-  imports: [CommonModule, FreshersRoutingModule],
+  imports: [CommonModule, FreshersRoutingModule, ...MATERIAL],
 })
 export class FreshersModule {}

@@ -173,6 +173,14 @@ export const FRESHERS_TRAININGS: RouteInterface = {
     return `${FRESHERS.fullUrl}/${this.path}`;
   },
 };
+
+export const TRAINING_DETAILS_TRAINEE : RouteInterface = {
+  path: 'training-details-trainee',
+  get fullUrl(): string {
+    return `${FRESHERS.fullUrl}/${this.path}`;
+  },
+};
+
 export const TRAINING: RouteInterface = {
   path: 'training',
   get fullUrl(): string {

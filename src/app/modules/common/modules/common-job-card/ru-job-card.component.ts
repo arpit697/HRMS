@@ -19,11 +19,13 @@ export class RuJobCardComponent {
   constructor(private dialog: MatDialog, private _router: Router) {}
   openDialog(): void {
     const isSmallScreen = window.matchMedia('(max-width: 50em)').matches;
+
     const dialogRef = this.dialog.open(ReferCandidateDialogComponent, {
-      width: isSmallScreen ? '100%' : '50%',
+      width: isSmallScreen ? '100%' : '40%',
       height: '98%',
       data: { id: this.id },
     });
+    dialogRef.disableClose = true;
     dialogRef.afterClosed().subscribe((result: any) => {});
   }
   viewDetails() {

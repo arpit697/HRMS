@@ -136,6 +136,12 @@ mat-card-content {
   grid-template-columns: auto auto auto;
 }
 
+.col-4 {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+
 // spinner code
 
 @keyframes spinner {
