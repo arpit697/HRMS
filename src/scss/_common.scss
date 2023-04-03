@@ -24,19 +24,52 @@
 }
 
 .button-primary {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF !important;
-  color: #FFFFFF !important;
+  background: #199cff !important;
+  color: #ffffff !important;
 }
-
+.button-cancel {
+  border: 1.5px solid rgba(150, 165, 184, 0.5) !important;
+  background-color: #ffffff !important;
+  color: #96a5b8 !important;
+}
 
 .add-button {
   background: transparent;
-  box-shadow: 0 0 0 1px #26B4FF inset;
-  color: #26B4FF !important;
+  box-shadow: 0 0 0 1px #26b4ff inset;
+  color: #26b4ff !important;
   border-radius: 0 !important;
   height: 1.5em !important;
   width: 2em;
   padding: 0;
+}
+
+.dash_heading {
+  font-size: 25px;
+  color: #606167;
+  font-weight: 500;
+  line-height: 1.5;
+  padding-left: 1em;
+  margin: 0 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  mat-card-title {
+    background-color: #ffffff;
+    z-index: 1;
+    margin: 4px 5px;
+  }
+}
+
+.dash_heading:after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  border-top: 1px dashed #96a5b8;
+  position: absolute;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .c-label {
@@ -48,7 +81,7 @@
 
 .c-2-label {
   font-size: 14px;
-  color: #96A5B8 !important;
+  color: #96a5b8 !important;
   font-weight: 400;
   line-height: 1.4;
   margin-bottom: 5px !important;
@@ -71,4 +104,3 @@
 .p-16 {
   padding: 16px;
 }
-

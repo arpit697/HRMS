@@ -132,6 +132,13 @@ export const JOB_DETAILS: RouteInterface = {
   },
 };
 
+export const CANDIDATE_PROFILE: RouteInterface = {
+  path: 'candidate-profile',
+  get fullUrl(): string {
+    return `${REFER_CANDIDATE.fullUrl}/${this.path}`;
+  },
+};
+
 export const REFERRAL_LIST: RouteInterface = {
   path: 'referral-list',
   get fullUrl(): string {

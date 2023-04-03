@@ -53,10 +53,6 @@ export class ProjectsComponent {
       cell: (element: Record<string, any>) => `${element['completed']}`,
     },
   ];
-  get url(){
-    let detail = `${PROJECT_DETAIL.path}/${1}`
-    return detail.toString
-  }
   tableData = [
     {
       id : 12567,

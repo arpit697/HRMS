@@ -1,6 +1,6 @@
 <mat-card-title class="module-title">Current Job Openings</mat-card-title>
 <div>
-  <app-ru-job-card *ngFor="let item of openings">
+  <app-ru-job-card [id]="item.id" *ngFor="let item of openings">
     <img class="card-image" src="{{ item.tech_image }}" alt="" />
     <span class="location_name">{{ item.location }}</span>
     <span class="date">{{ item.release_date }}</span>

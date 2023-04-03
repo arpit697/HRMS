@@ -6,7 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root',
 })
 export class UtilityService {
-  constructor(public _snack: MatSnackBar, public http: HttpClient) { }
+  constructor(public _snack: MatSnackBar, public http: HttpClient) {}
 
   /**@description returns the current year */
   get newYear() {
@@ -49,13 +49,22 @@ export class UtilityService {
   //   return ipAddress;
   // }
 
-  readURL(event: any, allowedTypes: string[]): Promise<string | ArrayBuffer | null> {
+  readURL(
+    event: any,
+    allowedTypes: string[]
+  ): Promise<string | ArrayBuffer | null> {
     return new Promise((resolve, reject) => {
       if (event.target.files && event.target.files[0]) {
         const file = event.target.files[0];
         // Check if file type is allowed
         if (!allowedTypes.includes(file.type)) {
-          reject(new Error(`Invalid file type. Only ${allowedTypes.join(', ')} files are allowed.`));
+          reject(
+            new Error(
+              `Invalid file type. Only ${allowedTypes.join(
+                ', '
+              )} files are allowed.`
+            )
+          );
         }
         const reader = new FileReader();
         reader.onload = (e) => resolve(reader.result);
@@ -65,7 +74,32 @@ export class UtilityService {
       }
     });
   }
-  
+
+  formCheck(form: any) {
+    for (const field of Object.keys(form.controls)) {
+      const control = form.controls[field];
+      if (control.invalid) {
+        if (control.errors.required) {
+          return `${field} is required`;
+        } else {
+          return `${field} is not valid`;
+        }
+      }
+    }
+    return null;
+  }
+
+  downloadHandler(element: any) {
+    const fileUrl = element.file_url;
+    const fileName = `${element.name}`;
+    const link = document.createElement('a');
+    link.setAttribute('href', fileUrl);
+    link.setAttribute('download', fileName);
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 
   bar(message: any, action: string, theme: string) {
     this._snack.open(message, action, {
@@ -75,4 +109,21 @@ export class UtilityService {
       verticalPosition: 'top',
     });
   }
+
+  getCurrentDate() {
+    const date: Date = new Date();
+    const month: number = date.getMonth() + 1; // add 1 to get the correct month index (0-11)
+    const day: number = date.getDate();
+    const year: number = date.getFullYear();
+    return `${month}-${day}-${year}`;
+  }
+
+
+  generateRandomNumber(): number {
+    const randomNumber: number = Math.floor(Math.random() * 9000) + 1000;
+    return randomNumber;
+  }
 }
+
+
+

@@ -5,3 +5,7 @@
   >
   <button mat-raised-button>Job Openings</button>
 </mat-card>
+
+<app-ru-table [tableColumns]="tableColumns"
+ [tableData]="tableData" 
+ (clickHandler)="utility.downloadHandler($event)"></app-ru-table>

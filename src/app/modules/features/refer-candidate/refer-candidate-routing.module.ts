@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ReferCandidateComponent } from './refer-candidate.component';
-import { JOB_DETAILS, JOB_OPENINGS } from 'src/app/constants/routes';
+import {
+  CANDIDATE_PROFILE,
+  JOB_DETAILS,
+  JOB_OPENINGS,
+} from 'src/app/constants/routes';
 
 const routes: Routes = [
   {
@@ -29,6 +33,13 @@ const routes: Routes = [
             (m) => m.JobDetailsModule
           ),
       },
+      {
+        path: `${CANDIDATE_PROFILE.path}/:id`,
+        loadChildren: () =>
+          import('./candidate-profile/candidate-profile.module').then(
+            (m) => m.CandidateProfileModule
+          ),
+      },
     ],
   },
 ];
@@ -37,4 +48,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ReferCandidateRoutingModule { }
+export class ReferCandidateRoutingModule {}

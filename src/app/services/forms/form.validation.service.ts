@@ -11,6 +11,7 @@ export class FormValidationService {
 
   VALIDATION = {
     emptyControl: [],
+    required : [Validators.required,] , 
     name: [
       Validators.required,
       Validators.pattern(PATTERN.name),

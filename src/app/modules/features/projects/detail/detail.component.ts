@@ -13,8 +13,6 @@ export class DetailComponent implements OnInit{
 
   }
   ngOnInit(): void {
-    let stpit = this.utility.splitArray(this.projectTitles)
-    console.log(stpit);
     this.splitTiles = this.utility.splitArray(this.projectTitles);
   }
 

@@ -18,7 +18,7 @@
 
 .container {
   position: relative;
-  padding: 25px;
+  padding: 24px;
   mat-card-subtitle {
     color: #96a5b8;
     margin-bottom: 5px;
@@ -38,7 +38,7 @@
     display: grid;
     grid-template-columns: calc(50% - 1em) calc(50% - 1em);
     gap: 2em;
-    margin-top: .5em;
+    margin-top: 0.5em;
     ::ng-deep .mat-mdc-text-field-wrapper {
       background-color: white;
       min-height: 10em;
@@ -57,37 +57,18 @@
   ::ng-deep.mat-mdc-form-field-infix {
     padding-top: 8px !important;
   }
-  .dash_heading {
-    font-size: 25px;
-    color: #606167;
-    font-weight: 500;
-    line-height: 1.5;
-    padding-left: 1em;
-    margin: 0 10px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    mat-card-title {
-      background-color: #ffffff;
-      z-index: 1;
-      margin: 4px 5px;
-    }
-  }
-
-  .dash_heading:after {
-    content: "";
-    width: 100%;
-    height: 1px;
-    border-top: 1px dashed #96a5b8;
-    position: absolute;
-    left: 0;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
+  
   .actions {
     gap: 1em;
     justify-content: flex-end !important;
+  }
+}
+
+.field-disabled {
+  ::ng-deep {
+    .mat-mdc-text-field-wrapper {
+      background-color: #f8f8f8 !important;
+      color: #a3a4a6 !important;
+    }
   }
 }

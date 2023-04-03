@@ -13,7 +13,7 @@
     <div class="pre-filled-form-fields">
       <div *ngFor="let field of preFilledFields">
         <mat-card-subtitle>{{ field.label }}</mat-card-subtitle>
-        <mat-form-field appearance="outline">
+        <mat-form-field class="field-disabled" appearance="outline">
           <input matInput formControlName="{{ field.formControlName }}" />
         </mat-form-field>
       </div>
@@ -31,11 +31,14 @@
             <mat-option *ngFor="let location of jobLocations" [value]="location">{{location}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <mat-form-field appearance="outline" *ngIf="!field.select">
-          <input matInput formControlName="{{ field.formControlName }}" />
+        <mat-form-field
+          [ngClass]="{'field-disabled': referCandidateFrom.get(field.formControlName)?.status == 'DISABLED'}"
+          appearance="outline" *ngIf="!field.select">
+          <input matInput type="{{field.type}}" formControlName="{{ field.formControlName }}" />
           <mat-error>{{
-            referCandidateFrom | getControl : [field.formControlName] | validationCheck : field.formControlName | replaceChar : '_':' '
-          }}</mat-error>
+            referCandidateFrom | getControl : [field.formControlName] | validationCheck : field.formControlName |
+            replaceChar : '_':' '
+            }}</mat-error>
         </mat-form-field>
       </div>
     </div>
@@ -44,25 +47,29 @@
       <div>
         <mat-card-subtitle>Upload CV (pdf,doc)</mat-card-subtitle>
         <mat-card class="custom-file-input-container">
-          <input class="custom-file-input" (change)="readURL($event)" type="file" />
+          <input class="custom-file-input" (change)="getResume($event)" type="file" />
         </mat-card>
       </div>
 
       <div>
-        <mat-card-subtitle>Skill Set</mat-card-subtitle>
+        <div class="flex jc-between">
+          <mat-card-subtitle>Skill Set</mat-card-subtitle>
+          <mat-card-subtitle>{{referCandidateFrom.get('skill')?.value.length}}/500</mat-card-subtitle>
+        </div>
+
         <mat-form-field appearance="outline">
-          <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="10" formControlName="skill"></textarea>
+          <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="1" maxlength="500" cdkAutosizeMaxRows="10"
+            formControlName="skill"></textarea>
           <mat-error>{{
-            referCandidateFrom | getControl : ["skill"] | validationCheck : "skill" 
-          }}</mat-error>
+            referCandidateFrom | getControl : ["skill"] | validationCheck : "skill"
+            }}</mat-error>
         </mat-form-field>
-        <p>{{referCandidateFrom.get('skill')?.value.length}}/500</p>
       </div>
     </div>
 
     <mat-card-actions class="actions">
-      <button mat-raised-button (click)="cancelHandler()" >Cancel</button>
-      <button mat-raised-button (click)="submitHandler()">Submit</button>
+      <button mat-raised-button class="button-cancel" (click)="cancelHandler()">Cancel</button>
+      <button mat-raised-button class="button-primary" (click)="submitHandler()">Submit</button>
     </mat-card-actions>
   </div>
 </div>
