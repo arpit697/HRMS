@@ -1,6 +1,6 @@
 <mat-card-title class="module-title">Trainings</mat-card-title>
 <div>
-  <app-ru-training-card *ngFor="let training of employee_training_data">
+  <app-ru-training-card [id]="training.id" *ngFor="let training of employee_training_data">
     <img class="card-image" src="{{ training.default_img }}" alt="" />
     <span class="training-name">{{ training.name }}</span>
     <span class="current-status">{{ training.status }}</span>

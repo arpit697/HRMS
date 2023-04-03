@@ -674,6 +674,7 @@ export const EMP_RATING_MONTH = [
 
 export const EMPLOYEE_TRAINING_DATA = [
   {
+    id: Math.floor(Math.random() * 9000) + 1000,
     default_img: '../../assets/default/ic-training.svg',
     name: 'Angular Training',
     status: 'Complete',
@@ -682,6 +683,7 @@ export const EMPLOYEE_TRAINING_DATA = [
     mode: 'Online',
   },
   {
+    id: Math.floor(Math.random() * 9000) + 1000,
     default_img: '../../assets/default/ic-training.svg',
     name: 'HTML/CSS/UI',
     status: 'Complete',
@@ -691,8 +693,10 @@ export const EMPLOYEE_TRAINING_DATA = [
   },
 ];
 
+
 export const UPCOMING_TRAINING_DATA = [
   {
+    id: Math.floor(Math.random() * 9000) + 1000,
     default_img: '../../assets/default/ic-training.svg',
     name: 'Angular Training',
     status: 'Complete',
