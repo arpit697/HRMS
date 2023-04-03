@@ -3,6 +3,28 @@
         Lorem ipsum dolor sit amet.
     </mat-card-title>
     <mat-card>
-        
+        <div class="flex jc-between p-24">
+            <div class="button-group flex g-1">
+                <button mat-button (click)="selectedTab = 'training detail' ">Training Details</button>
+                <button mat-button (click)="selectedTab = 'sub topic' ">Sub-Topics</button>
+                <button mat-button (click)="selectedTab = 'advance' ">advance</button>
+            </div>
+            <button mat-button>Lorem</button>
+        </div>
     </mat-card>
+    <div [ngSwitch]="selectedTab">
+        <div *ngSwitchCase="'training detail'">
+            <app-training-details></app-training-details>
+        </div>
+        <div *ngSwitchCase="'sub topic'">
+            <app-sub-topics></app-sub-topics>
+        </div>
+        <div *ngSwitchCase="'advance'">
+            <app-advance></app-advance>
+        </div>
+        <div *ngSwitchDefault>
+            <app-training-details></app-training-details>
+        </div>
+    </div>
+
 </div>
