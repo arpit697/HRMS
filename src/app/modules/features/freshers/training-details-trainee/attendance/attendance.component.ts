@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-advance',
-  templateUrl: './advance.component.html',
-  styleUrls: ['./advance.component.scss'],
+  selector: 'app-attendance',
+  templateUrl: './attendance.component.html',
+  styleUrls: ['./attendance.component.scss'],
 })
-export class AdvanceComponent {
+export class AttendanceComponent {
   tableColumns: Array<any> = [
     {
       columnDef: 'serial_number',

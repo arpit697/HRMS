@@ -1,0 +1,45 @@
+.column {
+  box-sizing: border-box;
+  float: left;
+
+  &.full {
+    width: 100%;
+  }
+
+  &.half {
+    width: 50%;
+  }
+
+  &.third {
+    width: 33.33333%;
+  }
+
+  &.quarter {
+    width: 25%;
+  }
+
+  &.fifth {
+    width: 20%;
+  }
+
+  &.last {
+    float: none;
+    clear: both;
+  }
+
+  @media (max-width: 768px) {
+    & {
+      width: 100%;
+      float: none;
+      clear: both;
+      padding: 0;
+    }
+  }
+}
+
+.row {
+  content: "";
+  display: table;
+  clear: both;
+  width: 100%;
+}

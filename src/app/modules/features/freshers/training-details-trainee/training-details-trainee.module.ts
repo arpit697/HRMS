@@ -9,8 +9,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { TrainingDetailsComponent } from './training-details/training-details.component';
 import { SubTopicsComponent } from './sub-topics/sub-topics.component';
-import { AdvanceComponent } from './advance/advance.component';
+
 import { RuTableModule } from 'src/app/modules/common/modules/common-table/ru-table.module';
+import { AttendanceComponent } from './attendance/attendance.component';
 
 const MATERIAL = [
   MatCardModule,
@@ -24,7 +25,8 @@ const MATERIAL = [
     TrainingDetailsTraineeComponent,
     TrainingDetailsComponent,
     SubTopicsComponent,
-    AdvanceComponent
+    AttendanceComponent,
+   
   ],
   imports: [
     CommonModule,

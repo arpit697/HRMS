@@ -14,20 +14,19 @@ import { ReferCandidateDialogComponent } from 'src/app/modules/features/refer-ca
   styleUrls: ['./ru-job-card.component.scss'],
 })
 export class RuJobCardComponent {
-  card: any;
   @Input() id: any;
   constructor(private dialog: MatDialog, private _router: Router) {}
   openDialog(): void {
     const isSmallScreen = window.matchMedia('(max-width: 50em)').matches;
-
     const dialogRef = this.dialog.open(ReferCandidateDialogComponent, {
       width: isSmallScreen ? '100%' : '40%',
       height: '98%',
-      data: { id: this.id },
+      data: {},
     });
     dialogRef.disableClose = true;
     dialogRef.afterClosed().subscribe((result: any) => {});
   }
+
   viewDetails() {
     this._router.navigate([JOB_DETAILS.fullUrl, this.id]);
   }

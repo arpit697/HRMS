@@ -34,13 +34,11 @@
     </div>
   </div>
   <mat-divider></mat-divider>
-  <mat-card-actions (click)="viewHandler()" class="action-buttons">
-    <button mat-raised-button class="view">View Details</button>
-    <button
-      mat-raised-button
-      (click)="feedBackHandler()"
-      class="feed-back"
-    >
+  <mat-card-actions class="action-buttons">
+    <button mat-raised-button (click)="viewHandler()" class="view">
+      View Details
+    </button>
+    <button mat-raised-button (click)="feedBackHandler()" class="feed-back">
       Feedback
     </button>
   </mat-card-actions>

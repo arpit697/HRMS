@@ -17,9 +17,17 @@
 }
 
 .feed-back-container {
-  .training-details {
-    .col-2 {
-      grid-template-columns: 25% auto;
+  .form-data {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    .label {
+      min-width: 160px;
+      color: #606167;
+      font-size: 14px;
+    }
+    .data {
+      color: #231e1e;
+      font-size: 14px;
     }
   }
 }

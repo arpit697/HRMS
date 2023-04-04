@@ -1,4 +1,42 @@
-<mat-card>
-    <mat-card-title>Training Details</mat-card-title>
+<mat-card class="p-24">
+  <section>
+    <mat-card-title class="card-title">Training Details</mat-card-title>
+    <div class="jd-summary row">
+      <div class="form-data column full flex">
+        <mat-card-subtitle class="label">Title :</mat-card-subtitle>
+        <mat-card-subtitle class="data"
+          >Angular Training Feb- 2022</mat-card-subtitle
+        >
+      </div>
+      <div class="form-data column half flex">
+        <mat-card-subtitle class="label">Start dates :</mat-card-subtitle>
+        <mat-card-subtitle class="data">Feb-28-2022</mat-card-subtitle>
+      </div>
+      <div class="form-data column half flex">
+        <mat-card-subtitle class="label">End dates :</mat-card-subtitle>
+        <mat-card-subtitle class="data">Apr-02-2022</mat-card-subtitle>
+      </div>
+      <div class="form-data column half flex">
+        <mat-card-subtitle class="label">Training mode :</mat-card-subtitle>
+        <mat-card-subtitle class="data">Online</mat-card-subtitle>
+      </div>
+      <div class="form-data column half flex">
+        <mat-card-subtitle class="label">Batch :</mat-card-subtitle>
+        <mat-card-subtitle class="data">Feb-2022</mat-card-subtitle>
+      </div>
+    </div>
+  </section>
+  <section>
+    <mat-card-title class="card-title">Description</mat-card-title>
+    <div class="jd-description p-24">
+      <p class="description-text">
+        Angular Training Feb- 2022 - Uploaded from sheet
+      </p>
+    </div>
+  </section>
 </mat-card>
-<app-ru-table [tableColumns]="tableColumns" [tableData]="tableData"></app-ru-table>
+<app-ru-table
+  [tableColumns]="tableColumns"
+  [tableData]="tableData"
+  [TableClass]="'light-theme-table'"
+></app-ru-table>
