@@ -10,6 +10,7 @@ import { MatDivider, MatDividerModule } from '@angular/material/divider';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 const MATERIAL = [
   MatIconModule,
@@ -18,7 +19,7 @@ const MATERIAL = [
   MatRadioModule,
   MatFormFieldModule,
   MatInputModule,
-  
+  MatButtonModule
 ];
 
 @NgModule({

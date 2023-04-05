@@ -38,8 +38,23 @@
     <button mat-raised-button (click)="viewHandler()" class="view">
       View Details
     </button>
-    <button mat-raised-button (click)="feedBackHandler()" class="feed-back">
+    <button
+      *ngIf="!(status == 'open')"
+      mat-raised-button
+      (click)="feedBackHandler()"
+      class="feed-back"
+    >
       Feedback
+    </button>
+
+    <button
+      *ngIf="status == 'open'"
+      mat-raised-button
+      (click)="enrollHandler()"
+      class="enroll"
+      [ngClass]="buttonText === 'Enroll Training' ? 'blue-bg' : 'red-bg'"
+    >
+      {{ buttonText }}
     </button>
   </mat-card-actions>
 </mat-card>

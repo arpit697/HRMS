@@ -1,7 +1,11 @@
 <mat-card-title class="module-title">Upcoming Trainings</mat-card-title>
 
 <div class="upcoming-training-grid">
-  <app-ru-training-card *ngFor="let training of upcoming_trainings">
+  <app-ru-training-card
+    [id]="training.id"
+    [status]="'open'"
+    *ngFor="let training of upcoming_trainings"
+  >
     <img class="card-image" src="{{ training.default_img }}" alt="" />
     <span class="training-name">{{ training.name }}</span>
     <span class="current-status">{{ training.status }}</span>

@@ -11,11 +11,11 @@
     <ng-container *ngFor="let item of newEmployee">
       <ng-template carouselSlide>
         <div class="user-card flex flex-column jc-center ai-center">
-          <img class="new-employee-image" src="{{ item }}" alt="" />
-          <mat-card-title>Something</mat-card-title>
-          <mat-card-subtitle
-            >Social Media Marketing : Social Media Team</mat-card-subtitle
-          >
+          <img class="new-employee-image" src="{{ item.path }}" alt="" />
+          <mat-card-title class="name">{{ item.name }}</mat-card-title>
+          <mat-card-subtitle class="designation">
+            {{ item.role }}
+          </mat-card-subtitle>
         </div>
       </ng-template>
     </ng-container>

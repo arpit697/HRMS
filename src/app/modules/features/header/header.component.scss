@@ -85,6 +85,15 @@ mat-toolbar {
     display: none;
   }
 }
+
+.notification-box {
+  margin-top: 5em;
+  min-height: calc(100vh - 8em);
+  width: 20em;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+}
 @media all and (max-width: 62em) {
   mat-toolbar {
     .arrow_forward {

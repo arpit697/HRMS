@@ -211,7 +211,8 @@ export const PROFILE_SELECTION_MENU = [
 ];
 
 export const JOBS = [
-  { id:2567,
+  {
+    id: 2567,
     tech_image: '../../assets/technologies/marketing.svg',
     tech_name: 'Marketing',
     location: 'Noida, Uttar Pradesh',
@@ -250,7 +251,7 @@ export const JOBS = [
     },
   },
   {
-    id:2569,
+    id: 2569,
     tech_image: '../../assets/technologies/react-native.svg',
     tech_name: 'Tech Lead',
     location: 'Noida, Uttar Pradesh',
@@ -287,7 +288,7 @@ export const JOBS = [
     },
   },
   {
-    id:2669,
+    id: 2669,
     tech_image: '../../assets/technologies/business-analyst.svg',
     tech_name: 'Business Analyst',
     location: 'Noida, Uttar Pradesh',
@@ -399,8 +400,16 @@ export const GALLERY_COLLECTION = [
 ];
 
 export const NEW_FAMILY_MEMBERS = [
-  '../../assets/employees/profile_1584437739.jpg',
-  '../../assets/employees/profile_1674213230.jpeg',
+  {
+    name: 'Nandani',
+    path: '../../assets/employees/profile_1584437739.jpg',
+    role: 'Social Media Marketing : Social Media Team',
+  },
+  {
+    name: 'Ananya',
+    path: '../../assets/employees/profile_1674213230.jpeg',
+    role: 'Developer : Angular',
+  },
 ];
 
 export const EMPLOYEE_DATA = [
@@ -674,18 +683,147 @@ export const EMP_RATING_MONTH = [
 
 export const EMPLOYEE_TRAINING_DATA = [
   {
-    id: Math.floor(Math.random() * 9000) + 1000,
+    id: 2070,
     default_img: '../../assets/default/ic-training.svg',
-    name: 'Angular Training',
+    name: 'Angular Training Feb-2022',
+    department: 'angular',
     status: 'Complete',
     start_date: 'Feb-28-2022',
     end_date: 'Arp-02-2022',
     mode: 'Online',
+    descrition: 'Angular Training Feb- 2022 - Uploaded from sheet',
+    training_detail: [
+      {
+        serial_number: 1,
+        topic: 'Introduction to JavaScript',
+        topic_trainer: 'John Doe',
+        trainer_email: 'johndoe@example.com',
+        start_date: '2023-05-01',
+        end_date: '2023-05-05',
+        resource_url: 'https://example.com/javascript-course',
+      },
+      {
+        serial_number: 2,
+        topic: 'Responsive Web Design',
+        topic_trainer: 'Jane Smith',
+        trainer_email: 'janesmith@example.com',
+        start_date: '2023-05-15',
+        end_date: '2023-05-19',
+        resource_url: 'https://example.com/web-design-course',
+      },
+      {
+        serial_number: 3,
+        topic: 'Node.js Fundamentals',
+        topic_trainer: 'Bob Johnson',
+        trainer_email: 'bobjohnson@example.com',
+        start_date: '2023-06-01',
+        end_date: '2023-06-05',
+        resource_url: 'https://example.com/nodejs-course',
+      },
+      {
+        serial_number: 4,
+        topic: 'Advanced CSS Techniques',
+        topic_trainer: 'Sara Lee',
+        trainer_email: 'saralee@example.com',
+        start_date: '2023-06-15',
+        end_date: '2023-06-19',
+        resource_url: 'https://example.com/css-course',
+      },
+      {
+        serial_number: 5,
+        topic: 'React.js for Beginners',
+        topic_trainer: 'Mike Adams',
+        trainer_email: 'mikeadams@example.com',
+        start_date: '2023-07-01',
+        end_date: '2023-07-05',
+        resource_url: 'https://example.com/reactjs-course',
+      },
+    ],
+    sub_topics: [
+      {
+        serial_number: 1,
+        sub_topics: 'Introduction to HTML',
+        topic_trainer: 'John Doe',
+        trainer_email: 'johndoe@example.com',
+        start_date: '2023-05-01',
+        end_date: '2023-05-05',
+        resource_url: 'https://example.com/html-course',
+      },
+      {
+        serial_number: 2,
+        sub_topics: 'Introduction to CSS',
+        topic_trainer: 'Jane Smith',
+        trainer_email: 'janesmith@example.com',
+        start_date: '2023-05-15',
+        end_date: '2023-05-19',
+        resource_url: 'https://example.com/css-course',
+      },
+      {
+        serial_number: 3,
+        sub_topics: 'JavaScript Basics',
+        topic_trainer: 'Bob Johnson',
+        trainer_email: 'bobjohnson@example.com',
+        start_date: '2023-06-01',
+        end_date: '2023-06-05',
+        resource_url: 'https://example.com/javascript-course',
+      },
+      {
+        serial_number: 4,
+        sub_topics: 'Advanced CSS Techniques',
+        topic_trainer: 'Sara Lee',
+        trainer_email: 'saralee@example.com',
+        start_date: '2023-06-15',
+        end_date: '2023-06-19',
+        resource_url: 'https://example.com/css-course-advanced',
+      },
+      {
+        serial_number: 5,
+        sub_topics: 'React.js Fundamentals',
+        topic_trainer: 'Mike Adams',
+        trainer_email: 'mikeadams@example.com',
+        start_date: '2023-07-01',
+        end_date: '2023-07-05',
+        resource_url: 'https://example.com/reactjs-course',
+      },
+    ],
+    attendance: [
+      {
+        serial_number: 1,
+        topic: 'Introduction to Programming',
+        date: '2022-03-01',
+        attendance: 'Present',
+      },
+      {
+        serial_number: 2,
+        topic: 'Data Structures and Algorithms',
+        date: '2022-03-05',
+        attendance: 'Absent',
+      },
+      {
+        serial_number: 3,
+        topic: 'Object-Oriented Programming',
+        date: '2022-03-08',
+        attendance: 'Present',
+      },
+      {
+        serial_number: 4,
+        topic: 'Database Management Systems',
+        date: '2022-03-12',
+        attendance: 'Present',
+      },
+      {
+        serial_number: 5,
+        topic: 'Web Development',
+        date: '2022-03-15',
+        attendance: 'Absent',
+      },
+    ],
   },
   {
-    id: Math.floor(Math.random() * 9000) + 1000,
+    id: 2071,
     default_img: '../../assets/default/ic-training.svg',
     name: 'HTML/CSS/UI',
+    department: 'angular',
     status: 'Complete',
     start_date: 'Feb-14-2022',
     end_date: 'Feb-25-2022',
@@ -693,12 +831,12 @@ export const EMPLOYEE_TRAINING_DATA = [
   },
 ];
 
-
 export const UPCOMING_TRAINING_DATA = [
   {
-    id: Math.floor(Math.random() * 9000) + 1000,
+    id: 2077,
     default_img: '../../assets/default/ic-training.svg',
-    name: 'Angular Training',
+    name: 'Micro Frontend Angular',
+    department: 'angular',
     status: 'Complete',
     start_date: 'Jan-05-2023',
     end_date: 'Arp-02-2022',

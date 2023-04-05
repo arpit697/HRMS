@@ -21,7 +21,7 @@ export class RuJobCardComponent {
     const dialogRef = this.dialog.open(ReferCandidateDialogComponent, {
       width: isSmallScreen ? '100%' : '40%',
       height: '98%',
-      data: {},
+      data: { id: this.id },
     });
     dialogRef.disableClose = true;
     dialogRef.afterClosed().subscribe((result: any) => {});

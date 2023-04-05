@@ -8,6 +8,21 @@
     background: url("../../../../../assets/default/new-family-card.png")
       no-repeat center / cover;
     text-align: center;
+    .name {
+      font-size: 18px;
+      color: #000000;
+      font-weight: 500;
+      line-height: 1.9;
+      margin: 5px 0;
+    }
+    .designation {
+      font-size: 12px;
+      color: #606167;
+      font-weight: 400;
+      line-height: 1.2;
+      margin: 5px 0;
+      text-align: center;
+    }
     .new-employee-image {
       height: 120px;
       width: 120px;

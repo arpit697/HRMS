@@ -25,6 +25,8 @@ export class ReferCandidateDialogComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     [this.jobDetails] = [...JOBS.filter((item) => item.id == this.data.id)];
+    console.log(this.jobDetails);
+    
     this.crateForm();
   }
 

@@ -1,3 +1,4 @@
+<div class="dailog"></div>
 <div class="header flex jc-between ai-center">
   <mat-card-title class="title">
     Additional condition for rewards
@@ -5,12 +6,10 @@
   <mat-icon (click)="close()" class="icon"> close </mat-icon>
 </div>
 <mat-card class="feed-back-container p-24">
-  <div class="row">
+  <div class="row p-8">
     <div class="form-data column full flex">
       <mat-card-subtitle class="label">Title:</mat-card-subtitle>
-      <mat-card-subtitle class="data"
-        >Angular Training Feb - 2022</mat-card-subtitle
-      >
+      <mat-card-subtitle class="data">{{ detail.name }}</mat-card-subtitle>
     </div>
     <div class="form-data column full flex">
       <mat-card-subtitle class="label">Department:</mat-card-subtitle>
@@ -18,84 +17,100 @@
     </div>
     <div class="form-data column half flex">
       <mat-card-subtitle class="label">Start Date:</mat-card-subtitle>
-      <mat-card-subtitle class="data">a</mat-card-subtitle>
+      <mat-card-subtitle class="data">{{
+        detail.start_date
+      }}</mat-card-subtitle>
     </div>
     <div class="form-data column half flex">
       <mat-card-subtitle class="label">End Date:</mat-card-subtitle>
-      <mat-card-subtitle class="data">a</mat-card-subtitle>
+      <mat-card-subtitle class="data">{{ detail.end_date }}</mat-card-subtitle>
     </div>
   </div>
-  <mat-divider></mat-divider>
-  <div>
-    <mat-card-subtitle>
+  <mat-divider class="mat-divider"></mat-divider>
+  <div class="p-12">
+    <mat-card-subtitle class="question">
       Do you feel that the objective/goal of the training has been fulfilled? *
     </mat-card-subtitle>
-    <mat-radio-group class="flex flex-column "aria-label="Select an option">
+    <mat-radio-group class="flex flex-column g-1" aria-label="Select an option">
       <mat-radio-button value="1">Yes</mat-radio-button>
       <mat-radio-button value="2">No</mat-radio-button>
     </mat-radio-group>
   </div>
-  <div>
-    <mat-card-subtitle> What is missing ? * </mat-card-subtitle>
+  <!-- <div>
+    <mat-card-subtitle class="question">
+      What is missing ? *
+    </mat-card-subtitle>
     <mat-form-field appearance="outline">
       <textarea matInput></textarea>
     </mat-form-field>
-  </div>
-  <div>
-    <mat-card-subtitle>
+  </div> -->
+  <div class="p-8">
+    <mat-card-subtitle class="question">
       How relevant and helpful do you think it was for your job? *
     </mat-card-subtitle>
-    <span>Not Very</span>
-    <mat-radio-group aria-label="Select an option">
-      <mat-radio-button value="1">1</mat-radio-button>
-      <mat-radio-button value="2">2</mat-radio-button>
-      <mat-radio-button value="3">3</mat-radio-button>
-      <mat-radio-button value="4">4</mat-radio-button>
-      <mat-radio-button value="5">5</mat-radio-button>
-    </mat-radio-group>
-    <span>Very Much</span>
+    <div class="flex jc-between ai-center">
+      <span class="degrade">Not Very</span>
+      <mat-radio-group class="radio-group flex" aria-label="Select an option">
+        <mat-radio-button value="1">1</mat-radio-button>
+        <mat-radio-button value="2">2</mat-radio-button>
+        <mat-radio-button value="3">3</mat-radio-button>
+        <mat-radio-button value="4">4</mat-radio-button>
+        <mat-radio-button value="5">5</mat-radio-button>
+      </mat-radio-group>
+      <span class="enhance">Very Much</span>
+    </div>
   </div>
-  <div>
-    <mat-card-subtitle>
+  <div class="p-8">
+    <mat-card-subtitle class="question">
       How would you rate the overall training? *
     </mat-card-subtitle>
-    <span>Not Good</span>
-    <mat-radio-group aria-label="Select an option">
-      <mat-radio-button value="1">1</mat-radio-button>
-      <mat-radio-button value="2">2</mat-radio-button>
-      <mat-radio-button value="3">3</mat-radio-button>
-      <mat-radio-button value="4">4</mat-radio-button>
-      <mat-radio-button value="5">5</mat-radio-button>
-    </mat-radio-group>
-    <span>Excellent</span>
+    <div class="flex jc-between ai-center">
+      <span class="degrade">Not Very</span>
+      <mat-radio-group class="radio-group flex" aria-label="Select an option">
+        <mat-radio-button value="1">1</mat-radio-button>
+        <mat-radio-button value="2">2</mat-radio-button>
+        <mat-radio-button value="3">3</mat-radio-button>
+        <mat-radio-button value="4">4</mat-radio-button>
+        <mat-radio-button value="5">5</mat-radio-button>
+      </mat-radio-group>
+      <span class="enhance">Excellent</span>
+    </div>
   </div>
-  <div>
-    <mat-card-subtitle>
+  <div class="p-8">
+    <mat-card-subtitle class="question">
       How satisfied were you with the session content? *
     </mat-card-subtitle>
-    <mat-card-subtitle>
+    <mat-card-subtitle class="question">
       (Both presented and pre-read material)
     </mat-card-subtitle>
-    <span>Poor</span>
-    <mat-radio-group aria-label="Select an option">
-      <mat-radio-button value="1">1</mat-radio-button>
-      <mat-radio-button value="2">2</mat-radio-button>
-      <mat-radio-button value="3">3</mat-radio-button>
-      <mat-radio-button value="4">4</mat-radio-button>
-      <mat-radio-button value="5">5</mat-radio-button>
-    </mat-radio-group>
-    <span>Excellent</span>
+    <div class="flex jc-between ai-center">
+      <span class="degrade">Not Very</span>
+      <mat-radio-group class="radio-group flex" aria-label="Select an option">
+        <mat-radio-button value="1">1</mat-radio-button>
+        <mat-radio-button value="2">2</mat-radio-button>
+        <mat-radio-button value="3">3</mat-radio-button>
+        <mat-radio-button value="4">4</mat-radio-button>
+        <mat-radio-button value="5">5</mat-radio-button>
+      </mat-radio-group>
+      <span class="enhance">Excellent</span>
+    </div>
   </div>
-  <div>
-    <mat-card-subtitle>
+  <div class="p-8">
+    <mat-card-subtitle class="question">
       Any overall feedback for the training? *
     </mat-card-subtitle>
     <mat-form-field appearance="outline">
-      <textarea matInput></textarea>
+      <textarea
+        matInput
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="1"
+        maxlength="500"
+        cdkAutosizeMaxRows="10"
+      ></textarea>
     </mat-form-field>
   </div>
-  <mat-card-actions>
-    <button>Cancel</button>
-    <button>Submit</button>
+  <mat-card-actions class="action">
+    <button mat-raised-button class="button-cancel">Cancel</button>
+    <button mat-raised-button class="button-primary">Submit</button>
   </mat-card-actions>
 </mat-card>

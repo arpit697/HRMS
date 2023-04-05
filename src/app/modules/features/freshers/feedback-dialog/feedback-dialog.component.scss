@@ -21,7 +21,7 @@
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     .label {
-      min-width: 160px;
+      min-width: 100px;
       color: #606167;
       font-size: 14px;
     }
@@ -30,8 +30,33 @@
       font-size: 14px;
     }
   }
+  .radio-group {
+    gap: 0.5em;
+  }
+  .question {
+    margin-bottom: 1em;
+    font-size: 14px;
+  }
+  .degrade {
+    color: #d9534f;
+    font-size: 14px;
+  }
+  .enhance {
+    color: #02bc77;
+    font-size: 14px;
+  }
+  .mat-divider {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .action {
+    padding-top: 1em;
+    gap: 0.5em;
+    justify-content: flex-end;
+  }
 }
 
 ::ng-deep .mat-mdc-text-field-wrapper {
-  height: auto !important;
+  background-color: white;
+  min-height: 10em;
 }
