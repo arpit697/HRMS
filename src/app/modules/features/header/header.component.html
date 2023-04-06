@@ -50,7 +50,7 @@
       </mat-card-content>
       <button class="help">Help</button>
       <span class="bell">
-        <mat-icon>notifications</mat-icon>
+        <mat-icon (click)="toggleDiv()">notifications</mat-icon>
       </span>
     </mat-card-content>
   </mat-card>
@@ -58,16 +58,14 @@
     ><mat-icon>menu</mat-icon></span
   >
 </mat-toolbar>
-<mat-card class="notification-box p-24">
-  <mat-icon class="close">close</mat-icon>
+<mat-card class="notification-box p-24" [@slideInOut]="divVisible">
+  <mat-icon class="close" (click)="toggleDiv()">close</mat-icon>
   <div class="notify-card">
     <div class="notify-header">
       <mat-card-subtitle>No new notification</mat-card-subtitle>
     </div>
     <div class="notify-body">
-      <p class="notify-content">
-        - -
-      </p>
+      <p class="notify-content">- -</p>
     </div>
   </div>
 </mat-card>

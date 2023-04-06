@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="header flex jc-between ai-center">
+    <mat-card-title class="title"> Request for training </mat-card-title>
+    <mat-icon (click)="close()" class="icon"> close </mat-icon>
+  </div>
+</div>
+
+<div class="p-24">
+  <div>
+    <mat-card-subtitle>Training name</mat-card-subtitle>
+    <mat-form-field appearance="outline">
+      <mat-select>
+        <mat-option></mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <br />
+  <div>
+    <mat-card-subtitle>Team name</mat-card-subtitle>
+    <mat-form-field appearance="outline">
+      <mat-select>
+        <mat-option></mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <br />
+  <div class="text-area">
+    <mat-card-subtitle>
+      Please mention the training/learning area’s you feel can be beneficial for
+      your skill enhancement and job performance *
+    </mat-card-subtitle>
+    <mat-form-field appearance="outline">
+      <textarea
+        matInput
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="1"
+        maxlength="500"
+        cdkAutosizeMaxRows="10"
+      ></textarea>
+    </mat-form-field>
+  </div>
+
+  <br />
+  <div class="text-area">
+    <mat-card-subtitle>
+      Why do you feel these skills are needed and how they will benefit your
+      personal and organizational needs *
+    </mat-card-subtitle>
+    <mat-form-field appearance="outline">
+      <textarea
+        matInput
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="1"
+        maxlength="500"
+        cdkAutosizeMaxRows="10"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</div>

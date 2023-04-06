@@ -1,0 +1,24 @@
+.header {
+  background: #f3f3f3 !important;
+  padding: 5px 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  .title {
+    font-size: 1.4em;
+    color: #199cff;
+    line-height: 1.2;
+    font-weight: 550;
+  }
+  .icon {
+    background: white;
+    border-radius: 50%;
+    padding: 0.2em;
+  }
+}
+
+.text-area {
+  ::ng-deep .mat-mdc-text-field-wrapper {
+    background-color: white;
+    min-height: 10em;
+  }
+}

@@ -1,11 +1,15 @@
-<div class="gap-between">
+<div class="flex jc-between">
   <mat-card-title class="module-title">Ongoing Trainings</mat-card-title>
-  <button class="req-button" mat-raised-button>+ Request For Training</button>
+  <button mat-raised-button class="req-button" (click)="openDialog()">
+    + Request For Training
+  </button>
 </div>
 
 <div>
   <mat-card class="message-wrapper">
     <mat-card-title> Not Enrolled For Any Trainings.</mat-card-title>
-    <button mat-raised-button>Upcoming Trainings</button>
+    <button mat-raised-button class="route-button" (click)="routeHandler()">
+      Upcoming Trainings
+    </button>
   </mat-card>
 </div>

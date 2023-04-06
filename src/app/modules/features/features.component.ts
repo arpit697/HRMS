@@ -32,6 +32,7 @@ import { SIDE_NAV_ITEM } from 'src/app/constants/app.constants';
     ]),
   ],
 })
+
 export class FeaturesComponent implements OnInit {
   rotateDirection = 'clockwise';
   sidenavState = 'open';
