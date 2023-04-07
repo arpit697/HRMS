@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UtilityService } from 'src/app/services/utility/utility.service';
 
 @Component({
@@ -8,12 +9,15 @@ import { UtilityService } from 'src/app/services/utility/utility.service';
 })
 export class DetailComponent implements OnInit{
 
+  selectedTab = '';
+
   splitTiles = <any>[] 
-  constructor(public utility:UtilityService){
+  constructor(public utility:UtilityService ){
 
   }
   ngOnInit(): void {
     this.splitTiles = this.utility.splitArray(this.projectTitles);
+    this.selectedTab = 'overview';
   }
 
   projectTitles = [

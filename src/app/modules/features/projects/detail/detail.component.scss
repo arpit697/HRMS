@@ -1,5 +1,62 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    background: rgba(178, 54, 241, 0.2);
+    padding: 5px;
+    border-radius: 4px;
+    color: #727476;
+    font-size: 16px;
+  }
+}
+.header {
+  .module-title {
+    flex: 1 0 calc(70% - 1em);
+  }
+  .badge-wrapper {
+    flex: 1 0 30%;
+    border-radius: 0.5em !important;
+    .card-title {
+      padding-bottom: 0.5em;
+    }
+    .icon {
+      background-color: #3246d3;
+      padding: 0.1em;
+      color: white;
+      border-radius: 50%;
+    }
+    .tag-wrapper {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+  }
+}
+
+.button-group {
+  .btn {
+    border-radius: 0;
+    padding: 0.5em 2em;
+    font-size: 20px;
+  }
+  .active {
+    border-bottom: 2px solid #3246d3;
+  }
+}
+
+@media all and (max-width: 50em) {
+  .header {
+    .module-title {
+      flex: 1 0 100%;
+    }
+    .badge-wrapper {
+      flex: 1 0 100%;
+    }
+  }
+}
+
 .a {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    column-gap: 1em;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 1em;
 }

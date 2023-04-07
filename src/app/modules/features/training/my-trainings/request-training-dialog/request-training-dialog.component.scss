@@ -17,8 +17,10 @@
 }
 
 .text-area {
+  padding-left: 8px;
+  padding-right: 8px;
   ::ng-deep .mat-mdc-text-field-wrapper {
     background-color: white;
-    min-height: 10em;
+    min-height: 5em;
   }
 }

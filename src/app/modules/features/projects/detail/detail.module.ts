@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 
 const MATERIAL = [
   MatCardModule,
@@ -25,6 +26,7 @@ const MATERIAL = [
   MatInputModule,
   MatSelectModule,
   MatButtonModule,
+  MatDividerModule
 ];
 
 @NgModule({

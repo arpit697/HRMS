@@ -1,42 +1,83 @@
-<div>
-  <mat-card-title class="module-title">React Js Training Project</mat-card-title>
-  <mat-card>
-    <div>
-      <mat-card-title>Project Tags/Label</mat-card-title>
-      <mat-icon>add</mat-icon>
+<div class="header flex flex-wrap g-1">
+  <mat-card-title class="module-title"
+    >React Js Training Project</mat-card-title
+  >
+  <mat-card class="badge-wrapper p-14">
+    <div class="flex jc-between ai-center">
+      <mat-card-title class="card-title">Project Tags/Label</mat-card-title>
+      <mat-icon class="flex jc-center ai-center icon">add</mat-icon>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="tag-wrapper">
+      <ul class="flex flex-wrap g-1 p-8">
+        <li>#Angular</li>
+      </ul>
     </div>
   </mat-card>
 </div>
 <br />
-<br />
-<mat-card>
-  <mat-tab-group>
-    <mat-tab label="Overview">
+<div>
+  <mat-card class="p-14">
+    <div class="wrapper flex jc-between ai-center">
+      <div class="button-group flex g-1">
+        <button
+          mat-button
+          class="btn"
+          [ngClass]="{ active: selectedTab === 'overview' }"
+          (click)="selectedTab = 'overview'"
+        >
+          Overview
+        </button>
+        <button
+          mat-button
+          class="btn"
+          [ngClass]="{ active: selectedTab === 'notes' }"
+          (click)="selectedTab = 'notes'"
+        >
+          Notes
+        </button>
+        <button
+          mat-button
+          class="btn"
+          [ngClass]="{ active: selectedTab === 'reports' }"
+          (click)="selectedTab = 'reports'"
+        >
+          DSR Reports
+        </button>
+      </div>
+    </div>
+  </mat-card>
+  <br />
+  <div [ngSwitch]="selectedTab">
+    <div *ngSwitchCase="'overview'">
       <app-overview></app-overview>
-    </mat-tab>
-    <mat-tab label="Notes">
+    </div>
+    <div *ngSwitchCase="'notes'">
       <app-notes></app-notes>
-    </mat-tab>
-    <mat-tab label="Dsr Reports">
+    </div>
+    <div *ngSwitchCase="'reports'">
       <app-dsr-report></app-dsr-report>
-    </mat-tab>
-  </mat-tab-group>
-</mat-card>
+    </div>
+    <div *ngSwitchDefault>
+      <app-overview></app-overview>
+    </div>
+  </div>
+</div>
 
 <br />
 
 <div *ngFor="let item of splitTiles" class="a">
-  <div *ngFor="let projectTile of item" >
+  <div *ngFor="let projectTile of item">
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          {{utility.getFirstLetter(projectTile.title)}}
+          {{ utility.getFirstLetter(projectTile.title) }}
         </mat-panel-title>
         <mat-panel-description>
-          {{projectTile.title}}
+          {{ projectTile.title }}
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <br>
+      <br />
     </mat-expansion-panel>
   </div>
 </div>

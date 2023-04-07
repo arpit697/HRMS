@@ -4,11 +4,11 @@
   <mat-icon class="icon" (click)="openAtlassian()">link</mat-icon>
 </div>
 
-<mat-card class="project-table-wrapper">
-  <mat-card-title class="heading">All Projects</mat-card-title>
+<mat-card>
+  <mat-card-title class="table-title">All Projects</mat-card-title>
   <app-ru-table
     [tableColumns]="tableColumns"
     [tableData]="tableData"
-    [TableClass]="''"
+    [TableClass]="'light-theme-table'"
   ></app-ru-table>
 </mat-card>

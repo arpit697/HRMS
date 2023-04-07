@@ -8,7 +8,7 @@
 
 <div *ngIf="tableData.length > 0" >
   <app-ru-table 
-  [TableClass]="'referral-list-table'"
+  [TableClass]="'light-theme-table'"
   [tableColumns]="tableColumns"
   [tableData]="tableData" 
   (clickHandler)="utility.downloadHandler($event)">
