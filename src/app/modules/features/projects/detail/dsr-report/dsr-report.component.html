@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-title class="table-title"> Filters </mat-card-title>
-  <div class="filters flex flex-wrap">
+  <div class="filters flex flex-wrap p-14">
     <div class="filter" *ngFor="let item of filters">
       <mat-card-subtitle>{{ item.name }}</mat-card-subtitle>
       <mat-form-field appearance="outline">
@@ -9,9 +9,9 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <mat-card-actions class="b c">
-      <button mat-raised-button>Apply</button>
-      <button mat-raised-button>Reset</button>
+    <mat-card-actions class="b g-1">
+      <button class="button-primary" mat-raised-button>Apply</button>
+      <button class="button-cancel" mat-raised-button>Reset</button>
     </mat-card-actions>
     <div class="b"></div>
   </div>

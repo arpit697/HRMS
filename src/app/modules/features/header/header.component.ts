@@ -7,6 +7,8 @@ import {
 } from '@angular/animations';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UtilityService } from 'src/app/services/utility/utility.service';
+import { HelpComponent } from './help/help.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -34,7 +36,7 @@ export class HeaderComponent implements OnInit {
   isExpanded: boolean = true;
   @Output() dataEvent = new EventEmitter<any>();
   ngOnInit() {}
-  constructor(public utility: UtilityService) {
+  constructor(private dialog: MatDialog, public utility: UtilityService) {
     this.checkScreenSize();
     window.addEventListener('resize', () => {
       this.checkScreenSize();
@@ -53,5 +55,16 @@ export class HeaderComponent implements OnInit {
   isExpendedValue() {
     this.isExpanded = !this.isExpanded;
     this.dataEvent.emit(this.isExpanded);
+  }
+
+  openDialog(): void {
+    // const isSmallScreen = window.matchMedia('(max-width: 50em)').matches;
+    const dialogRef = this.dialog.open(HelpComponent, {
+      // width: isSmallScreen ? '100%' : '30%',
+      height: '40%',
+      data: {},
+    });
+    dialogRef.disableClose = true;
+    dialogRef.afterClosed().subscribe((result: any) => {});
   }
 }

@@ -21,7 +21,7 @@ ul {
       padding-bottom: 0.5em;
     }
     .icon {
-      background-color: #3246d3;
+      background-color: #199cff;
       padding: 0.1em;
       color: white;
       border-radius: 50%;
@@ -40,7 +40,21 @@ ul {
     font-size: 20px;
   }
   .active {
-    border-bottom: 2px solid #3246d3;
+    border-bottom: 2px solid #199cff;
+  }
+}
+mat-panel-title {
+  .first-char {
+    width: 60px;
+    height: 60px;
+    border-radius: 7px;
+    background-color: var(--spiro);
+    font-size: 31px;
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

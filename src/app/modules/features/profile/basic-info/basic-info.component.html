@@ -1,5 +1,7 @@
 <mat-card [formGroup]="basicInfoForm" class="basic-info-main">
-  <mat-card-title class="table-title">{{ "basic information" | titlecase }}</mat-card-title>
+  <mat-card-title class="table-title">{{
+    "basic information" | titlecase
+  }}</mat-card-title>
   <div class="card">
     <div class="col-3">
       <div class="field">
@@ -10,6 +12,8 @@
             basicInfoForm
               | getControl : ["first_name"]
               | validationCheck : "first name"
+              | titlecase
+              | replaceChar : "_" : " "
           }}</mat-error>
         </mat-form-field>
       </div>
@@ -21,6 +25,8 @@
             basicInfoForm
               | getControl : ["last_name"]
               | validationCheck : "last name"
+              | titlecase
+              | replaceChar : "_" : " "
           }}</mat-error>
         </mat-form-field>
       </div>
@@ -41,7 +47,9 @@
             *ngIf="
               basicInfoForm.get('birthday')?.hasError('matDatepickerParse')
             "
-            >Invalid date format</mat-error
+            >{{
+              "Invalid date format" | titlecase | replaceChar : "_" : " "
+            }}</mat-error
           >
           <mat-error
             *ngIf="basicInfoForm.get('birthday')?.hasError('birthdayInvalid')"
@@ -81,6 +89,8 @@
             basicInfoForm
               | getControl : ["contact_number"]
               | validationCheck : "phone"
+              | titlecase
+              | replaceChar : "_" : " "
           }}</mat-error>
         </mat-form-field>
       </div>
@@ -99,7 +109,11 @@
                     .get('working_experience_year')
                     ?.hasError('numberRange')
                 "
-                >Please enter a Year between 0 and 50.</mat-error
+                >{{
+                  "Please enter a Year between 0 and 50."
+                    | titlecase
+                    | replaceChar : "_" : " "
+                }}</mat-error
               >
             </mat-form-field>
           </div>
@@ -113,8 +127,12 @@
                     .get('working_experience_month')
                     ?.hasError('numberRange')
                 "
-                >Please enter a months between 0 and 12.</mat-error
-              >
+                >{{
+                  "Please enter a months between 0 and 12."
+                    | titlecase
+                    | replaceChar : "_" : " "
+                }}
+              </mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -132,7 +150,11 @@
                     .get('relevant_experience_year')
                     ?.hasError('numberRange')
                 "
-                >Please enter a Year between 0 and 50.</mat-error
+                >{{
+                  "Please enter a Year between 0 and 50."
+                    | titlecase
+                    | replaceChar : "_" : " "
+                }}</mat-error
               >
             </mat-form-field>
           </div>
@@ -146,28 +168,43 @@
                     .get('relevant_experience_month')
                     ?.hasError('numberRange')
                 "
-                >Please enter a months between 0 and 12.</mat-error
+                >{{
+                  "Please enter a months between 0 and 12."
+                    | titlecase
+                    | replaceChar : "_" : " "
+                }}</mat-error
               >
             </mat-form-field>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-1">
+    <div class="col-1 text-area">
       <label>Address</label>
       <mat-form-field appearance="outline">
-        <textarea matInput formControlName="address"></textarea>
+        <textarea
+          matInput
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="1"
+          maxlength="500"
+          cdkAutosizeMaxRows="10"
+          formControlName="address"
+        ></textarea>
         <mat-error>{{
-          basicInfoForm | getControl : ["address"] | validationCheck : "address"
+          basicInfoForm
+            | getControl : ["address"]
+            | validationCheck : "address"
+            | titlecase
+            | replaceChar : "_" : " "
         }}</mat-error>
       </mat-form-field>
     </div>
     <div>
-      <app-ru-button
-        [bText]="'Submit'"
-        [bClass]="'save'"
-        (btnClick)="submitHandler()"
-      ></app-ru-button>
+      <button
+        (click)="submitHandler()"
+        mat-raised-button
+        class="button-primary"
+      >Save</button>
     </div>
   </div>
 </mat-card>

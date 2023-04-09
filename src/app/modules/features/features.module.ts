@@ -15,6 +15,8 @@ import { MatCardModule } from '@angular/material/card';
 import { FooterComponent } from './footer/footer.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { RoutingModule } from 'src/app/pipes/routing/routing.module';
+import { HelpComponent } from './header/help/help.component';
+import { MatDialogModule } from '@angular/material/dialog';
 const MATERIAL = [
   MatSidenavModule,
   MatToolbarModule,
@@ -24,10 +26,16 @@ const MATERIAL = [
   MatCardModule,
   MatListModule,
   MatExpansionModule,
+  MatDialogModule,
 ];
 
 @NgModule({
-  declarations: [FeaturesComponent, HeaderComponent, FooterComponent],
+  declarations: [
+    FeaturesComponent,
+    HeaderComponent,
+    FooterComponent,
+    HelpComponent,
+  ],
   imports: [CommonModule, FeaturesRoutingModule, RoutingModule, ...MATERIAL],
 })
 export class FeaturesModule {}

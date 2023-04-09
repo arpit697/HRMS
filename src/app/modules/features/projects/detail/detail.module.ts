@@ -26,7 +26,7 @@ const MATERIAL = [
   MatInputModule,
   MatSelectModule,
   MatButtonModule,
-  MatDividerModule
+  MatDividerModule,
 ];
 
 @NgModule({

@@ -48,7 +48,7 @@
           </button>
         </mat-menu>
       </mat-card-content>
-      <button class="help">Help</button>
+      <button (click)="openDialog()" class="help">Help</button>
       <span class="bell">
         <mat-icon (click)="toggleDiv()">notifications</mat-icon>
       </span>
@@ -64,7 +64,7 @@
     <div class="notify-header">
       <mat-card-subtitle>No new notification</mat-card-subtitle>
     </div>
-    <div class="notify-body">
+    <div class="notify-body p-14">
       <p class="notify-content">- -</p>
     </div>
   </div>

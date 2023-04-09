@@ -15,7 +15,9 @@
           <mat-card-subtitle>Education Level</mat-card-subtitle>
           <mat-form-field appearance="outline">
             <mat-select>
-              <mat-option>I am option no one</mat-option>
+              <mat-option *ngFor="let education of educationLevel">{{
+                education.course
+              }}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -27,14 +29,20 @@
           <div>
             <mat-form-field appearance="outline">
               <input matInput [matDatepicker]="picker" />
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </div>
           <div>
             <mat-form-field appearance="outline">
               <input matInput [matDatepicker]="picker1" />
-              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker1"
+              ></mat-datepicker-toggle>
               <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
           </div>
@@ -46,7 +54,9 @@
           <mat-card-subtitle>Language</mat-card-subtitle>
           <mat-form-field appearance="outline">
             <mat-select>
-              <mat-option>dsafasdfa</mat-option>
+              <mat-option *ngFor="let lang of languages">{{
+                lang.language
+              }}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -58,20 +68,32 @@
         </div>
       </div>
 
-      <div>
+      <div class="text-area">
         <mat-card-subtitle>Description</mat-card-subtitle>
         <mat-form-field appearance="outline">
           <textarea matInput placeholder="Description"></textarea>
         </mat-form-field>
       </div>
       <div>
-        <button mat-raised-button (click)="submitHandler()">Save</button>
+        <button
+          class="button-primary"
+          mat-raised-button
+          (click)="submitHandler()"
+        >
+          Save
+        </button>
       </div>
     </div>
   </mat-card>
 
   <mat-card class="qualifiction-table-card">
     <mat-card-title class="table-title">List All Qualification</mat-card-title>
-    <app-ru-table class="table" [tableColumns]="tableColumns" [tableData]="tableData"></app-ru-table>
+    <app-ru-table
+      class="table"
+      [tableColumns]="tableColumns"
+      [isFilterable]="true"
+      [tableData]="tableData"
+      [TableClass]="'qualification-table'"
+    ></app-ru-table>
   </mat-card>
 </div>

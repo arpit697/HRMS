@@ -24,6 +24,9 @@ import { RuTableModule } from '../../common/modules/common-table/ru-table.module
 import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationCheckModule } from 'src/app/pipes/validation-check/validation-check.module';
 import { MatButtonModule } from '@angular/material/button';
+import { ReplaceCharModule } from '../../../pipes/replace-char/replace-char.module';
+
+
 const MATERIAL = [
   MatCardModule,
   MatListModule,
@@ -55,7 +58,8 @@ const MATERIAL = [
     ValidationCheckModule,
     RuButtonModule,
     RuTableModule,
+    ReplaceCharModule,
     ...MATERIAL,
   ],
 })
-export class ProfileModule { }
+export class ProfileModule {}

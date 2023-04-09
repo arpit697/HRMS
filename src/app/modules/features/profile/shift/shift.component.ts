@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import {
+  SHIFT_TABLE_COLUMN,
+  SHIFT_TABLE_DATA,
+} from 'src/app/constants/table.data';
 
 @Component({
   selector: 'app-shift',
@@ -6,23 +10,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./shift.component.scss'],
 })
 export class ShiftComponent {
-  tableColumns: Array<any> = [
-    {
-      columnDef: 'joining',
-      header: 'Date Of Joining',
-      cell: (element: Record<string, any>) => `${element['joining']}`,
-    },
-    {
-      columnDef: 'shift',
-      header: 'Office Shift',
-      cell: (element: Record<string, any>) => `${element['shift']}`,
-    },
-  ];
+  tableColumns: Array<any> = [...SHIFT_TABLE_COLUMN];
 
-  tableData = [
-    {
-      joining: '27-Feb-2022',
-      shift: 'Morning Shift',
-    },
-  ];
+  tableData = [...SHIFT_TABLE_DATA];
 }

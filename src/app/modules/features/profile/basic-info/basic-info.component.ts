@@ -60,15 +60,19 @@ export class BasicInfoComponent implements OnInit {
     if (this.basicInfoForm.dirty) {
       if (this.basicInfoForm.valid) {
         this._utility.bar(
-          'details submitted successfully',
+          'Details Submitted Successfully',
           '',
           'green-snackbar'
         );
       } else {
-        this._utility.bar('form fields are not valid', '', 'red-snackbar');
+        this._utility.bar(
+          this._utility.formCheck(this.basicInfoForm),
+          '',
+          'red-snackbar'
+        );
       }
     } else {
-      this._utility.bar('please edit the details first', '', 'red-snackbar');
+      this._utility.bar('Please Edit The Details First', '', 'red-snackbar');
     }
   }
 }

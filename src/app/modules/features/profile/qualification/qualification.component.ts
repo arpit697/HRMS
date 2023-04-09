@@ -1,4 +1,9 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  EDUCATION_LEVEL_DROP_DOWN,
+  LANGUAGE_DROP_DOWN,
+} from 'src/app/constants/drop.down.data';
+import { QUALIFICATION_TABLE_COLUMN } from 'src/app/constants/table.data';
 import { RuTableComponent } from 'src/app/modules/common/modules/common-table/ru-table.component';
 
 @Component({
@@ -6,32 +11,26 @@ import { RuTableComponent } from 'src/app/modules/common/modules/common-table/ru
   templateUrl: './qualification.component.html',
   styleUrls: ['./qualification.component.scss'],
 })
-export class QualificationComponent {
-  tableColumns: Array<any> = [
-    {
-      columnDef: 'action',
-      header: 'Action',
-      cell: (element: Record<string, any>) => `${element['action']}`,
-    },
-    {
-      columnDef: 'school_university',
-      header: 'School/University',
-      cell: (element: Record<string, any>) => `${element['school_university']}`,
-    },
-    {
-      columnDef: 'time_period',
-      header: 'Time Period',
-      cell: (element: Record<string, any>) => `${element['time_period']}`,
-    },
-  ];
+export class QualificationComponent implements OnInit {
+  educationLevel: any;
+  languages: any;
+  tableColumns: Array<any> = [...QUALIFICATION_TABLE_COLUMN];
   tableData: Array<any> = [];
 
   @ViewChild(RuTableComponent) tableComponent!: RuTableComponent<any>;
 
-  constructor() { }
+  constructor() {}
+  ngOnInit(): void {
+    this.educationLevel = EDUCATION_LEVEL_DROP_DOWN;
+    this.languages = LANGUAGE_DROP_DOWN;
+  }
 
   submitHandler() {
-    this.tableData.push({ action: '1', school_university: '1', time_period: '1' });
+    this.tableData.push({
+      action: '1',
+      school_university: '1',
+      time_period: '1',
+    });
     this.tableComponent.dataSource.data = this.tableData; // update the data source
   }
 
@@ -40,4 +39,3 @@ export class QualificationComponent {
     this.tableComponent.tableData = this.tableData;
   }
 }
-

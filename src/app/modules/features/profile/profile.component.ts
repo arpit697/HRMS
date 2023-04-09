@@ -10,18 +10,16 @@ import { UtilityService } from 'src/app/services/utility/utility.service';
 export class ProfileComponent implements OnInit {
   empDetail!: any;
   selectionMenu!: any;
-
   constructor(public utility: UtilityService) {}
   ngOnInit(): void {
     this.empDetail = EMP_DETAIL;
-    console.log(this.empDetail);
     let emp = [
-      {label : 'Email' , data : this.empDetail.email},
-      {label : 'Employee Id' , data : this.empDetail.employee_id},
-      {label : 'Designation' , data : this.empDetail.designation},
-      {label : 'Last Login' , data : this.empDetail.last_login},
-    ]
-    this.empDetail = emp
+      { label: 'Email', data: this.empDetail.email },
+      { label: 'Employee Id', data: this.empDetail.employee_id },
+      { label: 'Designation', data: this.empDetail.designation },
+      { label: 'Last Login', data: this.empDetail.last_login },
+    ];
+    this.empDetail = emp;
     this.selectionMenu = PROFILE_SELECTION_MENU;
   }
 }

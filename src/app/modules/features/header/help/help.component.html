@@ -1,0 +1,24 @@
+<div class="p-24">
+  <div class="flex jc-end">
+    <mat-icon (click)="close()" class="close">close</mat-icon>
+  </div>
+  <div class="flex jc-center ai-center p-8">
+    <div class="priority-wrapper flex jc-center ai-center">
+      <mat-icon class="priority-icon">priority_high</mat-icon>
+    </div>
+  </div>
+
+  <div class="text-wrapper">
+    <mat-card-title class="title">Please Mail Us</mat-card-title>
+    <mat-card-subtitle
+      >For any query regarding HRMS , Please mail us</mat-card-subtitle
+    >
+    <mat-card-subtitle
+      >to <a class="link">hrms-heopdesk@appinventiv.com</a></mat-card-subtitle
+    >
+  </div>
+
+  <mat-card-actions class="jc-center">
+    <button (click)="close()" class="btn-ok" mat-raised-button>OK</button>
+  </mat-card-actions>
+</div>

@@ -23,6 +23,13 @@ mat-card-subtitle {
   }
 }
 
+.text-area {
+  ::ng-deep .mat-mdc-text-field-wrapper {
+    background-color: white;
+    min-height: 5em;
+  }
+}
+
 @media all and (max-width: 50em) {
   .col-2{
     grid-template-columns: auto;

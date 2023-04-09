@@ -31,12 +31,13 @@
     </div>
 
     <div>
-      <app-ru-button
-        [bText]="'Save'"
-        [bClass]="'save'"
-        (btnClick)="submitHandler()"
+      <button
+        class="button-primary"
+        mat-raised-button
+        (click)="submitHandler()"
       >
-      </app-ru-button>
+        Save
+      </button>
     </div>
   </div>
 </mat-card>

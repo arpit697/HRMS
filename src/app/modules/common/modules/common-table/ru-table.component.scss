@@ -86,6 +86,34 @@ table {
   }
 }
 
+.shift-table,
+.qualification-table {
+  padding: 0.5em;
+  th {
+    background-color: white;
+  }
+  th,
+  td {
+    font-size: 16px;
+    color: #2f3031;
+    font-weight: 500 ;
+    border-bottom: 0 ;
+    border-top: 0 ;
+    text-transform: capitalize;
+  }
+  tr {
+    &:nth-child(odd) {
+      background-color: rgba(24, 28, 33, 0.025);
+    }
+  }
+}
+
+.qualification-table{
+  th{
+    border-bottom: 1px solid  gray;;
+  }
+}
+
 .policy-document-table {
   box-shadow: none;
   border: 1px solid rgba(150, 165, 184, 0.3);
@@ -155,7 +183,8 @@ table {
   th {
     background-color: white;
   }
-  th {
+  th,
+  td {
     font-size: 16px;
     color: #2f3031;
     font-weight: 500 !important;

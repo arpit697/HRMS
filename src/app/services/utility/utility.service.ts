@@ -80,13 +80,26 @@ export class UtilityService {
       const control = form.controls[field];
       if (control.invalid) {
         if (control.errors.required) {
-          return `${field} is required`;
+          return this.formatErrorMessage(field, 'is required');
         } else {
-          return `${field} is not valid`;
+          return this.formatErrorMessage(field, 'is not valid');
         }
       }
     }
     return null;
+  }
+
+  formatErrorMessage(field: string, message: string) {
+    // Replace underscores with spaces
+    const fieldName = field.replace(/_/g, ' ');
+
+    // Convert to title case
+    const titleCaseFieldName = fieldName
+      .split(' ')
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(' ');
+
+    return `${titleCaseFieldName} ${message}`;
   }
 
   downloadHandler(element: any) {
@@ -118,12 +131,8 @@ export class UtilityService {
     return `${month}-${day}-${year}`;
   }
 
-
   generateRandomNumber(): number {
     const randomNumber: number = Math.floor(Math.random() * 9000) + 1000;
     return randomNumber;
   }
 }
-
-
-
