@@ -5,20 +5,24 @@
   </div>
 </div>
 
-<div class="p-24">
+<div [formGroup]="requestTrainingForm" class="p-24">
   <div class="p-8">
     <mat-card-subtitle class="c-2-label">Training name</mat-card-subtitle>
     <mat-form-field appearance="outline">
-      <mat-select>
-        <mat-option></mat-option>
+      <mat-select formControlName="training_name">
+        <mat-option *ngFor="let item of trainingName" value="{{ item }}">{{
+          item
+        }}</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
   <div class="p-8">
     <mat-card-subtitle class="c-2-label">Team name</mat-card-subtitle>
     <mat-form-field appearance="outline">
-      <mat-select>
-        <mat-option></mat-option>
+      <mat-select formControlName="team_name">
+        <mat-option *ngFor="let item of teamName" value="{{ item }}">{{
+          item
+        }}</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
@@ -29,6 +33,7 @@
     </mat-card-subtitle>
     <mat-form-field appearance="outline">
       <textarea
+        formControlName="question_one"
         matInput
         cdkTextareaAutosize
         cdkAutosizeMinRows="1"
@@ -44,6 +49,7 @@
     </mat-card-subtitle>
     <mat-form-field appearance="outline">
       <textarea
+        formControlName="question_two"
         matInput
         cdkTextareaAutosize
         cdkAutosizeMinRows="1"
@@ -56,7 +62,7 @@
     <mat-card-subtitle class="c-2-label"
       >Are you interested to give the Trainings? *
     </mat-card-subtitle>
-    <mat-radio-group aria-label="Select an option">
+    <mat-radio-group formControlName="intrested" aria-label="Select an option">
       <mat-radio-button value="1">Yes</mat-radio-button>
       <mat-radio-button value="2">No</mat-radio-button>
     </mat-radio-group>
@@ -65,14 +71,22 @@
     <mat-card-subtitle class="c-2-label"
       >What should be the timeline to conduct this training?
     </mat-card-subtitle>
-    <mat-radio-group class="flex flex-column" aria-label="Select an option">
+    <mat-radio-group
+      formControlName="timeline"
+      class="flex flex-column"
+      aria-label="Select an option"
+    >
       <mat-radio-button value="1">Immediate</mat-radio-button>
       <mat-radio-button value="2">3-6 Months</mat-radio-button>
       <mat-radio-button value="3">More Than 6 Months</mat-radio-button>
     </mat-radio-group>
   </div>
   <mat-card-actions class="jc-end g-05">
-    <button mat-raised-button class="button-cancel">Cancel</button>
-    <button mat-raised-button class="button-primary">Submit</button>
+    <button mat-raised-button (click)="close()" class="button-cancel">
+      Cancel
+    </button>
+    <button mat-raised-button (click)="submitHandler()" class="button-primary">
+      Submit
+    </button>
   </mat-card-actions>
 </div>

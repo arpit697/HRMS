@@ -11,7 +11,7 @@ export class FormValidationService {
 
   VALIDATION = {
     emptyControl: [],
-    required : [Validators.required,] , 
+    required: [Validators.required],
     name: [
       Validators.required,
       Validators.pattern(PATTERN.name),
@@ -22,8 +22,7 @@ export class FormValidationService {
     address: [Validators.pattern(PATTERN.address)],
     month: [],
     year: [],
-    skill : [
-    Validators.maxLength(VALIDATION_CRITERIA.textAreaMaxLength)],
+    skill: [Validators.maxLength(VALIDATION_CRITERIA.textAreaMaxLength)],
     phone: [
       Validators.pattern(PATTERN.phoneNumber),
       Validators.minLength(VALIDATION_CRITERIA.phoneMinLength),
@@ -82,7 +81,7 @@ export class FormValidationService {
   }
 
   numberRangeValidator(min: number, max: number): ValidatorFn {
-    return (control: AbstractControl): {[key: string]: any} | null => {
+    return (control: AbstractControl): { [key: string]: any } | null => {
       const value = control.value;
       if (value === null || value === undefined || value === '') {
         // Return null if the value is not set
@@ -91,10 +90,28 @@ export class FormValidationService {
       const num = Number(value);
       if (isNaN(num) || num < min || num > max) {
         // Return an error object if the value is not a number or is outside the range
-        return { 'numberRange': true };
+        return { numberRange: true };
       }
       // Return null if the value is valid
       return null;
     };
+  }
+
+  dateRangeValidator(control: any): { [key: string]: boolean } | null {
+    const dateFrom = control.get('date_from').value;
+    const dateTo = control.get('date_to').value;
+
+    if (!dateFrom || !dateTo) {
+      return null;
+    }
+
+    const fromDate = new Date(dateFrom);
+    const toDate = new Date(dateTo);
+
+    if (fromDate > toDate) {
+      return { invalidDateRange: true };
+    }
+
+    return null;
   }
 }

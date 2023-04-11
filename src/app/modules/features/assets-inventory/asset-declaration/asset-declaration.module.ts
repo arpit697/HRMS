@@ -8,6 +8,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { RuTableModule } from 'src/app/modules/common/modules/common-table/ru-table.module';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const MATERIAL = [
   MatCardModule,
@@ -15,6 +18,8 @@ const MATERIAL = [
   MatFormFieldModule,
   MatCardModule,
   MatSelectModule,
+  MatExpansionModule,
+  MatButtonModule,
 ];
 
 @NgModule({
@@ -23,7 +28,9 @@ const MATERIAL = [
     CommonModule,
     AssetDeclarationRoutingModule,
     RuTableModule,
+    FormsModule,
+    ReactiveFormsModule,
     ...MATERIAL,
   ],
 })
-export class AssetDeclarationModule { }
+export class AssetDeclarationModule {}

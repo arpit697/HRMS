@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { RuTableModule } from 'src/app/modules/common/modules/common-table/ru-table.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const MATERIAL = [
   MatCardModule,
@@ -18,6 +19,13 @@ const MATERIAL = [
 
 @NgModule({
   declarations: [InterviewsComponent],
-  imports: [CommonModule, InterviewsRoutingModule, RuTableModule, ...MATERIAL],
+  imports: [
+    CommonModule,
+    InterviewsRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    RuTableModule,
+    ...MATERIAL,
+  ],
 })
-export class InterviewsModule { }
+export class InterviewsModule {}

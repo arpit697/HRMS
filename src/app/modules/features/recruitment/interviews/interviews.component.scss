@@ -8,7 +8,6 @@
     grid-gap: 10px;
     /* Space between grid items */
   }
-
   @media screen and (max-width: 600px) {
     .select-filters {
       grid-template-columns: repeat(1, 1fr);

@@ -1,75 +1,91 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import {
+  ASSET_DECLARATION_TABLE_COLUMN,
+  ASSET_DECLARATION_TABLE_DATA,
+} from 'src/app/constants/table.data';
+import { DataService } from 'src/app/services/data/data.service';
+import { FormValidationService } from 'src/app/services/forms/form.validation.service';
+import { UtilityService } from 'src/app/services/utility/utility.service';
 
 @Component({
   selector: 'app-asset-declaration',
   templateUrl: './asset-declaration.component.html',
   styleUrls: ['./asset-declaration.component.scss'],
 })
-export class AssetDeclarationComponent {
-  tableColumns: Array<any> = [
-    {
-      columnDef: 'asset_name',
-      header: 'Asset Name',
-      cell: (element: Record<string, any>) => `${element['asset_name']}`,
-    },
-    {
-      columnDef: 'asset_category',
-      header: 'Asset Category',
-      cell: (element: Record<string, any>) => `${element['asset_category']}`,
-    },
-    {
-      columnDef: 'computer_asset_code',
-      header: 'Computer Asset Code',
-      cell: (element: Record<string, any>) =>
-        `${element['computer_asset_code']}`,
-    },
-    {
-      columnDef: 'brand',
-      header: 'Brand',
-      cell: (element: Record<string, any>) => `${element['brand']}`,
-    },
-    {
-      columnDef: 'serial_number',
-      header: 'Serial Number',
-      cell: (element: Record<string, any>) => `${element['serial_number']}`,
-    },
-    {
-      columnDef: 'model',
-      header: 'Model',
-      cell: (element: Record<string, any>) => `${element['model']}`,
-    },
-    {
-      columnDef: 'is_working',
-      header: 'Is Working ?',
-      cell: (element: Record<string, any>) => `${element['is_working']}`,
-    },
-    {
-      columnDef: 'company',
-      header: 'Company',
-      cell: (element: Record<string, any>) => `${element['company']}`,
-    },
-  ];
+export class AssetDeclarationComponent implements OnInit {
+  panelOpenState: boolean = false;
+  togglePanel() {
+    this.panelOpenState = !this.panelOpenState;
+  }
+  constructor(
+    private _formBuilder: FormBuilder,
+    private _formValidation: FormValidationService,
+    private _dataService: DataService,
+    private utility: UtilityService
+  ) {}
+  ngOnInit(): void {
+    this.createForm();
+  }
 
-  tableData = [
+  tableColumns: Array<any> = [...ASSET_DECLARATION_TABLE_COLUMN];
+  tableData = [...ASSET_DECLARATION_TABLE_DATA];
+  assetDeclarationForm: any;
+  fields = [
     {
-      asset_name: 'Laptop',
-      asset_category: 'Computers',
-      computer_asset_code: 'C001',
-      brand: 'Dell',
-      serial_number: '123456789',
-      model: 'Latitude',
-      is_working: true,
-      company: 'ABC Inc.',
+      label: 'Employee Id',
+      formControlName: 'employee_id',
+      type: '',
+      placeholder: '',
     },
-  ];
-
-  searchFilter = [
     {
-      label_horizontal_left: 'Show',
-      label_horizontal_right: 'Entries',
-      formControlName: '',
+      label: 'Unique Asset Code',
+      formControlName: 'unique_asset_code',
+      type: '',
+      placeholder: '',
+    },
+    {
+      label: 'Serial Number',
+      formControlName: 'asset_serial_number',
+      type: '',
+      placeholder: '',
+    },
+    {
+      label: 'Model Number',
+      formControlName: 'model_number',
+      type: '',
+      placeholder: '',
+    },
+    { label: 'OS', formControlName: 'os', type: '', placeholder: '' },
+    {
+      label: 'OS Version',
+      formControlName: 'os_version',
       type: 'select',
+      placeholder: '',
     },
-    { label_horizontal_left: 'Search :', formControlName: '', type: 'input' },
+    { label: 'Brand', formControlName: 'brand', type: '', placeholder: '' },
+    { label: 'Color', formControlName: 'color', type: '', placeholder: '' },
+    {
+      label: 'Device is in working condition ?',
+      formControlName: 'is_working',
+      type: 'select',
+      placeholder: '',
+    },
   ];
+
+  createForm() {
+    this.assetDeclarationForm = this._formBuilder.group({
+      employee_id: [],
+      unique_asset_code: [],
+      asset_serial_number: [],
+      model_number: [],
+      os: [],
+      os_version: [],
+      brand: [],
+      color: [],
+      is_working: [],
+    });
+  }
+
+  submitHandler() {}
 }

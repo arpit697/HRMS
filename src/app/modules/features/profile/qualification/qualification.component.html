@@ -2,22 +2,24 @@
   <mat-card-title class="table-title">Add New Qualification</mat-card-title>
 </mat-card>
 <div class="qualification-container">
-  <mat-card class="qualification-form">
+  <mat-card [formGroup]="qualificationForm" class="qualification-form">
     <div class="field-container">
       <div class="col-2">
         <div>
           <mat-card-subtitle>School/University</mat-card-subtitle>
           <mat-form-field appearance="outline">
-            <input matInput />
+            <input formControlName="school_univercity" matInput />
           </mat-form-field>
         </div>
         <div>
           <mat-card-subtitle>Education Level</mat-card-subtitle>
           <mat-form-field appearance="outline">
-            <mat-select>
-              <mat-option *ngFor="let education of educationLevel">{{
-                education.course
-              }}</mat-option>
+            <mat-select formControlName="education_level">
+              <mat-option
+                *ngFor="let education of educationLevel"
+                value="{{ education.course }}"
+                >{{ education.course }}</mat-option
+              >
             </mat-select>
           </mat-form-field>
         </div>
@@ -28,22 +30,34 @@
         <div class="col-2">
           <div>
             <mat-form-field appearance="outline">
-              <input matInput [matDatepicker]="picker" />
+              <input
+                [min]="minDate"
+                [max]="maxDate"
+                formControlName="date_from"
+                matInput
+                [matDatepicker]="time_from"
+              />
               <mat-datepicker-toggle
                 matSuffix
-                [for]="picker"
+                [for]="time_from"
               ></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
+              <mat-datepicker #time_from></mat-datepicker>
             </mat-form-field>
           </div>
           <div>
             <mat-form-field appearance="outline">
-              <input matInput [matDatepicker]="picker1" />
+              <input
+                [min]="minDate"
+                [max]="maxDate"
+                formControlName="date_to"
+                matInput
+                [matDatepicker]="time_to"
+              />
               <mat-datepicker-toggle
                 matSuffix
-                [for]="picker1"
+                [for]="time_to"
               ></mat-datepicker-toggle>
-              <mat-datepicker #picker1></mat-datepicker>
+              <mat-datepicker #time_to></mat-datepicker>
             </mat-form-field>
           </div>
         </div>
@@ -53,17 +67,19 @@
         <div>
           <mat-card-subtitle>Language</mat-card-subtitle>
           <mat-form-field appearance="outline">
-            <mat-select>
-              <mat-option *ngFor="let lang of languages">{{
-                lang.language
-              }}</mat-option>
+            <mat-select formControlName="language">
+              <mat-option
+                *ngFor="let lang of languages"
+                value="{{ lang.language }}"
+                >{{ lang.language }}</mat-option
+              >
             </mat-select>
           </mat-form-field>
         </div>
         <div>
           <mat-card-subtitle> Professional Course (If any)</mat-card-subtitle>
           <mat-form-field appearance="outline">
-            <input matInput />
+            <input formControlName="professional_course" matInput />
           </mat-form-field>
         </div>
       </div>
@@ -71,7 +87,15 @@
       <div class="text-area">
         <mat-card-subtitle>Description</mat-card-subtitle>
         <mat-form-field appearance="outline">
-          <textarea matInput placeholder="Description"></textarea>
+          <textarea
+            formControlName="description"
+            matInput
+            cdkTextareaAutosize
+            cdkAutosizeMinRows="1"
+            maxlength="500"
+            cdkAutosizeMaxRows="10"
+            placeholder="Description"
+          ></textarea>
         </mat-form-field>
       </div>
       <div>
@@ -94,6 +118,7 @@
       [isFilterable]="true"
       [tableData]="tableData"
       [TableClass]="'qualification-table'"
+      (clickHandler)="editDelete($event)"
     ></app-ru-table>
   </mat-card>
 </div>

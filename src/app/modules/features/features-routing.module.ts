@@ -8,6 +8,7 @@ import {
   DSR,
   ENTREPRENEURSHIP,
   FINANCE,
+  FOOD,
   FRESHERS,
   HOME,
   LEAVE,
@@ -130,6 +131,11 @@ const routes: Routes = [
         path: PROJECTS.path,
         loadChildren: () =>
           import('./projects/projects.module').then((m) => m.ProjectsModule),
+      },
+      {
+        path: FOOD.path,
+        loadChildren: () =>
+          import('./food/food.module').then((m) => m.FoodModule),
       },
     ],
   },

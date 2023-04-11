@@ -12,6 +12,9 @@ mat-form-field {
     left: 0;
   }
 }
+.mat-mdc-paginator {
+  color: #a3a4a6;
+}
 
 .filters {
   flex-direction: row;
@@ -87,7 +90,8 @@ table {
 }
 
 .shift-table,
-.qualification-table {
+.qualification-table,
+.manual-punch-table {
   padding: 0.5em;
   th {
     background-color: white;
@@ -96,9 +100,9 @@ table {
   td {
     font-size: 16px;
     color: #2f3031;
-    font-weight: 500 ;
-    border-bottom: 0 ;
-    border-top: 0 ;
+    font-weight: 500;
+    border-bottom: 0;
+    border-top: 0;
     text-transform: capitalize;
   }
   tr {
@@ -106,11 +110,30 @@ table {
       background-color: rgba(24, 28, 33, 0.025);
     }
   }
+  .action-button {
+    gap: 0.5em;
+    mat-icon {
+      display: none;
+    }
+  }
+  .edit {
+    background: #8897aa;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.07),
+      0px 4px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 10px 0px rgba(0, 0, 0, 0.03);
+    color: #fff;
+  }
+  .delete {
+    background: #d9534f;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.07),
+      0px 4px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 10px 0px rgba(0, 0, 0, 0.03);
+    color: #fff;
+  }
 }
 
-.qualification-table{
-  th{
-    border-bottom: 1px solid  gray;;
+.qualification-table,
+.manual-punch-table {
+  th {
+    border-bottom: 1px solid gray;
   }
 }
 
@@ -145,7 +168,9 @@ table {
       align-items: center;
       gap: 1em;
     }
-
+    .icon {
+      color: red;
+    }
     .action-button {
       display: flex;
       justify-content: center;
@@ -216,13 +241,24 @@ table {
 }
 
 .asset-inventory-table {
+  .mat-mdc-table .mdc-data-table__header-row {
+    height: 35px;
+  }
+  th {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: white;
+  }
   th,
   td {
     font-size: 14px;
     font-weight: 400;
-    line-height: 1.5;
-    padding: 0.625rem;
     border: 1px solid #edf2f6;
+  }
+  tr {
+    &:nth-child(odd) {
+      background-color: rgba(24, 28, 33, 0.025);
+    }
   }
 }
 

@@ -19,7 +19,7 @@ export class RuTableComponent<T> {
   @ViewChild(MatPaginator)
   Paginator!: MatPaginator;
 
-  @ViewChild(MatSort) sort !: MatSort;
+  @ViewChild(MatSort) sort!: MatSort;
 
   @Input() tableColumns: Array<any> = [];
   @Input() tableData: Array<T> = [];
@@ -32,19 +32,19 @@ export class RuTableComponent<T> {
   displayedColumns: Array<any> = [];
   dataSource: MatTableDataSource<T> = new MatTableDataSource();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.displayedColumns = this.tableColumns.map((c) => c.columnDef);
     this.dataSource = new MatTableDataSource(this.tableData);
-    
   }
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.Paginator;
     this.dataSource.sort = this.sort;
   }
 
-  bClick(element?: any) {
+  bClick(element?: any, id?: any) {
+    element = { ...element, click_type: id };
     this.clickHandler.emit(element);
   }
 }

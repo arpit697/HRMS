@@ -1,42 +1,46 @@
 <div class="container">
-  <div>
-    <mat-card class="employee-detail">
-      <mat-card-title class="title"> Employee Detail </mat-card-title>
-      <div class="field-group">
-        <div>
-          <mat-card-subtitle> Punch Request </mat-card-subtitle>
-          <mat-form-field appearance="outline">
+  
+    <mat-card>
+      <mat-card-title class="table-title"> Employee Detail </mat-card-title>
+      <div class="p-14">
+        <div *ngFor="let field of fields">
+          <mat-card-subtitle class="c-label"
+            >{{ field.label }}
+          </mat-card-subtitle>
+          <mat-form-field
+            class="form-field"
+            appearance="outline"
+            *ngIf="!(field.type === 'select')"
+          >
             <input matInput type="text" />
           </mat-form-field>
-        </div>
-        <div>
-          <mat-card-subtitle> Company </mat-card-subtitle>
-          <mat-form-field appearance="outline">
+          <mat-form-field
+            class="form-field"
+            appearance="outline"
+            *ngIf="field.type === 'select'"
+          >
             <mat-select>
-              <mat-option> </mat-option>
+              <mat-option></mat-option>
             </mat-select>
-          </mat-form-field>
-        </div>
-        <div>
-          <mat-card-subtitle> Employee </mat-card-subtitle>
-          <mat-form-field appearance="outline">
-            <input matInput type="text" />
           </mat-form-field>
         </div>
       </div>
     </mat-card>
-  </div>
+  
   <div>
     <mat-card class="manual-punch-list">
       <div class="title">
-        <mat-card-title> Manual Punch List </mat-card-title>
-        <button mat-raised-button>+ Add</button>
+        <mat-card-title class="table-title"> Manual Punch List </mat-card-title>
+        <button mat-button class="add-button">+ Add</button>
       </div>
-      <div class="punch-list"></div>
-      <app-ru-table
-        [tableColumns]="tableColumns"
-        [tableData]="tableData"
-      ></app-ru-table>
+
+      <div class="p-24">
+        <app-ru-table
+          [tableColumns]="tableColumns"
+          [tableData]="tableData"
+          [TableClass]="'manual-punch-table'"
+        ></app-ru-table>
+      </div>
     </mat-card>
   </div>
 </div>

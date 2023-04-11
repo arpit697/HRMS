@@ -1,5 +1,5 @@
 export const SIDE_NAV_ITEM = [
-  { icon: 'home', name: 'home', router_link: 'HOME' },
+  { icon: 'home', name: 'Home', router_link: 'HOME' },
   {
     icon: 'person',
     name: 'My Profile',
@@ -21,6 +21,22 @@ export const SIDE_NAV_ITEM = [
         icon: 'travel_explore',
         name: 'Explore',
         router_link: 'ENTREPRENEURSHIP',
+      },
+    ],
+  },
+  {
+    icon: 'restaurant',
+    name: 'Food',
+    categories: [
+      {
+        icon: 'lunch_dining',
+        name: 'Lunch Coupon',
+        router_link: 'LUNCH',
+      },
+      {
+        icon: 'dinner_dining',
+        name: 'Request Dinner',
+        router_link: 'DINNER',
       },
     ],
   },
@@ -197,6 +213,7 @@ export const EMP_DETAIL = {
   full_name: 'arpit dwivedi',
   email: 'arpit.dwivedi@appinventiv.com',
   employee_id: 'AI1558',
+  birthday: '29/06/1996',
   designation: 'software engineer',
   last_login: 'Feb-05-2023 06:34 PM from 172.31.25.47',
 };

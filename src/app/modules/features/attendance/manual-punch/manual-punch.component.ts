@@ -30,4 +30,24 @@ export class ManualPunchComponent {
   ];
 
   tableData = [];
+  fields = [
+    {
+      label: 'Punch Request',
+      formControlName: 'punch_request',
+      type: '',
+      placeholder: '',
+    },
+    {
+      label: 'Employee',
+      formControlName: 'company',
+      type: 'select',
+      placeholder: '',
+    },
+    {
+      label: 'Employee',
+      formControlName: 'employee',
+      type: '',
+      placeholder: '',
+    },
+  ];
 }

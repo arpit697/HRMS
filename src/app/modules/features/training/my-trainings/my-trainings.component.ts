@@ -10,13 +10,13 @@ import { RequestTrainingDialogComponent } from './request-training-dialog/reques
   styleUrls: ['./my-trainings.component.scss'],
 })
 export class MyTrainingsComponent {
-  constructor(private _router: Router , private dialog: MatDialog) {}
- 
+  constructor(private _router: Router, private dialog: MatDialog) {}
+
   openDialog(): void {
     const isSmallScreen = window.matchMedia('(max-width: 50em)').matches;
     const dialogRef = this.dialog.open(RequestTrainingDialogComponent, {
       width: isSmallScreen ? '100%' : '40%',
-      height: '98%',
+      height: '90%',
       data: {},
     });
     dialogRef.disableClose = true;

@@ -2,18 +2,28 @@
 <mat-card class="container">
   <div class="select-filters">
     <div class="select-filters">
-      <div *ngFor="let item of selectFilter" class="grid-item">
-        <mat-card-subtitle class="c-2-label">{{ item.label }}</mat-card-subtitle>
-        <mat-form-field appearance="outline" id="{{ item.label }}">
+      <div class="grid-item">
+        <mat-card-subtitle class="c-2-label">Department</mat-card-subtitle>
+        <mat-form-field appearance="outline">
           <mat-select>
-            <mat-option></mat-option>
+            <mat-option *ngFor="let item of departments" value="{{ item }}">{{
+              item
+            }}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
-    </div>    
+      <div class="grid-item">
+        <mat-card-subtitle class="c-2-label">Status</mat-card-subtitle>
+        <mat-form-field appearance="outline">
+          <mat-select>
+            <mat-option *ngFor="let item of status" value="{{ item }}">{{
+              item
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
   </div>
-
-  
 
   <app-ru-table
     class="table"

@@ -25,4 +25,18 @@ export class PunchLogComponent {
   ];
 
   tableData = [];
+  fields = [
+    {
+      label: 'Date',
+      formControlName: 'date',
+      type: '',
+      placeholder: '',
+    },
+    {
+      label: 'Employee',
+      formControlName: 'company',
+      type: 'select',
+      placeholder: '',
+    },
+  ];
 }

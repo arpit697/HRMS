@@ -1,14 +1,108 @@
-<mat-card class="header">
-  <mat-card-actions>
-    <button class="add-button" mat-raised-button>
-      + Add new asset request
-    </button>
-  </mat-card-actions>
-</mat-card>
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title> </mat-panel-title>
+    <button class="req-btn" mat-raised-button>+ Add new request</button>
+  </mat-expansion-panel-header>
+  <div [formGroup]="requestAssetFrom" class="p-24">
+    <div class="flex flex-wrap ai-center g-1">
+      <div class="flex-size">
+        <mat-card-subtitle class="c-label"
+          >Assets Categories <sup>*</sup></mat-card-subtitle
+        >
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-select formControlName="categories">
+            <mat-option
+              *ngFor="let item of assetCategories"
+              value="{{ item }}"
+              >{{ item }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="flex-size">
+        <mat-card-subtitle class="c-label"
+          >Quantity <sup>*</sup></mat-card-subtitle
+        >
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-select formControlName="quantity">
+            <mat-option *ngFor="let item of quantity" value="{{ item }}">{{
+              item
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="flex-size">
+        <mat-card-subtitle class="c-label"
+          >Priority <sup>*</sup></mat-card-subtitle
+        >
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-select formControlName="priority">
+            <mat-option *ngFor="let item of priority" value="{{ item }}">{{
+              item
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="flex-size">
+        <mat-card-subtitle class="c-label"
+          >Required By Date <sup>*</sup></mat-card-subtitle
+        >
+        <mat-form-field appearance="outline">
+          <input formControlName="date" matInput [matDatepicker]="picker" />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="flex-size">
+        <mat-card-subtitle class="c-label"
+          >Allocation Type <sup>*</sup></mat-card-subtitle
+        >
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-select formControlName="allocation">
+            <mat-option
+              *ngFor="let item of allocationType"
+              value="{{ item }}"
+              >{{ item }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="flex-size"></div>
+      <div class="flex-size"></div>
+      <div class="flex-size"></div>
+    </div>
+    <div class="text-area">
+      <mat-card-subtitle class="c-label"
+        >Request Reason <sup>*</sup></mat-card-subtitle
+      >
+      <mat-form-field appearance="outline">
+        <textarea
+          formControlName="reason"
+          matInput
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="1"
+          maxlength="500"
+          cdkAutosizeMaxRows="10"
+        ></textarea>
+      </mat-form-field>
+    </div>
+    <mat-card-actions class="jc-center">
+      <button
+        (click)="submitHandler()"
+        mat-raised-button
+        class="button-primary"
+      >
+        Submit
+      </button>
+    </mat-card-actions>
+  </div>
+</mat-expansion-panel>
 
-<mat-card class="container">
+<mat-card class="container p-14">
   <app-ru-table
-    class="table"
     [tableColumns]="tableColumns"
     [tableData]="tableData"
     [TableClass]="'asset-inventory-table'"

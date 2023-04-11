@@ -25,6 +25,8 @@ import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationCheckModule } from 'src/app/pipes/validation-check/validation-check.module';
 import { MatButtonModule } from '@angular/material/button';
 import { ReplaceCharModule } from '../../../pipes/replace-char/replace-char.module';
+import { DeleteComponent } from './qualification/delete/delete.component';
+import { EditComponent } from './qualification/edit/edit.component';
 
 
 const MATERIAL = [
@@ -49,6 +51,8 @@ const MATERIAL = [
     ShiftComponent,
     ChangePassComponent,
     AppraisalComponent,
+    DeleteComponent,
+    EditComponent,
   ],
   imports: [
     CommonModule,

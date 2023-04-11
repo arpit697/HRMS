@@ -10,6 +10,9 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { CKEditorModule } from 'ckeditor4-angular';
+import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
+import { ValidationCheckModule } from 'src/app/pipes/validation-check/validation-check.module';
+import { ReplaceCharModule } from 'src/app/pipes/replace-char/replace-char.module';
 
 const MATERIAL = [
   MatCardModule,
@@ -27,6 +30,9 @@ const MATERIAL = [
     ReactiveFormsModule,
     CKEditorModule,
     FormsModule,
+    GetControlModule,
+    ValidationCheckModule,
+    ReplaceCharModule,
     ...MATERIAL,
   ],
 })

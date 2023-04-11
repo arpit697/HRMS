@@ -13,6 +13,16 @@ export class MyDsrComponent {
     
   }
 
+  defaultValue= {hour: 13, minute: 30};
+
+  timeChangeHandler(event: Event) {
+    console.log(event);
+  }
+
+  invalidInputHandler() {
+    // some error handling  
+  }
+
 
   formFields = [
     { label: 'From Date', formControlName: '', type: 'datePicker' },

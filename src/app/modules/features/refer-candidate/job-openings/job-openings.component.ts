@@ -10,7 +10,6 @@ import { JOB_OPENINGS } from 'src/app/constants/routes';
 })
 export class JobOpeningsComponent implements OnInit {
   openings!: any;
-  constructor(private dialog: MatDialog) {}
   ngOnInit(): void {
     this.openings = JOBS;
   }

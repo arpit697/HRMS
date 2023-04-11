@@ -174,7 +174,7 @@ export const FRESHERS_TRAININGS: RouteInterface = {
   },
 };
 
-export const TRAINING_DETAILS_TRAINEE : RouteInterface = {
+export const TRAINING_DETAILS_TRAINEE: RouteInterface = {
   path: 'training-details-trainee',
   get fullUrl(): string {
     return `${FRESHERS.fullUrl}/${this.path}`;
@@ -329,5 +329,33 @@ export const PROJECT_DETAIL: RouteInterface = {
   path: 'detail',
   get fullUrl(): string {
     return `${PROJECTS.fullUrl}/${this.path}`;
+  },
+};
+
+export const FOOD: RouteInterface = {
+  path: 'food',
+  get fullUrl(): string {
+    return `${FEATURES.fullUrl}/${this.path}`;
+  },
+};
+
+export const LUNCH: RouteInterface = {
+  path: 'lunch',
+  get fullUrl(): string {
+    return `${FOOD.fullUrl}/${this.path}`;
+  },
+};
+
+export const PURCHASE_LUNCH_COUPON: RouteInterface = {
+  path: 'purchase-lunch-coupon',
+  get fullUrl(): string {
+    return `${LUNCH.fullUrl}/${this.path}`;
+  },
+};
+
+export const DINNER: RouteInterface = {
+  path: 'dinner',
+  get fullUrl(): string {
+    return `${FOOD.fullUrl}/${this.path}`;
   },
 };

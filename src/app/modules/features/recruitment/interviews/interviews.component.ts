@@ -1,11 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { options } from '@fullcalendar/core/preact';
+import {
+  DEPARTMENTS_DROP_DOWN,
+  REFERRAL_STATUS_DROP_DOWN,
+} from 'src/app/constants/drop.down.data';
 
 @Component({
   selector: 'app-interviews',
   templateUrl: './interviews.component.html',
   styleUrls: ['./interviews.component.scss'],
 })
-export class InterviewsComponent {
+export class InterviewsComponent implements OnInit {
+  departments = <any>[];
+  status = <any>[];
+  dropDownForm!: FormGroup;
+  constructor(private _formBuilder: FormBuilder) {}
+  ngOnInit(): void {
+    this.departments = DEPARTMENTS_DROP_DOWN;
+    this.status = REFERRAL_STATUS_DROP_DOWN;
+    console.log(this.departments, this.status);
+    this.createForm();
+  }
+
+  createForm() {
+    this.dropDownForm = this._formBuilder.group({
+      department: [],
+      status: [],
+    });
+  }
+
   tableColumns: Array<any> = [
     {
       columnDef: 'serial_number',
@@ -75,18 +99,5 @@ export class InterviewsComponent {
     // add more mock data if needed
   ];
 
-  selectFilter = [
-    { label: 'Department', formControlName: 'department' },
-    { label: 'Status', formControlName: 'status' },
-  ];
-
-  searchFilter = [
-    {
-      label_horizontal_left: 'Show',
-      label_horizontal_right: 'Entries',
-      formControlName: '',
-      type: 'select',
-    },
-    { label_horizontal_left: 'Search :', formControlName: '', type: 'input' },
-  ];
+  
 }

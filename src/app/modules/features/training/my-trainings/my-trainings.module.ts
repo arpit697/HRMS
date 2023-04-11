@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioButton, MatRadioModule } from '@angular/material/radio';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const MATERIAL = [
   MatCardModule,
@@ -26,6 +27,6 @@ const MATERIAL = [
 
 @NgModule({
   declarations: [MyTrainingsComponent, RequestTrainingDialogComponent],
-  imports: [CommonModule, MyTrainingsRoutingModule, ...MATERIAL],
+  imports: [CommonModule, MyTrainingsRoutingModule, ReactiveFormsModule , ...MATERIAL],
 })
 export class MyTrainingsModule {}
