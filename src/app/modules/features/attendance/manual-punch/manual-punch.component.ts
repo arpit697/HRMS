@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MANUAL_PUNCH_TABLE_COLUMN } from 'src/app/constants/table.data';
 
 @Component({
   selector: 'app-manual-punch',
@@ -6,29 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./manual-punch.component.scss'],
 })
 export class ManualPunchComponent {
-  tableColumns: Array<any> = [
-    {
-      columnDef: 'edit',
-      header: 'Edit',
-      cell: (element: Record<string, any>) => `${element['edit']}`,
-    },
-    {
-      columnDef: 'manual_punch_date',
-      header: 'Manual Punch Date',
-      cell: (element: Record<string, any>) => `${element['manual_punch_date']}`,
-    },
-    {
-      columnDef: 'in_time',
-      header: 'In Time',
-      cell: (element: Record<string, any>) => `${element['in_time']}`,
-    },
-    {
-      columnDef: 'out_time',
-      header: 'Out Time',
-      cell: (element: Record<string, any>) => `${element['out_time']}`,
-    },
-  ];
-
+  tableColumns: Array<any> = [...MANUAL_PUNCH_TABLE_COLUMN];
   tableData = [];
   fields = [
     {
@@ -50,4 +29,5 @@ export class ManualPunchComponent {
       placeholder: '',
     },
   ];
+  
 }

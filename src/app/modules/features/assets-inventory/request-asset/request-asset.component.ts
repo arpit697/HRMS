@@ -27,7 +27,10 @@ export class RequestAssetComponent implements OnInit {
   quantity: any;
   priority: any;
   allocationType: any;
-
+  panelOpenState: boolean = false;
+  togglePanel() {
+    this.panelOpenState = !this.panelOpenState;
+  }
   constructor(
     private _formBuilder: FormBuilder,
     private _formValidation: FormValidationService,

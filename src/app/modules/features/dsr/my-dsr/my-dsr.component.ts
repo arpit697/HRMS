@@ -1,29 +1,53 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { rotate } from 'src/app/animations/clock.anticlock';
+import { DSR_PROJECT_DROP_DOWN } from 'src/app/constants/drop.down.data';
+import { EDITOR_CONFIG } from 'src/app/constants/editor.config';
+import { DSR_TABLE_COLUMN, DSR_TABLE_DATA } from 'src/app/constants/table.data';
+import { DataService } from 'src/app/services/data/data.service';
+import { FormValidationService } from 'src/app/services/forms/form.validation.service';
+import { UtilityService } from 'src/app/services/utility/utility.service';
 
 @Component({
   selector: 'app-my-dsr',
   templateUrl: './my-dsr.component.html',
   styleUrls: ['./my-dsr.component.scss'],
 })
-export class MyDsrComponent {
-
-  constructor(private _route : Router){
-    
+export class MyDsrComponent implements OnInit {
+  editorConfig = { ...EDITOR_CONFIG };
+  tableColumns: Array<any> = [...DSR_TABLE_COLUMN];
+  tableData = [...DSR_TABLE_DATA];
+  dsrForm!: FormGroup;
+  projects: any;
+  content: string = '';
+  panelOpenState: boolean = false;
+  constructor(
+    private _route: Router,
+    private _formBuilder: FormBuilder,
+    private _formValidation: FormValidationService,
+    private _dataService: DataService,
+    private utility: UtilityService
+  ) {}
+  ngOnInit(): void {
+    this.projects = DSR_PROJECT_DROP_DOWN;
+    this.createForm();
+  }
+  createForm() {
+    this.dsrForm =  this._formBuilder.group({
+      project_name: [],
+      date: [],
+      login_hours: [],
+      dsr_detail: [],
+    });
   }
 
-  defaultValue= {hour: 13, minute: 30};
-
-  timeChangeHandler(event: Event) {
-    console.log(event);
+  togglePanel() {
+    this.panelOpenState = !this.panelOpenState;
   }
-
-  invalidInputHandler() {
-    // some error handling  
+  submitHandler() {
+    console.log(this.dsrForm.value);
   }
-
-
   formFields = [
     { label: 'From Date', formControlName: '', type: 'datePicker' },
     { label: 'End Date', formControlName: '', type: 'datePicker' },
@@ -33,115 +57,7 @@ export class MyDsrComponent {
     { label: 'Hours', formControlName: '', type: 'select' },
   ];
 
-  content: string = '';
-  editorConfig = {
-    toolbar: [
-      { name: 'document', items: ['Print'] },
-      { name: 'clipboard', items: ['Undo', 'Redo'] },
-      { name: 'styles', items: ['Styles', 'Format'] },
-      {
-        name: 'basicstyles',
-        items: ['Bold', 'Italic', 'Strike', '-', 'RemoveFormat'],
-      },
-      {
-        name: 'paragraph',
-        items: [
-          'NumberedList',
-          'BulletedList',
-          '-',
-          'Outdent',
-          'Indent',
-          '-',
-          'Blockquote',
-        ],
-      },
-      { name: 'links', items: ['Link', 'Unlink'] },
-      { name: 'insert', items: ['Image', 'Table', 'HorizontalRule'] },
-      { name: 'tools', items: ['Maximize'] },
-      { name: 'editing', items: ['Scayt'] },
-      { name: 'mode', items: ['Source'] },
-    ],
-  };
-
-  tableColumns: Array<any> = [
-    {
-      columnDef: 'serial_number',
-      header: 'Sr.No.',
-      cell: (element: Record<string, any>) => `${element['serial_number']}`,
-    },
-    {
-      columnDef: 'emp_name',
-      header: 'Employee Name',
-      cell: (element: Record<string, any>) => `${element['emp_name']}`,
-    },
-    {
-      columnDef: 'emp_id',
-      header: 'Employee Id',
-      cell: (element: Record<string, any>) => `${element['emp_id']}`,
-    },
-    {
-      columnDef: 'email',
-      header: 'email',
-      cell: (element: Record<string, any>) => `${element['email']}`,
-    },
-    {
-      columnDef: 'employment_type',
-      header: 'Employment Type',
-      cell: (element: Record<string, any>) => `${element['employment_type']}`,
-    },
-    {
-      columnDef: 'date',
-      header: 'Date',
-      cell: (element: Record<string, any>) => `${element['date']}`,
-    },
-    {
-      columnDef: 'total_logged_hr',
-      header: 'Total(logged) Hr',
-      cell: (element: Record<string, any>) => `${element['total_logged_hr']}`,
-    },
-    {
-      columnDef: 'final_approval',
-      header: 'Final Approval',
-      cell: (element: Record<string, any>) => `${element['final_approval']}`,
-      type : 'button-action'
-    },
-  ];
-
-  tableData = [
-    {
-      serial_number: 1,
-      emp_name: 'John Smith',
-      emp_id: 'A123',
-      email: 'john.smith@example.com',
-      employment_type: 'Full-time',
-      date: '2022-03-15',
-      total_logged_hr: 8,
-      final_approval: 'Yes',
-    },
-    {
-      serial_number: 2,
-      emp_name: 'Jane Doe',
-      emp_id: 'B456',
-      email: 'jane.doe@example.com',
-      employment_type: 'Part-time',
-      date: '2022-03-15',
-      total_logged_hr: 4,
-      final_approval: 'Yes',
-    },
-    {
-      serial_number: 3,
-      emp_name: 'Bob Johnson',
-      emp_id: 'C789',
-      email: 'bob.johnson@example.com',
-      employment_type: 'Full-time',
-      date: '2022-03-16',
-      total_logged_hr: 6,
-      final_approval: 'No',
-    },
-  ];
-
-
-  viewDetails(){
-    this._route.navigate([])
+  viewDetails() {
+    this._route.navigate([]);
   }
 }

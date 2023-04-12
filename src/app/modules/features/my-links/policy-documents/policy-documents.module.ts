@@ -4,8 +4,9 @@ import { CommonModule } from '@angular/common';
 import { PolicyDocumentsRoutingModule } from './policy-documents-routing.module';
 import { PolicyDocumentsComponent } from './policy-documents.component';
 import { RuTableModule } from 'src/app/modules/common/modules/common-table/ru-table.module';
+import { MatCardModule } from '@angular/material/card';
 
-const MATERIAL = []
+const MATERIAL = [MatCardModule]
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ const MATERIAL = []
   imports: [
     CommonModule,
     PolicyDocumentsRoutingModule,
-    RuTableModule
+    RuTableModule,
+    ...MATERIAL
   ]
 })
 export class PolicyDocumentsModule { }

@@ -255,6 +255,13 @@ export const MY_LEAVES: RouteInterface = {
   },
 };
 
+export const LEAVE_DETAIL: RouteInterface = {
+  path: 'leave-detail',
+  get fullUrl(): string {
+    return `${MY_LEAVES.fullUrl}/${this.path}`;
+  },
+};
+
 export const FLOATING_LEAVES: RouteInterface = {
   path: 'floating-leaves',
   get fullUrl(): string {

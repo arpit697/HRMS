@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import {
+  PUNCH_LOG_TABLE_COULMN,
+  PUNCH_LOG_TABLE_DATA,
+} from 'src/app/constants/table.data';
 
 @Component({
   selector: 'app-punch-log',
@@ -6,25 +10,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./punch-log.component.scss'],
 })
 export class PunchLogComponent {
-  tableColumns: Array<any> = [
-    {
-      columnDef: 'name',
-      header: 'Name',
-      cell: (element: Record<string, any>) => `${element['name']}`,
-    },
-    {
-      columnDef: 'punch_time',
-      header: 'Punch Time',
-      cell: (element: Record<string, any>) => `${element['punch_time']}`,
-    },
-    {
-      columnDef: 'direction',
-      header: 'Direction',
-      cell: (element: Record<string, any>) => `${element['direction']}`,
-    },
-  ];
-
-  tableData = [];
+  tableColumns: Array<any> = [...PUNCH_LOG_TABLE_COULMN];
+  tableData = [...PUNCH_LOG_TABLE_DATA];
   fields = [
     {
       label: 'Date',

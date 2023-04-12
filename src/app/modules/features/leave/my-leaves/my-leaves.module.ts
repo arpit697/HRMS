@@ -14,10 +14,12 @@ import { MatNativeDateModule, NativeDateModule } from '@angular/material/core';
 import { RuTableModule } from 'src/app/modules/common/modules/common-table/ru-table.module';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ckeditor4-angular';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatListModule } from '@angular/material/list';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+
 const MATERIAL = [
   MatCardModule,
   MatIconModule,
@@ -30,10 +32,9 @@ const MATERIAL = [
   MatExpansionModule,
   MatCheckboxModule,
   MatRadioModule,
-  MatListModule
+  MatListModule,
+  NgxMaterialTimepickerModule,
 ];
-
-
 
 @NgModule({
   declarations: [MyLeavesComponent],
@@ -42,8 +43,9 @@ const MATERIAL = [
     MyLeavesRoutingModule,
     RuTableModule,
     CKEditorModule,
+    ReactiveFormsModule,
     FormsModule,
     ...MATERIAL,
   ],
 })
-export class MyLeavesModule { }
+export class MyLeavesModule {}

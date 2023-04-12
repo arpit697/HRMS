@@ -1,7 +1,9 @@
-<mat-expansion-panel hideToggle>
+<mat-expansion-panel [disabled]="true" [expanded]="panelOpenState" hideToggle>
   <mat-expansion-panel-header>
     <mat-panel-title> </mat-panel-title>
-    <button class="req-btn" mat-raised-button>+ Add new request</button>
+    <button (click)="togglePanel()" class="req-btn" mat-raised-button>
+      + Add new request
+    </button>
   </mat-expansion-panel-header>
   <div [formGroup]="requestAssetFrom" class="p-24">
     <div class="flex flex-wrap ai-center g-1">

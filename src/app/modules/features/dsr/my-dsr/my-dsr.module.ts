@@ -17,7 +17,8 @@ import {
 import { MatNativeDateModule, NativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CKEditorModule } from 'ckeditor4-angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 const MATERIAL = [
   MatCardModule,
@@ -30,6 +31,7 @@ const MATERIAL = [
   MatNativeDateModule,
   MatButtonModule,
   MatCheckboxModule,
+  NgxMaterialTimepickerModule,
 ];
 
 @NgModule({
@@ -40,8 +42,8 @@ const MATERIAL = [
     RuTableModule,
     CKEditorModule,
     RuTableModule,
-    FormsModule,
+    ReactiveFormsModule,
     ...MATERIAL,
   ],
 })
-export class MyDsrModule { }
+export class MyDsrModule {}

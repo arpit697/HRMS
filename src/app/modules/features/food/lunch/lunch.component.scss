@@ -1,0 +1,1241 @@
+// table{
+//     width: 100%;
+// }
+// .boxshadowadd {
+//   box-shadow: 0px 4px 4px rgba(82, 130, 240, 0.25);
+// }
+
+// .whitecoupon {
+//   background-color: #fff;
+// }
+
+// .boxborder {
+//   border: 1px solid #dce2e9;
+// }
+
+// .purchasedcoupon {
+//   background-color: #bdf9ca;
+// }
+
+// .availablecoupon {
+//   background-color: #bdcff9;
+// }
+
+// .holidaycoupon {
+//   background-color: #f7a2a2;
+// }
+
+// .lockedcoupon {
+//   /* background-color: #F3F3F3; */
+//   background-color: #bfbfbf;
+// }
+
+// /* #cancelcoupon .modal-dialog {
+//     max-width: 320px !important;
+//     min-width: 320px !important;
+//   } */
+
+// .couponmodal .modal-content {
+//   min-height: 410px;
+// }
+
+// .cancelDinnerModal.modal-content {
+//   min-height: auto !important;
+// }
+
+// .couponmodal .modal-dialog {
+//   min-width: unset !important;
+//   -webkit-transform: translateY(60px) scale(1) !important;
+//   transform: translateY(60px) scale(1) !important;
+// }
+
+// .couponmodal .selectmonth_coupon {
+//   position: relative;
+//   width: 100%;
+// }
+
+// .couponmodal .selectmonth_coupon .selectform {
+//   width: 100%;
+//   display: flex;
+//   align-items: end;
+//   margin-bottom: 25px;
+// }
+
+// .couponmodal .selectmonth_coupon .selectform .selectboxmonth {
+//   width: 100%;
+//   margin-right: 20px;
+// }
+
+
+
+// .couponmodal .selectmonth_coupon .selectform .selectboxmonth label {
+//   font-weight: 600;
+//   font-size: 16px;
+//   color: #2f3031;
+// }
+
+// .couponmodal .selectmonth_coupon .selectform .selectboxmonth .form-control {
+//   border: 1px solid #d8d8d8;
+//   border-radius: 2px;
+//   padding-left: 5px !important;
+//   padding-right: 5px !important;
+// }
+
+// .couponmodal .selectmonth_coupon .selectform .getvaluemonth {
+//   background: linear-gradient(180deg, #67b0f9 0%, #368cf6 100%);
+//   border: 1px solid #67a8eb;
+//   border-radius: 5px;
+//   color: #fff;
+//   font-size: 14px;
+//   max-width: 110px;
+//   width: 100%;
+//   padding: 8px 10px;
+// }
+
+// .couponmodal .selectmonth_coupon .close {
+//   position: absolute;
+//   right: 20px;
+//   top: 20px;
+//   float: none;
+//   padding: 0;
+//   line-height: 0;
+//   width: 20px;
+//   background-color: #5282f0;
+//   color: #fff;
+//   border-radius: 4px;
+//   height: 20px;
+// }
+
+// .couponmodal .modal-header {
+//   border-bottom: 1px solid #f4f7fb;
+//   background-color: transparent;
+//   border-radius: 0px;
+// }
+
+// .couponmodal .modal-header .close {
+//   width: 31px;
+//   height: 31px;
+//   background-color: #fff;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   border-radius: 40px;
+//   margin-top: -20px;
+//   opacity: 1;
+//   margin-right: 0px;
+// }
+
+// .couponmodal .modal-header .close span img {
+//   width: 12px;
+// }
+
+// .couponmodal .modal-header .close:hover {
+//   opacity: 1;
+// }
+
+// .couponmodal .modal-title {
+//   font-weight: 600;
+//   font-size: 16px;
+//   color: #5282f0;
+// }
+
+// .couponformstyle label {
+//   font-weight: 600;
+//   font-size: 14px;
+//   color: #2f3031;
+//   margin-bottom: 2px;
+// }
+
+// .couponformstyle .form-control {
+//   border: 1px solid #d8d8d8;
+//   border-radius: 5px;
+// }
+
+// .couponformstyle .custborder-top {
+//   border-top: 1px dashed rgba(0, 0, 0, 0.2) !important;
+// }
+
+// .couponconfirmbox {
+//   padding: 24px 10px 23px;
+// }
+
+// .couponstylecontent h4 {
+//   font-weight: 500;
+//   font-size: 20px;
+//   color: #221e1e;
+//   text-align: center;
+//   margin-bottom: 20px;
+// }
+
+// .couponstylecontent p {
+//   font-weight: 400;
+//   font-size: 16px;
+//   text-align: center;
+//   color: #606167;
+// }
+
+// .couponformbtn a,
+// .couponformbtn button {
+//   border-radius: 5px;
+//   color: #fff;
+//   min-width: 110px;
+//   text-align: center;
+//   padding: 7px 10px;
+//   display: inline-block;
+//   font-size: 14px;
+//   outline: none;
+// }
+
+// .couponformbtn a:hover,
+// .couponformbtn button:hover {
+//   text-decoration: none;
+// }
+
+// .couponformbtn a:not(:last-child),
+// .couponformbtn button:not(:last-child) {
+//   margin-right: 20px;
+// }
+
+// .couponformbtn .btn-submit {
+//   background: linear-gradient(180deg, #67b0f9 0%, #368cf6 100%);
+//   border: 1px solid #67a8eb;
+// }
+
+// .couponformbtn .btn-cancel {
+//   border: 1px solid #ccd2da;
+//   border-radius: 5px;
+//   color: #469cf8;
+// }
+
+// .calendar-day {
+//   position: relative;
+//   padding: 20px !important;
+//   vertical-align: middle !important;
+// }
+
+// .calendar-day .calender_btn {
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   border-radius: 0px;
+//   text-align: left;
+// }
+
+// .calendar-day .calender_btn .calend-righttop {
+//   position: absolute;
+//   left: 10px;
+//   top: 5px;
+//   display: flex;
+//   flex-direction: row-reverse;
+//   align-items: center;
+// }
+
+// .calendar-day .calender_btn .calend-checkbox {
+//   position: relative;
+//   cursor: pointer;
+//   /* width: 20px;
+//       height: 20px; */
+//   width: 100%;
+//   height: 100%;
+//   margin-bottom: 0px;
+// }
+
+// .calendar-day .calender_btn .calend-checkbox input {
+//   opacity: 0;
+//   z-index: 1;
+//   left: 0px;
+//   margin-left: 0;
+// }
+
+// .calendar-day .calender_btn .calend-checkbox .checkmark {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 20px;
+//   width: 20px;
+//   cursor: pointer;
+//   border-radius: 4px;
+//   background: #eef3ff;
+//   border: 1px solid #68789e;
+// }
+
+// .calendar-day .calender_btn .calend-checkbox :hover input ~ .checkmark {
+//   background-color: #ccc;
+// }
+
+// .calendar-day .calender_btn .calend-checkbox input:checked ~ .checkmark {
+//   background-color: #2196f3;
+// }
+
+// .calendar-day .calender_btn .calend-checkbox .checkmark:after {
+//   content: "";
+//   position: absolute;
+//   display: none;
+// }
+
+// .calendar-day .calender_btn .calend-checkbox input:checked ~ .checkmark:after {
+//   display: block;
+// }
+
+// .calendar-day .calender_btn .calend-checkbox .checkmark:after {
+//   left: 6px;
+//   top: 2px;
+//   width: 6px;
+//   height: 12px;
+//   border: solid white;
+//   border-width: 0 2px 2px 0;
+//   transform: rotate(45deg);
+// }
+
+// .calendar-day .calender_btn .calen-menu {
+//   cursor: pointer;
+//   margin-right: 4px;
+//   /* display: flex;
+//     align-items: center; */
+//   padding-right: 8px;
+//   position: relative;
+//   /* z-index: 9; */
+//   display: inline-block;
+// }
+
+// .calendar-day .calender_btn .calen-menu a {
+//   color: #000;
+//   position: relative;
+//   z-index: 9;
+// }
+
+// .calendar-day .calender_btn .calen-menu .dropdown-menu {
+//   padding: 22px 22px;
+// }
+
+// .calendar-day .calender_btn .calen-menu .dropdown-menu .dropdown-item {
+//   background: #5282f0;
+//   border-radius: 5px;
+//   color: #fff;
+//   font-size: 16px;
+//   font-weight: 400;
+//   padding: 7px 20px;
+//   text-align: center;
+// }
+
+// .calendar-day
+//   .calender_btn
+//   .calen-menu
+//   .dropdown-menu
+//   .dropdown-item:not(:last-child) {
+//   margin-bottom: 10px;
+// }
+
+// .calendar-day .calender_btn .calen-menu .dropdown-menu .cancelbtncoupcalen {
+//   background: #c95c54;
+// }
+
+// .calendar-day .calender_btn .calen-menu .dropdown-menu .addsurplusbtncoupan {
+//   border: 1px solid #ccd2da;
+//   color: #469cf8;
+//   background: #fff;
+// }
+
+// .calendar-day .calender_btn .dateno {
+//   color: #000;
+//   font-size: 20px;
+//   font-weight: 600;
+//   margin-bottom: 5px;
+//   position: absolute;
+//   top: 5px;
+//   right: 10px;
+// }
+
+// .calendar-day .calender_btn .couponno {
+//   position: absolute;
+//   margin-bottom: 0px;
+//   color: rgba(0, 0, 0, 0.8);
+//   font-size: 12px;
+//   font-weight: 600;
+//   background: #e6f3fe;
+//   border: 1px solid #4b88d2;
+//   border-radius: 3px;
+//   width: calc(100% - 20px);
+//   left: 50%;
+//   top: 50%;
+//   line-height: normal;
+//   height: 20px;
+//   transform: translate(-50%, -50%);
+//   padding: 3px;
+//   text-align: center;
+// }
+
+// .lunchcoupon-maintop h4 {
+//   color: #221e1e;
+//   font-size: 24px;
+//   font-weight: 600;
+//   margin-bottom: 10px;
+// }
+
+// .lunchcoupon-maintop p {
+//   color: #606167;
+//   font-size: 14px;
+//   font-weight: 400;
+//   margin-bottom: 0px;
+// }
+
+// .amount-purchasewrap {
+//   margin-top: 25px;
+// }
+
+// .amount-purchasewrap .lowerpara {
+//   color: #606167;
+//   font-size: 14px;
+//   font-weight: 400;
+//   margin-bottom: 0px;
+//   padding-right: 10px;
+// }
+
+// .amount-purchasewrap .lowerpara i {
+//   margin-right: 10px;
+// }
+
+// .amountdue {
+//   min-height: 150px;
+//   padding: 10px 20px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   background: #ffffff;
+//   border: 1px solid #dce2e9;
+//   border-radius: 8px;
+// }
+
+// .amountdue .amountdue-toppart {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .amountdue .amountdue-toppart h4 {
+//   color: #221e1e;
+//   font-size: 24px;
+//   font-weight: 600;
+// }
+
+// .amountdue .amountdue-toppart .avabcoupon {
+//   color: #469cf8;
+//   font-size: 18px;
+// }
+
+// .amountdue .availamountdue {
+//   font-weight: 700;
+//   font-size: 38px;
+//   color: #469cf8;
+//   margin-bottom: 0px;
+// }
+
+// .purchcoupwrap {
+//   min-height: 150px;
+//   padding: 27px 10px 10px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   background: #ffffff;
+//   border: 1px solid #dce2e9;
+//   border-radius: 8px;
+// }
+
+// .purchcoupwrap .purcoupbtn a,
+// .purchcoupwrap .purcoupbtn button {
+//   outline: none;
+//   box-shadow: none;
+//   background: linear-gradient(180deg, #67b0f9 0%, #368cf6 100%);
+//   border: 1px solid #67a8eb;
+//   border-radius: 5px;
+//   font-weight: 700;
+//   font-size: 14px;
+//   color: #fff;
+//   width: 100%;
+//   display: block;
+//   text-align: center;
+//   padding: 10px;
+//   max-width: 332px;
+//   margin: 0px auto 20px;
+// }
+
+// .purchcoupwrap .purcoupbtn a:hover,
+// .purchcoupwrap .purcoupbtn button:hover {
+//   text-decoration: none;
+// }
+
+// .amntduebtnpart {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: end;
+// }
+
+// .amntduebtnpart .amntdueviewbtn {
+//   border: 1px solid #ccd2da;
+//   border-radius: 5px;
+//   font-weight: 400;
+//   font-size: 14px;
+//   padding: 8px 10px;
+//   text-align: center;
+//   color: #469cf8;
+//   max-width: 115px;
+//   width: 100%;
+// }
+
+// .amntduebtnpart .amntdueviewbtn:hover {
+//   text-decoration: none;
+// }
+
+// .calendar-innerbox {
+//   margin-top: 30px;
+//   background: #ffffff;
+//   border-radius: 8px;
+//   padding: 15px 25px 30px;
+// }
+
+// .calendar-innerbox .calendar-header {
+//   display: flex;
+//   justify-content: space-between;
+//   margin-bottom: 20px;
+// }
+
+// .calendar-innerbox .calendar-header .calendar_month {
+//   display: flex;
+// }
+
+// .calendar-innerbox .calendar-header .calendar_month span {
+//   font-weight: 400;
+//   font-size: 20px;
+//   line-height: 24px;
+//   color: #221e1e;
+//   margin-right: 30px;
+// }
+
+// .calendar-innerbox .calendar-header .calendar_month .fademonth {
+//   opacity: 0.5;
+//   font-size: 16px;
+// }
+
+// .calendar-innerbox .calendar-header .calendar_arrow {
+//   display: flex;
+// }
+
+// .calendar-innerbox .calendar-header .calendar_arrow a {
+//   background-color: #e1dfdf;
+//   border-radius: 20px;
+//   width: 25px;
+//   height: 25px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .calendar-innerbox .calendar-header .calendar_arrow a:not(:last-child) {
+//   margin-right: 8px;
+// }
+
+// .calendar-innerbox .calendar-header .calendar_arrow a i {
+//   color: #5282f0;
+// }
+
+// .calendar-innerbox .calender-tablewrap {
+//   background-color: #fff;
+//   overflow-x: auto;
+// }
+
+// .calendar-innerbox .calender-tablewrap .calendar-table {
+//   margin-bottom: 0px;
+// }
+
+// .calendar-innerbox .calender-tablewrap .calendar-table tr th {
+//   color: #221e1e;
+//   font-size: 12px;
+//   font-weight: 700;
+//   border-top: 0px;
+//   border-bottom: 1px solid #dddddd;
+//   text-align: center;
+//   padding: 2px 5px;
+// }
+
+// .calendar-innerbox .calender-tablewrap .calendar-table tr td {
+//   border-top: 0px;
+//   text-align: center;
+//   padding: 0px !important;
+//   height: 137px;
+//   width: 14.28%;
+// }
+
+// .calendar-innerbox .calender-tablewrap .calendar-table tr td:not(:last-child) {
+//   border-right: 1px solid #dddddd;
+// }
+
+// .colorpresentwrap ul {
+//   display: flex;
+//   margin-bottom: 0px;
+//   flex-wrap: wrap;
+// }
+
+// .colorpresentwrap ul li {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .colorpresentwrap ul li:not(:last-child) {
+//   margin-right: 15px;
+// }
+
+// .colorpresentwrap ul li .holidaycolor {
+//   width: 20px;
+//   height: 20px;
+//   background: rgba(240, 82, 82, 0.54);
+// }
+
+// .colorpresentwrap ul li .purchasedcolor {
+//   width: 20px;
+//   height: 20px;
+//   background: #bdf9ca;
+// }
+
+// .colorpresentwrap ul li .availablecolor {
+//   width: 20px;
+//   height: 20px;
+//   background: #bdcff9;
+// }
+
+// .colorpresentwrap ul li .lockedcolor {
+//   width: 20px;
+//   height: 20px;
+//   background: #bfbfbf;
+// }
+
+// .colorpresentwrap ul li span {
+//   font-weight: 400;
+//   font-size: 16px;
+//   display: inline-block;
+//   margin-left: 5px;
+// }
+
+// .cust-formcoupon {
+//   background: #ffffff;
+//   margin-top: 30px;
+//   padding: 30px 20px;
+//   border-radius: 8px;
+// }
+
+// .addsurplusmore {
+//   margin-top: 25px;
+// }
+
+// .addsurplusmore a,
+// .addsurplusmore button {
+//   outline: none;
+//   box-shadow: none;
+//   background: linear-gradient(180deg, #67b0f9 0%, #368cf6 100%);
+//   border: 1px solid #67a8eb;
+//   border-radius: 5px;
+//   font-weight: 700;
+//   font-size: 14px;
+//   color: #fff;
+//   width: 100%;
+//   display: block;
+//   text-align: center;
+//   padding: 5px 10px;
+//   max-width: 110px;
+//   margin-left: auto;
+// }
+
+// .transactionlist-coupon {
+//   max-height: calc(100vh - 320px);
+//   overflow-y: auto;
+// }
+
+// .transactionlist-coupon table tr:first-child td {
+//   padding-top: 10px !important;
+// }
+
+// .transactionlist-coupon table th {
+//   font-weight: 600;
+//   font-size: 16px;
+//   color: #2f3031;
+//   border: 1px solid rgba(216, 216, 216, 0.5);
+//   padding: 5px;
+//   text-align: center;
+// }
+
+// .transactionlist-coupon table td {
+//   border: none;
+//   padding: 5px;
+//   text-align: center;
+//   color: #2f3031;
+//   font-weight: 400;
+//   font-size: 16px;
+//   border-right: 1px solid rgba(216, 216, 216, 0.5);
+//   border-bottom: 1px solid rgba(216, 216, 216, 0.5);
+// }
+
+// .bluebtncss {
+//   background: #5282f0;
+//   border-radius: 8px;
+//   font-weight: 400;
+//   font-size: 18px;
+//   color: #fff;
+//   display: inline-block;
+//   padding: 9px 20px;
+//   box-shadow: none;
+//   outline: none;
+//   line-height: normal;
+// }
+
+// .bluebtncss:hover {
+//   color: #fff;
+//   text-decoration: none;
+// }
+
+// .confirmbox-btn a,
+// .confirmbox-btn button {
+//   min-width: 150px;
+//   text-align: center;
+//   padding: 10px;
+//   display: inline-block;
+//   font-size: 18px;
+//   border-radius: 6px;
+//   outline: none;
+// }
+
+// .confirmbox-btn a:not(:last-child),
+// .confirmbox-btn button:not(:last-child) {
+//   margin-right: 25px;
+// }
+
+// .confirmbox-btn .outlinebtn {
+//   background: #ffffff;
+//   border: 1px solid #5282f0;
+//   color: #5282f0;
+// }
+
+// .confirmbox-btn .solidbtn {
+//   background: #5282f0;
+//   border: 1px solid #5282f0;
+//   color: #fff;
+// }
+
+// .cancel-tabbtn {
+//   outline: none;
+//   box-shadow: none;
+//   background: transparent;
+//   border: none;
+//   color: #5282f0;
+//   text-decoration: underline;
+//   font-weight: 700;
+//   font-size: 18px;
+// }
+
+// .customdeep-tablewrap {
+//   margin-top: 30px;
+//   padding: 15px 0px;
+// }
+
+// .customdeep-tableheadtop {
+//   display: flex;
+//   justify-content: space-between;
+//   padding: 0px 20px;
+//   margin-bottom: 30px;
+//   align-items: center;
+// }
+
+// .customdeep-tableheadtop h4 {
+//   font-weight: 400;
+//   font-size: 26px;
+//   letter-spacing: 0.437px;
+//   color: #5282f0;
+//   margin-bottom: 0px;
+// }
+
+// .customdeep-table table thead {
+//   background: rgba(82, 130, 240, 0.1);
+// }
+
+// .customdeep-table table thead th {
+//   font-weight: 500;
+//   font-size: 20px;
+//   color: #5282f0;
+//   border: 0px;
+//   text-align: center;
+// }
+
+// .customdeep-table table tbody tr:not(:first-child) td {
+//   border-top: 1px solid rgba(82, 129, 240, 0.2);
+// }
+
+// .customdeep-table table tbody tr td {
+//   border: 0px;
+//   font-weight: 400;
+//   font-size: 18px;
+//   color: #5282f0;
+//   text-align: center;
+// }
+
+// .customdeep-table table tbody tr td a {
+//   text-decoration: underline;
+//   font-weight: 700;
+//   font-size: 18px;
+// }
+
+// .customdeep-table table tbody tr td .dinreq-tabbtn {
+//   outline: none;
+//   box-shadow: none;
+//   background: transparent;
+//   border: none;
+//   color: #5282f0;
+//   text-decoration: underline;
+//   font-weight: 500;
+//   font-size: 18px;
+// }
+
+// .requestdinner-maintop {
+//   background: #ffffff;
+//   padding: 15px 20px;
+// }
+
+// .requestdinner-maintop .reqdinnbtn {
+//   float: right;
+// }
+
+// .requestdinner-maintop h4 {
+//   color: #221e1e;
+//   font-weight: 400;
+//   font-size: 26px;
+//   letter-spacing: 0.437px;
+//   margin-bottom: 10px;
+// }
+
+// .requestdinner-maintop p {
+//   color: #221e1e;
+//   font-size: 14px;
+//   font-weight: 400;
+//   margin-bottom: 0px;
+// }
+
+// .dinner-request-formwrap {
+//   padding: 30px 20px;
+// }
+
+// .dinner-request-formwrap .dinnerreq-maintop {
+//   margin-bottom: 30px;
+// }
+
+// .dinner-request-formwrap .dinnerreq-maintop h4 {
+//   color: #5282f0;
+//   font-size: 24px;
+//   font-weight: 600;
+//   margin-bottom: 10px;
+// }
+
+// .dinner-request-formwrap .dinnerreq-maintop p {
+//   color: rgba(82, 130, 240, 0.6);
+//   font-size: 14px;
+//   font-weight: 700;
+//   margin-bottom: 0px;
+// }
+
+// .account-teamdue {
+//   padding: 20px;
+//   max-width: 383px;
+//   width: 100%;
+// }
+
+// .account-teamdue .accountteam_dueamount {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// }
+
+// .account-teamdue .accountteam_dueamount p {
+//   font-weight: 400;
+//   font-size: 24px;
+//   color: #5282f0;
+// }
+
+// .account-teamdue .accountteam_dueamount h5 {
+//   font-weight: 700;
+//   font-size: 40px;
+//   color: #5282f0;
+// }
+
+// .account-departmentwrap {
+//   padding: 20px;
+//   border-top: 1px solid rgba(82, 129, 240, 0.2);
+// }
+
+// .account-departmentwrap .accountdepartbtnwrap {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .account-departmentwrap .accountdepartbtnwrap .couponformbtn a,
+// .account-departmentwrap .accountdepartbtnwrap .couponformbtn button {
+//   padding: 13px 10px;
+// }
+
+// .collectamount {
+//   justify-content: center;
+//   display: flex;
+//   align-items: center;
+// }
+
+// .collectamount input {
+//   margin-right: 5px;
+//   max-width: 100px;
+// }
+
+// .disabled-link {
+//   pointer-events: none;
+// }
+
+// .dinner_request_table tr td {
+//   white-space: unset !important;
+//   min-width: 150px;
+// }
+
+// #next-month-calendar,
+// #current-month-calendar {
+//   cursor: pointer;
+// }
+
+// .cancel-dinner-request-btn {
+//   cursor: pointer;
+// }
+
+// .dinner_request_table th {
+//   font-weight: bold;
+// }
+
+// .table_colorpresent {
+//   display: flex;
+//   align-items: center;
+//   padding-left: 30px;
+//   padding-bottom: 50px;
+// }
+
+// .table_colorpresent .selectall_tablecheck .selectcheckall {
+//   display: flex;
+//   align-items: center;
+//   position: relative;
+//   padding-left: 25px;
+//   margin-bottom: 0px;
+//   margin-right: 20px;
+//   cursor: pointer;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   user-select: none;
+//   font-weight: 700;
+//   font-size: 16px;
+//   color: #4e5155;
+//   white-space: nowrap;
+// }
+
+// .table_colorpresent .selectall_tablecheck .selectcheckall input {
+//   position: absolute;
+//   top: 0px;
+//   opacity: 0;
+//   cursor: pointer;
+// }
+
+// .table_colorpresent .selectall_tablecheck .selectcheckall .checkmark {
+//   position: absolute;
+//   top: 3px;
+//   left: 0;
+//   height: 20px;
+//   width: 20px;
+//   border: 1px solid #4e5155;
+// }
+
+// .table_colorpresent
+//   .selectall_tablecheck
+//   .selectcheckall
+//   :hover
+//   input
+//   ~ .checkmark {
+//   background-color: #ccc;
+// }
+
+// .table_colorpresent
+//   .selectall_tablecheck
+//   .selectcheckall
+//   input:checked
+//   ~ .checkmark {
+//   background-color: #2196f3;
+// }
+
+// .table_colorpresent .selectall_tablecheck .selectcheckall .checkmark:after {
+//   content: "";
+//   position: absolute;
+//   display: none;
+// }
+
+// .table_colorpresent
+//   .selectall_tablecheck
+//   .selectcheckall
+//   input:checked
+//   ~ .checkmark:after {
+//   display: block;
+// }
+
+// .table_colorpresent .selectall_tablecheck .selectcheckall .checkmark:after {
+//   left: 7px;
+//   top: 2px;
+//   width: 6px;
+//   height: 12px;
+//   border: solid white;
+//   border-width: 0 2px 2px 0;
+//   transform: rotate(45deg);
+// }
+
+// .all_box_clickable {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   z-index: 1;
+// }
+
+// .collect-amount {
+//   border-style: solid;
+//   border-width: 1px;
+//   border-color: #d8d8d8;
+//   max-width: 100px;
+//   min-height: 30px;
+// }
+
+// .update-collect-amount {
+//   margin-left: 10px;
+//   background-color: #26b4ff;
+//   color: #fff;
+//   border: none;
+//   cursor: pointer;
+//   padding: 3px 10px;
+// }
+
+// .amount-due {
+//   color: #3246d3;
+//   text-decoration: underline !important;
+// }
+
+// .disable-click {
+//   pointer-events: none;
+//   cursor: not-allowed;
+//   opacity: 0.7;
+// }
+
+// .user-collect-amount input::-webkit-outer-spin-button,
+// .user-collect-amount input::-webkit-inner-spin-button {
+//   -webkit-appearance: none;
+//   margin: 0;
+// }
+
+// .user-collect-amount input[type="number"] {
+//   -moz-appearance: textfield;
+// }
+
+// #daily-surplus::-webkit-outer-spin-button,
+// #daily-surplus::-webkit-inner-spin-button {
+//   -webkit-appearance: none;
+//   margin: 0;
+// }
+
+// #daily-surplus[type="number"] {
+//   -moz-appearance: textfield;
+// }
+
+// #today-surplus::-webkit-outer-spin-button,
+// #today-surplus::-webkit-inner-spin-button {
+//   -webkit-appearance: none;
+//   margin: 0;
+// }
+
+// #today-surplus[type="number"] {
+//   -moz-appearance: textfield;
+// }
+
+// .amounduefood {
+//   padding: 0px 20px 0px;
+//   border-bottom: 1px solid #f3f7fc;
+//   margin-bottom: 20px;
+// }
+
+// .minheightreset .modal-content {
+//   min-height: auto !important;
+// }
+
+// .hide {
+//   display: none;
+// }
+
+// .show-collected-amount {
+//   font-size: 25px;
+//   font-weight: bold;
+// }
+
+// /* Media Query */
+
+// @media (max-width: 1199px) {
+//   .calendar-innerbox .calender-tablewrap .calendar-table tr td {
+//     height: 90px;
+//   }
+
+//   .calendar-innerbox .calendar-header {
+//     display: block;
+//   }
+
+//   .calendar-innerbox .calendar-header .calendar_month {
+//     margin-bottom: 10px;
+//   }
+
+//   .colorpresentwrap ul li {
+//     margin-bottom: 5px;
+//   }
+
+//   .amntduebtnpart {
+//     flex-direction: column-reverse;
+//     /* align-items: flex-start; */
+//   }
+
+//   .amntduebtnpart .amntdueviewbtn {
+//     margin-bottom: 10px;
+//     background: linear-gradient(180deg, #67b0f9 0%, #368cf6 100%);
+//     border: 1px solid #67a8eb;
+//     color: #fff;
+//   }
+
+//   .table_colorpresent {
+//     padding-left: 0px;
+//     padding-bottom: 30px;
+//   }
+
+//   .amountdue .amountdue-toppart h4 {
+//     font-size: 20px;
+//   }
+
+//   .amountdue .availamountdue {
+//     font-size: 28px;
+//   }
+
+//   .amountdue .amountdue-toppart {
+//     flex-direction: column-reverse;
+//   }
+
+//   .purchcoupwrap {
+//     min-height: 215px;
+//   }
+// }
+
+// @media (max-width: 991px) {
+// }
+
+// @media (max-width: 776px) {
+//   .calendar-day .calender_btn .dateno {
+//     font-size: 16px;
+//   }
+// }
+
+// @media (max-width: 576px) {
+//   .calendar-innerbox .calender-tablewrap .calendar-table tr td {
+//     height: 80px;
+//   }
+
+//   .calendar-day .calender_btn {
+//     padding: 5px 2px;
+//   }
+
+//   .calendar-day .calender_btn .couponno {
+//     width: calc(100% - 3px);
+//     top: auto;
+//     bottom: 10px;
+//     transform: translate(-50%, 0px);
+//     height: auto;
+//     text-align: center;
+//     font-size: 10px;
+//     padding: 3px 2px;
+//   }
+
+//   .calendar-day .calender_btn .couponno span {
+//     display: block;
+//     white-space: pre-wrap;
+//   }
+
+//   .calendar-day .calender_btn .dateno {
+//     right: 3px;
+//     font-size: 14px;
+//   }
+
+//   .calendar-day .calender_btn .calen-menu {
+//     padding-left: 2px;
+//   }
+
+//   .calendar-day .calender_btn .calen-menu a {
+//     font-size: 12px;
+//   }
+
+//   .calendar-day .calender_btn .calen-menu .dropdown-menu {
+//     padding: 10px 7px;
+//     min-width: 7rem;
+//   }
+
+//   .calendar-day .calender_btn .calen-menu .dropdown-menu .dropdown-item {
+//     font-size: 14px;
+//     padding: 4px 10px;
+//   }
+
+//   .calendar-innerbox {
+//     padding: 15px 10px;
+//   }
+
+//   .calendar-day .calender_btn .calend-righttop {
+//     position: absolute;
+//     left: 1px;
+//     top: 2px;
+//   }
+
+//   .calendar-day .calender_btn .calend-checkbox .checkmark {
+//     width: 15px;
+//     height: 15px;
+//   }
+
+//   .cust-formcoupon,
+//   .amountdue {
+//     padding: 15px;
+//     margin-bottom: 20px;
+//     min-height: auto;
+//   }
+
+//   .amountdue .amountdue-toppart h4 {
+//     font-size: 16px;
+//   }
+
+//   .amountdue .amountdue-toppart .avabcoupon {
+//     font-size: 14px;
+//   }
+
+//   .amntduebtnpart {
+//     margin-top: 20px;
+//   }
+
+//   .amountdue .availamountdue {
+//     font-size: 28px;
+//   }
+
+//   .purchcoupwrap {
+//     min-height: auto;
+//   }
+
+//   .calendar-day .calender_btn .calend-checkbox .checkmark:after {
+//     left: 4px;
+//     top: 0px;
+//     width: 6px;
+//     height: 10px;
+//   }
+
+//   .colorpresentwrap ul li span {
+//     font-size: 14px;
+//   }
+// }

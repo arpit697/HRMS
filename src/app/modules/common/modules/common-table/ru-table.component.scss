@@ -145,7 +145,6 @@ table {
   padding: 1em 2.5em;
 
   th {
-    font-family: "Lato";
     font-size: 14px;
     color: #96a5b8;
     font-weight: 500;
@@ -155,7 +154,6 @@ table {
   }
 
   td {
-    font-family: "Lato";
     font-size: 14px;
     color: #606167;
     font-weight: 500;
@@ -262,7 +260,8 @@ table {
   }
 }
 
-.my-dsr {
+.my-dsr,
+.my-leave-table {
   th,
   td {
     font-size: 14px;
@@ -275,6 +274,14 @@ table {
     background-color: white;
   }
 
+  tr {
+    &:nth-child(odd) {
+      background-color: rgba(24, 28, 33, 0.025);
+    }
+  }
+}
+
+.my-dsr {
   td {
     .action-button {
       height: 1.5em;
@@ -289,10 +296,30 @@ table {
       }
     }
   }
+}
 
-  tr {
-    &:nth-child(odd) {
-      background-color: rgba(24, 28, 33, 0.025);
+.my-leave-table {
+  td {
+    .action-button {
+      padding: 0;
+      height: auto;
+      background: transparent;
+      box-shadow: 0 0 0 1px #28c3d7 inset;
+      border-radius: 0;
+    }
+    mat-icon {
+      padding: 5px;
+      margin: 0;
+    }
+    .second-button-icon {
+      color: red;
+    }
+    .first-button-icon {
+      color: #28c3d7;
+    }
+
+    ::ng-deep .mdc-button {
+      min-width: 0 !important;
     }
   }
 }

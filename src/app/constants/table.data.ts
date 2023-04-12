@@ -357,3 +357,223 @@ export const ASSET_DECLARATION_TABLE_DATA = [
     added: '2022-02-05',
   },
 ];
+
+export const MANUAL_PUNCH_TABLE_COLUMN = [
+  {
+    columnDef: 'edit',
+    header: 'Edit',
+    cell: (element: Record<string, any>) => `${element['edit']}`,
+  },
+  {
+    columnDef: 'manual_punch_date',
+    header: 'Manual Punch Date',
+    cell: (element: Record<string, any>) => `${element['manual_punch_date']}`,
+  },
+  {
+    columnDef: 'in_time',
+    header: 'In Time',
+    cell: (element: Record<string, any>) => `${element['in_time']}`,
+  },
+  {
+    columnDef: 'out_time',
+    header: 'Out Time',
+    cell: (element: Record<string, any>) => `${element['out_time']}`,
+  },
+];
+
+export const MANUAL_PUNCH_TABLE_DATA = [];
+
+export const PUNCH_LOG_TABLE_COULMN = [
+  {
+    columnDef: 'name',
+    header: 'Name',
+    cell: (element: Record<string, any>) => `${element['name']}`,
+  },
+  {
+    columnDef: 'punch_time',
+    header: 'Punch Time',
+    cell: (element: Record<string, any>) => `${element['punch_time']}`,
+  },
+  {
+    columnDef: 'direction',
+    header: 'Direction',
+    cell: (element: Record<string, any>) => `${element['direction']}`,
+  },
+];
+
+export const PUNCH_LOG_TABLE_DATA = [];
+
+export const LEAVE_TABLE_COLUMN = [
+  {
+    columnDef: 'action',
+    header: 'Action',
+    cell: (element: Record<string, any>) => `${element['action']}`,
+    type: 'two-buttons-action',
+  },
+  {
+    columnDef: 'leave_type',
+    header: 'Leave Type',
+    cell: (element: Record<string, any>) => `${element['leave_type']}`,
+  },
+  {
+    columnDef: 'request_from',
+    header: 'Request From',
+    cell: (element: Record<string, any>) => `${element['request_from']}`,
+  },
+  {
+    columnDef: 'request_to',
+    header: 'Request To',
+    cell: (element: Record<string, any>) => `${element['request_to']}`,
+  },
+  {
+    columnDef: 'applied_on',
+    header: 'Applied On',
+    cell: (element: Record<string, any>) => `${element['applied_on']}`,
+  },
+  {
+    columnDef: 'status',
+    header: 'Status',
+    cell: (element: Record<string, any>) => `${element['status']}`,
+  },
+  {
+    columnDef: 'level_one',
+    header: 'Level One',
+    cell: (element: Record<string, any>) => `${element['level_one']}`,
+  },
+  {
+    columnDef: 'level_two',
+    header: 'Level Two',
+    cell: (element: Record<string, any>) => `${element['level_two']}`,
+  },
+];
+
+export const LEAVE_TABLE_DATA = [
+  {
+    first_button_icon: 'arrow_circle_right',
+    second_button_icon: 'refresh',
+    leave_type: 'Annual',
+    request_from: 'John Doe',
+    request_to: 'Manager',
+    applied_on: '2022-01-01',
+    status: 'Pending',
+    level_one: 'Jane Smith',
+    level_two: 'David Lee',
+  },
+  // {
+  //   action: 'Edit',
+  //   leave_type: 'Sick',
+  //   request_form: 'Sarah Johnson',
+  //   request_to: 'Supervisor',
+  //   applied_on: '2022-02-15',
+  //   status: 'Approved',
+  //   level_one: 'Mark Davis',
+  //   level_two: 'Nancy Brown',
+  // },
+  // {
+  //   action: 'Delete',
+  //   leave_type: 'Maternity',
+  //   request_form: 'Emily Wilson',
+  //   request_to: 'HR Manager',
+  //   applied_on: '2022-03-10',
+  //   status: 'Rejected',
+  //   level_one: 'Alex Rodriguez',
+  //   level_two: 'Samuel Kim',
+  // },
+  // {
+  //   action: 'View',
+  //   leave_type: 'Bereavement',
+  //   request_form: 'Chris Evans',
+  //   request_to: 'Team Lead',
+  //   applied_on: '2022-04-05',
+  //   status: 'Pending',
+  //   level_one: 'Olivia Parker',
+  //   level_two: 'Ryan Lee',
+  // },
+  // {
+  //   action: 'Edit',
+  //   leave_type: 'Personal',
+  //   request_form: 'Daniel Brown',
+  //   request_to: 'Manager',
+  //   applied_on: '2022-05-20',
+  //   status: 'Approved',
+  //   level_one: 'Jessica Kim',
+  //   level_two: 'Erica Davis',
+  // },
+];
+
+export const DSR_TABLE_COLUMN = [
+  {
+    columnDef: 'serial_number',
+    header: 'Sr.No.',
+    cell: (element: Record<string, any>) => `${element['serial_number']}`,
+  },
+  {
+    columnDef: 'emp_name',
+    header: 'Employee Name',
+    cell: (element: Record<string, any>) => `${element['emp_name']}`,
+  },
+  {
+    columnDef: 'emp_id',
+    header: 'Employee Id',
+    cell: (element: Record<string, any>) => `${element['emp_id']}`,
+  },
+  {
+    columnDef: 'email',
+    header: 'email',
+    cell: (element: Record<string, any>) => `${element['email']}`,
+  },
+  {
+    columnDef: 'employment_type',
+    header: 'Employment Type',
+    cell: (element: Record<string, any>) => `${element['employment_type']}`,
+  },
+  {
+    columnDef: 'date',
+    header: 'Date',
+    cell: (element: Record<string, any>) => `${element['date']}`,
+  },
+  {
+    columnDef: 'total_logged_hr',
+    header: 'Total(logged) Hr',
+    cell: (element: Record<string, any>) => `${element['total_logged_hr']}`,
+  },
+  {
+    columnDef: 'final_approval',
+    header: 'Final Approval',
+    cell: (element: Record<string, any>) => `${element['final_approval']}`,
+    type: 'button-action',
+  },
+];
+
+export const DSR_TABLE_DATA = [
+  {
+    serial_number: 1,
+    emp_name: 'John Smith',
+    emp_id: 'A123',
+    email: 'john.smith@example.com',
+    employment_type: 'Full-time',
+    date: '2022-03-15',
+    total_logged_hr: 8,
+    final_approval: 'Yes',
+  },
+  {
+    serial_number: 2,
+    emp_name: 'Jane Doe',
+    emp_id: 'B456',
+    email: 'jane.doe@example.com',
+    employment_type: 'Part-time',
+    date: '2022-03-15',
+    total_logged_hr: 4,
+    final_approval: 'Yes',
+  },
+  {
+    serial_number: 3,
+    emp_name: 'Bob Johnson',
+    emp_id: 'C789',
+    email: 'bob.johnson@example.com',
+    employment_type: 'Full-time',
+    date: '2022-03-16',
+    total_logged_hr: 6,
+    final_approval: 'No',
+  },
+];

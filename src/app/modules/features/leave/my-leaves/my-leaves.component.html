@@ -4,45 +4,83 @@
     <div>
       <mat-card-subtitle>{{
         item.type + item.claimed + "/" + item.total
-        }}</mat-card-subtitle>
+      }}</mat-card-subtitle>
       <mat-card-subtitle>{{ item.type }}</mat-card-subtitle>
     </div>
   </mat-card>
 </div>
 <br />
 <br />
-<mat-expansion-panel hideToggle>
+<mat-expansion-panel [disabled]="true" [expanded]="panelOpenState" hideToggle>
   <mat-expansion-panel-header>
     <mat-panel-title class="table-title"> Add Leave </mat-panel-title>
-    <button mat-button class="add-button">+ Add</button>
+    <div class="flex ai-center jc-center">
+      <button (click)="togglePanel()" mat-button class="add-button">
+        + Add
+      </button>
+    </div>
   </mat-expansion-panel-header>
-  <div class="expansion p-24">
+  <div [formGroup]="leaveForm" class="expansion p-24">
     <div>
       <div>
         <mat-card-subtitle class="c-label">Leave Type</mat-card-subtitle>
         <mat-form-field class="form-field" appearance="outline">
-          <mat-select>
-            <mat-option></mat-option>
+          <mat-select formControlName="type">
+            <mat-option *ngFor="let type of leaveType" value="{{ type }}">{{
+              type
+            }}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
-      <div>
+      <div *ngIf="false" class="flex g-1 ai-center">
+        <mat-form-field appearance="outline">
+          <input matInput [ngxTimepicker]="start_time" />
+          <ngx-material-timepicker #start_time></ngx-material-timepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <input matInput [ngxTimepicker]="end_time" />
+          <ngx-material-timepicker #end_time></ngx-material-timepicker>
+        </mat-form-field>
+      </div>
+      <div class="flex flex-wrap g-3 ai-center">
         <mat-checkbox>Half Day ?</mat-checkbox>
+        <mat-radio-group
+          formControlName="half_day"
+          class="flex g-1 p-8"
+          aria-label="Select an option"
+        >
+          <mat-radio-button value="1">1st Half</mat-radio-button>
+          <mat-radio-button value="2">2nd Half</mat-radio-button>
+        </mat-radio-group>
       </div>
       <div class="date-grid">
         <div>
           <mat-card-subtitle class="c-label">Start Date</mat-card-subtitle>
           <mat-form-field appearance="outline">
-            <input matInput [matDatepicker]="startDate" />
-            <mat-datepicker-toggle matIconSuffix [for]="startDate"></mat-datepicker-toggle>
+            <input
+              formControlName="start_day"
+              matInput
+              [matDatepicker]="startDate"
+            />
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="startDate"
+            ></mat-datepicker-toggle>
             <mat-datepicker #startDate></mat-datepicker>
           </mat-form-field>
         </div>
         <div>
           <mat-card-subtitle class="c-label">End Date</mat-card-subtitle>
           <mat-form-field appearance="outline">
-            <input matInput [matDatepicker]="endDate" />
-            <mat-datepicker-toggle matIconSuffix [for]="endDate"></mat-datepicker-toggle>
+            <input
+              formControlName="end_day"
+              matInput
+              [matDatepicker]="endDate"
+            />
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="endDate"
+            ></mat-datepicker-toggle>
             <mat-datepicker #endDate></mat-datepicker>
           </mat-form-field>
         </div>
@@ -50,77 +88,45 @@
       <div>
         <mat-card-subtitle class="c-label">Remarks</mat-card-subtitle>
         <mat-form-field appearance="outline">
-          <input matInput type="text">
+          <input formControlName="remark" matInput type="text" />
         </mat-form-field>
+      </div>
+
+      <div>
+        <mat-card-subtitle class="c-label">Upload Document</mat-card-subtitle>
+        <mat-card class="custom-file-input-container">
+          <input
+            class="custom-file-input"
+            (change)="getDocument($event)"
+            type="file"
+          />
+        </mat-card>
       </div>
     </div>
     <div>
       <mat-card-subtitle class="c-label">Description</mat-card-subtitle>
-      <ckeditor [(ngModel)]="content" [config]="editorConfig"></ckeditor>
+      <ckeditor formControlName="detail" [config]="editorConfig"></ckeditor>
     </div>
     <mat-card-actions class="g-2">
-      <button mat-raised-button class="add">Add</button>
-      <button mat-raised-button class="cancel">Cancel</button>
+      <button mat-raised-button (click)="submitHandler()" class="add">
+        Add
+      </button>
+      <button mat-raised-button (click)="cancelHandler()" class="cancel">
+        Cancel
+      </button>
     </mat-card-actions>
   </div>
 </mat-expansion-panel>
-<br>
+<br />
 <mat-card>
   <mat-card-title class="table-title"> List All Leaves </mat-card-title>
-  <app-ru-table class="p-12" [tableColumns]="tableColumns" [tableData]="tableData" [isPageable]="true"></app-ru-table>
+  <app-ru-table
+    class="p-12"
+    [tableColumns]="tableColumns"
+    [tableData]="tableData"
+    [TableClass]="'my-leave-table'"
+    (clickHandler)="editDelete($event)"
+    [isPageable]="true"
+  ></app-ru-table>
 </mat-card>
 
-<!-- <div class="line">
-  <span class="circle">
-    <span class="number">1 : Suyash Saxena</span>
-  </span>
-  <span class="circle">
-    <span class="number">2 : HR (Human Resource )</span>
-  </span>
-</div>
-<div class="detail-grid">
-  <div>
-    <mat-card>
-      <mat-card-title class="table-title">Leave Details</mat-card-title>
-      <mat-list role="list">
-        <mat-list-item class="list-item" role="listitem" *ngFor="let item of leaveDetail">
-          <div class="flex jc-between">
-            <mat-card-subtitle class="tag">{{item.tag}}</mat-card-subtitle>
-            <mat-card-subtitle class="detail">{{item.detail}}</mat-card-subtitle>
-          </div>
-        </mat-list-item>
-        <mat-card class="p-16">
-          <mat-card-subtitle>
-            <span>Reason</span>
-            <br>
-            <br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-            non proident, sunt in culpa qui officia deserunt mollit anim id est
-          </mat-card-subtitle>
-        </mat-card>
-      </mat-list>
-    </mat-card>
-  </div>
-  <div>
-    <mat-card>
-      <mat-card-title class="table-title">Approval Status</mat-card-title>
-      <mat-list role="list">
-        <mat-list-item class="list-item" role="listitem">
-          <div class="flex jc-between">
-            <mat-card-subtitle class="tag">Suyash Saxena</mat-card-subtitle>
-            <mat-card-subtitle>Pending</mat-card-subtitle>
-          </div>
-        </mat-list-item>
-        <mat-list-item class="list-item" role="listitem">
-          <div class="flex jc-between ">
-            <mat-card-subtitle class="tag">HR (Human Resourse)</mat-card-subtitle>
-            <mat-card-subtitle>Pending</mat-card-subtitle>
-          </div>
-        </mat-list-item>
-      </mat-list>
-    </mat-card>
-  </div>
-</div> -->

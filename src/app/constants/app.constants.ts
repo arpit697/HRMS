@@ -418,12 +418,12 @@ export const GALLERY_COLLECTION = [
 
 export const NEW_FAMILY_MEMBERS = [
   {
-    name: 'Nandani',
+    name: 'Alisha',
     path: '../../assets/employees/profile_1584437739.jpg',
     role: 'Social Media Marketing : Social Media Team',
   },
   {
-    name: 'Ananya',
+    name: 'Aakriti',
     path: '../../assets/employees/profile_1674213230.jpeg',
     role: 'Developer : Angular',
   },

@@ -66,3 +66,18 @@ export const ASSETS_QUANTITY_DROP_DOWN = [1, 2, 3, 4, 5];
 export const ASSETS_PRIORITY_DROP_DOWN = ['Low', 'Medium', 'High'];
 
 export const ALLOCATION_TYPE_DROP_DOWN = ['Permanent', 'Temporary'];
+
+export const LEAVE_TYPE_DROP_DOWN = [
+  'Planned Leave (CL)',
+  'Privileged Leave',
+  'Emergency Leave (CL)',
+  'Short Leaves',
+  'All Remaining Leaves (11.5)',
+];
+
+export const DSR_PROJECT_DROP_DOWN = [
+  'Training Project React JS',
+  'Miscellaneous',
+  'Interview',
+];
+

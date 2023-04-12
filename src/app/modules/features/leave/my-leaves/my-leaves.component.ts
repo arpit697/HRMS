@@ -1,12 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { A } from '@fullcalendar/core/internal-common';
+import { LEAVE_TYPE_DROP_DOWN } from 'src/app/constants/drop.down.data';
+import { EDITOR_CONFIG } from 'src/app/constants/editor.config';
+import { LEAVE_DETAIL } from 'src/app/constants/routes';
+import {
+  LEAVE_TABLE_COLUMN,
+  LEAVE_TABLE_DATA,
+} from 'src/app/constants/table.data';
+import { DataService } from 'src/app/services/data/data.service';
+import { FormValidationService } from 'src/app/services/forms/form.validation.service';
+import { UtilityService } from 'src/app/services/utility/utility.service';
 
 @Component({
   selector: 'app-my-leaves',
   templateUrl: './my-leaves.component.html',
   styleUrls: ['./my-leaves.component.scss'],
 })
-export class MyLeavesComponent {
+export class MyLeavesComponent implements OnInit {
+  leaveForm!: FormGroup;
+  leaveType: any;
+  file_ulr: any;
+  panelOpenState: boolean = false;
+  content: string = '';
+  editorConfig = { ...EDITOR_CONFIG };
+  tableColumns: Array<any> = [...LEAVE_TABLE_COLUMN];
+  tableData = [...LEAVE_TABLE_DATA];
   datePickers = [
     { label: 'Start Date', name: 'startDate' },
     { label: 'End Date', name: 'endDate' },
@@ -19,140 +39,64 @@ export class MyLeavesComponent {
     { type: 'Short Leave', total: 10, claimed: 0 },
   ];
 
-  content: string = '';
-  editorConfig = {
-    toolbar: [
-      { name: 'document', items: ['Print'] },
-      { name: 'clipboard', items: ['Undo', 'Redo'] },
-      { name: 'styles', items: ['Styles', 'Format'] },
-      {
-        name: 'basicstyles',
-        items: ['Bold', 'Italic', 'Strike', '-', 'RemoveFormat'],
-      },
-      {
-        name: 'paragraph',
-        items: [
-          'NumberedList',
-          'BulletedList',
-          '-',
-          'Outdent',
-          'Indent',
-          '-',
-          'Blockquote',
-        ],
-      },
-      { name: 'links', items: ['Link', 'Unlink'] },
-      { name: 'insert', items: ['Image', 'Table', 'HorizontalRule'] },
-      { name: 'tools', items: ['Maximize'] },
-      { name: 'editing', items: ['Scayt'] },
-      { name: 'mode', items: ['Source'] },
-    ],
-  };
+  constructor(
+    private _formBuilder: FormBuilder,
+    private _formValidation: FormValidationService,
+    private _dataService: DataService,
+    private utility: UtilityService,
+    private _router: Router
+  ) {}
+  ngOnInit(): void {
+    this.leaveType = LEAVE_TYPE_DROP_DOWN;
+    this.createForm();
+  }
 
-  tableColumns: Array<any> = [
-    {
-      columnDef: 'action',
-      header: 'Action',
-      cell: (element: Record<string, any>) => `${element['action']}`,
-    },
-    {
-      columnDef: 'leave_type',
-      header: 'Leave Type',
-      cell: (element: Record<string, any>) => `${element['level_type']}`,
-    },
-    {
-      columnDef: 'request_form',
-      header: 'Request Form',
-      cell: (element: Record<string, any>) => `${element['request_form']}`,
-    },
-    {
-      columnDef: 'request_to',
-      header: 'Request To',
-      cell: (element: Record<string, any>) => `${element['request_to']}`,
-    },
-    {
-      columnDef: 'applied_on',
-      header: 'Applied On',
-      cell: (element: Record<string, any>) => `${element['applied_on']}`,
-    },
-    {
-      columnDef: 'status',
-      header: 'Status',
-      cell: (element: Record<string, any>) => `${element['status']}`,
-    },
-    {
-      columnDef: 'level_one',
-      header: 'Level One',
-      cell: (element: Record<string, any>) => `${element['level_one']}`,
-    },
-    {
-      columnDef: 'level_two',
-      header: 'Level Two',
-      cell: (element: Record<string, any>) => `${element['level_two']}`,
-    },
-  ];
+  createForm() {
+    this.leaveForm = this._formBuilder.group({
+      type: [],
+      half_day: [],
+      start_day: [],
+      end_day: [],
+      remark: [],
+      document: [],
+      detail: [],
+    });
+  }
 
-  tableData = [
-    {
-      action: 'View',
-      leave_type: 'Annual',
-      request_form: 'John Doe',
-      request_to: 'Manager',
-      applied_on: '2022-01-01',
-      status: 'Pending',
-      level_one: 'Jane Smith',
-      level_two: 'David Lee',
-    },
-    {
-      action: 'Edit',
-      leave_type: 'Sick',
-      request_form: 'Sarah Johnson',
-      request_to: 'Supervisor',
-      applied_on: '2022-02-15',
-      status: 'Approved',
-      level_one: 'Mark Davis',
-      level_two: 'Nancy Brown',
-    },
-    {
-      action: 'Delete',
-      leave_type: 'Maternity',
-      request_form: 'Emily Wilson',
-      request_to: 'HR Manager',
-      applied_on: '2022-03-10',
-      status: 'Rejected',
-      level_one: 'Alex Rodriguez',
-      level_two: 'Samuel Kim',
-    },
-    {
-      action: 'View',
-      leave_type: 'Bereavement',
-      request_form: 'Chris Evans',
-      request_to: 'Team Lead',
-      applied_on: '2022-04-05',
-      status: 'Pending',
-      level_one: 'Olivia Parker',
-      level_two: 'Ryan Lee',
-    },
-    {
-      action: 'Edit',
-      leave_type: 'Personal',
-      request_form: 'Daniel Brown',
-      request_to: 'Manager',
-      applied_on: '2022-05-20',
-      status: 'Approved',
-      level_one: 'Jessica Kim',
-      level_two: 'Erica Davis',
-    },
-  ];
+  togglePanel() {
+    this.panelOpenState = !this.panelOpenState;
+  }
+  cancelHandler() {
+    this.panelOpenState = !this.panelOpenState;
+  }
+  submitHandler() {
+    console.log(this.leaveForm.value);
+  }
+  editDelete(event: any) {
+    if (event.click_type == 'edit') {
+      this._dataService.leaveDetail = { ...event };
+      event = { ...event, id: this.utility.generateRandomNumber() };
+      this._router.navigate([LEAVE_DETAIL.fullUrl, event.id]);
+    }
+    if (event.click_type == 'delete') {
+      console.log('delete');
+    }
+  }
 
-
-  leaveDetail = [
-    {tag :"Employee Name" , detail : 'Arpit Dwivedi (AI1558)'},
-    {tag :"Leave Type" , detail : 'Short Leaves'},
-    {tag :"Leave Duration" , detail : '5:00 PM - 7:00 PM'},
-    {tag :"Applied Duration" , detail : 'Mar-17-2023'},
-    {tag :"Start Date" , detail : 'Mar-17-2023'},
-    {tag :"End Date" , detail : 'Mar-17-2023'},
-    {tag :"Uploaded " , detail : ''},
-  ]
+  getDocument(event: any) {
+    this.utility
+      .readURL(event, ['application/msword', 'application/pdf', 'text/plain'])
+      .then((result: any) => {
+        this.file_ulr = result;
+        this.utility.bar('Resume Uploaded Successfully', '', 'green-snackbar');
+      })
+      .catch((error) => {
+        this.utility.bar(
+          'The attachment must be a file of type: msword, pdf, plain text',
+          '',
+          'red-snackbar'
+        );
+        console.error(error);
+      });
+  }
 }
