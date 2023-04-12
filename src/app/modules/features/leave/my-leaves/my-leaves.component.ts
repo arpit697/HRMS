@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { A } from '@fullcalendar/core/internal-common';
@@ -9,6 +9,7 @@ import {
   LEAVE_TABLE_COLUMN,
   LEAVE_TABLE_DATA,
 } from 'src/app/constants/table.data';
+import { RuTableComponent } from 'src/app/modules/common/modules/common-table/ru-table.component';
 import { DataService } from 'src/app/services/data/data.service';
 import { FormValidationService } from 'src/app/services/forms/form.validation.service';
 import { UtilityService } from 'src/app/services/utility/utility.service';
@@ -27,6 +28,7 @@ export class MyLeavesComponent implements OnInit {
   editorConfig = { ...EDITOR_CONFIG };
   tableColumns: Array<any> = [...LEAVE_TABLE_COLUMN];
   tableData = [...LEAVE_TABLE_DATA];
+  @ViewChild(RuTableComponent) tableComponent!: RuTableComponent<any>;
   datePickers = [
     { label: 'Start Date', name: 'startDate' },
     { label: 'End Date', name: 'endDate' },
@@ -51,6 +53,11 @@ export class MyLeavesComponent implements OnInit {
     this.createForm();
   }
 
+  ngAfterViewInit(): void {
+    // set the table data in the child component
+    this.tableComponent.tableData = this.tableData;
+  }
+
   createForm() {
     this.leaveForm = this._formBuilder.group({
       type: [],
@@ -70,7 +77,20 @@ export class MyLeavesComponent implements OnInit {
     this.panelOpenState = !this.panelOpenState;
   }
   submitHandler() {
-    console.log(this.leaveForm.value);
+    let obj: any = {
+      first_button_icon: 'arrow_circle_right',
+      second_button_icon: 'refresh',
+      leave_type: 'Annual',
+      request_from: 'John Doe',
+      request_to: 'Manager',
+      applied_on: '2022-01-01',
+      status: 'Pending',
+      level_one: 'Jane Smith',
+      level_two: 'David Lee',
+    };
+
+    this.tableData.push(obj);
+    this.tableComponent.dataSource.data = this.tableData; // update the data source
   }
   editDelete(event: any) {
     if (event.click_type == 'edit') {
