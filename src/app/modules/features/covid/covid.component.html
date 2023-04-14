@@ -1,0 +1,61 @@
+<div class="form-container">
+  <mat-card>
+    <div class="form-header">
+      <owl-carousel-o [options]="topCarouselLeft">
+        <ng-template carouselSlide *ngFor="let item of covidInstruction">
+          <div class="carousel-warpper flex jc-center ai-center">
+            <div class="carousel-item p-24">
+              <mat-card-title class="heading">{{ item.title }}</mat-card-title>
+              <mat-card-subtitle class="content">
+                {{ item.content }}
+              </mat-card-subtitle>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </mat-card>
+  <mat-card class="form p-24">
+    <div class="form-content">
+      <mat-card-title class="form-title"> Need Help! </mat-card-title>
+      <mat-card-subtitle class="form-sub-title">
+        Let us know if you are facing any issue because of the lockdown, We will
+        be giving our best to take care of your problems, Please fill the form
+        below and provide the required details, Concerned person will get in
+        touch with you on the earliest.
+      </mat-card-subtitle>
+      <div class="form-group">
+        <mat-card-subtitle class="c-label">Title</mat-card-subtitle>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Enter your mobile number" />
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-card-subtitle class="c-label">Mobile No.</mat-card-subtitle>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Enter your mobile number" />
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-card-subtitle class="c-label">address</mat-card-subtitle>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Enter your mobile number" />
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-card-subtitle class="c-label">Description</mat-card-subtitle>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Enter your mobile number" />
+        </mat-form-field>
+      </div>
+      <mat-card-actions class="button-actions jc-end g-1 p-24">
+        <button type="button" (click)="close()" class="button-primary" mat-raised-button>
+          Cancel
+        </button>
+        <button type="submit" (click)="submit()" class="button-cancel" mat-raised-button>
+          Submit
+        </button>
+      </mat-card-actions>
+    </div>
+  </mat-card>
+</div>

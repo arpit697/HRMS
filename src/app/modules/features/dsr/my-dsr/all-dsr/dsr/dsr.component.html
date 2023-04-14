@@ -1,6 +1,13 @@
 <mat-card>
-    <mat-card-subtitle class="table-title">{{'Arpit Dwivedi | DSR | 01 , Jan 1970'}}</mat-card-subtitle>
-    <div class="p-12">
-        <app-ru-table [tableColumns]="tableColumns" [tableData]="tableData"></app-ru-table>
-    </div>
+  <mat-card-subtitle class="table-title">{{
+    "Arpit Dwivedi | DSR | 01 , Jan 1970"
+  }}</mat-card-subtitle>
+  <div class="p-12">
+    <app-ru-table
+      [tableColumns]="tableColumns"
+      [tableData]="tableData"
+      [TableClass]="'dsr-detail-table'"
+      (clickHandler)="edit($event)"
+    ></app-ru-table>
+  </div>
 </mat-card>

@@ -135,4 +135,8 @@ export class UtilityService {
     const randomNumber: number = Math.floor(Math.random() * 9000) + 1000;
     return randomNumber;
   }
+
+  findIndexByPropertyValue(arr: any, property: any, value: any) {
+    return arr.findIndex((obj: any) => obj[property] === value);
+  }
 }

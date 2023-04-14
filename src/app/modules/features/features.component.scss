@@ -85,6 +85,22 @@ mat-sidenav-container {
     }
   }
 }
+.covid-button {
+  box-shadow: 0 3px 5px 0 rgba(119, 119, 119, 0.16) !important;
+  border-top-left-radius: 40px !important;
+  border-bottom-left-radius: 40px !important;
+  min-height: 50px;
+  color: red !important;
+  border-color: #46b8da !important;
+  font-weight: 600;
+  font-size: 17px;
+  padding-left: 10px;
+  position: fixed;
+  right: 0;
+  padding-left: 1em;
+  bottom: 3.5em;
+  z-index: 9;
+}
 
 @media all and (max-width: 1000px) {
   mat-sidenav-content {

@@ -860,3 +860,26 @@ export const UPCOMING_TRAINING_DATA = [
     seat: '41',
   },
 ];
+
+export const COVID_INSTRUCTIONS = [
+  {
+    title: 'Wear a mask',
+    content:
+      'Face masks, gloves and other protective gear can help stop the spread of coronavirus. Wearing a mask doesn’t imply that you disregard social distancing. In addition to social distancing, keep proper hygiene, especially, when you touch your mask.',
+  },
+  {
+    title: 'Wash ‘Em, Wash ‘Em Good',
+    content:
+      'Good hand washing is the first line of defense to stay safe from Covid-19. Respiratory viruses like Coronavirus spreads when the virus gets into your body through your eyes, throat, or nose. Most often, it happens through your hands.',
+  },
+  {
+    title: 'Fight the virus',
+    content:
+      'Take simple and constructive steps to help fight the spread of Coronavirus like stay at home, wash hands often, wear masks, maintain social distancing and practice respiratory hygiene.',
+  },
+  {
+    title: 'Telemedicine consultation',
+    content:
+      'Consult doctors or certified medical practitioners remotely and reduce the risk of transmission. Telemedicine consultation is the best alternative for steady and quick medical services.',
+  },
+];

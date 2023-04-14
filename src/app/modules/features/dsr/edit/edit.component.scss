@@ -1,0 +1,31 @@
+.expansion {
+  display: grid;
+  grid-template-columns: 50% auto;
+  gap: 1em;
+
+  .work-time {
+    gap: 1em;
+
+    .flex-size {
+      flex: 1 0 calc(33.33% - 1em);
+    }
+  }
+}
+
+.project-conteiner {
+  gap: 1em;
+
+  .flex-size {
+    flex: 1 0 calc(25% - 1em);
+  }
+
+  .button-container {
+    width: 50%;
+  }
+}
+
+@media all and (max-width: 50em) {
+  .expansion {
+    grid-template-columns: auto;
+  }
+}

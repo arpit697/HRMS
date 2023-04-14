@@ -1,24 +1,32 @@
 <div class="profile-container">
   <mat-card class="media">
-    <img [src]="utility.uploadedProfilePicture || '../../../../../assets/default/default_male.jpg'" alt="User Image" />
+    <img
+      [src]="
+        utility.uploadedProfilePicture ||
+        '../../../../../assets/default/default_male.jpg'
+      "
+      alt="User Image"
+    />
     <div class="media-body">
       <mat-card-title>
-        {{ empDetail.full_name| titlecase }}
+        {{ empDetail.full_name | titlecase }}
       </mat-card-title>
       <mat-card-subtitle class="user-data" *ngFor="let item of empDetail">
-        <span><strong>{{ item.label | titlecase }} {{' : '}}</strong></span>
-        <span class="data">{{item.data }}</span>
+        <span
+          ><strong>{{ item.label | titlecase }} {{ " : " }}</strong></span
+        >
+        <span class="data">{{ item.data }}</span>
       </mat-card-subtitle>
     </div>
   </mat-card>
 </div>
 
 <div class="content-container">
-  <mat-tab-group>
+  <mat-tab-group animationDuration="0ms">
     <mat-tab *ngFor="let list of selectionMenu">
       <ng-template mat-tab-label>
         <mat-icon class="list-icon">{{ list?.icon }}</mat-icon>
-        {{ list.name | titlecase}}
+        {{ list.name | titlecase }}
       </ng-template>
       <div [ngSwitch]="list.name">
         <app-basic-info *ngSwitchCase="'basic information'"></app-basic-info>

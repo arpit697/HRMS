@@ -7,7 +7,7 @@
     </mat-card-actions>
   </div>
 
-  <owl-carousel-o [options]="topCarouselRight">
+  <owl-carousel-o [options]="topCarouselRight" #OwlCarousel>
     <ng-container *ngFor="let item of newEmployee">
       <ng-template carouselSlide>
         <div class="user-card flex flex-column jc-center ai-center">

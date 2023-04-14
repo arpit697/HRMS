@@ -11,4 +11,12 @@ export class DeleteComponent {
     public dialogRef: MatDialogRef<DeleteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
+
+  confirmationHandler() {
+    this.dialogRef.close(this.data);
+  }
+
+  close() {
+    this.dialogRef.close();
+  }
 }

@@ -297,6 +297,13 @@ export const MY_DSR: RouteInterface = {
   },
 };
 
+export const EDIT: RouteInterface = {
+  path: 'edit',
+  get fullUrl(): string {
+    return `${DSR.fullUrl}/${this.path}`;
+  },
+};
+
 export const ATTENDANCE: RouteInterface = {
   path: 'attendance',
   get fullUrl(): string {

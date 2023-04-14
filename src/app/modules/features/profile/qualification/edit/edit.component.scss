@@ -1,0 +1,28 @@
+.header-wrapper {
+  .title {
+    font-size: 23px;
+    color: #6b8090;
+  }
+  margin-bottom: 1em;
+}
+.form-container {
+  display: grid;
+  grid-template-columns: calc(50% - 0.5em) calc(50% - 0.5em);
+  gap: 1em;
+}
+.btn-wrapper {
+  margin-top: 2em;
+}
+
+.text-area {
+  ::ng-deep .mat-mdc-text-field-wrapper {
+    background-color: white;
+    min-height: 6.8em;
+  }
+}
+
+@media all and (max-width: 50em) {
+  .form-container {
+    grid-template-columns: auto;
+  }
+}

@@ -6,8 +6,10 @@ import {
   style,
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { rotateAnimation } from 'src/app/animations/clock.anticlock';
 import { SIDE_NAV_ITEM } from 'src/app/constants/app.constants';
+import { CovidComponent } from './covid/covid.component';
 
 @Component({
   selector: 'app-features',
@@ -32,14 +34,13 @@ import { SIDE_NAV_ITEM } from 'src/app/constants/app.constants';
     ]),
   ],
 })
-
 export class FeaturesComponent implements OnInit {
   rotateDirection = 'clockwise';
   sidenavState = 'open';
   isExpanded: boolean = true;
   public items = <any>[];
   isClicked: any;
-  constructor() {
+  constructor(private dialog: MatDialog) {
     this.checkScreenSize();
     window.addEventListener('resize', () => {
       this.checkScreenSize();
@@ -72,5 +73,16 @@ export class FeaturesComponent implements OnInit {
 
   mouseleave() {
     this.isShowing = false;
+  }
+
+  openDialog(): void {
+    const isSmallScreen = window.matchMedia('(max-width: 50em)').matches;
+    const dialogRef = this.dialog.open(CovidComponent, {
+      width: '90%',
+      height: '70%',
+      data: {},
+    });
+    dialogRef.disableClose = true;
+    dialogRef.afterClosed().subscribe((result: any) => {});
   }
 }

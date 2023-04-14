@@ -31,7 +31,7 @@ export class QualificationComponent implements OnInit {
   languages: any;
 
   minDate = new Date(2000, 0, 1);
-  maxDate = new Date(2020, 0, 1);
+  maxDate = new Date(Date.now());
 
   qualificationForm!: FormGroup;
   tableColumns: Array<any> = [...QUALIFICATION_TABLE_COLUMN];
@@ -62,39 +62,56 @@ export class QualificationComponent implements OnInit {
       description: [],
     });
   }
-  openEditDialog(): void {
-    const isSmallScreen = window.matchMedia('(max-width: 50em)').matches;
+  openEditDialog(data?: any): void {
+    const isSmallScreen = window.matchMedia('(max-width: 100em)').matches;
     const dialogRef = this._dialog.open(EditComponent, {
-      // width: isSmallScreen ? '100%' : '40%',
-      // height: '98%',
-      data: {},
+      width: isSmallScreen ? '100%' : '40%',
+      data: { ...data },
     });
-    // dialogRef.disableClose = true;
-    dialogRef.afterClosed().subscribe((result: any) => {});
+    dialogRef.disableClose = true;
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result) {
+        let index = this._utility.findIndexByPropertyValue(
+          this.tableData,
+          'id',
+          result.id
+        );
+        this.tableData[index] = result;
+        this.tableComponent.dataSource.data = this.tableData; // update the data source
+      }
+    });
   }
 
-  openDeleteDialog(): void {
-    const isSmallScreen = window.matchMedia('(max-width: 50em)').matches;
+  openDeleteDialog(data?: any): void {
     const dialogRef = this._dialog.open(DeleteComponent, {
-      // width: isSmallScreen ? '100%' : '40%',
-      // height: '98%',
-      data: {},
+      data: { ...data },
     });
-    // dialogRef.disableClose = true;
-    dialogRef.afterClosed().subscribe((result: any) => {});
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result) {
+        let index = this._utility.findIndexByPropertyValue(
+          this.tableData,
+          'id',
+          result.id
+        );
+        this.tableData.splice(index, 1);
+        this.tableComponent.dataSource.data = this.tableData; // update the data source
+      }
+    });
   }
   editDelete(event: any) {
     if (event.click_type == 'edit') {
-      this.openEditDialog();
+      this.openEditDialog(event);
     }
     if (event.click_type == 'delete') {
-      this.openDeleteDialog();
+      this.openDeleteDialog(event);
     }
   }
 
   submitHandler() {
     if (this.qualificationForm.valid) {
       let obj = {
+        ...this.qualificationForm.value,
+        id: this._utility.generateRandomNumber(),
         first_button_text: 'Edit',
         second_button_text: 'Delete',
         school_university:
@@ -115,6 +132,11 @@ export class QualificationComponent implements OnInit {
         education_level: this.qualificationForm.get('education_level')?.value,
       };
       this.tableData.push(obj);
+      this._utility.bar(
+        'Qualification Update Successfully',
+        '',
+        'green-snackbar'
+      );
       this.tableComponent.dataSource.data = this.tableData; // update the data source
     } else {
       this._utility.bar(

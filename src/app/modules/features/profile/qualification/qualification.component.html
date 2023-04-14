@@ -6,15 +6,24 @@
     <div class="field-container">
       <div class="col-2">
         <div>
-          <mat-card-subtitle>School/University</mat-card-subtitle>
+          <mat-card-subtitle class="c-label"
+            >School/University</mat-card-subtitle
+          >
           <mat-form-field appearance="outline">
-            <input formControlName="school_univercity" matInput />
+            <input
+              matInput
+              formControlName="school_univercity"
+              placeholder="School/University"
+            />
           </mat-form-field>
         </div>
         <div>
-          <mat-card-subtitle>Education Level</mat-card-subtitle>
+          <mat-card-subtitle class="c-label">Education Level</mat-card-subtitle>
           <mat-form-field appearance="outline">
-            <mat-select formControlName="education_level">
+            <mat-select
+              formControlName="education_level"
+              placeholder="Education Level"
+            >
               <mat-option
                 *ngFor="let education of educationLevel"
                 value="{{ education.course }}"
@@ -26,16 +35,18 @@
       </div>
 
       <div>
-        <mat-card-subtitle>Time Period</mat-card-subtitle>
+        <mat-card-subtitle class="c-label">Time Period</mat-card-subtitle>
         <div class="col-2">
           <div>
             <mat-form-field appearance="outline">
               <input
+                matInput
+                readonly
                 [min]="minDate"
                 [max]="maxDate"
                 formControlName="date_from"
-                matInput
                 [matDatepicker]="time_from"
+                placeholder="From"
               />
               <mat-datepicker-toggle
                 matSuffix
@@ -47,11 +58,13 @@
           <div>
             <mat-form-field appearance="outline">
               <input
+                matInput
+                readonly
                 [min]="minDate"
                 [max]="maxDate"
                 formControlName="date_to"
-                matInput
                 [matDatepicker]="time_to"
+                placeholder="To"
               />
               <mat-datepicker-toggle
                 matSuffix
@@ -65,9 +78,9 @@
 
       <div class="col-2">
         <div>
-          <mat-card-subtitle>Language</mat-card-subtitle>
+          <mat-card-subtitle class="c-label">Language</mat-card-subtitle>
           <mat-form-field appearance="outline">
-            <mat-select formControlName="language">
+            <mat-select formControlName="language" placeholder="Language">
               <mat-option
                 *ngFor="let lang of languages"
                 value="{{ lang.language }}"
@@ -77,19 +90,25 @@
           </mat-form-field>
         </div>
         <div>
-          <mat-card-subtitle> Professional Course (If any)</mat-card-subtitle>
+          <mat-card-subtitle class="c-label">
+            Professional Course (If any)</mat-card-subtitle
+          >
           <mat-form-field appearance="outline">
-            <input formControlName="professional_course" matInput />
+            <input
+              matInput
+              formControlName="professional_course"
+              placeholder="Professional Course (If any)"
+            />
           </mat-form-field>
         </div>
       </div>
 
       <div class="text-area">
-        <mat-card-subtitle>Description</mat-card-subtitle>
+        <mat-card-subtitle class="c-label">Description</mat-card-subtitle>
         <mat-form-field appearance="outline">
           <textarea
-            formControlName="description"
             matInput
+            formControlName="description"
             cdkTextareaAutosize
             cdkAutosizeMinRows="1"
             maxlength="500"

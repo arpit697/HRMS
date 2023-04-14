@@ -29,7 +29,9 @@
           <div [ngSwitch]="disCol.type">
             <div *ngSwitchCase="'icon-data'">
               <span>
-                <mat-icon class="icon" *ngIf="disCol.icon">{{ element.icon }}</mat-icon>
+                <mat-icon class="icon" *ngIf="disCol.icon">{{
+                  element.icon
+                }}</mat-icon>
                 {{ disCol?.cell(element) }}
               </span>
             </div>
@@ -53,7 +55,9 @@
                   (click)="bClick(element, 'edit')"
                 >
                   {{ element.first_button_text }}
-                  <mat-icon  class="first-button-icon">{{ element.first_button_icon }}</mat-icon>
+                  <mat-icon class="first-button-icon">{{
+                    element.first_button_icon
+                  }}</mat-icon>
                 </button>
                 <button
                   mat-raised-button
@@ -61,9 +65,14 @@
                   (click)="bClick(element, 'delete')"
                 >
                   {{ element.second_button_text }}
-                  <mat-icon class="second-button-icon">{{ element.second_button_icon }}</mat-icon>
+                  <mat-icon class="second-button-icon">{{
+                    element.second_button_icon
+                  }}</mat-icon>
                 </button>
               </span>
+            </div>
+            <div *ngSwitchCase="'formatted-text'">
+              <div [innerHTML]="element.editor_text"></div>
             </div>
             <div *ngSwitchCase="'link'">
               <a [routerLink]="element?.path | routing : element?.id">{{

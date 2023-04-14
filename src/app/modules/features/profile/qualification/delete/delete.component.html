@@ -1,1 +1,19 @@
-<p>delete works!</p>
+<div class="card p-24">
+  <div class="card-header">Delete Record</div>
+  <hr />
+  <div class="card-body">
+    <p class="warning">Record deleted can't be restored!!!</p>
+    <mat-card-actions class="jc-center g-05">
+      <button mat-raised-button (click)="close()" class="button-cancel">
+        Close
+      </button>
+      <button
+        mat-raised-button
+        (click)="confirmationHandler()"
+        class="button-primary"
+      >
+        Confirm
+      </button>
+    </mat-card-actions>
+  </div>
+</div>

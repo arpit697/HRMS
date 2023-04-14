@@ -1,1 +1,143 @@
-<p>edit works!</p>
+<div class="p-24">
+  <div class="header-wrapper flex jc-between">
+    <mat-card-title class="title">Edit Qualification</mat-card-title>
+    <mat-icon (click)="close()">close</mat-icon>
+  </div>
+
+  <div [formGroup]="editQualificationForm" class="form-container">
+    <div class="flex flex-column g-05">
+      <div class="form-group">
+        <mat-card-subtitle class="c-2-label">
+          School/University
+        </mat-card-subtitle>
+        <mat-form-field appearance="outline">
+          <input
+            matInput
+            type="text"
+            id="school-university"
+            name="school-university"
+            placeholder="Enter School/University Name"
+            formControlName="school_univercity"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-card-subtitle class="c-2-label">Time Period</mat-card-subtitle>
+        <div>
+          <mat-form-field appearance="outline">
+            <input
+              readonly
+              matInput
+              [min]="minDate"
+              [max]="maxDate"
+              formControlName="date_from"
+              [matDatepicker]="time_from"
+              placeholder="From"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="time_from"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #time_from></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              readonly
+              [min]="minDate"
+              [max]="maxDate"
+              formControlName="date_to"
+              [matDatepicker]="time_to"
+              placeholder="To"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="time_to"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #time_to></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <mat-card-subtitle class="c-2-label">
+          Education Level
+        </mat-card-subtitle>
+        <mat-form-field appearance="outline">
+          <mat-select formControlName="education_level">
+            <mat-option
+              *ngFor="let education of educationLevel"
+              value="{{ education.course }}"
+              >{{ education.course }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="flex flex-column g-05">
+      <div class="form-group">
+        <mat-card-subtitle class="c-2-label"> Language </mat-card-subtitle>
+        <mat-form-field appearance="outline">
+          <mat-select formControlName="language">
+            <mat-option
+              *ngFor="let lan of languages"
+              value="{{ lan.language }}"
+              >{{ lan.language }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-card-subtitle class="c-2-label"
+          >Professional Courses (if any)</mat-card-subtitle
+        >
+        <mat-form-field appearance="outline">
+          <input
+            matInput
+            type="text"
+            id="professional-courses"
+            name="professional-courses"
+            placeholder="Enter Professional Courses (if any)"
+            formControlName="professional_course"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="form-group text-area">
+        <mat-card-subtitle class="c-2-label"> Description </mat-card-subtitle>
+        <mat-form-field appearance="outline">
+          <textarea
+            matInput
+            matInput
+            cdkTextareaAutosize
+            cdkAutosizeMinRows="1"
+            maxlength="500"
+            cdkAutosizeMaxRows="10"
+            placeholder="Description"
+            formControlName="description"
+          ></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <mat-card-actions class="btn-wrapper jc-end g-05">
+    <button
+      type="button"
+      (click)="close()"
+      mat-raised-button
+      class="button-cancel"
+    >
+      Close
+    </button>
+    <button
+      (click)="updateHandler()"
+      type="submit"
+      mat-raised-button
+      class="button-primary"
+    >
+      Update
+    </button>
+  </mat-card-actions>
+</div>

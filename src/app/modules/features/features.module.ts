@@ -17,6 +17,13 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { RoutingModule } from 'src/app/pipes/routing/routing.module';
 import { HelpComponent } from './header/help/help.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CovidComponent } from './covid/covid.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 const MATERIAL = [
   MatSidenavModule,
   MatToolbarModule,
@@ -27,6 +34,11 @@ const MATERIAL = [
   MatListModule,
   MatExpansionModule,
   MatDialogModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
 ];
 
 @NgModule({
@@ -35,7 +47,14 @@ const MATERIAL = [
     HeaderComponent,
     FooterComponent,
     HelpComponent,
+    CovidComponent,
   ],
-  imports: [CommonModule, FeaturesRoutingModule, RoutingModule, ...MATERIAL],
+  imports: [
+    CommonModule,
+    FeaturesRoutingModule,
+    CarouselModule,
+    RoutingModule,
+    ...MATERIAL,
+  ],
 })
 export class FeaturesModule {}

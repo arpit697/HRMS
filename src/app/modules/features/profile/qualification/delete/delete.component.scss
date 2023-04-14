@@ -1,0 +1,22 @@
+$color_1: red;
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #ccc;
+}
+.card-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px;
+}
+.card-body {
+  margin: 20px;
+}
+.warning {
+  color: $color_1;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+
