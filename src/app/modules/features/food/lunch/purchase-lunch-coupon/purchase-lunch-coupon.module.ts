@@ -3,15 +3,28 @@ import { CommonModule } from '@angular/common';
 
 import { PurchaseLunchCouponRoutingModule } from './purchase-lunch-coupon-routing.module';
 import { PurchaseLunchCouponComponent } from './purchase-lunch-coupon.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
+const MATERIAL = [
+  MatCardModule,
+  MatIconModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+];
 
 @NgModule({
-  declarations: [
-    PurchaseLunchCouponComponent
-  ],
+  declarations: [PurchaseLunchCouponComponent],
   imports: [
     CommonModule,
-    PurchaseLunchCouponRoutingModule
-  ]
+    PurchaseLunchCouponRoutingModule,
+    ReactiveFormsModule,
+    ...MATERIAL,
+  ],
 })
-export class PurchaseLunchCouponModule { }
+export class PurchaseLunchCouponModule {}

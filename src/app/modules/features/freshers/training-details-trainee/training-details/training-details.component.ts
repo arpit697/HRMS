@@ -16,7 +16,6 @@ export class TrainingDetailsComponent {
       this.details = EMPLOYEE_TRAINING_DATA.filter(
         (item) => item.id == params.id
       );
-      console.log(this.details);
     });
     this.tableData = this.details[0].training_detail
   }

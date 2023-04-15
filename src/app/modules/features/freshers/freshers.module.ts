@@ -11,6 +11,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const MATERIAL = [
   MatIconModule,
@@ -19,11 +20,16 @@ const MATERIAL = [
   MatRadioModule,
   MatFormFieldModule,
   MatInputModule,
-  MatButtonModule
+  MatButtonModule,
 ];
 
 @NgModule({
   declarations: [FreshersComponent, FeedbackDialogComponent],
-  imports: [CommonModule, FreshersRoutingModule, ...MATERIAL],
+  imports: [
+    CommonModule,
+    FreshersRoutingModule,
+    ReactiveFormsModule,
+    ...MATERIAL,
+  ],
 })
 export class FreshersModule {}

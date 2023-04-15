@@ -54,9 +54,29 @@
     gap: 0.5em;
     justify-content: flex-end;
   }
+  .text-area {
+    ::ng-deep .mat-mdc-text-field-wrapper {
+      background-color: white;
+      min-height: 10em;
+    }
+  }
 }
 
-::ng-deep .mat-mdc-text-field-wrapper {
-  background-color: white;
-  min-height: 10em;
+@media all and (max-width: 80em) {
+  .feed-back-container {
+    .form-data {
+      width: 100%;
+      .label {
+        min-width: auto;
+      }
+    }
+    .radio-group-wrapper {
+      flex-direction: column;
+      align-items: flex-start !important;
+
+      .radio-group {
+        flex-direction: column;
+      }
+    }
+  }
 }

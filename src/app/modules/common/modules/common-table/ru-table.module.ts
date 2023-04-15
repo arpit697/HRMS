@@ -12,6 +12,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { RoutingModule } from 'src/app/pipes/routing/routing.module';
 import { RouterModule } from '@angular/router';
 import { MatSortModule } from '@angular/material/sort';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -31,7 +32,7 @@ const MATERIAL = [
 ];
 @NgModule({
   declarations: [RuTableComponent],
-  imports: [CommonModule, RouterModule ,RoutingModule, ...MATERIAL],
+  imports: [CommonModule, RouterModule ,RoutingModule,FormsModule, ...MATERIAL],
   exports: [RuTableComponent],
 })
 export class RuTableModule {}

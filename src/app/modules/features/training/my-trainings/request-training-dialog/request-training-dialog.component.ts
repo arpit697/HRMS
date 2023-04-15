@@ -16,8 +16,9 @@ import { UtilityService } from 'src/app/services/utility/utility.service';
 })
 export class RequestTrainingDialogComponent implements OnInit {
   requestTrainingForm!: FormGroup;
-  trainingName: any;
-  teamName: any;
+  trainingName = REQUEST_TRAINING_DROP_DOWN;
+  teamName = DEPARTMENTS_DROP_DOWN;
+
   constructor(
     public dialogRef: MatDialogRef<RequestTrainingDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -26,25 +27,43 @@ export class RequestTrainingDialogComponent implements OnInit {
     private _dataService: DataService,
     private utility: UtilityService
   ) {}
-  ngOnInit(): void {
-    this.trainingName = REQUEST_TRAINING_DROP_DOWN;
-    this.teamName = DEPARTMENTS_DROP_DOWN;
+
+  ngOnInit() {
     this.createForm();
   }
 
   createForm() {
     this.requestTrainingForm = this._formBuilder.group({
-      training_name: [],
-      team_name: [],
-      question_one: [],
-      question_two: [],
-      intrested: [],
-      timeline: [],
+      training_name: [null, [...this._formValidation.VALIDATION.required]],
+      team_name: [null, [...this._formValidation.VALIDATION.required]],
+      question_one: [null, [...this._formValidation.VALIDATION.required]],
+      question_two: [null, [...this._formValidation.VALIDATION.required]],
+      intrested: [null, [...this._formValidation.VALIDATION.required]],
+      timeline: [null, [...this._formValidation.VALIDATION.required]],
     });
   }
+
   submitHandler() {
-    console.log(this.requestTrainingForm.value);
+    if (this.requestTrainingForm.valid) {
+      const obj = {
+        ...this.requestTrainingForm.value,
+        serial_number: this.utility.generateRandomNumber(),
+        requested_date: this.utility.getCurrentDate(),
+        status: 'Approved',
+        action: 'N/A',
+      };
+      this._dataService.trainingRequest.push(obj);
+      this.utility.bar('Request Submitted Successfully', '', 'green-snackbar');
+      this.dialogRef.close();
+    } else {
+      this.utility.bar(
+        this.utility.formCheck(this.requestTrainingForm),
+        '',
+        'red-snackbar'
+      );
+    }
   }
+
   close() {
     this.dialogRef.close();
   }

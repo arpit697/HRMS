@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { EMPLOYEE_TRAINING_DATA } from 'src/app/constants/app.constants';
 
 @Component({
   selector: 'app-training-details-trainee',
@@ -8,11 +9,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TrainingDetailsTraineeComponent {
   selectedTab = '';
+  details: any;
   constructor(private _route: ActivatedRoute) {}
   ngOnInit(): void {
     this._route.params.subscribe((params: any) => {
-      console.log(params);
+      let arr = EMPLOYEE_TRAINING_DATA.filter((item) => item.id == params.id);
+      this.details = arr[0];
     });
+    console.log(this.details);
+
     this.selectedTab = 'training detail'; // Set the first button active by default
   }
 }

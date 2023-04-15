@@ -30,3 +30,20 @@
     margin: 0;
   }
 }
+
+@media all and (max-width: 50em) {
+  .jd-summary {
+    .form-data {
+      font-size: 10px;
+      .label {
+        min-width: auto;
+      }
+    }
+  }
+  .jd-description {
+    .description-text {
+      font-size: 12px;
+      line-height: 1.4;
+    }
+  }
+}

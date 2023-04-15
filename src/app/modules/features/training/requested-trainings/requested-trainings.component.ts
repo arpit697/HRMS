@@ -1,52 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {
+  REQUESTED_TRAINING_TABLE_COLUMN,
+  REQUESTED_TRAINING_TABLE_DATA,
+} from 'src/app/constants/table.data';
+import { DataService } from 'src/app/services/data/data.service';
+import { UtilityService } from 'src/app/services/utility/utility.service';
 
 @Component({
   selector: 'app-requested-trainings',
   templateUrl: './requested-trainings.component.html',
   styleUrls: ['./requested-trainings.component.scss'],
 })
-export class RequestedTrainingsComponent {
-  tableColumns: Array<any> = [
-    {
-      columnDef: 'serial_number',
-      header: 'Serial Number',
-      cell: (element: Record<string, any>) => `${element['serial_number']}`,
-    },
-    {
-      columnDef: 'training_name',
-      header: 'Training Name',
-      cell: (element: Record<string, any>) => `${element['training_name']}`,
-    },
-    {
-      columnDef: 'timeline',
-      header: 'Timeline To Conduct',
-      cell: (element: Record<string, any>) => `${element['timeline']}`,
-    },
-    {
-      columnDef: 'requested_date',
-      header: 'Requested Date',
-      cell: (element: Record<string, any>) => `${element['requested_date']}`,
-    },
-    {
-      columnDef: 'status',
-      header: 'Status',
-      cell: (element: Record<string, any>) => `${element['status']}`,
-    },
-    {
-      columnDef: 'action',
-      header: 'Action',
-      cell: (element: Record<string, any>) => `${element['action']}`,
-    },
-  ];
+export class RequestedTrainingsComponent implements OnInit {
+  constructor(private _dataService: DataService) {}
 
-  tableData = [
-    // {
-    //   serial_number: 1,
-    //   training_name: 'Sales Training',
-    //   timeline: 'April 2023',
-    //   requested_date: 'February 5, 2023',
-    //   status: 'Approved',
-    //   action: 'Edit',
-    // },
-  ];
+  ngOnInit(): void {
+    if (!(this._dataService.trainingRequest.length == 0)) {
+      this.tableData = this._dataService.trainingRequest;
+    }
+  }
+
+  tableColumns: Array<any> = [...REQUESTED_TRAINING_TABLE_COLUMN];
+  tableData: any[] = [...REQUESTED_TRAINING_TABLE_DATA];
 }

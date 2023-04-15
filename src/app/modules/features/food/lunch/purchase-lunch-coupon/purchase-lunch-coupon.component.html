@@ -1,1 +1,55 @@
-<p>purchase-lunch-coupon works!</p>
+<div class="header">
+  <mat-icon (click)="backHandler()" class="back-icon flex jc-center ai-center"
+    >arrow_back</mat-icon
+  >
+  <mat-card-title class="title">Lunch Coupon</mat-card-title>
+  <div class="flex ai-center">
+    <mat-icon class="icon flex jc-center ai-center">info</mat-icon>
+    <mat-card-subtitle class="note">
+      Note: You can purchase/cancel a coupon for the upcoming day before 6 p.m.
+      today.
+    </mat-card-subtitle>
+  </div>
+</div>
+<mat-card class="amount-due flex-wrap g-1">
+  <div class="flex flex-wrap-rev jc-between g-05">
+    <mat-card-title class="amount-title">Amount Due</mat-card-title>
+    <mat-card-title class="avabcoupon"
+      >Available coupon for purchase: 10</mat-card-title
+    >
+  </div>
+
+  <div>
+    <mat-card-title class="amount">₹125</mat-card-title>
+  </div>
+  <div class="flex flex-wrap-rev ai-start jc-between g-05">
+    <div class="flex ai-center g-05">
+      <mat-icon class="icon flex jc-center ai-center">info</mat-icon>
+      <mat-card-subtitle class="note">
+        <strong>Note :</strong> Amount due need to paid in cash in account
+        office.
+      </mat-card-subtitle>
+    </div>
+  </div>
+</mat-card>
+
+<mat-card class="submission-card">
+  <div class="flex flex-wrap g-1">
+    <div class="flex-size">
+      <mat-card-subtitle class="c-label">Coupon Count</mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <input matInput type="text" />
+      </mat-form-field>
+    </div>
+    <div class="flex-size">
+      <mat-card-subtitle class="c-label">Total Amount (Rs)</mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <input matInput type="text" />
+      </mat-form-field>
+    </div>
+    <mat-card-actions class="button-group flex-size-50 g-1">
+      <button mat-raised-button class="button-primary">Submit</button>
+      <button mat-raised-button class="button-cancel">Cancel</button>
+    </mat-card-actions>
+  </div>
+</mat-card>

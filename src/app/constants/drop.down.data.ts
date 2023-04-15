@@ -81,3 +81,4 @@ export const DSR_PROJECT_DROP_DOWN = [
   'Interview',
 ];
 
+export const PAGE_SIZE_DROP_DOWN = [5, 10, 25, 50, 100];

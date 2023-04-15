@@ -1,1 +1,53 @@
-<p>dinner works!</p>
+<mat-expansion-panel [disabled]="true" [expanded]="panelOpenState" hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <div class="flex flex-column">
+        <mat-card-title> Dinner Request </mat-card-title>
+        <mat-card-subtitle>
+          Note: You can request/cancel dinner for today before 6:00 PM
+        </mat-card-subtitle>
+      </div>
+    </mat-panel-title>
+    <div class="flex jc-center ai-center">
+      <button mat-raised-button (click)="togglePanel()">Request Dinner</button>
+    </div>
+  </mat-expansion-panel-header>
+  <div class="expansion p-24">
+    <form [formGroup]="dinnerRequestForm" class="form">
+      <div class="flex flex-wrap g-1 p-14">
+        <div class="project flex-size">
+          <mat-card-subtitle class="c-label">Project</mat-card-subtitle>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-select formControlName="date">
+              <mat-option *ngFor="let item of projects" value="{{ item }}">{{
+                item
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="flex-size">
+          <mat-card-subtitle class="c-label">Date</mat-card-subtitle>
+          <mat-form-field appearance="outline">
+            <input formControlName="project" matInput [matDatepicker]="date" />
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="date"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #date></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="p-14">
+        <mat-card-subtitle class="c-label"
+          >Reason for late stay</mat-card-subtitle
+        >
+        <ckeditor formControlName="reason" [config]="editorConfig"></ckeditor>
+      </div>
+    </form>
+    <mat-card-actions>
+      <button (click)="submitHandler()" mat-raised-button class="add">
+        Add
+      </button>
+    </mat-card-actions>
+  </div>
+</mat-expansion-panel>
