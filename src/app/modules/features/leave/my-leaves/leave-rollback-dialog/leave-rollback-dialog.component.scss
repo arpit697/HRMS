@@ -1,0 +1,53 @@
+/* Default styles for all devices */
+.cancle-modal {
+  width: 100%;
+}
+
+.cancle-modal .title {
+  background: rgba(255, 0, 0, 0.696);
+  color: white;
+  padding: 30px 500px 30px 50px;
+  margin: 30px 0px 0px 0px;
+  font-size: 30px;
+}
+
+.cancle-modal .input-field {
+  padding: 20px;
+}
+
+.cancle-modal .input-title {
+  color: gray;
+  margin-bottom: 10px;
+}
+
+sup {
+  color: red;
+}
+
+/* Styles for devices with a max width of 768px */
+@media only screen and (max-width: 768px) {
+  .cancle-modal .title {
+    padding: 40px 100px 40px 20px;
+    font-size: 24px;
+  }
+
+  .cancle-modal .input-field {
+    padding: 10px;
+  }
+}
+
+/* Styles for devices with a max width of 480px */
+@media only screen and (max-width: 480px) {
+  .cancle-modal .title {
+    padding: 40px 20px;
+    font-size: 20px;
+  }
+
+  .cancle-modal .input-field {
+    padding: 5px;
+  }
+
+  .cancle-modal .input-title {
+    font-size: 14px;
+  }
+}

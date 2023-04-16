@@ -1,12 +1,12 @@
-<div>
+<div class="cancle-modal">
   <div>
-    <mat-card-title>Cancel Leave</mat-card-title>
+    <mat-card-title class="title">Cancel Leave</mat-card-title>
   </div>
   <form [formGroup]="reasonForm">
-    <div>
-      <mat-card-subtitle>Please enter note <sup>*</sup></mat-card-subtitle>
+    <div class="input-field">
+      <mat-card-subtitle class="input-title">Please enter note <sup>*</sup></mat-card-subtitle>
       <mat-form-field appearance="outline">
-        <input type="text" matInput formControlName="reason" />
+        <input type="text" matInput formControlName="reason" placeholder="Write here..."/>
       </mat-form-field>
     </div>
   </form>
