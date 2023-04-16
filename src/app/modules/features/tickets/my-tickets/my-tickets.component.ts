@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import {
   TICKET_DEPARTMENT_CATEGORY_DROP_DWON,
   TICKET_PRIORITY_DROP_DOWN,
@@ -11,6 +12,7 @@ import {
 } from 'src/app/constants/table.data';
 import { RuTableComponent } from 'src/app/modules/common/modules/common-table/ru-table.component';
 import { UtilityService } from 'src/app/services/utility/utility.service';
+import { RemoveRecordDialogComponent } from './remove-record-dialog/remove-record-dialog.component';
 
 @Component({
   selector: 'app-my-tickets',
@@ -28,6 +30,7 @@ export class MyTicketsComponent implements OnInit {
   ticketForm!: FormGroup;
   content: string = '';
   constructor(
+    private _dialog: MatDialog,
     private _formBuilder: FormBuilder,
     private _utility: UtilityService
   ) {}
@@ -51,10 +54,12 @@ export class MyTicketsComponent implements OnInit {
     if (this.ticketForm.valid) {
       let obj = {
         ...this.ticketForm.value,
+        first_button_icon: 'arrow_circle_right',
+        second_button_icon: 'delete_forever',
         status: 'Open',
         employee: 'Arpit Dwivedi',
-        date : this._utility.getCurrentDate(),
-        ticket_code : this._utility.generateRandomNumber()
+        date: this._utility.getCurrentDate(),
+        ticket_code: this._utility.generateRandomNumber(),
       };
       this.tableData.push(obj);
       this._utility.bar('Leave Applied Successfully', '', 'green-snackbar');
@@ -62,5 +67,38 @@ export class MyTicketsComponent implements OnInit {
       this.tableComponent.dataSource.data = this.tableData; // update the data source
     } else {
     }
+  }
+
+  editDelete(event: any) {
+    if (event.click_type == 'edit') {
+    }
+    if (event.click_type == 'delete') {
+      this.deleteRecordDialog(event);
+    }
+  }
+
+  deleteRecordDialog(data?: any): void {
+    const dialogRef = this._dialog.open(RemoveRecordDialogComponent, {
+      data: { ...data },
+    });
+    dialogRef.disableClose = false;
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result) {
+        let index = this._utility.findIndexByPropertyValue(
+          this.tableData,
+          'ticket_code',
+          result.ticket_code
+        );
+        
+        this.tableData.splice(index, 1);
+        this.tableComponent.dataSource.data = this.tableData;
+       
+        
+      }
+    });
+  }
+  ngAfterViewInit(): void {
+    // set the table data in the child component
+    this.tableComponent.tableData = this.tableData;
   }
 }

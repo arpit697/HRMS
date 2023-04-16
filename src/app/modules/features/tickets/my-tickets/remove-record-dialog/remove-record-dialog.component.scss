@@ -9,7 +9,7 @@ $color_1: red;
   font-size: 24px;
   font-weight: bold;
   margin: 20px;
-  padding-right: 500px;
+  padding-right: 500px ;
 }
 .card-body {
   margin: 20px;
@@ -22,13 +22,13 @@ $color_1: red;
 
 @media only screen and (max-width: 768px) {
   .card-header {
-    padding-right: 100px;
+    padding-right: 100px ;
   }
 }
 
 /* Styles for devices with a max width of 480px */
 @media only screen and (max-width: 480px) {
   .card-header {
-    padding-right: 40px;
+    padding-right: 40px ;
   }
 }

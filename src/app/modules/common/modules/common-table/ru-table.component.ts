@@ -49,8 +49,17 @@ export class RuTableComponent<T> implements OnInit, AfterViewInit {
     this.applyFilter();
   }
 
-  applyFilter(): void {
-    const filterValue = this.searchText.trim().toLowerCase();
+  applyFilter(keywords?: string[]): void {
+    let filterValue = this.searchText.trim().toLowerCase();
+
+    if (keywords && keywords.length > 0) {
+      filterValue = keywords
+        .map((keyword) => keyword.trim().toLowerCase())
+        .filter((keyword) => keyword.length > 0)
+        .sort()
+        .join(' ');
+    }
+
     this.dataSource.filter = filterValue;
   }
 
@@ -67,14 +76,6 @@ export class RuTableComponent<T> implements OnInit, AfterViewInit {
   }
 
   updateDataSource() {
-    // get the current page index and page size
-    // const pageIndex = this.Paginator.pageIndex;
-    // const pageSize = this.Paginator.pageSize;
-    // slice the data source to get the current page of data
-    // const startIndex = pageIndex * pageSize;
-    // const endIndex = startIndex + pageSize;
-    // const currentPage = this.tableData.slice(startIndex, endIndex);
-    // set the current page of data to the data source
     this.dataSource.data = this.tableData;
   }
 
@@ -83,7 +84,6 @@ export class RuTableComponent<T> implements OnInit, AfterViewInit {
     this.clickHandler.emit(element);
   }
 }
-
 
 // import {
 //   AfterViewInit,

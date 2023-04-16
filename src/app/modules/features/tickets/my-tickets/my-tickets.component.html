@@ -79,6 +79,7 @@
     [tableColumns]="tableColumns"
     [tableData]="tableData"
     [TableClass]="'ticket-table'"
+    (clickHandler)="editDelete($event)"
     [isPageable]="true"
     [isFilterable]="true"
   ></app-ru-table>

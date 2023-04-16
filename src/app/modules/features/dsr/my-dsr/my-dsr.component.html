@@ -57,28 +57,40 @@
 <br />
 <br />
 <mat-card class="p-24">
-  <div class="project-conteiner flex flex-wrap ai-center">
-    <div *ngFor="let item of formFields" class="flex-size">
-      <mat-card-subtitle class="c-label">{{ item.label }}</mat-card-subtitle>
-      <mat-form-field appearance="outline" *ngIf="item.type === 'select'">
-        <mat-select>
-          <mat-option></mat-option>
-        </mat-select>
-      </mat-form-field>
+  <form [formGroup]="filterForm">
+    <div class="project-conteiner flex flex-wrap ai-center">
+      <div *ngFor="let item of formFields" class="flex-size">
+        <mat-card-subtitle class="c-label">{{ item.label }}</mat-card-subtitle>
+        <mat-form-field appearance="outline" *ngIf="item.type === 'select'">
+          <mat-select formControlName="{{ item.formControlName }}">
+            <mat-option [value]="'jane'">aa</mat-option>
+          </mat-select>
+        </mat-form-field>
 
-      <mat-form-field appearance="outline" *ngIf="item.type === 'datePicker'">
-        <input matInput [matDatepicker]="picker" />
-        <mat-datepicker-toggle
-          matIconSuffix
-          [for]="picker"
-        ></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
+        <mat-form-field appearance="outline" *ngIf="item.type === 'datePicker'">
+          <input
+            readonly
+            matInput
+            [matDatepicker]="picker"
+            formControlName="{{ item.formControlName }}"
+          />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="button-container flex g-1">
+        <button (click)="search()" mat-raised-button class="button-primary">
+          Search
+        </button>
+        <button (click)="reset()" mat-raised-button class="button-cancel">
+          Reset
+        </button>
+      </div>
     </div>
-    <div class="button-container">
-      <button mat-raised-button class="button-primary">Reset</button>
-    </div>
-  </div>
+  </form>
 </mat-card>
 
 <br />
