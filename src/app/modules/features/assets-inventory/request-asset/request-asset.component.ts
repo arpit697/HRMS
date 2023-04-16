@@ -45,32 +45,48 @@ export class RequestAssetComponent implements OnInit {
   }
   crateForm() {
     this.requestAssetFrom = this._formBuilder.group({
-      asset_category: ['',[this._formValidation.VALIDATION.required]],
-      quantity: [JSON.stringify(this.quantity[0]), [[this._formValidation.VALIDATION.required]]],
-      priority: [this.priority[0], [[this._formValidation.VALIDATION.required]]],
-      required_by: ['',[this._formValidation.VALIDATION.required]],
-      allocation_type: [this.allocationType[0], [[this._formValidation.VALIDATION.required]]],
-      request_reason: [[this._formValidation.VALIDATION.required]],
+      asset_category: ['', [...this._formValidation.VALIDATION.required]],
+      quantity: [
+        JSON.stringify(this.quantity[0]),
+        [...this._formValidation.VALIDATION.required],
+      ],
+      priority: [
+        this.priority[0],
+        [...this._formValidation.VALIDATION.required],
+      ],
+      required_by: ['', [...this._formValidation.VALIDATION.required]],
+      allocation_type: [
+        this.allocationType[0],
+        [...this._formValidation.VALIDATION.required],
+      ],
+      request_reason: ['', [...this._formValidation.VALIDATION.required]],
     });
   }
 
   submitHandler() {
-    let obj: any = {
-      ...this.requestAssetFrom.value,
-      serial_number: this.tableData.length + 1,
-      status: 'Pending',
-      priority: 'High',
-      request_at: this._utility.getCurrentDate(),
-      company: 'Appinventiv',
-    };
+    if (this.requestAssetFrom.valid) {
+      let obj: any = {
+        ...this.requestAssetFrom.value,
+        serial_number: this.tableData.length + 1,
+        status: 'Pending',
+        request_at: this._utility.getCurrentDate(),
+        company: 'Appinventiv',
+      };
 
-    this.tableData.push(obj);
-    this._utility.bar(
-      'Qualification Update Successfully',
-      '',
-      'green-snackbar'
-    );
-    this.tableComponent.dataSource.data = this.tableData; // update the data source
+      this.tableData.push(obj);
+      this._utility.bar(
+        'Request Asset Update Successfully',
+        '',
+        'green-snackbar'
+      );
+      this.tableComponent.dataSource.data = this.tableData; // update the data source
+    } else {
+      this._utility.bar(
+        this._utility.formCheck(this.requestAssetFrom),
+        '',
+        'red-snackbar'
+      );
+    }
   }
 
   ngAfterViewInit(): void {

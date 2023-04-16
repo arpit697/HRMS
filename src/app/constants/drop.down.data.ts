@@ -67,6 +67,8 @@ export const ASSETS_PRIORITY_DROP_DOWN = ['Low', 'Medium', 'High'];
 
 export const ALLOCATION_TYPE_DROP_DOWN = ['Permanent', 'Temporary'];
 
+export const OS_TYPE_DROP_DOWN = ['Android' , 'IOS']
+
 export const LEAVE_TYPE_DROP_DOWN = [
   'Planned Leave (CL)',
   'Privileged Leave',
@@ -80,5 +82,7 @@ export const DSR_PROJECT_DROP_DOWN = [
   'Miscellaneous',
   'Interview',
 ];
+
+export const YES_NO_DROP_DOWN = ['Yes' , 'No']
 
 export const PAGE_SIZE_DROP_DOWN = [5, 10, 25, 50, 100];

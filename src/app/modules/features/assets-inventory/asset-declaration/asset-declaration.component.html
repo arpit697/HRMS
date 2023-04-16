@@ -7,33 +7,46 @@
     </button>
   </mat-expansion-panel-header>
   <div class="p-24">
-    <div class="flex flex-wrap ai-center g-1">
-      <div *ngFor="let field of fields" class="flex-size">
-        <mat-card-subtitle class="c-label"
-          >{{ field.label }}
-        </mat-card-subtitle>
-        <mat-form-field
-          class="form-field"
-          appearance="outline"
-          *ngIf="!(field.type === 'select')"
-        >
-          <input matInput type="text" />
-        </mat-form-field>
-        <mat-form-field
-          class="form-field"
-          appearance="outline"
-          *ngIf="field.type === 'select'"
-        >
-          <mat-select>
-            <mat-option></mat-option>
-          </mat-select>
-        </mat-form-field>
-        
+    <form [formGroup]="assetDeclarationForm">
+      <div class="flex flex-wrap ai-center g-1">
+        <div *ngFor="let field of fields" class="flex-size">
+          <mat-card-subtitle class="c-label"
+            >{{ field.label }}
+          </mat-card-subtitle>
+          <mat-form-field
+            class="form-field"
+            appearance="outline"
+            *ngIf="!(field.type === 'select')"
+          >
+            <input
+              matInput
+              type="text"
+              formControlName="{{ field.formControlName }}"
+              placeholder="{{ field.placeholder }}"
+            />
+          </mat-form-field>
+          <mat-form-field
+            class="form-field"
+            appearance="outline"
+            *ngIf="field.type === 'select'"
+          >
+            <mat-select
+              formControlName="{{ field.formControlName }}"
+              placeholder="{{ field.placeholder }}"
+            >
+              <mat-option
+                *ngFor="let item of field.dorpDown"
+                value="{{ item }}"
+                >{{ item }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="flex-size"></div>
+        <div class="flex-size"></div>
+        <div class="flex-size"></div>
       </div>
-      <div class="flex-size"></div>
-      <div class="flex-size"></div>
-      <div class="flex-size"></div>
-    </div>
+    </form>
 
     <mat-card-actions class="jc-center">
       <button
