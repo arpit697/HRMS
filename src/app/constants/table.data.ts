@@ -204,9 +204,29 @@ export const MY_ASSETS_TABLE_DATA = [
 
 export const REQUEST_ASSET_TABLE_COLUMN = [
   {
-    columnDef: 'asset_name',
-    header: 'Asset Name',
-    cell: (element: Record<string, any>) => `${element['asset_name']}`,
+    columnDef: 'serial_number',
+    header: 'S.No',
+    cell: (element: Record<string, any>) => `${element['serial_number']}`,
+  },
+  {
+    columnDef: 'status',
+    header: 'Status',
+    cell: (element: Record<string, any>) => `${element['status']}`,
+  },
+  {
+    columnDef: 'request_Reason',
+    header: 'Request Reason',
+    cell: (element: Record<string, any>) => `${element['request_reason']}`,
+  },
+  {
+    columnDef: 'priority',
+    header: 'Priority',
+    cell: (element: Record<string, any>) => `${element['priority']}`,
+  },
+  {
+    columnDef: 'request_at',
+    header: 'Request At',
+    cell: (element: Record<string, any>) => `${element['request_at']}`,
   },
   {
     columnDef: 'asset_category',
@@ -214,29 +234,9 @@ export const REQUEST_ASSET_TABLE_COLUMN = [
     cell: (element: Record<string, any>) => `${element['asset_category']}`,
   },
   {
-    columnDef: 'computer_asset_code',
-    header: 'Computer Asset Code',
-    cell: (element: Record<string, any>) => `${element['computer_asset_code']}`,
-  },
-  {
-    columnDef: 'brand',
-    header: 'Brand',
-    cell: (element: Record<string, any>) => `${element['brand']}`,
-  },
-  {
-    columnDef: 'serial_number',
-    header: 'Serial Number',
-    cell: (element: Record<string, any>) => `${element['serial_number']}`,
-  },
-  {
-    columnDef: 'model',
-    header: 'Model',
-    cell: (element: Record<string, any>) => `${element['model']}`,
-  },
-  {
-    columnDef: 'is_working',
-    header: 'Is Working ?',
-    cell: (element: Record<string, any>) => `${element['is_working']}`,
+    columnDef: 'allocation_type',
+    header: 'Allocation Type',
+    cell: (element: Record<string, any>) => `${element['allocation_type']}`,
   },
   {
     columnDef: 'company',
@@ -247,14 +247,14 @@ export const REQUEST_ASSET_TABLE_COLUMN = [
 
 export const REQUEST_ASSET_TABLE_DATA = [
   {
-    asset_name: 'Laptop',
-    asset_category: 'Computers',
-    computer_asset_code: 'C001',
-    brand: 'Dell',
-    serial_number: '123456789',
-    model: 'Latitude',
-    is_working: true,
-    company: 'ABC Inc.',
+    serial_number: 1,
+    status: 'Pending',
+    request_reason: 'New hire',
+    priority: 'High',
+    request_at: '2022-03-25',
+    asset_category: 'Laptops',
+    allocation_type: 'Permanent',
+    company: 'ABC Corporation'
   },
 ];
 
@@ -773,4 +773,4 @@ export const REQUESTED_TRAINING_TABLE_COLUMN = [
   },
 ];
 
-export const REQUESTED_TRAINING_TABLE_DATA  = <any>[];
+export const REQUESTED_TRAINING_TABLE_DATA = <any>[];
