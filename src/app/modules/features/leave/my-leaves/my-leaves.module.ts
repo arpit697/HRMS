@@ -19,6 +19,7 @@ import { CKEditorModule } from 'ckeditor4-angular';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatListModule } from '@angular/material/list';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { LeaveRollbackDialogComponent } from './leave-rollback-dialog/leave-rollback-dialog.component';
 
 const MATERIAL = [
   MatCardModule,
@@ -37,7 +38,7 @@ const MATERIAL = [
 ];
 
 @NgModule({
-  declarations: [MyLeavesComponent],
+  declarations: [MyLeavesComponent, LeaveRollbackDialogComponent],
   imports: [
     CommonModule,
     MyLeavesRoutingModule,

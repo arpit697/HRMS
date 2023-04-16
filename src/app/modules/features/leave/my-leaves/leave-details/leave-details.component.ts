@@ -8,10 +8,11 @@ import { DataService } from 'src/app/services/data/data.service';
   styleUrls: ['./leave-details.component.scss'],
 })
 export class LeaveDetailsComponent implements OnInit {
-  constructor(private _route: ActivatedRoute , private dataService :DataService) {}
+  constructor(private _route: ActivatedRoute , public dataService :DataService) {}
+  detail = this.dataService.leaveDetail.detail
   ngOnInit(): void {
     this._route.params.subscribe((params: any) => {
-      console.log(params , this.dataService);
+      console.log(params , this.dataService.leaveDetail);
     });
   }
   leaveDetail = [

@@ -1,0 +1,15 @@
+<div>
+  <div>
+    <mat-card-title>Cancel Leave</mat-card-title>
+  </div>
+  <div>
+    <mat-card-subtitle>Please enter note <sup>*</sup></mat-card-subtitle>
+    <mat-form-field appearance="outline">
+      <input matInput />
+    </mat-form-field>
+  </div>
+  <mat-card-actions class="jc-end">
+    <button mat-raised-button (click)="close()">Close</button>
+    <button mat-raised-button (click)="confirmationHandler()">Confirm</button>
+  </mat-card-actions>
+</div>

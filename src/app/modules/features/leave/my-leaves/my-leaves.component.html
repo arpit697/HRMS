@@ -25,29 +25,42 @@
       <div>
         <mat-card-subtitle class="c-label">Leave Type</mat-card-subtitle>
         <mat-form-field class="form-field" appearance="outline">
-          <mat-select formControlName="type">
+          <mat-select formControlName="leave_type">
             <mat-option *ngFor="let type of leaveType" value="{{ type }}">{{
               type
             }}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
-      <div *ngIf="false" class="flex g-1 ai-center">
-        <mat-form-field appearance="outline">
-          <input matInput [ngxTimepicker]="start_time" />
-          <ngx-material-timepicker #start_time></ngx-material-timepicker>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <input matInput [ngxTimepicker]="end_time" />
-          <ngx-material-timepicker #end_time></ngx-material-timepicker>
-        </mat-form-field>
+      <div
+        *ngIf="leaveForm.get('leave_type')?.value == 'Short Leaves'"
+        class="flex g-1 ai-center"
+      >
+        <div>
+          <mat-card-subtitle class="c-label">Start Time</mat-card-subtitle>
+          <mat-form-field appearance="outline">
+            <input matInput [ngxTimepicker]="start_time" readonly />
+            <ngx-material-timepicker #start_time></ngx-material-timepicker>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-card-subtitle class="c-label">End Time</mat-card-subtitle>
+          <mat-form-field appearance="outline">
+            <input matInput [ngxTimepicker]="end_time" readonly />
+            <ngx-material-timepicker #end_time></ngx-material-timepicker>
+          </mat-form-field>
+        </div>
       </div>
-      <div class="flex flex-wrap g-3 ai-center">
-        <mat-checkbox>Half Day ?</mat-checkbox>
+      <div
+        *ngIf="!(leaveForm.get('leave_type')?.value == 'Short Leaves')"
+        class="flex flex-wrap g-3 ai-center check-box-radio"
+      >
+        <mat-checkbox formControlName="isChecked">Half Day ?</mat-checkbox>
         <mat-radio-group
           formControlName="half_day"
-          class="flex g-1 p-8"
+          class="radio-group flex g-1 p-8"
           aria-label="Select an option"
+          *ngIf="leaveForm.get('isChecked')?.value == true"
         >
           <mat-radio-button value="1">1st Half</mat-radio-button>
           <mat-radio-button value="2">2nd Half</mat-radio-button>
@@ -61,6 +74,7 @@
               formControlName="start_day"
               matInput
               [matDatepicker]="startDate"
+              readonly
             />
             <mat-datepicker-toggle
               matIconSuffix
@@ -76,6 +90,7 @@
               formControlName="end_day"
               matInput
               [matDatepicker]="endDate"
+              readonly
             />
             <mat-datepicker-toggle
               matIconSuffix
@@ -129,4 +144,3 @@
     [isPageable]="true"
   ></app-ru-table>
 </mat-card>
-

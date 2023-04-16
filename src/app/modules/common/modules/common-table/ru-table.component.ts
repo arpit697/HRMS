@@ -68,14 +68,14 @@ export class RuTableComponent<T> implements OnInit, AfterViewInit {
 
   updateDataSource() {
     // get the current page index and page size
-    const pageIndex = this.Paginator.pageIndex;
-    const pageSize = this.Paginator.pageSize;
+    // const pageIndex = this.Paginator.pageIndex;
+    // const pageSize = this.Paginator.pageSize;
     // slice the data source to get the current page of data
-    const startIndex = pageIndex * pageSize;
-    const endIndex = startIndex + pageSize;
-    const currentPage = this.tableData.slice(startIndex, endIndex);
+    // const startIndex = pageIndex * pageSize;
+    // const endIndex = startIndex + pageSize;
+    // const currentPage = this.tableData.slice(startIndex, endIndex);
     // set the current page of data to the data source
-    this.dataSource.data = currentPage;
+    this.dataSource.data = this.tableData;
   }
 
   bClick(element?: any, id?: any) {

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Route, Router } from '@angular/router';
 import { A } from '@fullcalendar/core/internal-common';
 import { LEAVE_TYPE_DROP_DOWN } from 'src/app/constants/drop.down.data';
@@ -13,6 +14,7 @@ import { RuTableComponent } from 'src/app/modules/common/modules/common-table/ru
 import { DataService } from 'src/app/services/data/data.service';
 import { FormValidationService } from 'src/app/services/forms/form.validation.service';
 import { UtilityService } from 'src/app/services/utility/utility.service';
+import { LeaveRollbackDialogComponent } from './leave-rollback-dialog/leave-rollback-dialog.component';
 
 @Component({
   selector: 'app-my-leaves',
@@ -20,6 +22,7 @@ import { UtilityService } from 'src/app/services/utility/utility.service';
   styleUrls: ['./my-leaves.component.scss'],
 })
 export class MyLeavesComponent implements OnInit {
+  @ViewChild(RuTableComponent) tableComponent!: RuTableComponent<any>;
   leaveForm!: FormGroup;
   leaveType: any;
   file_ulr: any;
@@ -28,7 +31,6 @@ export class MyLeavesComponent implements OnInit {
   editorConfig = { ...EDITOR_CONFIG };
   tableColumns: Array<any> = [...LEAVE_TABLE_COLUMN];
   tableData = [...LEAVE_TABLE_DATA];
-  @ViewChild(RuTableComponent) tableComponent!: RuTableComponent<any>;
   datePickers = [
     { label: 'Start Date', name: 'startDate' },
     { label: 'End Date', name: 'endDate' },
@@ -45,8 +47,9 @@ export class MyLeavesComponent implements OnInit {
     private _formBuilder: FormBuilder,
     private _formValidation: FormValidationService,
     private _dataService: DataService,
-    private utility: UtilityService,
-    private _router: Router
+    private _utility: UtilityService,
+    private _router: Router,
+    private _dialog: MatDialog
   ) {}
   ngOnInit(): void {
     this.leaveType = LEAVE_TYPE_DROP_DOWN;
@@ -60,13 +63,14 @@ export class MyLeavesComponent implements OnInit {
 
   createForm() {
     this.leaveForm = this._formBuilder.group({
-      type: [],
+      leave_type: [, [...this._formValidation.VALIDATION.required]],
       half_day: [],
-      start_day: [],
-      end_day: [],
-      remark: [],
+      start_day: [, [...this._formValidation.VALIDATION.required]],
+      end_day: [, [...this._formValidation.VALIDATION.required]],
+      remark: [, [...this._formValidation.VALIDATION.required]],
       document: [],
-      detail: [],
+      detail: [, [...this._formValidation.VALIDATION.required]],
+      isChecked: [false],
     });
   }
 
@@ -77,41 +81,69 @@ export class MyLeavesComponent implements OnInit {
     this.panelOpenState = !this.panelOpenState;
   }
   submitHandler() {
-    let obj: any = {
-      first_button_icon: 'arrow_circle_right',
-      second_button_icon: 'refresh',
-      leave_type: 'Annual',
-      request_from: 'John Doe',
-      request_to: 'Manager',
-      applied_on: '2022-01-01',
-      status: 'Pending',
-      level_one: 'Jane Smith',
-      level_two: 'David Lee',
-    };
+    if (this.leaveForm.valid) {
+      let obj: any = {
+        ...this.leaveForm.value,
+        first_button_icon: 'arrow_circle_right',
+        second_button_icon: 'refresh',
+        request_from: 'AI1558',
+        request_to: 'Manager',
+        applied_on: this._utility.getCurrentDate(),
+        status: 'Pending',
+        level_one: 'Suyash Saxena(AI057)',
+        level_two: 'HR (Human Resourse)',
+      };
 
-    this.tableData.push(obj);
-    this.tableComponent.dataSource.data = this.tableData; // update the data source
+      this.tableData.push(obj);
+      this._utility.bar('Leave Applied Successfully', '', 'green-snackbar');
+      this.leaveForm.reset();
+      this.tableComponent.dataSource.data = this.tableData; // update the data source
+    } else {
+      this._utility.bar(
+        this._utility.formCheck(this.leaveForm),
+        '',
+        'red-snackbar'
+      );
+    }
   }
   editDelete(event: any) {
     if (event.click_type == 'edit') {
       this._dataService.leaveDetail = { ...event };
-      event = { ...event, id: this.utility.generateRandomNumber() };
+      event = { ...event, id: this._utility.generateRandomNumber() };
       this._router.navigate([LEAVE_DETAIL.fullUrl, event.id]);
     }
     if (event.click_type == 'delete') {
-      console.log('delete');
+      this.cancelLeaveDialog(event);
     }
   }
 
+  cancelLeaveDialog(data?: any): void {
+    const dialogRef = this._dialog.open(LeaveRollbackDialogComponent, {
+      data: { ...data },
+    });
+    dialogRef.disableClose = true;
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result) {
+        let index = this._utility.findIndexByPropertyValue(
+          this.tableData,
+          'id',
+          result.id
+        );
+        this.tableData[index] = result;
+        this.tableComponent.dataSource.data = this.tableData; // update the data source
+      }
+    });
+  }
+
   getDocument(event: any) {
-    this.utility
+    this._utility
       .readURL(event, ['application/msword', 'application/pdf', 'text/plain'])
       .then((result: any) => {
         this.file_ulr = result;
-        this.utility.bar('Resume Uploaded Successfully', '', 'green-snackbar');
+        this._utility.bar('Resume Uploaded Successfully', '', 'green-snackbar');
       })
       .catch((error) => {
-        this.utility.bar(
+        this._utility.bar(
           'The attachment must be a file of type: msword, pdf, plain text',
           '',
           'red-snackbar'

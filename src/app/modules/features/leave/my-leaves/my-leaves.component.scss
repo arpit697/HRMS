@@ -58,6 +58,13 @@
     border-radius: 0 !important;
     color: white;
   }
+
+  .check-box-radio {
+    margin-bottom: 1em;
+    .radio-group {
+      padding: 0;
+    }
+  }
 }
 
 @media all and (max-width: 50em) {
@@ -68,4 +75,3 @@
     grid-template-columns: auto;
   }
 }
-
