@@ -2,14 +2,25 @@
   <div>
     <mat-card-title>Cancel Leave</mat-card-title>
   </div>
-  <div>
-    <mat-card-subtitle>Please enter note <sup>*</sup></mat-card-subtitle>
-    <mat-form-field appearance="outline">
-      <input matInput />
-    </mat-form-field>
-  </div>
-  <mat-card-actions class="jc-end">
-    <button mat-raised-button (click)="close()">Close</button>
-    <button mat-raised-button (click)="confirmationHandler()">Confirm</button>
+  <form [formGroup]="reasonForm">
+    <div>
+      <mat-card-subtitle>Please enter note <sup>*</sup></mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <input type="text" matInput formControlName="reason" />
+      </mat-form-field>
+    </div>
+  </form>
+
+  <mat-card-actions class="jc-end g-1">
+    <button mat-raised-button class="button-cancel" (click)="close()">
+      Close
+    </button>
+    <button
+      mat-raised-button
+      class="button-primary"
+      (click)="confirmationHandler()"
+    >
+      Confirm
+    </button>
   </mat-card-actions>
 </div>
