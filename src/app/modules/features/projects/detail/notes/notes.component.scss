@@ -1,15 +1,21 @@
 .content {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    
+
   border-radius: 5px;
 
   h2 {
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: 100;
   }
   h2:hover {
     color: #3246d3;
+    cursor: pointer;
   }
   img {
     width: 7%;
+    cursor: pointer;
+  }
+  .download{
+    cursor: pointer;
   }
 }

@@ -34,10 +34,13 @@ ul {
 }
 
 .button-group {
+  flex-wrap: wrap;
   .btn {
     border-radius: 0;
     padding: 0.5em 2em;
     font-size: 20px;
+    position: relative;
+    white-space: nowrap;
   }
   .active {
     border-bottom: 2px solid #199cff;
@@ -73,4 +76,9 @@ mat-panel-title {
   display: grid;
   grid-template-columns: 50% 50%;
   column-gap: 1em;
+}
+.project-title
+{
+  white-space: nowrap;
+  overflow: hidden;
 }
