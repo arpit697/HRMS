@@ -6,11 +6,11 @@ p {
   margin-inline-end: 0px;
 }
 .container {
-  margin-left: 176px;
+  margin-left: 100px;
   margin-right: 176px;
   padding-left: 16px;
   padding-right: 16px;
-  padding-top: 88px;
+  padding-top: 120px;
   padding-bottom: 120px;
   .hero-inner {
     display: flex;
@@ -20,6 +20,17 @@ p {
       min-width: 448px;
       max-width: 512px;
       z-index: 1;
+      .objective{
+        font-size: 25px;
+      }
+      .entrepreneurs_data_investor_title{
+        font-size: 25px;
+        font-weight: 400;
+        padding-top: 20px;
+      }
+      .entrepreneurs_data_investor_list{
+        padding: 20px 0px 10px 0px;
+      }
     }
     .hero-button {
       margin-top: 1em;

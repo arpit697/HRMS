@@ -2,16 +2,16 @@
   <div class="hero-inner">
     <div class="hero-copy">
       <div>
-        <mat-card-title>{{
+        <mat-card-title class="objective">{{
           entrepreneurs_data.objective.title
         }}</mat-card-title>
         <p>{{ entrepreneurs_data.objective.paragraph }}</p>
       </div>
 
       <div>
-        <mat-card-title>{{ entrepreneurs_data.investor.title }}</mat-card-title>
+        <mat-card-title class="entrepreneurs_data_investor_title">{{ entrepreneurs_data.investor.title }}</mat-card-title>
         <ul>
-          <li *ngFor="let item of entrepreneurs_data.investor.list">
+          <li class="entrepreneurs_data_investor_list" *ngFor="let item of entrepreneurs_data.investor.list">
             {{ item }}
           </li>
         </ul>
@@ -19,11 +19,11 @@
       </div>
 
       <div>
-        <mat-card-title>{{
+        <mat-card-title class="entrepreneurs_data_investor_title">{{
           entrepreneurs_data.experience[0].title
         }}</mat-card-title>
         <ul>
-          <li *ngFor="let item of entrepreneurs_data.experience[0].list">
+          <li class="entrepreneurs_data_investor_list" *ngFor="let item of entrepreneurs_data.experience[0].list">
             {{ item }}
           </li>
         </ul>
