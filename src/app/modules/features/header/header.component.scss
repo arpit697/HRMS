@@ -62,7 +62,7 @@ mat-toolbar {
       .help {
         border: none;
         background-color: #d9534f;
-        color: white; 
+        color: white;
         border-radius: 2px;
         padding: 0px 8px 0px 8px;
         height: 1.2rem;
@@ -90,29 +90,36 @@ mat-toolbar {
 .notification-box {
   margin-top: 5em;
   min-height: calc(100vh - 8em);
-  width: 20em;
+  width: 23em;
+  height: 100%;
   position: fixed;
   right: 0;
   z-index: 1;
-  border-radius: 3px;
+  border-radius: 5px;
   background: #f7f7f7;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.3) !important;
   overflow: scroll;
   .close {
     position: absolute;
     z-index: 1;
     top: 0;
     left: 0;
+    padding: 5px;
+    color: #888;
+  }
+  .close:hover{
+    color:#201e1e
   }
 
   .notify-card {
     margin-bottom: 15px;
     border: 1px solid #cac5c578;
-    border-radius: 12px;
+    border-radius: 10px;
+    background: white;
     .notify-header {
       padding: 10px;
       border-radius: 12px 12px 0 0 !important;
-      background-color: #0000000f;
+      background-color:#f7f7f7;
     }
   }
 }
