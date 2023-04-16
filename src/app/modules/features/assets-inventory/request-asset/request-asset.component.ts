@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {
   ALLOCATION_TYPE_DROP_DOWN,
@@ -10,6 +10,7 @@ import {
   REQUEST_ASSET_TABLE_COLUMN,
   REQUEST_ASSET_TABLE_DATA,
 } from 'src/app/constants/table.data';
+import { RuTableComponent } from 'src/app/modules/common/modules/common-table/ru-table.component';
 import { DataService } from 'src/app/services/data/data.service';
 import { FormValidationService } from 'src/app/services/forms/form.validation.service';
 import { UtilityService } from 'src/app/services/utility/utility.service';
@@ -20,6 +21,7 @@ import { UtilityService } from 'src/app/services/utility/utility.service';
   styleUrls: ['./request-asset.component.scss'],
 })
 export class RequestAssetComponent implements OnInit {
+  @ViewChild(RuTableComponent) tableComponent!: RuTableComponent<any>;
   tableColumns: Array<any> = [...REQUEST_ASSET_TABLE_COLUMN];
   tableData = [...REQUEST_ASSET_TABLE_DATA];
   requestAssetFrom!: FormGroup;
@@ -35,7 +37,7 @@ export class RequestAssetComponent implements OnInit {
     private _formBuilder: FormBuilder,
     private _formValidation: FormValidationService,
     private _dataService: DataService,
-    private utility: UtilityService
+    private _utility: UtilityService
   ) {}
 
   ngOnInit(): void {
@@ -43,16 +45,36 @@ export class RequestAssetComponent implements OnInit {
   }
   crateForm() {
     this.requestAssetFrom = this._formBuilder.group({
-      categories: [],
-      quantity: [JSON.stringify(this.quantity[0]), []],
-      priority: [this.priority[0], []],
-      date: [],
-      allocation: [this.allocationType[0], []],
-      reason: [],
+      asset_category: ['',[this._formValidation.VALIDATION.required]],
+      quantity: [JSON.stringify(this.quantity[0]), [[this._formValidation.VALIDATION.required]]],
+      priority: [this.priority[0], [[this._formValidation.VALIDATION.required]]],
+      required_by: ['',[this._formValidation.VALIDATION.required]],
+      allocation_type: [this.allocationType[0], [[this._formValidation.VALIDATION.required]]],
+      request_reason: [[this._formValidation.VALIDATION.required]],
     });
   }
 
   submitHandler() {
-    console.log(this.requestAssetFrom.value);
+    let obj: any = {
+      ...this.requestAssetFrom.value,
+      serial_number: this.tableData.length + 1,
+      status: 'Pending',
+      priority: 'High',
+      request_at: this._utility.getCurrentDate(),
+      company: 'Appinventiv',
+    };
+
+    this.tableData.push(obj);
+    this._utility.bar(
+      'Qualification Update Successfully',
+      '',
+      'green-snackbar'
+    );
+    this.tableComponent.dataSource.data = this.tableData; // update the data source
+  }
+
+  ngAfterViewInit(): void {
+    // set the table data in the child component
+    this.tableComponent.tableData = this.tableData;
   }
 }

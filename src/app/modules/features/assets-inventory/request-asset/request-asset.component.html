@@ -13,7 +13,7 @@
         >
         <mat-form-field class="form-field" appearance="outline">
           <mat-select
-            formControlName="categories"
+            formControlName="asset_category"
             placeholder="Assets Categories"
           >
             <mat-option
@@ -53,7 +53,12 @@
           >Required By Date <sup>*</sup></mat-card-subtitle
         >
         <mat-form-field appearance="outline">
-          <input formControlName="date" matInput [matDatepicker]="picker" placeholder="Required by Date" />
+          <input
+            formControlName="required_by"
+            matInput
+            [matDatepicker]="picker"
+            placeholder="Required by Date"
+          />
           <mat-datepicker-toggle
             matIconSuffix
             [for]="picker"
@@ -66,7 +71,7 @@
           >Allocation Type <sup>*</sup></mat-card-subtitle
         >
         <mat-form-field class="form-field" appearance="outline">
-          <mat-select formControlName="allocation">
+          <mat-select formControlName="allocation_type">
             <mat-option
               *ngFor="let item of allocationType"
               value="{{ item }}"
@@ -86,7 +91,7 @@
       <mat-form-field appearance="outline">
         <textarea
           matInput
-          formControlName="reason"
+          formControlName="request_reason"
           cdkTextareaAutosize
           cdkAutosizeMinRows="1"
           maxlength="500"
