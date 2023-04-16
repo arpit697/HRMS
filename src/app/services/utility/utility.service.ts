@@ -128,7 +128,7 @@ export class UtilityService {
     const month: number = date.getMonth() + 1; // add 1 to get the correct month index (0-11)
     const day: number = date.getDate();
     const year: number = date.getFullYear();
-    return `${year}-${month}-${day}`;
+    return `${year} - ${month} - ${day}`;
   }
 
   generateRandomNumber(): number {

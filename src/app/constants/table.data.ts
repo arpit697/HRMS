@@ -780,6 +780,7 @@ export const MY_TICKETS_TABLE_COLUMS = <any>[
     columnDef: 'action',
     header: 'Action',
     cell: (element: Record<string, any>) => `${element['action']}`,
+    type: 'two-buttons-action',
   },
   {
     columnDef: 'ticket_code',
@@ -815,7 +816,9 @@ export const MY_TICKETS_TABLE_COLUMS = <any>[
 
 export const MY_TICKETS_TABLE_DATA = <any>[
   {
-    action: 'Edit',
+    first_button_icon: 'arrow_circle_right',
+    second_button_icon: 'delete_forever',
+    action: '',
     ticket_code: 'ABC123',
     priority: 'High',
     employee: 'John Smith',

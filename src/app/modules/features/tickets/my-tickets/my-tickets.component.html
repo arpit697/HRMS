@@ -73,12 +73,13 @@
 <br />
 <br />
 <mat-card>
-  <mat-card-title class="table-title"> List All Shift </mat-card-title>
+  <mat-card-title class="table-title"> List All Tickets </mat-card-title>
   <app-ru-table
     class="p-12"
     [tableColumns]="tableColumns"
     [tableData]="tableData"
-    [TableClass]="'light-theme-table'"
+    [TableClass]="'ticket-table'"
     [isPageable]="true"
+    [isFilterable]="true"
   ></app-ru-table>
 </mat-card>

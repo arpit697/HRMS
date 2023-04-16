@@ -53,6 +53,8 @@ export class MyTicketsComponent implements OnInit {
         ...this.ticketForm.value,
         status: 'Open',
         employee: 'Arpit Dwivedi',
+        date : this._utility.getCurrentDate(),
+        ticket_code : this._utility.generateRandomNumber()
       };
       this.tableData.push(obj);
       this._utility.bar('Leave Applied Successfully', '', 'green-snackbar');

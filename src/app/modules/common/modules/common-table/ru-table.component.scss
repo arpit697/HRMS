@@ -261,7 +261,8 @@ table {
 }
 
 .my-dsr,
-.my-leave-table {
+.my-leave-table,
+.ticket-table {
   th,
   td {
     font-size: 14px;
@@ -330,7 +331,8 @@ table {
   }
 }
 
-.my-leave-table {
+.my-leave-table,
+.ticket-table {
   td {
     .action-button {
       padding: 0;
