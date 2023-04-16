@@ -37,6 +37,7 @@ mat-toolbar {
       position: absolute;
       left: 50%;
       transform: translateX(-50%) translateY(-190%);
+      margin-top: .3rem;
     }
 
     box-shadow: none;
@@ -46,6 +47,8 @@ mat-toolbar {
       padding: 0;
       box-shadow: none;
       gap: 2em;
+      font-weight: 500;
+      font-size: small;
       .user-card {
         padding: 0;
         box-shadow: none;
@@ -66,7 +69,7 @@ mat-toolbar {
         border-radius: 2px;
         padding: 0px 8px 0px 8px;
         height: 1.2rem;
-        margin-top: .5rem;
+        margin: .5rem .5rem ;
       }
       .bell {
         display: flex;
@@ -82,12 +85,18 @@ mat-toolbar {
       }
     }
   }
+  .bell-icon{
+    font-size: 1.5em;
+    margin-top: .5rem;
+    margin-right: 1rem;
+  }
   .menu {
     display: none;
   }
 }
 
 //  temp commit
+
 .notification-box {
   margin-top: 5em;
   min-height: calc(100vh - 8em);
@@ -119,11 +128,14 @@ mat-toolbar {
     background: white;
     .notify-header {
       padding: 10px;
-      border-radius: 12px 12px 0 0 !important;
+      border-radius: 12px 12px 0 0 ;
       background-color:#f7f7f7;
     }
   }
 }
+
+
+
 @media all and (max-width: 62em) {
   mat-toolbar {
     .arrow_forward {
