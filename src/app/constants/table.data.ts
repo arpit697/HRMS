@@ -254,7 +254,7 @@ export const REQUEST_ASSET_TABLE_DATA = [
     request_at: '2022-03-25',
     asset_category: 'Laptops',
     allocation_type: 'Permanent',
-    company: 'ABC Corporation'
+    company: 'ABC Corporation',
   },
 ];
 
@@ -774,3 +774,53 @@ export const REQUESTED_TRAINING_TABLE_COLUMN = [
 ];
 
 export const REQUESTED_TRAINING_TABLE_DATA = <any>[];
+
+export const MY_TICKETS_TABLE_COLUMS = <any>[
+  {
+    columnDef: 'action',
+    header: 'Action',
+    cell: (element: Record<string, any>) => `${element['action']}`,
+  },
+  {
+    columnDef: 'ticket_code',
+    header: 'Ticket Code',
+    cell: (element: Record<string, any>) => `${element['ticket_code']}`,
+  },
+  {
+    columnDef: 'priority',
+    header: 'Priority',
+    cell: (element: Record<string, any>) => `${element['priority']}`,
+  },
+  {
+    columnDef: 'employee',
+    header: 'Employee',
+    cell: (element: Record<string, any>) => `${element['employee']}`,
+  },
+  {
+    columnDef: 'subject',
+    header: 'Subject',
+    cell: (element: Record<string, any>) => `${element['subject']}`,
+  },
+  {
+    columnDef: 'status',
+    header: 'Status',
+    cell: (element: Record<string, any>) => `${element['status']}`,
+  },
+  {
+    columnDef: 'date',
+    header: 'Date',
+    cell: (element: Record<string, any>) => `${element['date']}`,
+  },
+];
+
+export const MY_TICKETS_TABLE_DATA = <any>[
+  {
+    action: 'Edit',
+    ticket_code: 'ABC123',
+    priority: 'High',
+    employee: 'John Smith',
+    subject: 'Server is down',
+    status: 'Open',
+    date: '2022-04-15',
+  },
+];

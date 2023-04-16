@@ -61,6 +61,12 @@ mat-panel-title {
   }
 }
 
+.a {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 1em;
+}
+
 @media all and (max-width: 50em) {
   .header {
     .module-title {

@@ -3,45 +3,70 @@
     <mat-panel-title class="table-title"> Create New Ticket </mat-panel-title>
     <button mat-button class="add-button">+ Add</button>
   </mat-expansion-panel-header>
-  <div class="expansion p-24">
-    <div>
-      <div class="project">
-        <mat-card-subtitle class="c-label">Subject</mat-card-subtitle>
-        <mat-form-field class="form-field" appearance="outline">
-          <input matInput type="text" />
-        </mat-form-field>
+  <div>
+    <form class="expansion p-24" [formGroup]="ticketForm">
+      <div>
+        <div>
+          <mat-card-subtitle class="c-label">Subject</mat-card-subtitle>
+          <mat-form-field class="form-field" appearance="outline">
+            <input matInput formControlName="subject" type="text" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-card-subtitle class="c-label">Department</mat-card-subtitle>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-select formArrayName="department">
+              <mat-option
+                *ngFor="let item of departmantCategories"
+                value="{{ item }}"
+                >{{ item.department }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-card-subtitle class="c-label">Ticket Category</mat-card-subtitle>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-select formControlName="categorie">
+              <mat-option
+                *ngFor="let item of departmantCategories[0]?.category"
+                value="{{ item }}"
+                >{{ item }}</mat-option
+              >
+              <mat-option
+                *ngFor="let item of departmantCategories[1]?.category"
+                value="{{ item }}"
+                >{{ item }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-card-subtitle class="c-label">Priority</mat-card-subtitle>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-select formControlName="priority">
+              <mat-option
+                *ngFor="let priority of priorities"
+                value="{{ priority }}"
+                >{{ priority }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+        </div>
       </div>
-      <div class="project">
-        <mat-card-subtitle class="c-label">Department</mat-card-subtitle>
-        <mat-form-field class="form-field" appearance="outline">
-          <mat-select>
-            <mat-option></mat-option>
-          </mat-select>
-        </mat-form-field>
+      <div>
+        <mat-card-subtitle class="c-label">Description</mat-card-subtitle>
+        <ckeditor
+          formControlName="ticket_detail"
+          [config]="editorConfig"
+        ></ckeditor>
       </div>
-      <div class="project">
-        <mat-card-subtitle class="c-label">Ticket Category</mat-card-subtitle>
-        <mat-form-field class="form-field" appearance="outline">
-          <mat-select>
-            <mat-option></mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="project">
-        <mat-card-subtitle class="c-label">Priority</mat-card-subtitle>
-        <mat-form-field class="form-field" appearance="outline">
-          <mat-select>
-            <mat-option></mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-    </div>
-    <div>
-      <mat-card-subtitle class="c-label">Description</mat-card-subtitle>
-      <ckeditor [(ngModel)]="content" [config]="editorConfig"></ckeditor>
-    </div>
+    </form>
+
     <mat-card-actions>
-      <button mat-raised-button class="add">Add</button>
+      <button mat-raised-button (click)="submitHandler()" class="add">
+        Add
+      </button>
     </mat-card-actions>
   </div>
 </mat-expansion-panel>

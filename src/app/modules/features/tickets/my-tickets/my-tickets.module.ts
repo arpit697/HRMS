@@ -12,7 +12,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CKEditorModule } from 'ckeditor4-angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RuTableModule } from 'src/app/modules/common/modules/common-table/ru-table.module';
 
 const MATERIAL = [
@@ -35,6 +35,7 @@ const MATERIAL = [
     CKEditorModule,
     FormsModule,
     RuTableModule,
+    ReactiveFormsModule,
     ...MATERIAL
   ]
 })

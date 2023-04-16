@@ -67,14 +67,14 @@ export const ASSETS_PRIORITY_DROP_DOWN = ['Low', 'Medium', 'High'];
 
 export const ALLOCATION_TYPE_DROP_DOWN = ['Permanent', 'Temporary'];
 
-export const OS_TYPE_DROP_DOWN = ['Android' , 'IOS']
+export const OS_TYPE_DROP_DOWN = ['Android', 'IOS'];
 
 export const LEAVE_TYPE_DROP_DOWN = [
   'Planned Leave (CL)',
   'Privileged Leave',
   'Emergency Leave (CL)',
   'Short Leaves',
-  'All Remaining Leaves (11.5)',
+  'All Remaining Leaves',
 ];
 
 export const DSR_PROJECT_DROP_DOWN = [
@@ -83,6 +83,24 @@ export const DSR_PROJECT_DROP_DOWN = [
   'Interview',
 ];
 
-export const YES_NO_DROP_DOWN = ['Yes' , 'No']
+export const YES_NO_DROP_DOWN = ['Yes', 'No'];
 
 export const PAGE_SIZE_DROP_DOWN = [5, 10, 25, 50, 100];
+
+export const TICKET_DEPARTMENT_CATEGORY_DROP_DWON = [
+  {
+    department: 'IT',
+    category: [
+      'Courier',
+      ' Devices',
+      ' Network',
+      'SIM Requirement',
+      'System Accessories',
+      ' System Arrangement',
+      'Troubleshooting',
+    ],
+  },
+  { department: 'Admin', category: ['Server'] },
+];
+
+export const TICKET_PRIORITY_DROP_DOWN = ['Low', 'Medium', 'High'];
