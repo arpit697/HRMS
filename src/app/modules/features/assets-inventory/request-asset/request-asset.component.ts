@@ -23,10 +23,10 @@ export class RequestAssetComponent implements OnInit {
   tableColumns: Array<any> = [...REQUEST_ASSET_TABLE_COLUMN];
   tableData = [...REQUEST_ASSET_TABLE_DATA];
   requestAssetFrom!: FormGroup;
-  assetCategories: any;
-  quantity: any;
-  priority: any;
-  allocationType: any;
+  assetCategories = ASSETS_CATEGORIES_DROP_DOWN;
+  quantity = ASSETS_QUANTITY_DROP_DOWN;
+  priority = ASSETS_PRIORITY_DROP_DOWN;
+  allocationType = ALLOCATION_TYPE_DROP_DOWN;
   panelOpenState: boolean = false;
   togglePanel() {
     this.panelOpenState = !this.panelOpenState;
@@ -39,19 +39,15 @@ export class RequestAssetComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.assetCategories = ASSETS_CATEGORIES_DROP_DOWN;
-    this.quantity = ASSETS_QUANTITY_DROP_DOWN;
-    this.priority = ASSETS_PRIORITY_DROP_DOWN;
-    this.allocationType = ALLOCATION_TYPE_DROP_DOWN;
     this.crateForm();
   }
   crateForm() {
     this.requestAssetFrom = this._formBuilder.group({
       categories: [],
-      quantity: [],
-      priority: [],
+      quantity: [JSON.stringify(this.quantity[0]), []],
+      priority: [this.priority[0], []],
       date: [],
-      allocation: [],
+      allocation: [this.allocationType[0], []],
       reason: [],
     });
   }
