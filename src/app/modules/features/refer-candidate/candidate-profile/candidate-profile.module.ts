@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { CandidateProfileRoutingModule } from './candidate-profile-routing.module';
 import { CandidateProfileComponent } from './candidate-profile.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
+const MATERIAL = [MatCardModule,MatDividerModule];
 
 @NgModule({
   declarations: [
@@ -11,7 +14,8 @@ import { CandidateProfileComponent } from './candidate-profile.component';
   ],
   imports: [
     CommonModule,
-    CandidateProfileRoutingModule
+    CandidateProfileRoutingModule,
+    ...MATERIAL
   ]
 })
 export class CandidateProfileModule { }
