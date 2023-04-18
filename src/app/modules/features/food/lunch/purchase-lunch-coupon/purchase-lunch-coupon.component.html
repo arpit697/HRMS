@@ -54,8 +54,8 @@
   </div>
 </mat-card>
 
-<br>
-<br>
+<br />
+<br />
 <div class="flex flex-column g-2">
   <mat-card class="p-24">
     <table class="calendar">
@@ -74,12 +74,20 @@
             future: day && isFuture(day)
           }"
         >
-          <mat-card-subtitle>
-            {{ day ? day.getDate() : "" }}
-          </mat-card-subtitle>
+          <div class="flex jc-between ai-center">
+            <input
+              type="checkbox"
+              *ngIf="
+                (day && isCurrent(day)) ||
+                (day && isFuture(day) && day && !isWeekend(day))
+              "
+            />
+            <mat-card-subtitle>
+              {{ day ? day.getDate() : "" }}
+            </mat-card-subtitle>
+          </div>
         </td>
       </tr>
     </table>
   </mat-card>
 </div>
-

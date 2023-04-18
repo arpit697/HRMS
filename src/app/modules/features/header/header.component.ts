@@ -1,35 +1,14 @@
-import {
-  trigger,
-  state,
-  style,
-  transition,
-  animate,
-} from '@angular/animations';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UtilityService } from 'src/app/services/utility/utility.service';
 import { HelpComponent } from './help/help.component';
 import { MatDialog } from '@angular/material/dialog';
+import { sliderAnimation } from 'src/app/animations/slide.in.out';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   animations: [
-    trigger('slideInOut', [
-      state(
-        'in',
-        style({
-          transform: 'translateX(0%)',
-        })
-      ),
-      state(
-        'out',
-        style({
-          transform: 'translateX(100%)',
-        })
-      ),
-      transition('in => out', animate('300ms ease-in-out')),
-      transition('out => in', animate('300ms ease-in-out')),
-    ]),
+    sliderAnimation
   ],
 })
 export class HeaderComponent implements OnInit {

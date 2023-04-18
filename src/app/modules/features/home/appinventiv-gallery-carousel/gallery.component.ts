@@ -33,8 +33,6 @@ export class GalleryComponent implements OnInit {
   };
 
   next() {
-    console.log('hello');
-
     this.carousel.next();
   }
 

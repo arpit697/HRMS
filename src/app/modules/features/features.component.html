@@ -21,13 +21,13 @@
             routerLinkActive="active"
             [routerLink]="list.router_link | routing"
           >
-            <mat-panel-title class="title"
+            <mat-panel-title class="title" 
               ><mat-icon class="list-icon" style="font-size: 1.5em">{{
                 list.icon
               }}</mat-icon>
               <span class="list-name" *ngIf="isShowing || isExpanded"
                 >{{ list.name }} </span
-              ><span
+              ><span 
                 ><mat-icon
                   class="important-icon"
                   *ngIf="list.important && isExpanded"

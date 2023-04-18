@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChunkModule } from 'src/app/pipes/chunk/chunk.module';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 const MATERIAL = [
   MatCardModule,
@@ -17,6 +18,7 @@ const MATERIAL = [
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
+  MatCheckboxModule,
 ];
 
 @NgModule({

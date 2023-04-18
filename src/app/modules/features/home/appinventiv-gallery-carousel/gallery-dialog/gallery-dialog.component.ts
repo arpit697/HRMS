@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, Inject, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { OwlOptions , CarouselComponent } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-gallery-dialog',
@@ -8,6 +8,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./gallery-dialog.component.scss'],
 })
 export class GalleryDialogComponent implements OnInit {
+  @ViewChild('OwlCarousel') carousel!: CarouselComponent;
   gallery: any;
   constructor(
     public dialogRef: MatDialogRef<GalleryDialogComponent>,
@@ -30,4 +31,12 @@ export class GalleryDialogComponent implements OnInit {
     pullDrag: false,
     navSpeed: 700,
   };
+
+  next() {
+    this.carousel.next();
+  }
+
+  previous() {
+    this.carousel.prev();
+  }
 }

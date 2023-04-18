@@ -9,3 +9,4 @@ export const slideRightToLeft = trigger('slideRightToLeft', [
     animate('500ms ease-in-out', style({ transform: 'translateX(-100%)' })),
   ]),
 ]);
+
