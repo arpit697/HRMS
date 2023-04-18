@@ -1,0 +1,14 @@
+.detail-container {
+  display: grid;
+  grid-template-columns: auto 60%;
+  gap: 1em;
+  .mat-divider{
+    margin-top: 5px;
+  }
+  .textarea {
+    ::ng-deep .mat-mdc-text-field-wrapper {
+      background-color: white;
+      min-height: 10em;
+    }
+  }
+}

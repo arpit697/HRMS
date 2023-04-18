@@ -1,0 +1,18 @@
+<mat-card class="textarea p-8">
+  <mat-form-field appearance="outline">
+    <textarea
+      matInput
+      cdkTextareaAutosize
+      cdkAutosizeMinRows="1"
+      maxlength="500"
+      cdkAutosizeMaxRows="10"
+      formControlName="skill"
+      placeholder="Comment"
+    ></textarea>
+  </mat-form-field>
+  <mat-card-actions>
+    <button mat-raised-button class="button-primary">Save</button>
+  </mat-card-actions>
+  <br />
+  <app-ru-table [tableColumns]="tableColumns" [tableData]="tableData"  [TableClass]="'ticket-comment-table'"></app-ru-table>
+</mat-card>

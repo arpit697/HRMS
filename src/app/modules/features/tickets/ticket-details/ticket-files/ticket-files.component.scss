@@ -1,0 +1,13 @@
+.textarea {
+  ::ng-deep .mat-mdc-text-field-wrapper {
+    background-color: white;
+    min-height: 5em;
+  }
+}
+
+.custom-file-input-container {
+  border: 1px solid #d8d8d8;
+  border-radius: 3px !important;
+  padding: 12px 10px !important;
+  background: #fff;
+}

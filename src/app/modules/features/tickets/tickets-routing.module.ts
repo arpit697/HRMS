@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TicketsComponent } from './tickets.component';
-import { MY_TICKETS } from 'src/app/constants/routes';
+import { MY_TICKETS, TICKET_DETAILS } from 'src/app/constants/routes';
 
 const routes: Routes = [
   {
@@ -13,6 +13,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./my-tickets/my-tickets.module').then(
             (m) => m.MyTicketsModule
+          ),
+      },
+      {
+        path: `${TICKET_DETAILS.path}/:id`,
+        loadChildren: () =>
+          import('./ticket-details/ticket-details.module').then(
+            (m) => m.TicketDetailsModule
           ),
       },
     ],

@@ -972,3 +972,71 @@ export const MY_TICKETS_TABLE_DATA = <any>[
     date: '2022-04-15',
   },
 ];
+
+export const TICKET_ATTACHMENT_TABLE_COLUMN = [
+  {
+    columnDef: 'option',
+    header: 'Option',
+    cell: (element: Record<string, any>) => `${element['option']}`,
+  },
+  {
+    columnDef: 'title',
+    header: 'Title',
+    cell: (element: Record<string, any>) => `${element['title']}`,
+  },
+  {
+    columnDef: 'description',
+    header: 'Description',
+    cell: (element: Record<string, any>) => `${element['description']}`,
+  },
+  {
+    columnDef: 'date_time',
+    header: 'Date And Time',
+    cell: (element: Record<string, any>) => `${element['date_time']}`,
+  },
+];
+export const TICKET_ATTACHMENT_TABLE_DATA = [
+  {
+    option: 1,
+    title: 'Attachment 1',
+    description: 'This is the description for attachment 1',
+    date_time: '2022-01-01 10:00:00',
+  },
+  {
+    option: 2,
+    title: 'Attachment 2',
+    description: 'This is the description for attachment 2',
+    date_time: '2022-01-02 12:00:00',
+  },
+  {
+    option: 3,
+    title: 'Attachment 3',
+    description: 'This is the description for attachment 3',
+    date_time: '2022-01-03 14:00:00',
+  },
+];
+
+export const TICKET_COMMENTS_TABLE_COLUMN = [
+  {
+    columnDef: 'all_comments',
+    header: 'All Comments',
+    cell: (element: Record<string, any>) => `${element['all_comments']}`,
+  },
+];
+export const TICKET_COMMENTS_TABLE_DATA = [
+  {
+    all_comments: 'This is the first comment',
+  },
+  {
+    all_comments: 'This is the second comment',
+  },
+  {
+    all_comments: 'This is the third comment',
+  },
+  {
+    all_comments: 'This is the fourth comment',
+  },
+  {
+    all_comments: 'This is the fifth comment',
+  },
+];

@@ -1,0 +1,37 @@
+<div class="ticket-detail-grid">
+  <div>
+    <mat-card>
+      <mat-card-title class="table-title">Leave Details</mat-card-title>
+      <mat-list role="list">
+        <mat-list-item
+          class="list-item"
+          role="listitem"
+          *ngFor="let item of ticketDetails"
+        >
+          <div class="flex jc-between">
+            <mat-card-subtitle class="tag">{{ item.tag }}</mat-card-subtitle>
+            <mat-card-subtitle class="detail">{{
+              item.detail
+            }}</mat-card-subtitle>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+  </div>
+  <mat-card class="p-14">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" animationDuration="0ms">
+      <mat-tab label="Details">
+        <app-details></app-details>
+      </mat-tab>
+      <mat-tab label="Comments">
+        <app-comments></app-comments>
+      </mat-tab>
+      <mat-tab label="Ticket Files">
+        <app-ticket-files></app-ticket-files>
+      </mat-tab>
+      <mat-tab label="Note">
+        <app-note></app-note>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>

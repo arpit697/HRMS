@@ -1,0 +1,38 @@
+<mat-card class="detail-container p-14">
+  <div>
+    <mat-card-title>Assigned To</mat-card-title>
+    
+    <mat-divider class="mat-divider"></mat-divider>
+  </div>
+  <div>
+    <mat-card-title>Update Status</mat-card-title>
+    <br />
+    <div>
+      <mat-card-subtitle class="c-label"> Status </mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <mat-select>
+          <mat-option value="open">Open</mat-option>
+          <mat-option value="close">Close</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <br />
+    <div class="textarea">
+      <mat-card-subtitle class="c-label">Remarks</mat-card-subtitle>
+      <mat-form-field appearance="outline">
+        <textarea
+          matInput
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="1"
+          maxlength="500"
+          cdkAutosizeMaxRows="10"
+          formControlName="skill"
+          placeholder="Remarks"
+        ></textarea>
+      </mat-form-field>
+    </div>
+    <mat-card-actions>
+      <button mat-raised-button class="button-primary">Save</button>
+    </mat-card-actions>
+  </div>
+</mat-card>

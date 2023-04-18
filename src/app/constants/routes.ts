@@ -283,6 +283,15 @@ export const MY_TICKETS: RouteInterface = {
   },
 };
 
+export const TICKET_DETAILS: RouteInterface = {
+  path: 'ticket-details',
+  get fullUrl(): string {
+    return `${TICKETS.fullUrl}/${this.path}`;
+  },
+};
+
+
+
 export const DSR: RouteInterface = {
   path: 'dsr',
   get fullUrl(): string {

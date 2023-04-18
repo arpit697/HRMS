@@ -1,0 +1,19 @@
+.ticket-detail-grid {
+  display: grid;
+  grid-template-columns: 30% auto;
+  grid-gap: 1em;
+
+  .list-item {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-top: 1px solid #f1f1f2;
+    font-size: 14px;
+    .tag,
+    .detail {
+      color: black;
+    }
+    &:nth-child(odd) {
+      background-color: rgba(24, 28, 33, 0.025);
+    }
+  }
+}

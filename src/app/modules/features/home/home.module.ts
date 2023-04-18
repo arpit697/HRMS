@@ -19,6 +19,7 @@ import { GalleryDialogComponent } from './appinventiv-gallery-carousel/gallery-d
 import { LatestAtAppinventivCarouselComponent } from './latest-at-appinventiv-carousel/latest-at-appinventiv-carousel.component';
 import { ReferralBonusComponent } from './referral-bonus/referral-bonus.component';
 import { MatSelectModule } from '@angular/material/select';
+import { ModalDialogComponent } from './latest-at-appinventiv-carousel/modal-dialog/modal-dialog.component';
 
 const MATERIAL = [
   MatCardModule,
@@ -37,6 +38,7 @@ const MATERIAL = [
     NewMembersComponent,
     LatestAtAppinventivCarouselComponent,
     ReferralBonusComponent,
+    ModalDialogComponent,
   ],
   imports: [
     CommonModule,
