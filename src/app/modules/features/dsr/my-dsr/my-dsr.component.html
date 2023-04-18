@@ -45,7 +45,10 @@
     </div>
     <div>
       <mat-card-subtitle class="c-label">Description</mat-card-subtitle>
-      <ckeditor formControlName="dsr_detail" [config]="editorConfig"></ckeditor>
+      <ckeditor
+        formControlName="editor_text"
+        [config]="editorConfig"
+      ></ckeditor>
     </div>
     <mat-card-actions>
       <button (click)="submitHandler()" mat-raised-button class="add">
@@ -63,7 +66,16 @@
         <mat-card-subtitle class="c-label">{{ item.label }}</mat-card-subtitle>
         <mat-form-field appearance="outline" *ngIf="item.type === 'select'">
           <mat-select formControlName="{{ item.formControlName }}">
-            <mat-option [value]="'jane'">aa</mat-option>
+            <div class="p-8">
+              <mat-form-field class="select-search-box" appearance="outline">
+                <input matInput  #inputRef />
+              </mat-form-field>
+            </div>
+            <mat-option
+              *ngFor="let value of item.dropDown | optionsFilter : inputRef" 
+              value="{{ value }}"
+              >{{ value }}</mat-option
+            >
           </mat-select>
         </mat-form-field>
 
@@ -92,7 +104,6 @@
     </div>
   </form>
 </mat-card>
-
 <br />
 <mat-card class="worksheets">
   <mat-card-title class="table-title">List All Worksheets</mat-card-title>

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { CarouselComponent, OwlOptions } from 'ngx-owl-carousel-o';
 import { GALLERY, GALLERY_COLLECTION } from 'src/app/constants/app.constants';
 import { GalleryDialogComponent } from './gallery-dialog/gallery-dialog.component';
 
@@ -11,13 +11,13 @@ import { GalleryDialogComponent } from './gallery-dialog/gallery-dialog.componen
 })
 export class GalleryComponent implements OnInit {
   gallery = <any>[];
-
+  @ViewChild('OwlCarousel') carousel!: CarouselComponent;
   constructor(private dialog: MatDialog) {}
   ngOnInit(): void {
     this.gallery = GALLERY_COLLECTION;
   }
   bottomCarousel: OwlOptions = {
-    loop: false,
+    loop: true,
     responsive: {
       '0': {
         items: 1,
@@ -32,9 +32,20 @@ export class GalleryComponent implements OnInit {
     margin: 20,
   };
 
+  next() {
+    console.log('hello');
+
+    this.carousel.next();
+  }
+
+  previous() {
+    this.carousel.prev();
+  }
+
   view(collection_data: any) {
+    const isSmallScreen = window.matchMedia('(max-width: 50em)').matches;
     const dialogRef = this.dialog.open(GalleryDialogComponent, {
-      width: '50%',
+      width: isSmallScreen ? '100%' : '40%',
       height: '50%',
       data: { ...collection_data },
     });

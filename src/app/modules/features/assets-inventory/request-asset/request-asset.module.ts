@@ -13,6 +13,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OptionsFilterModule } from 'src/app/pipes/options-filter/options-filter.module';
 
 const MATERIAL = [
   MatCardModule,
@@ -33,6 +34,7 @@ const MATERIAL = [
     ReactiveFormsModule,
     FormsModule,
     RuTableModule,
+    OptionsFilterModule,
     ...MATERIAL,
   ],
 })

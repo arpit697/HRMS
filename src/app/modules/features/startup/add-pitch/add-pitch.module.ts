@@ -13,6 +13,7 @@ import { CKEditorModule } from 'ckeditor4-angular';
 import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationCheckModule } from 'src/app/pipes/validation-check/validation-check.module';
 import { ReplaceCharModule } from 'src/app/pipes/replace-char/replace-char.module';
+import { OptionsFilterModule } from 'src/app/pipes/options-filter/options-filter.module';
 
 const MATERIAL = [
   MatCardModule,
@@ -33,6 +34,7 @@ const MATERIAL = [
     GetControlModule,
     ValidationCheckModule,
     ReplaceCharModule,
+    OptionsFilterModule,
     ...MATERIAL,
   ],
 })

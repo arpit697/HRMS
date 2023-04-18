@@ -548,123 +548,283 @@ export const DSR_TABLE_COLUMN = [
 export const DSR_TABLE_DATA = [
   {
     serial_number: 1,
+    project_name: 'Training Project React JS',
     emp_name: 'John Smith',
+    editor_text: `<p><strong>Meetings:</strong></p>
+    <p>N/A</p>
+    <p><strong>Tasks:</strong></p>
+    <ul>
+        <li>Task 1: Optimize the edit and delete of qualification (2 hours) [Complete]</li>
+        <li>Task 2: Create the logic of request training module and populate data into requested module (2 hours) [Complete]</li>
+        <li>Task 3: Make some left part which is not responsive, make it responsive (4 hours) [Complete]</li>
+    </ul>
+    <p><strong>Challenges:</strong></p>
+    <p>N/A</p>
+    `,
     emp_id: 'A123',
     email: 'john.smith@example.com',
     employment_type: 'Full-time',
     date: '2022-03-15',
     total_logged_hr: 8,
-    final_approval: 'Yes',
+    final_approval: 'Approved',
+    pm_approval: 'Pending',
+    am_approval: 'Approved',
+    rm_approval: 'Approved',
+    status: 'Pending',
+    button_icon: 'edit',
+    action: '',
   },
   {
     serial_number: 2,
+    project_name: 'Training Project React JS',
     emp_name: 'Jane Doe',
+    editor_text: `<p><strong>Meetings:</strong></p>
+    <p>N/A</p>
+    <p><strong>Tasks:</strong></p>
+    <ul>
+        <li>Task 1: Optimize the edit and delete of qualification (2 hours) [Complete]</li>
+        <li>Task 2: Create the logic of request training module and populate data into requested module (2 hours) [Complete]</li>
+        <li>Task 3: Make some left part which is not responsive, make it responsive (4 hours) [Complete]</li>
+    </ul>
+    <p><strong>Challenges:</strong></p>
+    <p>N/A</p>
+    `,
     emp_id: 'B456',
     email: 'jane.doe@example.com',
     employment_type: 'Part-time',
     date: '2022-03-15',
     total_logged_hr: 4,
-    final_approval: 'Yes',
+    final_approval: 'Approved',
+    pm_approval: 'Pending',
+    am_approval: 'Approved',
+    rm_approval: 'Approved',
+    status: 'Pending',
+    button_icon: 'edit',
+    action: '',
   },
   {
     serial_number: 3,
+    project_name: 'Training Project React JS',
     emp_name: 'Bob Johnson',
+    editor_text: `<p><strong>Meetings:</strong></p>
+    <p>N/A</p>
+    <p><strong>Tasks:</strong></p>
+    <ul>
+        <li>Task 1: Optimize the edit and delete of qualification (2 hours) [Complete]</li>
+        <li>Task 2: Create the logic of request training module and populate data into requested module (2 hours) [Complete]</li>
+        <li>Task 3: Make some left part which is not responsive, make it responsive (4 hours) [Complete]</li>
+    </ul>
+    <p><strong>Challenges:</strong></p>
+    <p>N/A</p>
+    `,
     emp_id: 'C789',
     email: 'bob.johnson@example.com',
     employment_type: 'Full-time',
     date: '2022-03-16',
     total_logged_hr: 6,
-    final_approval: 'No',
+    final_approval: 'Pending',
+    pm_approval: 'Pending',
+    am_approval: 'Approved',
+    rm_approval: 'Approved',
+    status: 'Pending',
+    button_icon: 'edit',
+    action: '',
   },
   {
     serial_number: 4,
+    project_name: 'Training Project React JS',
     emp_name: 'John Smith',
+    editor_text: `<p><strong>Meetings:</strong></p>
+    <p>N/A</p>
+    <p><strong>Tasks:</strong></p>
+    <ul>
+        <li>Task 1: Optimize the edit and delete of qualification (2 hours) [Complete]</li>
+        <li>Task 2: Create the logic of request training module and populate data into requested module (2 hours) [Complete]</li>
+        <li>Task 3: Make some left part which is not responsive, make it responsive (4 hours) [Complete]</li>
+    </ul>
+    <p><strong>Challenges:</strong></p>
+    <p>N/A</p>
+    `,
     emp_id: 'A123',
     email: 'john.smith@example.com',
     employment_type: 'Full-time',
     date: '2022-03-15',
     total_logged_hr: 8,
-    final_approval: 'Yes',
+    final_approval: 'Approved',
+    pm_approval: 'Pending',
+    am_approval: 'Approved',
+    rm_approval: 'Approved',
+    status: 'Pending',
+    button_icon: 'edit',
+    action: '',
   },
   {
     serial_number: 5,
+    project_name: 'Training Project React JS',
     emp_name: 'Jane Doe',
+    editor_text: `<p><strong>Meetings:</strong></p>
+    <p>N/A</p>
+    <p><strong>Tasks:</strong></p>
+    <ul>
+        <li>Task 1: Optimize the edit and delete of qualification (2 hours) [Complete]</li>
+        <li>Task 2: Create the logic of request training module and populate data into requested module (2 hours) [Complete]</li>
+        <li>Task 3: Make some left part which is not responsive, make it responsive (4 hours) [Complete]</li>
+    </ul>
+    <p><strong>Challenges:</strong></p>
+    <p>N/A</p>
+    `,
     emp_id: 'B456',
     email: 'jane.doe@example.com',
     employment_type: 'Part-time',
     date: '2022-03-15',
     total_logged_hr: 4,
-    final_approval: 'Yes',
+    final_approval: 'Approved',
+    pm_approval: 'Pending',
+    am_approval: 'Approved',
+    rm_approval: 'Approved',
+    status: 'Pending',
+    button_icon: 'edit',
+    action: '',
   },
   {
     serial_number: 6,
+    project_name: 'Training Project React JS',
     emp_name: 'Bob Johnson',
+    editor_text: `<p><strong>Meetings:</strong></p>
+    <p>N/A</p>
+    <p><strong>Tasks:</strong></p>
+    <ul>
+        <li>Task 1: Optimize the edit and delete of qualification (2 hours) [Complete]</li>
+        <li>Task 2: Create the logic of request training module and populate data into requested module (2 hours) [Complete]</li>
+        <li>Task 3: Make some left part which is not responsive, make it responsive (4 hours) [Complete]</li>
+    </ul>
+    <p><strong>Challenges:</strong></p>
+    <p>N/A</p>
+    `,
     emp_id: 'C789',
     email: 'bob.johnson@example.com',
     employment_type: 'Full-time',
     date: '2022-03-16',
     total_logged_hr: 6,
-    final_approval: 'No',
+    final_approval: 'Rejected',
+    pm_approval: 'Pending',
+    am_approval: 'Approved',
+    rm_approval: 'Approved',
+    status: 'Pending',
+    button_icon: 'edit',
+    action: '',
   },
   {
     serial_number: 7,
+    project_name: 'Training Project React JS',
     emp_name: 'John Smith',
+    editor_text: `<p><strong>Meetings:</strong></p>
+    <p>N/A</p>
+    <p><strong>Tasks:</strong></p>
+    <ul>
+        <li>Task 1: Optimize the edit and delete of qualification (2 hours) [Complete]</li>
+        <li>Task 2: Create the logic of request training module and populate data into requested module (2 hours) [Complete]</li>
+        <li>Task 3: Make some left part which is not responsive, make it responsive (4 hours) [Complete]</li>
+    </ul>
+    <p><strong>Challenges:</strong></p>
+    <p>N/A</p>
+    `,
     emp_id: 'A123',
     email: 'john.smith@example.com',
     employment_type: 'Full-time',
     date: '2022-03-15',
     total_logged_hr: 8,
-    final_approval: 'Yes',
+    final_approval: 'Approved',
+    pm_approval: 'Pending',
+    am_approval: 'Approved',
+    rm_approval: 'Approved',
+    status: 'Pending',
+    button_icon: 'edit',
+    action: '',
   },
   {
     serial_number: 8,
+    project_name: 'Training Project React JS',
     emp_name: 'Jane Doe',
+    editor_text: `<p><strong>Meetings:</strong></p>
+    <p>N/A</p>
+    <p><strong>Tasks:</strong></p>
+    <ul>
+        <li>Task 1: Optimize the edit and delete of qualification (2 hours) [Complete]</li>
+        <li>Task 2: Create the logic of request training module and populate data into requested module (2 hours) [Complete]</li>
+        <li>Task 3: Make some left part which is not responsive, make it responsive (4 hours) [Complete]</li>
+    </ul>
+    <p><strong>Challenges:</strong></p>
+    <p>N/A</p>
+    `,
     emp_id: 'B456',
     email: 'jane.doe@example.com',
     employment_type: 'Part-time',
     date: '2022-03-15',
     total_logged_hr: 4,
-    final_approval: 'Yes',
+    final_approval: 'Approved',
+    pm_approval: 'Pending',
+    am_approval: 'Approved',
+    rm_approval: 'Approved',
+    status: 'Pending',
+    button_icon: 'edit',
+    action: '',
   },
   {
     serial_number: 9,
+    project_name: 'Training Project React JS',
     emp_name: 'Bob Johnson',
+    editor_text: `<p><strong>Meetings:</strong></p>
+    <p>N/A</p>
+    <p><strong>Tasks:</strong></p>
+    <ul>
+        <li>Task 1: Optimize the edit and delete of qualification (2 hours) [Complete]</li>
+        <li>Task 2: Create the logic of request training module and populate data into requested module (2 hours) [Complete]</li>
+        <li>Task 3: Make some left part which is not responsive, make it responsive (4 hours) [Complete]</li>
+    </ul>
+    <p><strong>Challenges:</strong></p>
+    <p>N/A</p>
+    `,
     emp_id: 'C789',
     email: 'bob.johnson@example.com',
     employment_type: 'Full-time',
     date: '2022-03-16',
     total_logged_hr: 6,
-    final_approval: 'No',
+    final_approval: 'Pending',
+    pm_approval: 'Pending',
+    am_approval: 'Approved',
+    rm_approval: 'Approved',
+    status: 'Pending',
+    button_icon: 'edit',
+    action: '',
   },
   {
     serial_number: 10,
+    project_name: 'Training Project React JS',
     emp_name: 'John Smith',
+    editor_text: `<p><strong>Meetings:</strong></p>
+    <p>N/A</p>
+    <p><strong>Tasks:</strong></p>
+    <ul>
+        <li>Task 1: Optimize the edit and delete of qualification (2 hours) [Complete]</li>
+        <li>Task 2: Create the logic of request training module and populate data into requested module (2 hours) [Complete]</li>
+        <li>Task 3: Make some left part which is not responsive, make it responsive (4 hours) [Complete]</li>
+    </ul>
+    <p><strong>Challenges:</strong></p>
+    <p>N/A</p>
+    `,
     emp_id: 'A123',
     email: 'john.smith@example.com',
     employment_type: 'Full-time',
     date: '2022-03-15',
     total_logged_hr: 8,
-    final_approval: 'Yes',
-  },
-  {
-    serial_number: 11,
-    emp_name: 'Jane Doe',
-    emp_id: 'B456',
-    email: 'jane.doe@example.com',
-    employment_type: 'Part-time',
-    date: '2022-03-15',
-    total_logged_hr: 4,
-    final_approval: 'Yes',
-  },
-  {
-    serial_number: 12,
-    emp_name: 'Bob Johnson',
-    emp_id: 'C789',
-    email: 'bob.johnson@example.com',
-    employment_type: 'Full-time',
-    date: '2022-03-16',
-    total_logged_hr: 6,
-    final_approval: 'No',
+    final_approval: 'Approved',
+    pm_approval: 'Pending',
+    am_approval: 'Approved',
+    rm_approval: 'Approved',
+    status: 'Pending',
+    button_icon: 'edit',
+    action: '',
   },
 ];
 
@@ -711,9 +871,9 @@ export const DSR_DETAIL_TABLE_COLUMN = [
     cell: (element: Record<string, any>) => `${element['final_approval']}`,
   },
   {
-    columnDef: 'logged_hrs',
+    columnDef: 'ttotal_logged_hr',
     header: 'Logged Hrs',
-    cell: (element: Record<string, any>) => `${element['logged_hrs']}`,
+    cell: (element: Record<string, any>) => `${element['total_logged_hr']}`,
   },
   {
     columnDef: 'action',
@@ -723,22 +883,7 @@ export const DSR_DETAIL_TABLE_COLUMN = [
   },
 ];
 
-export const DSR_DETAIL_TABLE_DATA = [
-  {
-    serial_number: 1,
-    project_name: 'Project A',
-    editor_text:
-      "<h4>Greetings from Arpit Dwivedi!</h4><p>Hi there,</p><p>Just wanted to say hello and check in on you. I hope you're doing well.</p><p>Best regards,</p><p>Arpit Dwivedi</p>",
-    status: 'In progress',
-    pm_approval: 'Pending',
-    am_approval: 'Approved',
-    rm_approval: 'Approved',
-    final_approval: 'Pending',
-    logged_hrs: 8,
-    button_icon: 'edit',
-    action: '',
-  },
-];
+export const DSR_DETAIL_TABLE_DATA = [];
 
 export const REQUESTED_TRAINING_TABLE_COLUMN = [
   {

@@ -9,6 +9,6 @@ export class DataService {
   constructor() {}
   referredCandidate = <any>[];
   leaveDetail = <any>{};
-  dsrDetail = {};
+  dsrDetail = <any>[];
   trainingRequest = <any>[];
 }

@@ -5,11 +5,13 @@ import {
   state,
   style,
 } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { rotateAnimation } from 'src/app/animations/clock.anticlock';
 import { SIDE_NAV_ITEM } from 'src/app/constants/app.constants';
 import { CovidComponent } from './covid/covid.component';
+import { MatAccordion } from '@angular/material/expansion';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-features',
@@ -34,17 +36,35 @@ import { CovidComponent } from './covid/covid.component';
     ]),
   ],
 })
-export class FeaturesComponent implements OnInit {
+export class FeaturesComponent implements OnInit, AfterViewInit {
   rotateDirection = 'clockwise';
   sidenavState = 'open';
   isExpanded: boolean = true;
+  isShowing = false;
   public items = <any>[];
   isClicked: any;
-  constructor(private dialog: MatDialog) {
+  previousUrl: string = '';
+
+  constructor(private dialog: MatDialog, private _router: Router) {
     this.checkScreenSize();
     window.addEventListener('resize', () => {
       this.checkScreenSize();
     });
+  }
+  ngAfterViewInit(): void {
+    this._router.events.subscribe((event: any) => {
+      if (
+        event instanceof NavigationEnd &&
+        this._router.url !== this.previousUrl
+      ) {
+        this.onRouteChange();
+        this.previousUrl = this._router.url;
+      }
+    });
+  }
+
+  onRouteChange() {
+    this.isExpanded = false;
   }
 
   checkScreenSize() {
@@ -59,13 +79,12 @@ export class FeaturesComponent implements OnInit {
       this.rotateDirection =
         this.rotateDirection === 'clockwise' ? 'anticlockwise' : 'clockwise';
     }, 1000);
+    this.previousUrl = this._router.url;
   }
 
   handleIsExpandedChange(event: any) {
     this.isExpanded = event;
   }
-
-  isShowing = false;
 
   mouseenter() {
     this.isShowing = !this.isExpanded;

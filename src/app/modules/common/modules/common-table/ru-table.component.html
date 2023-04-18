@@ -79,7 +79,7 @@
               </span>
             </div>
             <div *ngSwitchCase="'formatted-text'">
-              <div [innerHTML]="element.editor_text"></div>
+              <div class="formatted-text" [innerHTML]="element.editor_text"></div>
             </div>
             <div *ngSwitchCase="'link'">
               <a [routerLink]="element?.path | routing : element?.id">{{

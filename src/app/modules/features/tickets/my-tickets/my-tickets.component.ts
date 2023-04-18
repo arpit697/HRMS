@@ -13,6 +13,7 @@ import {
 import { RuTableComponent } from 'src/app/modules/common/modules/common-table/ru-table.component';
 import { UtilityService } from 'src/app/services/utility/utility.service';
 import { RemoveRecordDialogComponent } from './remove-record-dialog/remove-record-dialog.component';
+import { FormValidationService } from 'src/app/services/forms/form.validation.service';
 
 @Component({
   selector: 'app-my-tickets',
@@ -32,7 +33,8 @@ export class MyTicketsComponent implements OnInit {
   constructor(
     private _dialog: MatDialog,
     private _formBuilder: FormBuilder,
-    private _utility: UtilityService
+    private _utility: UtilityService,
+    private _formValidation: FormValidationService
   ) {}
   ngOnInit(): void {
     this.createForm();
@@ -40,14 +42,14 @@ export class MyTicketsComponent implements OnInit {
 
   createForm() {
     this.ticketForm = this._formBuilder.group({
-      ticket_code: [],
-      priority: [],
-      employee: [],
-      subject: [],
-      department: [],
-      categorie: [],
-      status: [],
-      ticket_detail: [],
+      ticket_code: [, [...this._formValidation.VALIDATION.required]],
+      priority: [, [...this._formValidation.VALIDATION.required]],
+      employee: [, [...this._formValidation.VALIDATION.required]],
+      subject: [, [...this._formValidation.VALIDATION.required]],
+      department: [, [...this._formValidation.VALIDATION.required]],
+      categorie: [, [...this._formValidation.VALIDATION.required]],
+      status: [, [...this._formValidation.VALIDATION.required]],
+      ticket_detail: [, [...this._formValidation.VALIDATION.required]],
     });
   }
   submitHandler() {
@@ -66,6 +68,11 @@ export class MyTicketsComponent implements OnInit {
       this.ticketForm.reset();
       this.tableComponent.dataSource.data = this.tableData; // update the data source
     } else {
+      this._utility.bar(
+        this._utility.formCheck(this.ticketForm),
+        '',
+        'red-snackbar'
+      );
     }
   }
 
@@ -89,11 +96,9 @@ export class MyTicketsComponent implements OnInit {
           'ticket_code',
           result.ticket_code
         );
-        
+
         this.tableData.splice(index, 1);
         this.tableComponent.dataSource.data = this.tableData;
-       
-        
       }
     });
   }

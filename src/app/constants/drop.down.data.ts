@@ -4,15 +4,15 @@ export const EDUCATION_LEVEL_DROP_DOWN = [
   { course: 'M.Tech' },
   { course: 'BCA' },
   { course: 'MCA' },
-  //   { course: 'BBA' },
-  //   { course: 'MBA' },
-  //   { course: 'B.Sc' },
-  //   { course: 'M.Sc' },
-  //   { course: 'BA' },
-  //   { course: 'MA' },
-  //   { course: 'Phd' },
-  //   { course: 'Diploma' },
-  //   { course: 'B.Sc Animation & Film Makin' },
+    { course: 'BBA' },
+    { course: 'MBA' },
+    { course: 'B.Sc' },
+    { course: 'M.Sc' },
+    { course: 'BA' },
+    { course: 'MA' },
+    { course: 'Phd' },
+    { course: 'Diploma' },
+    { course: 'B.Sc Animation & Film Makin' },
 ];
 
 export const LANGUAGE_DROP_DOWN = [
@@ -81,6 +81,22 @@ export const DSR_PROJECT_DROP_DOWN = [
   'Training Project React JS',
   'Miscellaneous',
   'Interview',
+];
+
+export const DSR_SUBMISSION_STATUS_DROP_DOWN = ['Submitted', 'Due'];
+
+export const WORKING_HOURS_DROP_DOWN = [
+  'Hours',
+  'Less than 5 Hours',
+  'Greater than 5 and Less than equal to 8',
+  'Greater than 8',
+  'Greater than 10',
+];
+
+export const DSR_FINAL_APPROVAL_STATUS_DROP_DOWN = [
+  'Pending',
+  'Approved',
+  'Rejected',
 ];
 
 export const YES_NO_DROP_DOWN = ['Yes', 'No'];

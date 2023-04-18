@@ -1,8 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { rotate } from 'src/app/animations/clock.anticlock';
-import { DSR_PROJECT_DROP_DOWN } from 'src/app/constants/drop.down.data';
+import {
+  DSR_FINAL_APPROVAL_STATUS_DROP_DOWN,
+  DSR_PROJECT_DROP_DOWN,
+  DSR_SUBMISSION_STATUS_DROP_DOWN,
+  WORKING_HOURS_DROP_DOWN,
+} from 'src/app/constants/drop.down.data';
 import { EDITOR_CONFIG } from 'src/app/constants/editor.config';
 import { MY_DSR } from 'src/app/constants/routes';
 import { DSR_TABLE_COLUMN, DSR_TABLE_DATA } from 'src/app/constants/table.data';
@@ -23,7 +27,10 @@ export class MyDsrComponent implements OnInit {
   tableData = [...DSR_TABLE_DATA];
   dsrForm!: FormGroup;
   filterForm!: FormGroup;
-  projects: any;
+  projects = DSR_PROJECT_DROP_DOWN;
+  submissionStatus = DSR_SUBMISSION_STATUS_DROP_DOWN;
+  finalApproval = DSR_FINAL_APPROVAL_STATUS_DROP_DOWN;
+  workingHours = WORKING_HOURS_DROP_DOWN;
   content: string = '';
   panelOpenState: boolean = false;
   filterValues: any[] = [];
@@ -35,14 +42,26 @@ export class MyDsrComponent implements OnInit {
       label: 'Submission Date',
       formControlName: 'submission_date',
       type: 'select',
+      dropDown: [...this.submissionStatus],
     },
-    { label: 'Project', formControlName: 'project', type: 'select' },
+    {
+      label: 'Project',
+      formControlName: 'project',
+      type: 'select',
+      dropDown: [...this.projects],
+    },
     {
       label: 'Final Approval Status',
       formControlName: 'status',
       type: 'select',
+      dropDown: [...this.finalApproval],
     },
-    { label: 'Hours', formControlName: 'timing', type: 'select' },
+    {
+      label: 'Hours',
+      formControlName: 'timing',
+      type: 'select',
+      dropDown: [...this.workingHours],
+    },
   ];
   constructor(
     private _route: Router,
@@ -52,7 +71,7 @@ export class MyDsrComponent implements OnInit {
     private _utility: UtilityService
   ) {}
   ngOnInit(): void {
-    this.projects = DSR_PROJECT_DROP_DOWN;
+    this._dataService.dsrDetail = [...DSR_TABLE_DATA];
     this.createForm();
     this.createFilterForm();
   }
@@ -61,7 +80,7 @@ export class MyDsrComponent implements OnInit {
       project_name: [],
       date: [],
       login_hours: [],
-      dsr_detail: [],
+      editor_text: [],
     });
   }
   createFilterForm() {
@@ -103,12 +122,38 @@ export class MyDsrComponent implements OnInit {
     this.panelOpenState = !this.panelOpenState;
   }
   submitHandler() {
-    console.log(this.dsrForm.value);
+    if (this.dsrForm.valid) {
+      let obj = {
+        ...this.dsrForm.value,
+        serial_number: this.tableData.length + 1,
+        emp_name: 'Arpit Dwivedi',
+        emp_id: 'A123',
+        email: 'arp.d@pm.me',
+        employment_type: 'Full-time',
+        date: this._utility.getCurrentDate(),
+        pm_approval: 'Pending',
+        am_approval: 'Approved',
+        rm_approval: 'Approved',
+        final_approval: 'Pending',
+        status: 'Pending',
+        total_logged_hr: 8,
+        button_icon: 'edit',
+        action: '',
+      };
+      this.tableData.push(obj);
+      this._dataService.dsrDetail.push(obj);
+      this._utility.bar('DSR Submitted Successfully', '', 'green-snackbar');
+      this.dsrForm.reset();
+      this.tableComponent.dataSource.data = this.tableData; // update the data source
+    } else {
+      this._utility.bar(
+        this._utility.formCheck(this.dsrForm),
+        '',
+        'red-snackbar'
+      );
+    }
   }
   viewDetails(event: any) {
-    console.log(event);
-    this._dataService.leaveDetail = { ...event };
-
     this._route.navigate([
       MY_DSR.fullUrl,
       this._utility.generateRandomNumber(),

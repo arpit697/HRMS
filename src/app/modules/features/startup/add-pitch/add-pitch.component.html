@@ -55,8 +55,13 @@
     <mat-card-subtitle>Industry</mat-card-subtitle>
     <mat-form-field appearance="outline">
       <mat-select formControlName="industry">
+        <div class="p-8">
+          <mat-form-field class="select-search-box" appearance="outline">
+            <input matInput #inputRef />
+          </mat-form-field>
+        </div>
         <mat-option
-          *ngFor="let indus of industries"
+          *ngFor="let indus of industries | optionsFilter : inputRef"
           value="{{ indus.industry }}"
           >{{ indus.industry }}</mat-option
         >
@@ -74,8 +79,13 @@
     <mat-card-subtitle>Type</mat-card-subtitle>
     <mat-form-field appearance="outline">
       <mat-select formControlName="type">
+        <div class="p-8">
+          <mat-form-field class="select-search-box" appearance="outline">
+            <input matInput #inputRef2 />
+          </mat-form-field>
+        </div>
         <mat-option
-          *ngFor="let tech of technicalTypes"
+          *ngFor="let tech of technicalTypes | optionsFilter : inputRef2"
           value="{{ tech.type }}"
           >{{ tech.type }}</mat-option
         >
@@ -94,7 +104,7 @@
     <mat-card-subtitle for="pitch_idea"
       >Idea - (Share your idea in brief)</mat-card-subtitle
     >
-    <ckeditor [(ngModel)]="content" [config]="editorConfig"></ckeditor>
+    <ckeditor formControlName="idea" [config]="editorConfig"></ckeditor>
   </div>
 
   <div>

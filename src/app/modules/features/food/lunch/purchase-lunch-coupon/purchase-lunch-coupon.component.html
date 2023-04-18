@@ -53,3 +53,33 @@
     </mat-card-actions>
   </div>
 </mat-card>
+
+<br>
+<br>
+<div class="flex flex-column g-2">
+  <mat-card class="p-24">
+    <table class="calendar">
+      <tr>
+        <th class="day-of-week" *ngFor="let dayOfWeek of daysOfWeek">
+          {{ dayOfWeek }}
+        </th>
+      </tr>
+      <tr *ngFor="let week of days | chunk : 7">
+        <td
+          *ngFor="let day of week"
+          [ngClass]="{
+            weekend: day && isWeekend(day),
+            past: day && isPast(day),
+            current: day && isCurrent(day),
+            future: day && isFuture(day)
+          }"
+        >
+          <mat-card-subtitle>
+            {{ day ? day.getDate() : "" }}
+          </mat-card-subtitle>
+        </td>
+      </tr>
+    </table>
+  </mat-card>
+</div>
+

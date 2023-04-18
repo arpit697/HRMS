@@ -5,7 +5,7 @@ import {
   transition,
   animate,
 } from '@angular/animations';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UtilityService } from 'src/app/services/utility/utility.service';
 import { HelpComponent } from './help/help.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -33,8 +33,9 @@ import { MatDialog } from '@angular/material/dialog';
   ],
 })
 export class HeaderComponent implements OnInit {
-  isExpanded: boolean = true;
+  @Input() isExpanded: boolean = true;
   @Output() dataEvent = new EventEmitter<any>();
+  @Input() routeChange = false;
   ngOnInit() {}
   constructor(private dialog: MatDialog, public utility: UtilityService) {
     this.checkScreenSize();
@@ -58,9 +59,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openDialog(): void {
-    // const isSmallScreen = window.matchMedia('(max-width: 50em)').matches;
     const dialogRef = this.dialog.open(HelpComponent, {
-      // width: isSmallScreen ? '100%' : '30%',
       height: '40%',
       data: {},
     });

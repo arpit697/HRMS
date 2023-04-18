@@ -10,6 +10,30 @@
   border-radius: 0 !important;
   color: white;
 }
+.card-title {
+  color: #221e1e;
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: 0.437px;
+  margin-bottom: 10px;
+}
+
+.note {
+  color: #606167;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  padding-right: 10px;
+}
+.request-button {
+  background: linear-gradient(180deg, #67b0f9 0%, #368cf6 100%);
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+}
 
 @media all and (max-width: 85em) {
   .form {

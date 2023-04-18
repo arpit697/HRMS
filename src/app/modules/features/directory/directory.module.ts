@@ -10,6 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { RuButtonModule } from '../../common/modules/common-button/ru-button.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { OptionsFilterModule } from 'src/app/pipes/options-filter/options-filter.module';
 
 const MATERIAL = [
   MatCardModule,
@@ -17,10 +18,10 @@ const MATERIAL = [
   MatInputModule,
   MatSelectModule,
   MatIconModule,
-  MatButtonModule
+  MatButtonModule , 
 ];
 @NgModule({
   declarations: [DirectoryComponent],
-  imports: [CommonModule, DirectoryRoutingModule, RuButtonModule, ...MATERIAL],
+  imports: [CommonModule, DirectoryRoutingModule, RuButtonModule, OptionsFilterModule, ...MATERIAL],
 })
 export class DirectoryModule { }

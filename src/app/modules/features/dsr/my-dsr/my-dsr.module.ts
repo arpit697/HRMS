@@ -19,6 +19,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CKEditorModule } from 'ckeditor4-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { OptionsFilterModule } from 'src/app/pipes/options-filter/options-filter.module';
 
 const MATERIAL = [
   MatCardModule,
@@ -43,6 +44,7 @@ const MATERIAL = [
     CKEditorModule,
     RuTableModule,
     ReactiveFormsModule,
+    OptionsFilterModule,
     ...MATERIAL,
   ],
 })

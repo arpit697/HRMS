@@ -41,7 +41,10 @@
     </div>
     <div>
       <mat-card-subtitle class="c-label">Description</mat-card-subtitle>
-      <ckeditor formControlName="dsr_detail" [config]="editorConfig"></ckeditor>
+      <ckeditor
+        formControlName="editor_text"
+        [config]="editorConfig"
+      ></ckeditor>
     </div>
     <mat-card-actions>
       <button

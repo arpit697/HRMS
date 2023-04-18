@@ -5,6 +5,7 @@ import {
   INDUSTRIES_DROP_DOWN,
   TECHNICAL_TYPE_DROP_DOWN,
 } from 'src/app/constants/drop.down.data';
+import { EDITOR_CONFIG } from 'src/app/constants/editor.config';
 import { DataService } from 'src/app/services/data/data.service';
 import { FormValidationService } from 'src/app/services/forms/form.validation.service';
 import { UtilityService } from 'src/app/services/utility/utility.service';
@@ -15,15 +16,15 @@ import { UtilityService } from 'src/app/services/utility/utility.service';
   styleUrls: ['./add-pitch.component.scss'],
 })
 export class AddPitchComponent implements OnInit {
+  editorConfig = {
+    ...EDITOR_CONFIG,
+  };
   ideaForm!: FormGroup;
-  industries: any;
-  technicalTypes: any;
-  employeeDetail: any;
+  industries = INDUSTRIES_DROP_DOWN;
+  technicalTypes = TECHNICAL_TYPE_DROP_DOWN;
+  employeeDetail = EMP_DETAIL;
 
   ngOnInit(): void {
-    this.employeeDetail = EMP_DETAIL;
-    this.industries = INDUSTRIES_DROP_DOWN;
-    this.technicalTypes = TECHNICAL_TYPE_DROP_DOWN;
     this.createForm();
   }
   constructor(
@@ -40,6 +41,7 @@ export class AddPitchComponent implements OnInit {
       pitch_title: [null, [...this._formValidation.VALIDATION.required]],
       industry: [null, [...this._formValidation.VALIDATION.required]],
       type: [null, [...this._formValidation.VALIDATION.required]],
+      idea: [null, [...this._formValidation.VALIDATION.required]],
     });
   }
   readURL(event: any): void {
@@ -50,35 +52,6 @@ export class AddPitchComponent implements OnInit {
     }
   }
 
-  content: string = '';
-  editorConfig = {
-    toolbar: [
-      { name: 'document', items: ['Print'] },
-      { name: 'clipboard', items: ['Undo', 'Redo'] },
-      { name: 'styles', items: ['Styles', 'Format'] },
-      {
-        name: 'basicstyles',
-        items: ['Bold', 'Italic', 'Strike', '-', 'RemoveFormat'],
-      },
-      {
-        name: 'paragraph',
-        items: [
-          'NumberedList',
-          'BulletedList',
-          '-',
-          'Outdent',
-          'Indent',
-          '-',
-          'Blockquote',
-        ],
-      },
-      { name: 'links', items: ['Link', 'Unlink'] },
-      { name: 'insert', items: ['Image', 'Table', 'HorizontalRule'] },
-      { name: 'tools', items: ['Maximize'] },
-      { name: 'editing', items: ['Scayt'] },
-      { name: 'mode', items: ['Source'] },
-    ],
-  };
   submitHandler() {
     if (this.ideaForm.valid) {
       this.utility.bar('Refer candidate successfully', '', 'green-snackbar');

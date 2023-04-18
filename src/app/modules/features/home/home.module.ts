@@ -46,6 +46,7 @@ const MATERIAL = [
     RoutingModule,
     RuJobCardModule,
     MatButtonModule,
+    CarouselModule,
     ...MATERIAL,
   ],
 })

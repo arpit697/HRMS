@@ -300,9 +300,14 @@ table {
 }
 
 .dsr-detail-table {
-  ::ng-deep .mdc-data-table__cell {
-    vertical-align: top;
-    padding-top: 0.5em;
+  ::ng-deep {
+    .mat-mdc-table .mdc-data-table__header-row {
+      height: 25px;
+    }
+    .mdc-data-table__cell {
+      vertical-align: top;
+      padding-top: 0.5em;
+    }
   }
   table,
   th,
@@ -314,6 +319,9 @@ table {
     line-height: 1.5;
     padding: 0.625rem;
   }
+  th {
+  }
+
   .action-button {
     padding: 0;
     height: auto;
@@ -321,6 +329,20 @@ table {
     box-shadow: 0 0 0 1px #28c3d7 inset;
     color: #28c3d7;
     border-radius: 0;
+  }
+  .formatted-text {
+    ::ng-deep {
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+        padding: 0;
+      }
+    }
   }
   mat-icon {
     padding: 5px;

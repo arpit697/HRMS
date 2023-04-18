@@ -1,6 +1,7 @@
 <header class="header">
-  <app-header (dataEvent)="handleIsExpandedChange($event)"></app-header>
+  <app-header (dataEvent)="handleIsExpandedChange($event)" [isExpanded]="isExpanded"></app-header>
 </header>
+
 <mat-sidenav-container autosize>
   <mat-sidenav
     [@slideInOut]="sidenavState"
@@ -10,7 +11,7 @@
     (mouseleave)="mouseleave()"
   >
     <mat-card [ngClass]="{ hide: !isExpanded, show: isExpanded }">
-      <mat-accordion class="accordion">
+      <mat-accordion #accordion class="accordion">
         <mat-expansion-panel
           *ngFor="let list of items"
           disabled="{{ list.active == false }}"
@@ -73,7 +74,9 @@
     <mat-card class="content-container">
       <mat-card-content class="content">
         <router-outlet></router-outlet>
-        <button (click)="openDialog()" class="covid-button" mat-raised-button>Covid 19 - Desk</button>
+        <button (click)="openDialog()" class="covid-button" mat-raised-button>
+          Covid 19 - Desk
+        </button>
       </mat-card-content>
       <app-footer class="footer"></app-footer>
     </mat-card>

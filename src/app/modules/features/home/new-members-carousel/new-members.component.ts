@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { OwlOptions, CarouselComponent } from 'ngx-owl-carousel-o';
 import { NEW_FAMILY_MEMBERS } from 'src/app/constants/app.constants';
 
 @Component({
@@ -12,9 +12,9 @@ export class NewMembersComponent implements OnInit {
   ngOnInit(): void {
     this.newEmployee = NEW_FAMILY_MEMBERS;
   }
-  @ViewChild('OwlCarousel') carousel!: OwlOptions;
-  
 
+  ngAfterViewInit() {}
+  @ViewChild('OwlCarousel') carousel!: CarouselComponent;
   topCarouselRight: OwlOptions = {
     loop: true,
     dots: false,
@@ -29,10 +29,13 @@ export class NewMembersComponent implements OnInit {
       },
     },
     margin: 20,
-    nav: true,
-    navText: [
-      '<i class=""></i>',
-      '<i class=""></i>',
-    ],
+    nav: false,
   };
+  next() {
+    this.carousel.next();
+  }
+
+  previous() {
+    this.carousel.prev();
+  }
 }

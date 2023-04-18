@@ -125,10 +125,10 @@ export class UtilityService {
 
   getCurrentDate() {
     const date: Date = new Date();
-    const month: number = date.getMonth() + 1; // add 1 to get the correct month index (0-11)
-    const day: number = date.getDate();
+    const month: string = (date.getMonth() + 1).toString().padStart(2, '0'); // add leading zero if month is single digit
+    const day: string = date.getDate().toString().padStart(2, '0'); // add leading zero if day is single digit
     const year: number = date.getFullYear();
-    return `${year} - ${month} - ${day}`;
+    return `${year}-${month}-${day}`;
   }
 
   generateRandomNumber(): number {
