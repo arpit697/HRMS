@@ -1,10 +1,18 @@
 <mat-card class="google-login-main none">
   <div class="container">
-    <div class="button-wrapper">
-      <span class="icon">
+    <div class="button-icon-wrapper flex ai-center jc-between primary-bg">
+      <div class="google-icon">
         <asl-google-signin-button size="large"></asl-google-signin-button>
-      </span>
-      <span><mat-card-subtitle>Sign in with Google</mat-card-subtitle></span>
+      </div>
+      <button
+        (click)="signInWithGoogle()"
+        mat-flat-button
+        disableRipple
+        class="sign"
+        color="primary"
+      >
+        Sign in with Google
+      </button>
     </div>
     <mat-card-subtitle class="sub-title"
       >Please use you official Email Id</mat-card-subtitle

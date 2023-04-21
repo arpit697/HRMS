@@ -12,8 +12,10 @@ import {
 } from 'src/app/constants/table.data';
 import { RuTableComponent } from 'src/app/modules/common/modules/common-table/ru-table.component';
 import { UtilityService } from 'src/app/services/utility/utility.service';
-import { RemoveRecordDialogComponent } from './remove-record-dialog/remove-record-dialog.component';
+import { RemoveRecordDialogComponent } from '../../includes/utilities/popups/remove-ticket/remove-record-dialog.component';
 import { FormValidationService } from 'src/app/services/forms/form.validation.service';
+import { Router } from '@angular/router';
+import { TICKET_DETAILS } from 'src/app/constants/routes';
 
 @Component({
   selector: 'app-my-tickets',
@@ -34,7 +36,8 @@ export class MyTicketsComponent implements OnInit {
     private _dialog: MatDialog,
     private _formBuilder: FormBuilder,
     private _utility: UtilityService,
-    private _formValidation: FormValidationService
+    private _formValidation: FormValidationService,
+    private _router: Router
   ) {}
   ngOnInit(): void {
     this.createForm();
@@ -78,6 +81,7 @@ export class MyTicketsComponent implements OnInit {
 
   editDelete(event: any) {
     if (event.click_type == 'edit') {
+      this._router.navigate([TICKET_DETAILS.fullUrl, 1]);
     }
     if (event.click_type == 'delete') {
       this.deleteRecordDialog(event);

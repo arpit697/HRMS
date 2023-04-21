@@ -10,6 +10,7 @@ export const SHIFT_TABLE_COLUMN = [
     cell: (element: Record<string, any>) => `${element['shift']}`,
   },
 ];
+
 export const SHIFT_TABLE_DATA = [
   {
     joining: '27-Feb-2022',
@@ -39,6 +40,88 @@ export const QUALIFICATION_TABLE_COLUMN = [
     header: 'Education Level',
     cell: (element: Record<string, any>) => `${element['education_level']}`,
   },
+];
+
+export const MY_IDEA_TABLE_COLUMN = [
+  {
+    columnDef: 'serial_number',
+    header: '#',
+    cell: (element: Record<string, any>) => `${element['serial_number']}`,
+  },
+  {
+    columnDef: 'title',
+    header: 'Titel',
+    cell: (element: Record<string, any>) => `${element['title']}`,
+  },
+  {
+    columnDef: 'industry',
+    header: 'Industry',
+    cell: (element: Record<string, any>) => `${element['industry']}`,
+  },
+  {
+    columnDef: 'tech_or_non_tech',
+    header: 'Technical / Non-Technical',
+    cell: (element: Record<string, any>) => `${element['tech_or_non_tech']}`,
+  },
+  {
+    columnDef: 'submitted_on',
+    header: 'Submitted On',
+    cell: (element: Record<string, any>) => `${element['submitted_on']}`,
+  },
+  {
+    columnDef: 'actions',
+    header: 'Actions',
+    cell: (element: Record<string, any>) => `${element['actions']}`,
+    type: 'two-buttons-action',
+  },
+];
+
+export const MY_IDEA_TABLE_DATA = [
+  {
+    serial_number: 1,
+    title: 'Smart Home Security System',
+    industry: 'Home Security',
+    tech_or_non_tech: 'Tech',
+    submitted_on: '2022-03-15',
+    first_button_icon: 'visibility',
+    second_button_icon: 'download',
+  },
+  {
+    serial_number: 2,
+    title: 'Organic Farming Certification Program',
+    industry: 'Agriculture',
+    tech_or_non_tech: 'Non-tech',
+    submitted_on: '2022-04-02',
+    first_button_icon: 'visibility',
+    second_button_icon: 'download',
+  },
+  // {
+  //   serial_number: 3,
+  //   title: 'Mobile Payment App',
+  //   industry: 'Finance',
+  //   tech_or_non_tech: 'Tech',
+  //   submitted_on: '2022-05-10',
+  //   first_button_icon: 'arrow_circle_right',
+  //   second_button_icon: 'refresh',
+  // },
+  // {
+  //   serial_number: 4,
+  //   title: 'Online Tutoring Platform',
+  //   industry: 'Education',
+  //   tech_or_non_tech: 'Tech',
+  //   submitted_on: '2022-06-01',
+  //   first_button_icon: 'arrow_circle_right',
+  //   second_button_icon: 'refresh',
+  // },
+  // {
+  //   serial_number: 5,
+  //   title: 'Sustainable Packaging Solutions',
+  //   industry: 'Packaging',
+  //   tech_or_non_tech: 'Non-tech',
+  //   submitted_on: '2022-07-22',
+  //   first_button_icon: 'arrow_circle_right',
+  //   second_button_icon: 'refresh',
+  // },
 ];
 
 export const POLICY_DOCUMENTS_TABLE_COLUMN = [
@@ -995,6 +1078,7 @@ export const TICKET_ATTACHMENT_TABLE_COLUMN = [
     cell: (element: Record<string, any>) => `${element['date_time']}`,
   },
 ];
+
 export const TICKET_ATTACHMENT_TABLE_DATA = [
   {
     option: 1,
@@ -1023,6 +1107,7 @@ export const TICKET_COMMENTS_TABLE_COLUMN = [
     cell: (element: Record<string, any>) => `${element['all_comments']}`,
   },
 ];
+
 export const TICKET_COMMENTS_TABLE_DATA = [
   {
     all_comments: 'This is the first comment',

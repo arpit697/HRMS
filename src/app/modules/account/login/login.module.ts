@@ -16,6 +16,7 @@ import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationCheckModule } from 'src/app/pipes/validation-check/validation-check.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatRippleModule } from '@angular/material/core';
 
 const MATERIAL = [
   MatCardModule,
@@ -23,6 +24,7 @@ const MATERIAL = [
   MatInputModule,
   MatIconModule,
   MatButtonModule,
+  MatRippleModule,
 ];
 
 @NgModule({
@@ -44,4 +46,4 @@ const MATERIAL = [
     ...MATERIAL,
   ],
 })
-export class LoginModule { }
+export class LoginModule {}

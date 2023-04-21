@@ -69,6 +69,13 @@ export const ADD_PITCH: RouteInterface = {
   },
 };
 
+export const MY_IDEA: RouteInterface = {
+  path: 'my-idea',
+  get fullUrl(): string {
+    return `${STARTUP.fullUrl}/${this.path}`;
+  },
+};
+
 export const MY_LINKS: RouteInterface = {
   path: 'my-links',
   get fullUrl(): string {

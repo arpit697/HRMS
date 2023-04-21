@@ -69,10 +69,12 @@ export class LatestAtAppinventivCarouselComponent implements OnInit {
     navSpeed: 700,
   };
 
-  openModalDialog(): void {
-    const dialogRef = this.dialog.open(ModalDialogComponent, {
-      height: '40%',
-      data: {},
+  openModalDialog(index: any): void {
+    let isSmallScreen = window.matchMedia('(max-width: 50em)').matches;
+    let dialogRef = this.dialog.open(ModalDialogComponent, {
+      width: isSmallScreen ? '100%' : '40%',
+     
+      data: { id: index },
     });
     dialogRef.disableClose = false;
     dialogRef.afterClosed().subscribe((result: any) => {});

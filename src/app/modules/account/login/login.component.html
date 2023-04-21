@@ -3,4 +3,11 @@
   <app-credential-login *ngIf="!screen"></app-credential-login>
 </mat-card>
 
-<button  class="login-with" mat-raised-button (click)="switch()">{{text}}</button>
+<button
+  mat-raised-button
+  class="login-with"
+  (click)="switch()"
+  color="primary"
+>
+  {{ text }}
+</button>

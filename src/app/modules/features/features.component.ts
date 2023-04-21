@@ -5,26 +5,20 @@ import { MatAccordion } from '@angular/material/expansion';
 import { Router, NavigationEnd } from '@angular/router';
 
 // Import animations and constants
-import {
-  trigger,
-  transition,
-  animate,
-  state,
-  style,
-} from '@angular/animations';
+
 import {
   rotateAnimation,
   rotationStates,
 } from 'src/app/animations/clock.anticlock';
 import { SIDE_NAV_ITEM } from 'src/app/constants/app.constants';
-import { CovidComponent } from './covid/covid.component';
+import { CovidComponent } from './includes/utilities/popups/covid/covid.component';
 
 @Component({
   selector: 'app-features',
   templateUrl: './features.component.html',
   styleUrls: ['./features.component.scss'],
   // Define animations
-  animations: [rotateAnimation, rotationStates , ],
+  animations: [rotateAnimation, rotationStates],
 })
 export class FeaturesComponent implements OnInit {
   // Define component variables
@@ -86,8 +80,15 @@ export class FeaturesComponent implements OnInit {
       width: '90%',
       height: '70%',
       data: {},
+      disableClose: false,
+      autoFocus: false,
+      restoreFocus: false,
+      panelClass: ['a'],
+      minHeight: '',
+      maxHeight: '',
+      maxWidth: '',
+      minWidth: '',
     });
-    dialogRef.disableClose = true;
     dialogRef.afterClosed().subscribe((result: any) => {});
   }
 }

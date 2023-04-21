@@ -11,6 +11,7 @@ import { RoutingModule } from 'src/app/pipes/routing/routing.module';
 import { CredentialLoginComponent } from './login/credential-login/credential-login.component';
 import { GoogleLoginComponent } from './login/google-login/google-login.component';
 import { MatDivider, MatDividerModule } from '@angular/material/divider';
+import { MatRippleModule } from '@angular/material/core';
 
 const MATERIAL = [MatCardModule, MatDividerModule];
 
@@ -26,4 +27,4 @@ const MATERIAL = [MatCardModule, MatDividerModule];
     ...MATERIAL,
   ],
 })
-export class AccountModule { }
+export class AccountModule {}

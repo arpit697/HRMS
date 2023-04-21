@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { EMPLOYEE_DATA, EMP_DETAIL } from 'src/app/constants/app.constants';
+import { EMP_DETAIL, SIDE_NAV_ITEM } from 'src/app/constants/app.constants';
 import {
   INDUSTRIES_DROP_DOWN,
   TECHNICAL_TYPE_DROP_DOWN,
@@ -54,6 +54,13 @@ export class AddPitchComponent implements OnInit {
 
   submitHandler() {
     if (this.ideaForm.valid) {
+      // SIDE_NAV_ITEM[3].categories?.push({
+      //   icon: 'lightbulb',
+      //   name: 'My Idea',
+      //   router_link: 'MY_IDEA',
+      //   blank: false,
+      // });
+
       this.utility.bar('Refer candidate successfully', '', 'green-snackbar');
     } else {
       this.utility.bar(

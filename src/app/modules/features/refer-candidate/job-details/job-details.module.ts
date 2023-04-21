@@ -7,7 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { TermsAndConditionsComponent } from '../../includes/utilities/popups/job-detail-t&c/terms-and-conditions.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
 const MATERIAL = [
@@ -15,7 +15,7 @@ const MATERIAL = [
   MatIconModule,
   MatDividerModule,
   MatGridListModule,
-  MatDialogModule
+  MatDialogModule,
 ];
 
 @NgModule({

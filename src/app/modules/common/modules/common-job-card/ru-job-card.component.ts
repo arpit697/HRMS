@@ -6,7 +6,7 @@ import {
   JOB_OPENINGS,
   REFER_CANDIDATE,
 } from 'src/app/constants/routes';
-import { ReferCandidateDialogComponent } from 'src/app/modules/features/refer-candidate/job-openings/refer-candidate-dialog/refer-candidate-dialog.component';
+import { ReferCandidateDialogComponent } from 'src/app/modules/features/includes/utilities/popups/refer-candidate/refer-candidate-dialog.component';
 
 @Component({
   selector: 'app-ru-job-card',

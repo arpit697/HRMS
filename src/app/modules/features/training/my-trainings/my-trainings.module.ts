@@ -5,7 +5,7 @@ import { MyTrainingsRoutingModule } from './my-trainings-routing.module';
 import { MyTrainingsComponent } from './my-trainings.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { RequestTrainingDialogComponent } from './request-training-dialog/request-training-dialog.component';
+import { RequestTrainingDialogComponent } from '../../includes/utilities/popups/request-training-dialog/request-training-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -27,6 +27,11 @@ const MATERIAL = [
 
 @NgModule({
   declarations: [MyTrainingsComponent, RequestTrainingDialogComponent],
-  imports: [CommonModule, MyTrainingsRoutingModule, ReactiveFormsModule , ...MATERIAL],
+  imports: [
+    CommonModule,
+    MyTrainingsRoutingModule,
+    ReactiveFormsModule,
+    ...MATERIAL,
+  ],
 })
 export class MyTrainingsModule {}

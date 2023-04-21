@@ -8,11 +8,9 @@ import { UtilityService } from 'src/app/services/utility/utility.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  constructor(
-    public utility: UtilityService,
-  ) {}
+  constructor(public utility: UtilityService) {}
   screen = true;
-  text = 'LOGIN WITH CREDENTIALS'
+  text = 'LOGIN WITH CREDENTIALS';
 
   switch() {
     this.screen = !this.screen;

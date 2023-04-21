@@ -31,8 +31,7 @@ const MATERIAL = [MatSnackBarModule ];
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
-        autoLogin: false,
-
+        autoLogin: true,
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,

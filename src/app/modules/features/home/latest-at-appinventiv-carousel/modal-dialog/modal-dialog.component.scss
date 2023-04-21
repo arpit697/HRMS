@@ -1,0 +1,17 @@
+.innerHTML {
+  ::ng-deep {
+    p:first-child {
+      font-size: 16px;
+      color: #000000;
+      line-height: 1.9;
+      width: 90%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-top: 0;
+      span {
+        display: none;
+      }
+    }
+  }
+}

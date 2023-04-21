@@ -14,7 +14,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CKEditorModule } from 'ckeditor4-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RuTableModule } from 'src/app/modules/common/modules/common-table/ru-table.module';
-import { RemoveRecordDialogComponent } from './remove-record-dialog/remove-record-dialog.component';
+import { RemoveRecordDialogComponent } from '../../includes/utilities/popups/remove-ticket/remove-record-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
 const MATERIAL = [
@@ -26,13 +26,10 @@ const MATERIAL = [
   MatSelectModule,
   MatInputModule,
   MatCheckboxModule,
-  MatDialogModule
-]
+  MatDialogModule,
+];
 @NgModule({
-  declarations: [
-    MyTicketsComponent,
-    RemoveRecordDialogComponent
-  ],
+  declarations: [MyTicketsComponent, RemoveRecordDialogComponent],
   imports: [
     CommonModule,
     MyTicketsRoutingModule,
@@ -40,7 +37,7 @@ const MATERIAL = [
     FormsModule,
     RuTableModule,
     ReactiveFormsModule,
-    ...MATERIAL
-  ]
+    ...MATERIAL,
+  ],
 })
-export class MyTicketsModule { }
+export class MyTicketsModule {}

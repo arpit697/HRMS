@@ -1,9 +1,9 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DeleteComponent } from '../../../profile/qualification/delete/delete.component';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { FormValidationService } from 'src/app/services/forms/form.validation.service';
-import { UtilityService } from 'src/app/services/utility/utility.service';
+import { Component, OnInit, Inject } from "@angular/core";
+import { FormGroup, FormBuilder } from "@angular/forms";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { FormValidationService } from "src/app/services/forms/form.validation.service";
+import { UtilityService } from "src/app/services/utility/utility.service";
+
 
 @Component({
   selector: 'app-leave-rollback-dialog',

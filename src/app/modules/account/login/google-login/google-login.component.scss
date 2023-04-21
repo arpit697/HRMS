@@ -1,36 +1,17 @@
-mat-card {
-  padding: 0;
-}
 .google-login-main {
   .container {
     padding: 1em 3em 6em 3em;
-    .button-wrapper {
-      padding: 0;
-      display: grid;
-      grid-template-columns: auto auto;
-      align-items: center;
+    .button-icon-wrapper {
       width: 17.5em;
-      height: 3.125em;
-      background-color: #4285f4;
-      .icon {
-        height: 3em;
-        width: 3em;
-        background-color: #fff;
-        margin-left: 1px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      border-radius: 4px;
+      .google-icon {
+        padding: 1px;
       }
-      span {
-        mat-card-subtitle {
-          font-size: 1em;
-          line-height: 3em;
-          letter-spacing: 0.21px;
-          color: #fff;
-          font-weight: 500;
-        }
+      .sign {
+        width: 100%;
       }
     }
+
     .sub-title {
       margin-top: 1rem;
       margin-bottom: 1rem;
@@ -72,12 +53,14 @@ mat-card {
       display: flex;
       flex-direction: column;
       align-items: center;
-      .button-wrapper {
-        width: 3.1em;
-        span {
-          mat-card-subtitle {
-            display: none;
-          }
+      .button-icon-wrapper {
+        width: auto;
+        border-radius: 4px;
+        .google-icon {
+          padding: 1px;
+        }
+        .sign {
+          display: none;
         }
       }
     }

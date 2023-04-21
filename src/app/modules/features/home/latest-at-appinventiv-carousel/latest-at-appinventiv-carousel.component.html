@@ -8,10 +8,10 @@
           <mat-card>
             <owl-carousel-o [options]="appreciationCarouselConfig">
               <ng-container>
-                <ng-template carouselSlide *ngFor="let item of innerHtmlArr">
+                <ng-template carouselSlide *ngFor="let item of innerHtmlArr ; let index = index">
                   <mat-card class="carousel-content-wrapper carousel-slide">
                     <div class="innerHTML" [innerHTML]="item"></div>
-                    <button class="view-more-button" (click)="openModalDialog()" mat-raised-button>
+                    <button class="view-more-button" (click)="openModalDialog(index)" mat-raised-button>
                       View More
                     </button>
                   </mat-card>

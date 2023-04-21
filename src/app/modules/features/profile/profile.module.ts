@@ -25,9 +25,8 @@ import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationCheckModule } from 'src/app/pipes/validation-check/validation-check.module';
 import { MatButtonModule } from '@angular/material/button';
 import { ReplaceCharModule } from '../../../pipes/replace-char/replace-char.module';
-import { DeleteComponent } from './qualification/delete/delete.component';
-import { EditComponent } from './qualification/edit/edit.component';
-
+import { DeleteComponent } from '../includes/utilities/popups/delete-qualification/delete.component';
+import { EditComponent } from '../includes/utilities/popups/edit-qualification/edit.component';
 
 const MATERIAL = [
   MatCardModule,

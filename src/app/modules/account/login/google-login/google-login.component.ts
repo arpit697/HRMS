@@ -3,7 +3,7 @@ import {
   SocialAuthService,
 } from '@abacritt/angularx-social-login';
 import { JsonPipe } from '@angular/common';
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FEATURES } from 'src/app/constants/routes';
 import { UtilityService } from 'src/app/services/utility/utility.service';
@@ -14,10 +14,8 @@ declare const gapi: any;
   styleUrls: ['./google-login.component.scss'],
 })
 export class GoogleLoginComponent implements OnInit {
-  private auth2: any;
   loggedIn!: boolean;
   user!: any;
-
   constructor(
     private authService: SocialAuthService,
     private _router: Router,
@@ -25,6 +23,8 @@ export class GoogleLoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log(this.authService);
+
     this.authService.authState.subscribe((user: any) => {
       this.user = user;
       if (user != null) {
@@ -36,6 +36,7 @@ export class GoogleLoginComponent implements OnInit {
   }
 
   signInWithGoogle(): any {
+    
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 

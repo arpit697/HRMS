@@ -13,13 +13,13 @@ import { QUALIFICATION_TABLE_COLUMN } from 'src/app/constants/table.data';
 import { RuTableComponent } from 'src/app/modules/common/modules/common-table/ru-table.component';
 import { FormValidationService } from 'src/app/services/forms/form.validation.service';
 import { UtilityService } from 'src/app/services/utility/utility.service';
-import { EditComponent } from './edit/edit.component';
+import { EditComponent } from '../../includes/utilities/popups/edit-qualification/edit.component';
 import {
   MAT_DIALOG_DATA,
   MatDialog,
   MatDialogRef,
 } from '@angular/material/dialog';
-import { DeleteComponent } from './delete/delete.component';
+import { DeleteComponent } from '../../includes/utilities/popups/delete-qualification/delete.component';
 
 @Component({
   selector: 'app-qualification',

@@ -5,7 +5,7 @@ import { JobOpeningsRoutingModule } from './job-openings-routing.module';
 import { JobOpeningsComponent } from './job-openings.component';
 import { RuJobCardModule } from 'src/app/modules/common/modules/common-job-card/ru-job-card.module';
 import { MatCardModule } from '@angular/material/card';
-import { ReferCandidateDialogComponent } from './refer-candidate-dialog/refer-candidate-dialog.component';
+import { ReferCandidateDialogComponent } from '../../includes/utilities/popups/refer-candidate/refer-candidate-dialog.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -16,6 +16,7 @@ import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationCheckModule } from 'src/app/pipes/validation-check/validation-check.module';
 import { ReplaceCharModule } from 'src/app/pipes/replace-char/replace-char.module';
 import { OptionsFilterModule } from 'src/app/pipes/options-filter/options-filter.module';
+import { LeaveDetailsComponent } from '../../leave/my-leaves/leave-details/leave-details.component';
 
 const MATERIAL = [
   MatCardModule,
@@ -23,7 +24,7 @@ const MATERIAL = [
   MatFormFieldModule,
   MatInputModule,
   MatSelectModule,
-  MatButtonModule
+  MatButtonModule,
 ];
 @NgModule({
   declarations: [JobOpeningsComponent, ReferCandidateDialogComponent],
@@ -39,4 +40,4 @@ const MATERIAL = [
     ...MATERIAL,
   ],
 })
-export class JobOpeningsModule { }
+export class JobOpeningsModule {}

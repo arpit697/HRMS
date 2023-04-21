@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { UPCOMING_TRAININGS } from 'src/app/constants/routes';
-import { RequestTrainingDialogComponent } from './request-training-dialog/request-training-dialog.component';
+import { RequestTrainingDialogComponent } from '../../includes/utilities/popups/request-training-dialog/request-training-dialog.component';
 
 @Component({
   selector: 'app-my-trainings',
