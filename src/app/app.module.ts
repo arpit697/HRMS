@@ -11,9 +11,6 @@ import {
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { CKEditorModule } from 'ckeditor4-angular';
-import { ReplaceCharPipe } from './pipes/replace-char/replace-char.pipe';
-import { OptionsFilterPipe } from './pipes/options-filter/options-filter.pipe';
-import { OptionsFilterModule } from './pipes/options-filter/options-filter.module';
 
 
 const MATERIAL = [MatSnackBarModule ];

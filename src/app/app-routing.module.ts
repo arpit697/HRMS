@@ -10,13 +10,13 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: `${ACCOUNT.path}`,
+    path: ACCOUNT.path,
     loadChildren: () =>
       import('./modules/account/account.module').then((m) => m.AccountModule),
   },
 
   {
-    path: `${FEATURES.path}`,
+    path: FEATURES.path,
     canActivate: [AuthGuard],
     loadChildren: () =>
       import('./modules/features/features.module').then(

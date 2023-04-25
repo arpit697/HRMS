@@ -1,12 +1,7 @@
 @use "@angular/material" as mat;
 @use "./scss/global.scss" as *;
-@include mat.core();
-@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
-@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 
-$HRMS_Appinventiv-primary: mat.define-palette(mat.$blue-palette, 500);
-$HRMS_Appinventiv-accent: mat.define-palette(mat.$light-blue-palette);
-$HRMS_Appinventiv-warn: mat.define-palette(mat.$pink-palette);
+@include mat.core();
 /*
   $red-palette, $pink-palette, $indigo-palette,
   $purple-palette, $deep-purple-palette, $blue-palette, $light-blue-palette, $cyan-palette,
@@ -22,6 +17,10 @@ $HRMS_Appinventiv-warn: mat.define-palette(mat.$pink-palette);
   get-color-config, get-typography-config, get-density-config,
   */
 
+$HRMS_Appinventiv-primary: mat.define-palette(mat.$blue-palette, 500);
+$HRMS_Appinventiv-accent: mat.define-palette(mat.$light-blue-palette);
+$HRMS_Appinventiv-warn: mat.define-palette(mat.$pink-palette);
+
 $HRMS_Appinventiv-theme: mat.define-light-theme(
   (
     color: (
@@ -32,26 +31,8 @@ $HRMS_Appinventiv-theme: mat.define-light-theme(
   )
 );
 
-$foreground: map-get($HRMS_Appinventiv-theme, foreground);
-
-$background: map-get($HRMS_Appinventiv-theme, background);
-
 @include mat.all-component-themes($HRMS_Appinventiv-theme);
-
-.primary {
-  color: mat.get-color-from-palette($HRMS_Appinventiv-primary);
-}
-.primary-bg{
-  background-color: mat.get-color-from-palette($HRMS_Appinventiv-primary);
-}
-
-.bg {
-  background: mat.get-color-from-palette($foreground, text);
-}
-
-.fg {
-  color: mat.get-color-from-palette($background, card);
-}
+@include include-mixin($HRMS_Appinventiv-theme);
 
 /* You can add global styles to this file, and also import other style files */
 

@@ -2,8 +2,7 @@ import {
   GoogleLoginProvider,
   SocialAuthService,
 } from '@abacritt/angularx-social-login';
-import { JsonPipe } from '@angular/common';
-import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FEATURES } from 'src/app/constants/routes';
 import { UtilityService } from 'src/app/services/utility/utility.service';
@@ -13,7 +12,7 @@ declare const gapi: any;
   templateUrl: './google-login.component.html',
   styleUrls: ['./google-login.component.scss'],
 })
-export class GoogleLoginComponent implements OnInit {
+export class GoogleLoginComponent implements OnInit, OnDestroy {
   loggedIn!: boolean;
   user!: any;
   constructor(
@@ -22,25 +21,29 @@ export class GoogleLoginComponent implements OnInit {
     private _utility: UtilityService
   ) {}
 
-  ngOnInit(): void {
-    console.log(this.authService);
-
+  ngOnInit() {
     this.authService.authState.subscribe((user: any) => {
-      this.user = user;
       if (user != null) {
-        sessionStorage.setItem('login', JSON.stringify(true));
-        this._router.navigate([FEATURES.path]);
-        this._utility.bar('login successfully', '', 'green-snackbar');
+        if (user.email.includes('@appinventiv')) {
+          sessionStorage.setItem('login', JSON.stringify(true));
+          this._router.navigate([FEATURES.path]);
+          this._utility.bar('Login successfully', '', 'green-snackbar');
+        } else {
+          this._utility.bar('Email is not registered', '', 'red-snackbar');
+        }
       }
     });
   }
 
   signInWithGoogle(): any {
-    
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 
   signOut(): any {
     this.authService.signOut();
+  }
+
+  ngOnDestroy(): void {
+    this.user = null;
   }
 }

@@ -43,7 +43,7 @@
 </div>
 
 <div class="card-container" *ngIf="loading == false">
-  <div class="card" *ngFor="let employee of filteredData">
+  <mat-card class="card" *ngFor="let employee of filteredData"  >
     <div class="background"></div>
     <div class="card-image">
       <img class=".picture" src="../../../../assets/default/default_male.jpg" />
@@ -59,7 +59,7 @@
       <span>{{ "29/06" }}</span>
     </mat-card-subtitle>
     <div class="social"></div>
-  </div>
+  </mat-card>
 </div>
 
 <div class="loading" [class.spinner]="loading" *ngIf="loading == true"></div>

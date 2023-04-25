@@ -4,13 +4,9 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
   padding: 3em 1.5em 3em 1.5em;
   .reusable-card {
-    max-width: 26em;
+    border-radius: 0.125rem !important;
     display: grid;
     grid-template-rows: auto auto auto auto;
     .app-logo {
@@ -30,7 +26,7 @@
       padding: 1em 2em 1em 2em;
       text-align: center;
       word-break: break-word;
-      mat-card-subtitle {
+      .footer-text {
         color: #a3a4a6;
       }
     }
@@ -48,15 +44,6 @@
           height: 50%;
           width: 85%;
         }
-      }
-    }
-  }
-}
-@media all and (max-width: 15em) {
-  .account-container {
-    .reusable-card {
-      .app-logo {
-
       }
     }
   }
@@ -81,12 +68,25 @@
     }
   }
 }
-@media all and (max-width: 8em) {
+
+/*
+@media all and (max-width: 15em) {
   .account-container {
     .reusable-card {
       .app-logo {
-        
       }
     }
   }
 }
+*/
+
+/*
+@media all and (max-width: 8em) {
+  .account-container {
+    .reusable-card {
+      .app-logo {
+      }
+    }
+  }
+}
+*/

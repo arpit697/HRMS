@@ -1,1 +1,48 @@
+@use "@angular/material" as mat;
+@mixin uitility-mixin($HRMS_Appinventiv-theme) {
+  $HRMS_Appinventiv-primary: mat.define-palette(mat.$blue-palette, 500);
+  $HRMS_Appinventiv-accent: mat.define-palette(mat.$light-blue-palette);
+  $HRMS_Appinventiv-warn: mat.define-palette(mat.$pink-palette);
 
+  $foreground: map-get($HRMS_Appinventiv-theme, foreground);
+
+  $background: map-get($HRMS_Appinventiv-theme, background);
+
+  .primary {
+    color: mat.get-color-from-palette($HRMS_Appinventiv-primary);
+  }
+  .primary-bg {
+    background-color: mat.get-color-from-palette($HRMS_Appinventiv-primary);
+  }
+
+  .bg-card{
+    background:mat.get-color-from-palette($background);
+  }
+
+  .bg {
+    background: mat.get-color-from-palette($foreground);
+  }
+
+  .ele {
+    @include mat.elevation(24);
+  }
+  //   status-bar: map.get($grey-palette, 300),
+  //   app-bar:    map.get($grey-palette, 100),
+  //   background: map.get($grey-palette, 50),
+  //   hover:      rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+  //   card:       white,
+  //   dialog:     white,
+  //   disabled-button: rgba(black, 0.12),
+  //   raised-button: white,
+  //   focused-button: $dark-focused,
+  //   selected-button: map.get($grey-palette, 300),
+  //   selected-disabled-button: map.get($grey-palette, 400),
+  //   disabled-button-toggle: map.get($grey-palette, 200),
+  //   unselected-chip: map.get($grey-palette, 300),
+  //   disabled-list-option: map.get($grey-palette, 200),
+  //   tooltip: map.get($grey-palette, 700),
+
+  .fg {
+    color: mat.get-color-from-palette($background, card);
+  }
+}

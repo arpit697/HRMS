@@ -12,6 +12,9 @@ import {
 } from 'src/app/animations/clock.anticlock';
 import { SIDE_NAV_ITEM } from 'src/app/constants/app.constants';
 import { CovidComponent } from './includes/utilities/popups/covid/covid.component';
+import { SocialAuthService } from '@abacritt/angularx-social-login';
+import { ACCOUNT } from 'src/app/constants/routes';
+import { AuthService } from 'src/app/services/Auth/auth.service';
 
 @Component({
   selector: 'app-features',
@@ -28,7 +31,11 @@ export class FeaturesComponent implements OnInit {
   isShowing = false;
   items = <any>[...SIDE_NAV_ITEM];
 
-  constructor(private dialog: MatDialog, private router: Router) {
+  constructor(
+    private dialog: MatDialog,
+    private router: Router,
+    private authService: SocialAuthService
+  ) {
     this.checkScreenSize();
     window.addEventListener('resize', () => {
       this.checkScreenSize();
@@ -41,6 +48,11 @@ export class FeaturesComponent implements OnInit {
       this.rotateDirection =
         this.rotateDirection === 'clockwise' ? 'anticlockwise' : 'clockwise';
     }, 1000);
+    this.authService.authState.subscribe(() => {
+      if (sessionStorage.getItem('login') == 'false') {
+        this.router.navigate([ACCOUNT.fullUrl]);
+      }
+    });
   }
 
   ngAfterViewInit(): void {
@@ -61,6 +73,13 @@ export class FeaturesComponent implements OnInit {
   handleIsExpandedChange(event: any) {
     // Update expanded state on side nav toggle
     this.isExpanded = event;
+  }
+  accordianClickHandler(url: any) {
+    if (url === 'ACCOUNT') {
+      this.authService.signOut();
+      sessionStorage.setItem('login', JSON.stringify('false'));
+      this.router.navigate([ACCOUNT.fullUrl]);
+    }
   }
 
   mouseenter() {
@@ -83,7 +102,7 @@ export class FeaturesComponent implements OnInit {
       disableClose: false,
       autoFocus: false,
       restoreFocus: false,
-      panelClass: ['a'],
+      panelClass: [''],
       minHeight: '',
       maxHeight: '',
       maxWidth: '',

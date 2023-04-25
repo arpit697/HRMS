@@ -2,7 +2,7 @@
   .container {
     padding: 1em 3em 6em 3em;
     .button-icon-wrapper {
-      width: 17.5em;
+      width: 14em;
       border-radius: 4px;
       .google-icon {
         padding: 1px;
@@ -19,17 +19,6 @@
       color: #a3a4a6;
     }
   }
-}
-
-.loading {
-  text-align: center;
-  background-color: transparent;
-  box-shadow: none;
-}
-
-.spinner::before {
-  height: 30px;
-  width: 30px;
 }
 
 @media all and (max-width: 29em) {

@@ -1,11 +1,10 @@
-<mat-card class="google-login-main none">
+<mat-card  class="google-login-main ">
   <div class="container">
     <div class="button-icon-wrapper flex ai-center jc-between primary-bg">
       <div class="google-icon">
-        <asl-google-signin-button size="large"></asl-google-signin-button>
+        <asl-google-signin-button style="padding: 0;"></asl-google-signin-button>
       </div>
       <button
-        (click)="signInWithGoogle()"
         mat-flat-button
         disableRipple
         class="sign"
@@ -17,8 +16,5 @@
     <mat-card-subtitle class="sub-title"
       >Please use you official Email Id</mat-card-subtitle
     >
-    <!-- <div class="loading">
-    <button mat-raised-button class="loading" [class.spinner]="loading" [disabled]="loading"></button>
-   </div> -->
   </div>
 </mat-card>

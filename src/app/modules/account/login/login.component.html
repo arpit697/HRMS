@@ -1,4 +1,4 @@
-<mat-card class="content-area">
+<mat-card class="content-area ele">
   <app-google-login *ngIf="screen"></app-google-login>
   <app-credential-login *ngIf="!screen"></app-credential-login>
 </mat-card>
@@ -8,6 +8,7 @@
   class="login-with"
   (click)="switch()"
   color="primary"
+  
 >
   {{ text }}
 </button>

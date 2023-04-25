@@ -3,4 +3,10 @@
 @forward "flex";
 @forward "mat";
 @forward "column";
-// @forward "utilities";
+@import "utilities";
+
+@mixin include-mixin($HRMS_Appinventiv-theme) {
+    @include uitility-mixin($HRMS_Appinventiv-theme); 
+}
+// @import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+// @import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
