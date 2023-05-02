@@ -9,11 +9,14 @@ import { NEW_FAMILY_MEMBERS } from 'src/app/constants/app.constants';
 })
 export class NewMembersComponent implements OnInit {
   newEmployee: any;
+  isViewInitialized = false;
   ngOnInit(): void {
     this.newEmployee = NEW_FAMILY_MEMBERS;
   }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+    this.isViewInitialized = true;
+  }
   @ViewChild('OwlCarousel') carousel!: CarouselComponent;
   topCarouselRight: OwlOptions = {
     loop: true,

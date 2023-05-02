@@ -12,9 +12,14 @@ import { MatDialog } from '@angular/material/dialog';
 export class LatestAtAppinventivCarouselComponent implements OnInit {
   gallery: any;
   innerHtmlArr = [...INNER_HTML];
+  isViewInitialized = false;
   constructor(private dialog: MatDialog) {}
   ngOnInit(): void {
     this.gallery = GALLERY;
+  }
+
+  ngAfterViewInit() {
+    this.isViewInitialized = true;
   }
   arr = [1, 2, 3];
 

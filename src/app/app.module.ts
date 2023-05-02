@@ -12,8 +12,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { CKEditorModule } from 'ckeditor4-angular';
 
-
-const MATERIAL = [MatSnackBarModule ];
+const MATERIAL = [MatSnackBarModule];
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -28,7 +27,7 @@ const MATERIAL = [MatSnackBarModule ];
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
-        autoLogin: true,
+        autoLogin: false,
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,

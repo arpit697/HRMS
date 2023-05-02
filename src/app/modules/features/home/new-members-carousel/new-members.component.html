@@ -7,21 +7,23 @@
     </mat-card-actions>
   </div>
 
-  <owl-carousel-o [options]="topCarouselRight" #OwlCarousel>
-    <ng-container *ngFor="let item of newEmployee">
-      <ng-template carouselSlide>
-        <div class="user-card flex flex-column jc-center ai-center" id="k10">
-          <img
-            class="new-employee-image"
-            src="{{ item.path }}"
-            alt="Employee Image"
-          />
-          <mat-card-title class="name">{{ item.name }}</mat-card-title>
-          <mat-card-subtitle class="designation">
-            {{ item.role }}
-          </mat-card-subtitle>
-        </div>
-      </ng-template>
-    </ng-container>
-  </owl-carousel-o>
+  <ng-container *ngIf="isViewInitialized">
+    <owl-carousel-o [options]="topCarouselRight" #OwlCarousel>
+      <ng-container *ngFor="let item of newEmployee">
+        <ng-template carouselSlide>
+          <div class="user-card flex flex-column jc-center ai-center" id="k10">
+            <img
+              class="new-employee-image"
+              src="{{ item.path }}"
+              alt="Employee Image"
+            />
+            <mat-card-title class="name">{{ item.name }}</mat-card-title>
+            <mat-card-subtitle class="designation">
+              {{ item.role }}
+            </mat-card-subtitle>
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </ng-container>
 </mat-card>

@@ -2,77 +2,79 @@
   <mat-card-title class="card-title">Latest at Appinventiv</mat-card-title>
   <mat-divider class="mat-divider"> </mat-divider>
   <mat-card class="carousel-container">
-    <owl-carousel-o [options]="middleCarousel">
-      <ng-container>
-        <ng-template carouselSlide>
-          <mat-card>
-            <owl-carousel-o [options]="appreciationCarouselConfig">
-              <ng-container>
-                <ng-template carouselSlide *ngFor="let item of innerHtmlArr ; let index = index">
-                  <mat-card class="carousel-content-wrapper carousel-slide">
-                    <div class="innerHTML" [innerHTML]="item"></div>
-                    <button class="view-more-button" (click)="openModalDialog(index)" mat-raised-button>
-                      View More
-                    </button>
-                  </mat-card>
-                </ng-template>
-              </ng-container>
-            </owl-carousel-o>
-          </mat-card>
-        </ng-template>
-
-        <ng-template carouselSlide *ngFor="let items of arr">
-          <mat-card class="carousel-content-wrapper carousel-slide">
-            <div class="slide-title">
-              <mat-icon class="icon flex jc-center ai-center"
-                >fiber_manual_record</mat-icon
-              >
-              <mat-card-subtitle class="title">Awards</mat-card-subtitle>
-            </div>
-            <mat-card-subtitle class="from">Dear</mat-card-subtitle>
-            <div class="nested-wrapper">
-              <div class="nested">
-                <owl-carousel-o [options]="innerCardsRight">
-                  <ng-container
-                    *ngFor="let slide of gallery; let index = index"
-                  >
-                    <ng-template carouselSlide>
-                      <div class="image-wrapper item">
-                        <img class="gallery-image" src="{{ slide }}" />
-                      </div>
-                    </ng-template>
-                  </ng-container>
-                </owl-carousel-o>
+    <ng-container *ngIf="isViewInitialized">
+      <owl-carousel-o [options]="middleCarousel">
+        <ng-container>
+          <ng-template carouselSlide>
+            <mat-card>
+              <owl-carousel-o [options]="appreciationCarouselConfig">
+                <ng-container>
+                  <ng-template carouselSlide *ngFor="let item of innerHtmlArr ; let index = index">
+                    <mat-card class="carousel-content-wrapper carousel-slide">
+                      <div class="innerHTML" [innerHTML]="item"></div>
+                      <button class="view-more-button" (click)="openModalDialog(index)" mat-raised-button>
+                        View More
+                      </button>
+                    </mat-card>
+                  </ng-template>
+                </ng-container>
+              </owl-carousel-o>
+            </mat-card>
+          </ng-template>
+  
+          <ng-template carouselSlide *ngFor="let items of arr">
+            <mat-card class="carousel-content-wrapper carousel-slide">
+              <div class="slide-title">
+                <mat-icon class="icon flex jc-center ai-center"
+                  >fiber_manual_record</mat-icon
+                >
+                <mat-card-subtitle class="title">Awards</mat-card-subtitle>
               </div>
-              <div class="nested">
-                <owl-carousel-o [options]="innerCardsRight">
-                  <ng-container
-                    *ngFor="let slide of gallery; let index = index"
-                  >
-                    <ng-template carouselSlide>
-                      <div class="image-wrapper item">
-                        <img class="gallery-image" src="{{ slide }}" />
-                      </div>
-                    </ng-template>
-                  </ng-container>
-                </owl-carousel-o>
+              <mat-card-subtitle class="from">Dear</mat-card-subtitle>
+              <div class="nested-wrapper">
+                <div class="nested">
+                  <owl-carousel-o [options]="innerCardsRight">
+                    <ng-container
+                      *ngFor="let slide of gallery; let index = index"
+                    >
+                      <ng-template carouselSlide>
+                        <div class="image-wrapper item">
+                          <img class="gallery-image" src="{{ slide }}" />
+                        </div>
+                      </ng-template>
+                    </ng-container>
+                  </owl-carousel-o>
+                </div>
+                <div class="nested">
+                  <owl-carousel-o [options]="innerCardsRight">
+                    <ng-container
+                      *ngFor="let slide of gallery; let index = index"
+                    >
+                      <ng-template carouselSlide>
+                        <div class="image-wrapper item">
+                          <img class="gallery-image" src="{{ slide }}" />
+                        </div>
+                      </ng-template>
+                    </ng-container>
+                  </owl-carousel-o>
+                </div>
               </div>
-            </div>
-            <div class="message">
-              <mat-card-subtitle
-                >Keep spreading your awesomeness. Congratulations !
-              </mat-card-subtitle>
-            </div>
-
-            <div class="cheers">
-              <mat-card-subtitle>Cheers !</mat-card-subtitle>
-              <mat-card-subtitle class="appinventiv"
-                >Appinventiv</mat-card-subtitle
-              >
-            </div>
-          </mat-card>
-        </ng-template>
-      </ng-container>
-    </owl-carousel-o>
+              <div class="message">
+                <mat-card-subtitle
+                  >Keep spreading your awesomeness. Congratulations !
+                </mat-card-subtitle>
+              </div>
+  
+              <div class="cheers">
+                <mat-card-subtitle>Cheers !</mat-card-subtitle>
+                <mat-card-subtitle class="appinventiv"
+                  >Appinventiv</mat-card-subtitle
+                >
+              </div>
+            </mat-card>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </ng-container>
   </mat-card>
 </mat-card>

@@ -1,8 +1,7 @@
 // Import necessary dependencies and components
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatAccordion } from '@angular/material/expansion';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router } from '@angular/router';
 
 // Import animations and constants
 
@@ -14,7 +13,6 @@ import { SIDE_NAV_ITEM } from 'src/app/constants/app.constants';
 import { CovidComponent } from './includes/utilities/popups/covid/covid.component';
 import { SocialAuthService } from '@abacritt/angularx-social-login';
 import { ACCOUNT } from 'src/app/constants/routes';
-import { AuthService } from 'src/app/services/Auth/auth.service';
 
 @Component({
   selector: 'app-features',

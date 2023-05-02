@@ -8,7 +8,7 @@ import { OwlOptions , CarouselComponent } from 'ngx-owl-carousel-o';
   styleUrls: ['./gallery-dialog.component.scss'],
 })
 export class GalleryDialogComponent implements OnInit {
-  @ViewChild('OwlCarousel') carousel!: CarouselComponent;
+  @ViewChild('carousel') carousel!: CarouselComponent;
   gallery: any;
   constructor(
     public dialogRef: MatDialogRef<GalleryDialogComponent>,

@@ -43,7 +43,6 @@ const MATERIAL = [
   imports: [
     CommonModule,
     HomeRoutingModule,
-    CarouselModule,
     RuButtonModule,
     RoutingModule,
     RuJobCardModule,

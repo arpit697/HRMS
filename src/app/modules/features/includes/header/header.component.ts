@@ -3,20 +3,28 @@ import { UtilityService } from 'src/app/services/utility/utility.service';
 import { HelpComponent } from './help/help.component';
 import { MatDialog } from '@angular/material/dialog';
 import { sliderAnimation } from 'src/app/animations/slide.in.out';
+import { Router } from '@angular/router';
+import { ACCOUNT } from 'src/app/constants/routes';
+import { SocialAuthService } from '@abacritt/angularx-social-login';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  animations: [
-    sliderAnimation
-  ],
+  animations: [sliderAnimation],
 })
 export class HeaderComponent implements OnInit {
   @Input() isExpanded: boolean = true;
   @Output() dataEvent = new EventEmitter<any>();
   @Input() routeChange = false;
+  
   ngOnInit() {}
-  constructor(private dialog: MatDialog, public utility: UtilityService) {
+
+  constructor(
+    private dialog: MatDialog,
+    public utility: UtilityService,
+    private authService: SocialAuthService,
+    private _router: Router
+  ) {
     this.checkScreenSize();
     window.addEventListener('resize', () => {
       this.checkScreenSize();
@@ -35,6 +43,12 @@ export class HeaderComponent implements OnInit {
   isExpendedValue() {
     this.isExpanded = !this.isExpanded;
     this.dataEvent.emit(this.isExpanded);
+  }
+
+  logOutHandler() {
+    this.authService.signOut();
+    sessionStorage.setItem('login', JSON.stringify('false'));
+    this._router.navigate([ACCOUNT.fullUrl]);
   }
 
   openDialog(): void {

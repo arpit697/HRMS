@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { JOBS } from 'src/app/constants/app.constants';
 
 @Component({
@@ -7,27 +8,21 @@ import { JOBS } from 'src/app/constants/app.constants';
   styleUrls: ['./latest-job-openings.component.scss'],
 })
 export class LatestJobOpeningsComponent implements OnInit {
-  openings: any;
-  ngOnInit(): void {
-    this.openings = JOBS;
+  openings = [...JOBS];
+  isViewInitialized = false;
+
+  ngAfterViewInit() {
+    this.isViewInitialized = true;
   }
-  topCarouselLeft = {
+  ngOnInit(): void {
+}
+  carouselConfig: OwlOptions = {
+    items : 1,
     loop: true,
     lazyLoad: true,
     center: true,
     dots: false,
     autoplay: true,
-    autoplayTimeout: 3500,
-    responsive: {
-      '0': {
-        items: 1,
-      },
-      '600': {
-        items: 1,
-      },
-      '1000': {
-        items: 1,
-      },
-    },
+    autoplayTimeout: 3500
   };
 }

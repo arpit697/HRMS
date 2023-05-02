@@ -7,25 +7,27 @@
     </mat-card-actions>
   </div>
   <mat-divider class="mat-divider"></mat-divider>
-  <div class="carousel-container">
-    <owl-carousel-o [options]="bottomCarousel" #OwlCarousel>
-      <ng-container *ngFor="let item of gallery">
-        <ng-template carouselSlide>
-          <div class="image-wrapper">
-            <img src="{{ item.collection[0] }}" />
-            <div class="count">
-              <mat-icon>image</mat-icon>
-              <mat-card-subtitle>{{
-                item.collection.length
-              }}</mat-card-subtitle>
+  <div class="p-24">
+    <ng-container *ngIf="isViewInitialized">
+      <owl-carousel-o [options]="bottomCarousel" #OwlCarousel>
+        <ng-container *ngFor="let item of gallery">
+          <ng-template carouselSlide>
+            <div class="image-wrapper">
+              <img src="{{ item.collection[0] }}" />
+              <div class="count">
+                <mat-icon>image</mat-icon>
+                <mat-card-subtitle>{{
+                  item.collection.length
+                }}</mat-card-subtitle>
+              </div>
+              <mat-card-title class="collection-name">
+                {{ item.collection_name }}</mat-card-title
+              >
+              <button (click)="view(item)" class="view-button">View</button>
             </div>
-            <mat-card-title class="collection-name">
-              {{ item.collection_name }}</mat-card-title
-            >
-            <button (click)="view(item)" class="view-button">View</button>
-          </div>
-        </ng-template>
-      </ng-container>
-    </owl-carousel-o>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </ng-container>
   </div>
 </mat-card>

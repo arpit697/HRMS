@@ -28,21 +28,21 @@
           class="user-image"
           [src]="
             utility.uploadedProfilePicture ||
-            '../../../../../assets/default/default_male.jpg'
+            '/assets/default/default_male.jpg'
           "
           alt="User Image"
         />
         <mat-icon>expand_more</mat-icon>
         <mat-menu class="menu" #menu="matMenu">
-          <button mat-menu-item>
+          <button mat-menu-item [routerLink]="'PROFILE' | routing">
             <mat-icon>person</mat-icon>
             <span>My Profile</span>
           </button>
-          <button mat-menu-item>
+          <button mat-menu-item [routerLink]="'PROFILE' | routing">
             <mat-icon>key</mat-icon>
             <span>Change Password</span>
           </button>
-          <button class="logout" mat-menu-item>
+          <button class="logout" mat-menu-item (click)="logOutHandler()">
             <mat-icon>logout</mat-icon>
             <span>Sing out</span>
           </button>
