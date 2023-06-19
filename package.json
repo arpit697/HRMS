@@ -25,6 +25,8 @@
     "@fullcalendar/core": "^6.1.4",
     "@fullcalendar/daygrid": "^6.1.4",
     "@fullcalendar/interaction": "^6.1.4",
+    "@ngrx/effects": "^15.4.0",
+    "@ngrx/store": "^15.4.0",
     "ckeditor4-angular": "^3.3.0",
     "googleapis": "^111.0.0",
     "ngx-material-timepicker": "^5.5.3",

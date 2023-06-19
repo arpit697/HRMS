@@ -1,0 +1,29 @@
+
+.purchase-wrap {
+  padding: 25px 10px 10px;
+  border: 1px solid #dce2e9;
+  border-radius: 8px !important;
+  .purchase-button {
+    background: linear-gradient(180deg, #67b0f9 0%, #368cf6 100%);
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    max-width: 332px;
+    margin-bottom: 10px;
+  }
+}
+
+.icon {
+  font-size: 14px;
+  color: #606167;
+}
+.note {
+  color: #606167;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0px;
+  padding-right: 10px;
+}

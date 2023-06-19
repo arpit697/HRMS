@@ -11,6 +11,10 @@ import {
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { CKEditorModule } from 'ckeditor4-angular';
+import { StoreModule } from '@ngrx/store';
+import { authReducer } from './states/auth/auth.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './states/auth/auth.effect';
 
 const MATERIAL = [MatSnackBarModule];
 @NgModule({
@@ -21,6 +25,8 @@ const MATERIAL = [MatSnackBarModule];
     BrowserAnimationsModule,
     HttpClientModule,
     CKEditorModule,
+    StoreModule.forRoot({ auth: authReducer }),
+    EffectsModule.forRoot([AuthEffects]),
     ...MATERIAL,
   ],
   providers: [

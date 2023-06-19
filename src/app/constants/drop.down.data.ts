@@ -4,15 +4,15 @@ export const EDUCATION_LEVEL_DROP_DOWN = [
   { course: 'M.Tech' },
   { course: 'BCA' },
   { course: 'MCA' },
-    { course: 'BBA' },
-    { course: 'MBA' },
-    { course: 'B.Sc' },
-    { course: 'M.Sc' },
-    { course: 'BA' },
-    { course: 'MA' },
-    { course: 'Phd' },
-    { course: 'Diploma' },
-    { course: 'B.Sc Animation & Film Makin' },
+  { course: 'BBA' },
+  { course: 'MBA' },
+  { course: 'B.Sc' },
+  { course: 'M.Sc' },
+  { course: 'BA' },
+  { course: 'MA' },
+  { course: 'Phd' },
+  { course: 'Diploma' },
+  { course: 'B.Sc Animation & Film Makin' },
 ];
 
 export const LANGUAGE_DROP_DOWN = [
@@ -117,6 +117,16 @@ export const TICKET_DEPARTMENT_CATEGORY_DROP_DWON = [
     ],
   },
   { department: 'Admin', category: ['Server'] },
+];
+
+export const WEEK_DAYS = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday',
 ];
 
 export const TICKET_PRIORITY_DROP_DOWN = ['Low', 'Medium', 'High'];

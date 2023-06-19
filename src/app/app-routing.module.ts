@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ACCOUNT, FEATURES } from './constants/routes';
-import { AuthGuard } from './guards/auth.guard';
+import { AuthGuard } from './guards/authGuard/auth.guard';
+import { LognGuard } from './guards/loginGuard/login.guard';
 
 const routes: Routes = [
   {
@@ -11,13 +12,14 @@ const routes: Routes = [
   },
   {
     path: ACCOUNT.path,
+    // canActivate: [LognGuard],
     loadChildren: () =>
       import('./modules/account/account.module').then((m) => m.AccountModule),
   },
 
   {
     path: FEATURES.path,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     loadChildren: () =>
       import('./modules/features/features.module').then(
         (m) => m.FeaturesModule

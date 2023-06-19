@@ -1,0 +1,25 @@
+<mat-card class="purchase-wrap flex-wrap g-1">
+  <div class="flex jc-center">
+    <button
+      class="purchase-button"
+      mat-raised-button
+      (click)="puchaseCouponsHandler()"
+    >
+      +Purchase Coupons
+    </button>
+  </div>
+  <div class="flex jc-center ai-center">
+    <mat-slide-toggle [(ngModel)]="isChecked" (change)="onChange()"
+      >Coupon Purchase Reminder</mat-slide-toggle
+    >
+  </div>
+  <div>
+    <div class="flex ai-center g-05">
+      <mat-icon class="icon flex jc-center ai-center">info</mat-icon>
+      <mat-card-subtitle class="note">
+        <strong>Note :</strong> You can purchase/cancel a coupon for the
+        upcoming day before 6 p.m. today.
+      </mat-card-subtitle>
+    </div>
+  </div>
+</mat-card>

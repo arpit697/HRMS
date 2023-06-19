@@ -1,0 +1,54 @@
+.amount-due {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #dce2e9;
+  border-radius: 8px !important;
+}
+.icon {
+  font-size: 14px;
+  color: #606167;
+}
+.note {
+  color: #606167;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0px;
+  padding-right: 10px;
+}
+.amount-due {
+  padding: 10px 20px;
+  .avabcoupon {
+    color: #469cf8;
+    font-size: 18px;
+  }
+  .amount-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #221e1e;
+  }
+  .amount {
+    font-weight: 500;
+    font-size: 38px;
+    color: #469cf8;
+  }
+}
+
+// .amount-due {
+//     .avabcoupon {
+//       color: #469cf8;
+//       font-size: 18px;
+//     }
+//     .amount-title {
+//       font-size: 20px;
+//       font-weight: 500;
+//       color: #221e1e;
+//     }
+//     .amount {
+//       font-weight: 500;
+//       font-size: 38px;
+//       color: #469cf8;
+//     }
+//   }

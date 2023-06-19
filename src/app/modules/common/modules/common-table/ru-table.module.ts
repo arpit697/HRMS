@@ -14,10 +14,6 @@ import { RouterModule } from '@angular/router';
 import { MatSortModule } from '@angular/material/sort';
 import { FormsModule } from '@angular/forms';
 
-
-
-
-
 const MATERIAL = [
   MatTableModule,
   MatPaginatorModule,
@@ -28,11 +24,17 @@ const MATERIAL = [
   MatInputModule,
   MatSelectModule,
   MatInputModule,
-  MatSortModule
+  MatSortModule,
 ];
 @NgModule({
   declarations: [RuTableComponent],
-  imports: [CommonModule, RouterModule ,RoutingModule,FormsModule, ...MATERIAL],
+  imports: [
+    CommonModule,
+    RouterModule,
+    RoutingModule,
+    FormsModule,
+    ...MATERIAL,
+  ],
   exports: [RuTableComponent],
 })
 export class RuTableModule {}

@@ -55,6 +55,7 @@
 }
 @media all and (max-width: 760px) {
   .referral-bonus {
+    border-left: none;
     .list-container {
       ul {
         grid-template-columns: auto;

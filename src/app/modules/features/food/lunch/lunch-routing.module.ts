@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: PURCHASE_LUNCH_COUPON.path,
     loadChildren: () =>
-      import('./purchase-lunch-coupon/purchase-lunch-coupon.module').then(
+      import('../purchase-lunch-coupon/purchase-lunch-coupon.module').then(
         (m) => m.PurchaseLunchCouponModule
       ),
   },

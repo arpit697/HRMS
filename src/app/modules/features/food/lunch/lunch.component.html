@@ -1,70 +1,9 @@
 <div class="flex flex-column g-2">
   <div class="card-wrapper">
-    <mat-card class="amount-due flex-wrap g-1">
-      <div class="flex flex-wrap-rev jc-between g-05">
-        <mat-card-title class="amount-title">Amount Due</mat-card-title>
-        <mat-card-title class="avabcoupon"
-          >Available coupon for purchase: 10</mat-card-title
-        >
-      </div>
-
-      <div>
-        <mat-card-title class="amount">₹125</mat-card-title>
-      </div>
-      <div class="flex flex-wrap-rev ai-start jc-between g-05">
-        <div class="flex ai-center g-05">
-          <mat-icon class="icon flex jc-center ai-center">info</mat-icon>
-          <mat-card-subtitle class="note">
-            <strong>Note :</strong> Amount due need to paid in cash in account
-            office.
-          </mat-card-subtitle>
-        </div>
-        <button class="view-button" mat-raised-button>View Details</button>
-      </div>
-    </mat-card>
-    <mat-card class="purchase-wrap flex-wrap g-1">
-      <div class="flex jc-center">
-        <button
-          class="purchase-button"
-          mat-raised-button
-          (click)="puchaseCouponsHandler()"
-        >
-          +Purchase Coupons
-        </button>
-      </div>
-      <div>
-        <div class="flex ai-center g-05">
-          <mat-icon class="icon flex jc-center ai-center">info</mat-icon>
-          <mat-card-subtitle class="note">
-            <strong>Note :</strong> You can purchase/cancel a coupon for the
-            upcoming day before 6 p.m. today.
-          </mat-card-subtitle>
-        </div>
-      </div>
-    </mat-card>
+    <app-amount-card></app-amount-card>
+    <app-purchase-card></app-purchase-card>
   </div>
   <mat-card class="p-24">
-    <table class="calendar">
-      <tr>
-        <th class="day-of-week" *ngFor="let dayOfWeek of daysOfWeek">
-          {{ dayOfWeek }}
-        </th>
-      </tr>
-      <tr *ngFor="let week of days | chunk : 7">
-        <td
-          *ngFor="let day of week"
-          [ngClass]="{
-            weekend: day && isWeekend(day),
-            past: day && isPast(day),
-            current: day && isCurrent(day),
-            future: day && isFuture(day)
-          }"
-        >
-          <mat-card-subtitle>
-            {{ day ? day.getDate() : "" }}
-          </mat-card-subtitle>
-        </td>
-      </tr>
-    </table>
+    <app-calendar></app-calendar>
   </mat-card>
 </div>

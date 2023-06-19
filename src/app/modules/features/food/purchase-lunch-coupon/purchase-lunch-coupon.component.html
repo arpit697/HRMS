@@ -15,12 +15,12 @@
   <div class="flex flex-wrap-rev jc-between g-05">
     <mat-card-title class="amount-title">Amount Due</mat-card-title>
     <mat-card-title class="avabcoupon"
-      >Available coupon for purchase: 10</mat-card-title
+      >Available coupon for purchase: {{ availableCoupons }}</mat-card-title
     >
   </div>
 
   <div>
-    <mat-card-title class="amount">₹125</mat-card-title>
+    <mat-card-title class="amount">{{ payable }}</mat-card-title>
   </div>
   <div class="flex flex-wrap-rev ai-start jc-between g-05">
     <div class="flex ai-center g-05">
@@ -38,13 +38,13 @@
     <div class="flex-size">
       <mat-card-subtitle class="c-label">Coupon Count</mat-card-subtitle>
       <mat-form-field appearance="outline">
-        <input matInput type="text" />
+        <input matInput type="text" [value]="data.count" />
       </mat-form-field>
     </div>
     <div class="flex-size">
       <mat-card-subtitle class="c-label">Total Amount (Rs)</mat-card-subtitle>
       <mat-form-field appearance="outline">
-        <input matInput type="text" />
+        <input matInput type="text" [value]="data.value" />
       </mat-form-field>
     </div>
     <mat-card-actions class="button-group flex-size-50 g-1">
@@ -75,13 +75,14 @@
           }"
         >
           <div class="flex jc-between ai-center">
-            <input
-              type="checkbox"
+            <mat-checkbox
+              (change)="selectionChange($event)"
               *ngIf="
                 (day && isCurrent(day)) ||
                 (day && isFuture(day) && day && !isWeekend(day))
               "
-            />
+            >
+            </mat-checkbox>
             <mat-card-subtitle>
               {{ day ? day.getDate() : "" }}
             </mat-card-subtitle>

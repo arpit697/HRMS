@@ -12,8 +12,9 @@ import {
 import { SIDE_NAV_ITEM } from 'src/app/constants/app.constants';
 import { CovidComponent } from './includes/utilities/popups/covid/covid.component';
 import { SocialAuthService } from '@abacritt/angularx-social-login';
-import { ACCOUNT } from 'src/app/constants/routes';
-
+import { Store } from '@ngrx/store';
+import * as fromAuth from '../../../app/states/auth/auth.reducer';
+import * as AuthActions from '../../states/auth/auth.actions';
 @Component({
   selector: 'app-features',
   templateUrl: './features.component.html',
@@ -28,11 +29,10 @@ export class FeaturesComponent implements OnInit {
   isExpanded = true;
   isShowing = false;
   items = <any>[...SIDE_NAV_ITEM];
-
   constructor(
     private dialog: MatDialog,
     private router: Router,
-    private authService: SocialAuthService
+    private _store: Store<fromAuth.State>,
   ) {
     this.checkScreenSize();
     window.addEventListener('resize', () => {
@@ -42,15 +42,11 @@ export class FeaturesComponent implements OnInit {
 
   ngOnInit(): void {
     // Set up interval to rotate animation direction every second
+
     setInterval(() => {
       this.rotateDirection =
         this.rotateDirection === 'clockwise' ? 'anticlockwise' : 'clockwise';
     }, 1000);
-    this.authService.authState.subscribe(() => {
-      if (sessionStorage.getItem('login') == 'false') {
-        this.router.navigate([ACCOUNT.fullUrl]);
-      }
-    });
   }
 
   ngAfterViewInit(): void {
@@ -74,12 +70,9 @@ export class FeaturesComponent implements OnInit {
   }
   accordianClickHandler(url: any) {
     if (url === 'ACCOUNT') {
-      this.authService.signOut();
-      sessionStorage.setItem('login', JSON.stringify('false'));
-      this.router.navigate([ACCOUNT.fullUrl]);
+      this._store.dispatch(AuthActions.logout());
     }
   }
-
   mouseenter() {
     // Show side nav on hover if it is collapsed
     this.isShowing = !this.isExpanded;

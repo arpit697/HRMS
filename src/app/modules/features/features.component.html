@@ -18,7 +18,7 @@
         <mat-expansion-panel
           *ngFor="let list of items"
           disabled="{{ list.active == false }}"
-          hideToggle="{{ !isExpanded || !list.categories }}"
+          hideToggle="{{ !isExpanded || !list?.categories }}"
         >
           <mat-expansion-panel-header
             (click)="accordianClickHandler(list.router_link)"

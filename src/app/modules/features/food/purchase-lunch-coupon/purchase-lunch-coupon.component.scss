@@ -97,6 +97,9 @@ table {
   }
   td.weekend {
     background-color: $background-color_3 !important;
+    mat-checkbox {
+      display: none;
+    }
   }
   td.past {
     background-color: $background-color_4;

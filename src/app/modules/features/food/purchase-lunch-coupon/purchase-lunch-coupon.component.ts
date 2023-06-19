@@ -1,31 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { WEEK_DAYS } from 'src/app/constants/drop.down.data';
 import { LUNCH, PURCHASE_LUNCH_COUPON } from 'src/app/constants/routes';
+import { getNumberOfCoupon } from 'src/app/states/purchaseCupon/purchase.action';
+import { getNumberOfCouponSelector } from 'src/app/states/purchaseCupon/purchase.selector';
 
 @Component({
   selector: 'app-purchase-lunch-coupon',
   templateUrl: './purchase-lunch-coupon.component.html',
   styleUrls: ['./purchase-lunch-coupon.component.scss'],
 })
-export class PurchaseLunchCouponComponent {
-  daysOfWeek = [
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-    'Sunday',
-  ];
+export class PurchaseLunchCouponComponent implements OnInit {
+  daysOfWeek = [...WEEK_DAYS];
 
   currentMonth: Date = new Date();
-  days: Date[] = [];
+  days: any[] = [];
   isWeekend: (day: Date) => boolean;
   isPast: (day: Date) => boolean;
   isCurrent: (day: Date) => boolean;
   isFuture: (day: Date) => boolean;
 
-  constructor(private _router: Router) {
+  data: any;
+  availableCoupons: any;
+
+  constructor(private _router: Router, private store: Store) {
     this.isWeekend = (day: Date) => {
       const dayOfWeek = day.getDay();
       return dayOfWeek === 0 || dayOfWeek === 6;
@@ -44,6 +43,12 @@ export class PurchaseLunchCouponComponent {
     };
 
     this.generateCalendar();
+  }
+  ngOnInit(): void {
+    this.store.select(getNumberOfCouponSelector).subscribe((res) => {
+      console.log(res);
+      this.data = res;
+    });
   }
 
   generateCalendar() {
@@ -64,19 +69,24 @@ export class PurchaseLunchCouponComponent {
       firstDayOfWeek = 6;
     }
 
-    let days: any = [];
+    let days = [];
+    let availableCoupons = 0;
     for (let i = 0; i < firstDayOfWeek; i++) {
       days.push(null);
     }
 
     for (let i = 1; i <= daysInMonth; i++) {
-      days.push(
-        new Date(
-          this.currentMonth.getFullYear(),
-          this.currentMonth.getMonth(),
-          i
-        )
+      const currentDate = new Date(
+        this.currentMonth.getFullYear(),
+        this.currentMonth.getMonth(),
+        i
       );
+
+      if (currentDate.getDay() !== 0 && currentDate.getDay() !== 6) {
+        availableCoupons++;
+      }
+
+      days.push(currentDate);
     }
 
     const totalCells = 35; // 6 rows x 7 columns
@@ -85,8 +95,10 @@ export class PurchaseLunchCouponComponent {
     for (let i = 0; i < numEmptyCells; i++) {
       days.push(null);
     }
+    this.availableCoupons = availableCoupons;
 
     this.days = days;
+    console.log('Available Coupons:', availableCoupons);
   }
 
   prevMonth() {
@@ -105,5 +117,15 @@ export class PurchaseLunchCouponComponent {
 
   backHandler() {
     this._router.navigate([LUNCH.fullUrl]);
+  }
+
+  selectionChange(check: any) {
+    console.log(check);
+    this.store.dispatch(getNumberOfCoupon({ check: check.checked }));
+    // this.availableCoupons = this.availableCoupons - this.data.count;
+  }
+
+  get payable() {
+    return this.data.value;
   }
 }
