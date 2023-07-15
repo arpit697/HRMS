@@ -40,8 +40,11 @@ export class GoogleLoginComponent implements OnInit, OnDestroy {
   }
 
   signInWithGoogle(): void {
+    // let userToken = {
+    //   token: this.socialUser?.idToken,
+    // };
     let userToken = {
-      token: this.socialUser?.idToken,
+      token: 'jwtToken'
     };
     this._store.dispatch(AuthActions.loginRequest(userToken));
   }

@@ -14,8 +14,8 @@ export class AuthEffects {
       ofType(AuthActions.loginRequest),
       exhaustMap((action) => {
         console.log(action);
-        
-        if (action.token) {
+
+        if (action.token || (action.email && action.password)) {
           return of(
             AuthActions.loginSuccess({
               loginSuccessResponse: {
