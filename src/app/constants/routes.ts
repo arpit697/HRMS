@@ -389,3 +389,4 @@ export const DINNER: RouteInterface = {
     return `${FOOD.fullUrl}/${this.path}`;
   },
 };
+

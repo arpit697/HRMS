@@ -14,6 +14,7 @@
 }
 
 .red-snackbar {
+  display: none;
   &.mat-mdc-snack-bar-container .mdc-snackbar__surface {
     background-color: #d9534f !important;
   }
