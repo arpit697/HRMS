@@ -1,49 +1,129 @@
-import {
-  HttpClient,
-  HttpClientModule,
-  HttpEvent,
-  HttpParams,
-} from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ApiConfig, ApiResponse } from 'src/app/interfaces/api.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HttpService {
   private apiUrl: string;
-  constructor(public http: HttpClient) {
+  constructor(private http: HttpClient) {
     this.apiUrl = '';
   }
 
-  get<T = any>(
-    url: string,
-    httpParams?: any,
-    config?: ApiConfig
-  ): Observable<HttpEvent<ApiResponse<T>>> {
-    // Use Object.entries to loop over the object and its properties
-    for (const [item, value] of Object.entries(httpParams || {})) {
-      if (!value) {
-        delete httpParams[item];
+  post(url:any, data:any, queryParams?:any, config?: any): any {
+    const header = <any>this.getCustomHeader(config);
+
+    // Add query parameters to the URL if queryParams is provided
+    if (queryParams) {
+      let params = new HttpParams();
+      for (const key in queryParams) {
+        if (queryParams.hasOwnProperty(key)) {
+          params = params.set(key, queryParams[key]);
+        }
       }
+      header['params'] = params;
     }
-    const header = this.getCustomHeader(<ApiConfig>config);
-    // Add the params to the header only if httpParams is truthy
-    if (httpParams) {
-      header.params = httpParams;
+
+    return this.http.post(this.apiUrl + url, data, header);
+  }
+
+  put(url:any, data:any, queryParams?:any, config?: any): any {
+    const header = this.getCustomHeader(config);
+
+    // Add query parameters to the URL if queryParams is provided
+    if (queryParams) {
+      let params = new HttpParams();
+      for (const key in queryParams) {
+        if (queryParams.hasOwnProperty(key)) {
+          params = params.set(key, queryParams[key]);
+        }
+      }
+      url += '?' + params.toString(); // Append the query parameters to the URL
     }
-    return this.http.get<HttpEvent<ApiResponse<T>>>(
-      `${this.apiUrl}${url}`,
-      header
+
+    return this.http.put(this.apiUrl + url, data, header);
+  }
+
+  patch(url:any, data:any, config?: any): any {
+    return this.http.patch(
+      this.apiUrl + url,
+      data,
+      this.getCustomHeader(config)
     );
   }
 
-  getCustomHeader(config: ApiConfig, httpParams?: HttpParams) {
-    const headers = { config: JSON.stringify(config || {}) };
-    if (config && config.customHeader) {
-      Object.assign(headers, config.customHeader);
+  delete(url:any, data?:any, config?: any): any {
+    return this.http.delete(
+      this.apiUrl + url,
+      this.getCustomHeader(config, data)
+    );
+  }
+
+  deleteWithQuery(url:any, httpParams?: any, config?: any): any {
+    for (let item in httpParams) {
+      if (
+        httpParams[item] === '' ||
+        httpParams[item] === undefined ||
+        httpParams[item] === null
+      ) {
+        delete httpParams[item];
+      }
     }
-    return { headers, params: httpParams };
+    const header = <any>this.getCustomHeader(config);
+    if (httpParams) {
+      header['params'] = httpParams;
+    }
+    return this.http.delete(this.apiUrl + url, header);
+  }
+
+  get(url:any, httpParams?: any, config?: any): any {
+    for (let item in httpParams) {
+      if (
+        httpParams[item] === '' ||
+        httpParams[item] === undefined ||
+        httpParams[item] === null
+      ) {
+        delete httpParams[item];
+        // delete httpParams["Match"];
+      }
+    }
+    const header = <any>this.getCustomHeader(config);
+    if (httpParams) {
+      header['params'] = httpParams;
+    }
+    return this.http.get(this.apiUrl + url, header);
+  }
+
+  getCustomHeader(config?:any, data?:any) {
+    if (config && config.customHeader) {
+      return {
+        headers: {
+          config: JSON.stringify(config || {}),
+          ...config.customHeader,
+        },
+      };
+    }
+    return {
+      headers: {
+        config: JSON.stringify(config || {}),
+      },
+    };
+  }
+
+  deleteWithBody(url:any, body?: any, config?: any): any {
+    for (let item in body) {
+      if (
+        body[item] === '' ||
+        body[item] === undefined ||
+        body[item] === null
+      ) {
+        delete body[item];
+      }
+    }
+    const header = <any>this.getCustomHeader(config);
+    if (body) {
+      header['body'] = body;
+    }
+    return this.http.delete(this.apiUrl + url, header);
   }
 }

@@ -6,6 +6,7 @@ import { UtilityService } from 'src/app/services/utility/utility.service';
 import * as AuthActions from '../../../../states/auth/auth.actions';
 import * as fromAuth from '../../../../../app/states/auth/auth.reducer';
 import { Router } from '@angular/router';
+import { HttpService } from 'src/app/services/http/http.service';
 
 @Component({
   selector: 'app-credential-login',
@@ -20,6 +21,7 @@ export class CredentialLoginComponent implements OnInit {
     private _formBuilder: FormBuilder,
     private _formValidation: FormValidationService,
     private _store: Store<fromAuth.State>,
+    private _http: HttpService
   ) {}
 
   ngOnInit(): void {
@@ -27,7 +29,13 @@ export class CredentialLoginComponent implements OnInit {
   }
   login() {
     if (this.loginForm.valid) {
-      this._store.dispatch(AuthActions.loginRequest(this.loginForm.value));
+      this._http
+        .post('http://localhost:8000/api/user/login', this.loginForm.value)
+        .subscribe((response: any) => {
+          console.log(response, 'hey i am response');
+
+          this._store.dispatch(AuthActions.loginRequest(response));
+        });
     }
   }
 
