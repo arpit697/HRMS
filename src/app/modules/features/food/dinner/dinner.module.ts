@@ -14,7 +14,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CKEditorModule } from 'ckeditor4-angular';
 
 const MATERIAL = [
   MatCardModule,
@@ -31,15 +30,12 @@ const MATERIAL = [
 ];
 
 @NgModule({
-  declarations: [
-    DinnerComponent
-  ],
+  declarations: [DinnerComponent],
   imports: [
     CommonModule,
-    DinnerRoutingModule ,
+    DinnerRoutingModule,
     ReactiveFormsModule,
-    CKEditorModule,
-    ...MATERIAL
-  ]
+    ...MATERIAL,
+  ],
 })
-export class DinnerModule { }
+export class DinnerModule {}

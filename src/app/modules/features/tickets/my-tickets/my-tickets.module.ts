@@ -11,7 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { CKEditorModule } from 'ckeditor4-angular';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RuTableModule } from 'src/app/modules/common/modules/common-table/ru-table.module';
 import { RemoveRecordDialogComponent } from '../../includes/utilities/popups/remove-ticket/remove-record-dialog.component';
@@ -33,7 +33,6 @@ const MATERIAL = [
   imports: [
     CommonModule,
     MyTicketsRoutingModule,
-    CKEditorModule,
     FormsModule,
     RuTableModule,
     ReactiveFormsModule,

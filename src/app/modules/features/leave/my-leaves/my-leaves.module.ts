@@ -15,7 +15,7 @@ import { RuTableModule } from 'src/app/modules/common/modules/common-table/ru-ta
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CKEditorModule } from 'ckeditor4-angular';
+
 import { MatRadioModule } from '@angular/material/radio';
 import { MatListModule } from '@angular/material/list';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
@@ -43,7 +43,6 @@ const MATERIAL = [
     CommonModule,
     MyLeavesRoutingModule,
     RuTableModule,
-    CKEditorModule,
     ReactiveFormsModule,
     FormsModule,
     ...MATERIAL,

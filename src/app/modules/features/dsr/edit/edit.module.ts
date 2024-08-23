@@ -5,9 +5,9 @@ import { EditRoutingModule } from './edit-routing.module';
 import { EditComponent } from './edit.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { CKEditorModule } from 'ckeditor4-angular';
-import {  MatFormFieldModule } from '@angular/material/form-field';
-import {  MatInputModule } from '@angular/material/input';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -30,6 +30,6 @@ const MATERIAL = [
 ];
 @NgModule({
   declarations: [EditComponent],
-  imports: [CommonModule, EditRoutingModule, CKEditorModule, ...MATERIAL],
+  imports: [CommonModule, EditRoutingModule, ...MATERIAL],
 })
 export class EditModule {}

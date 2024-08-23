@@ -16,7 +16,7 @@ import {
 } from '@angular/material/datepicker';
 import { MatNativeDateModule, NativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { CKEditorModule } from 'ckeditor4-angular';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { OptionsFilterModule } from 'src/app/pipes/options-filter/options-filter.module';
@@ -41,7 +41,7 @@ const MATERIAL = [
     CommonModule,
     MyDsrRoutingModule,
     RuTableModule,
-    CKEditorModule,
+
     RuTableModule,
     ReactiveFormsModule,
     OptionsFilterModule,

@@ -10,7 +10,7 @@ import {
 } from '@abacritt/angularx-social-login';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
-import { CKEditorModule } from 'ckeditor4-angular';
+
 import { StoreModule } from '@ngrx/store';
 import { authReducer } from './states/auth/auth.reducer';
 import { EffectsModule } from '@ngrx/effects';
@@ -24,7 +24,6 @@ const MATERIAL = [MatSnackBarModule];
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    CKEditorModule,
     StoreModule.forRoot({ auth: authReducer }),
     EffectsModule.forRoot([AuthEffects]),
     ...MATERIAL,
