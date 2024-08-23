@@ -29,7 +29,7 @@
     "@ngrx/store": "^15.4.0",
     "ckeditor4-angular": "^3.3.0",
     "googleapis": "^111.0.0",
-    "ngx-material-timepicker": "^5.5.3",
+    "ngx-material-timepicker": "^13.1.1",
     "ngx-owl-carousel-o": "^15.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.0.1",
-    "@angular/cli": "~15.0.1",
+    "@angular/cli": "^15.2.11",
     "@angular/compiler-cli": "^15.0.0",
     "@types/jasmine": "~4.3.0",
     "angular-cli-ghpages": "^2.0.1",
